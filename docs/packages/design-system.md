@@ -11,7 +11,7 @@
     </h1>
 </div>
 
-# Design System Overview
+### Design System Overview
 
 ## Purpose
 

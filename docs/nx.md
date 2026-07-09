@@ -11,7 +11,7 @@
 	</h1>
 </div>
 
-# NX Guide
+### NX Guide
 
 ## Purpose
 

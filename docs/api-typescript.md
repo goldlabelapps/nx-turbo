@@ -11,7 +11,7 @@
 	</h1>
 </div>
 
-# API + TypeScript Guide
+### API + TypeScript Guide
 
 ## API Location
 

@@ -11,13 +11,12 @@
 	</h1>
 </div>
 
-# Documentation Home
+### Docs
 
 This folder is the canonical location for repository documentation.
 
 ## Core Guides
 
-- [Leida Guide](./leida.md)
 - [NX Guide](./nx.md)
 - [API + TypeScript Guide](./api-typescript.md)
 - [Testing Guide](./testing.md)
@@ -39,5 +38,4 @@ This folder is the canonical location for repository documentation.
 
 ## Notes
 
-- Runtime markdown content under `apps/v3/public/**` is application content, not repository documentation.
-- Prompt and skill markdown files under `packages/design-system/components/**` and `packages/design-system/SKILL.md` are kept in place because they are consumed by tooling.
+- Runtime markdown content under `apps/v3/public/**` is application content, not repository documentation

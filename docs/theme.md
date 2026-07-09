@@ -11,7 +11,7 @@
 	</h1>
 </div>
 
-# Theme module
+### Theme module
 
 This module owns presentation integration for the Leida app, including the app's MUI theme adapter and the shared monorepo design-system wiring.
 

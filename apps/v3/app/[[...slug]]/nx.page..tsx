@@ -8,7 +8,7 @@ import {
     Container,
     Typography,
 } from '@mui/material';
-import { NX } from '../NX';
+import { NXProvider } from '../NX';
 import {
     serverUseMDBySlug,
     serverUseAllMd,
@@ -100,7 +100,7 @@ export default async function Page(props: any) {
     });
 
     return (
-            <NX config={config} frontmatter={data}>
+            <NXProvider config={config}>
                 <Header config={config} frontmatter={data} />
                 {data.cartridge ? (
                     data.cartridge === 'virus' ? (
@@ -161,6 +161,6 @@ export default async function Page(props: any) {
                     >
                     </Footer>
                 </footer>
-            </NX>
+            </NXProvider>
     );
 }

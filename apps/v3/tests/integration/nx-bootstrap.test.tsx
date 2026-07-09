@@ -33,7 +33,7 @@ jest.mock('@/app/NX/DesignSystem', () => {
   };
 });
 
-import NX from '@/app/NX/NX';
+import { NXProvider as NX } from '@/app/NX';
 
 const validConfig = {
   cartridges: {

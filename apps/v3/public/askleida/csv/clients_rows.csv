@@ -1,0 +1,22 @@
+id,practitioner_id,first_name,last_name,date_of_birth,email,skin_type,concern_tags,is_pregnant,is_breastfeeding,current_medication,skin_overview,personal_notes,created_at
+0dd54e41-9bed-4052-8bdb-2dafac465081,190e3a95-a8e6-4dab-99c5-52d9ff7fdc49,Thomas,(me),,,,[],false,false,,,,2026-03-29 20:22:26.151004+00
+0f2aead0-ba0b-47cf-bc4a-c228672dca3c,f824b82b-0bcc-4d09-b558-9214d663f527,Angie,Havers,,,Combination,"[""ageing"",""dehydration""]",false,false,,,,2026-04-14 20:42:59.732887+00
+138a0358-7ab8-49a3-ad20-b7de597f18b5,f824b82b-0bcc-4d09-b558-9214d663f527,Emma,Colgate,,,Oily,"[""ageing"",""pigmentation""]",false,false,,,,2026-03-26 22:21:21.558668+00
+1890a3ca-c8d0-4130-a8c7-c30b1b7bb47b,f824b82b-0bcc-4d09-b558-9214d663f527,Jade,Z,,,,[],false,false,,,,2026-03-26 21:02:50.694337+00
+1905bdbe-6e7f-4060-aa33-e94f9ae6da8c,78a77883-f71e-4486-ad51-d176e0e24310,Jessica,MacPherson,,jessica-macpherson@hotmail.co.uk,Dry,"[""dehydration"",""ageing""]",false,false,,,,2026-03-31 21:13:30.709747+00
+2324f80f-bc7a-4ff9-9ca2-68c631712242,be705ce2-2c38-4a3d-9964-c7d42b459538,Julia,Hendricks,1989-09-10,,Dry,"[""redness"",""dehydration""]",false,false,,"Skin appears generally healthy with even tone, mild dryness on the cheeks, and no visible inflammation, lesions, or active breakouts; texture is slightly uneven in the T-zone, and skin barrier support is recommended.",,2026-04-10 07:22:32.42213+00
+2c371ba6-76bf-4246-8a91-362381ca4773,9265dd02-a2b6-4de6-8d06-60b93dc8cdf3,Sophie,Clarke,1990-05-12,sophie@example.com,combination,"[""acne"",""dehydration""]",false,false,,Updated overview,Prefers fragrance-free products,2026-03-23 21:17:36.069912+00
+30991aad-65ed-47b2-beb3-8adcad12d935,f824b82b-0bcc-4d09-b558-9214d663f527,Amelia,(me),,,,[],false,false,,,,2026-03-23 23:55:42.295598+00
+3690347a-a19d-491d-967e-29171879b03a,af46291a-7aed-4d85-8bf8-3d79ceb2582b,Test,test,,,,"[""acne""]",false,false,,,,2026-04-04 09:09:54.949208+00
+3a0b8bf1-f073-4cf1-add9-18018385fb6f,f824b82b-0bcc-4d09-b558-9214d663f527,Katie,Smith,,,Combination,"[""ageing"",""dehydration""]",false,false,,,,2026-03-30 08:48:26.629359+00
+40b35258-346b-4bd2-94c2-6b1919adc3f1,ca28cadc-81e9-45c1-a1b3-731076afd835,Jane,Doe,,,combination,"[""acne"",""dehydration""]",false,false,,,,2026-03-25 10:24:01.133371+00
+4418bf68-ebbe-4d85-909c-c861a716f364,9265dd02-a2b6-4de6-8d06-60b93dc8cdf3,Evelyn,Zhao-Chen,,,Combination,"[""acne"",""dehydration""]",false,false,,"Combination skin, oily T-zone, dehydrated cheeks",Client prefers fragrance-free products,2026-03-23 22:16:55.074876+00
+5ae0c73d-8ce6-4a98-a526-83b8f4915281,912ed997-549d-4e71-b592-8327f3d8822b,Bob,B,,bob@test.com,Oily,"[""dehydration""]",false,false,,,Bob will buy anything if you mention his dog,2026-04-18 19:01:47.717726+00
+685d191d-8e00-44e7-986a-2bdc2e1f69b0,f824b82b-0bcc-4d09-b558-9214d663f527,Ellie,Matthews,,,Combination,"[""redness"",""dehydration""]",false,false,,Wants to feel glowy as she's prone to dehydration.,,2026-05-26 16:26:45.833935+00
+69d8f2e5-5534-4341-ae14-4155d243378f,f824b82b-0bcc-4d09-b558-9214d663f527,Bev,Ives,,,Combination,"[""ageing"",""dehydration"",""redness"",""pigmentation""]",false,false,,,,2026-04-14 16:33:11.081886+00
+71e2d1c6-a2a6-431d-801c-45ae592575fd,f824b82b-0bcc-4d09-b558-9214d663f527,Emily,Green,,,Combination,[],false,false,,,,2026-04-25 08:02:34.300928+00
+79c0a076-da54-415f-b450-3948c2bb39af,f824b82b-0bcc-4d09-b558-9214d663f527,Philippa,Seed,,,Combination,"[""dehydration"",""ageing""]",false,false,,,,2026-04-02 20:19:58.453809+00
+94aafd02-04c8-440c-996f-4e7d5290e1ff,47fad392-2814-46af-a4a8-49b710d0f54d,Yuliia,Nechyporenko,,,Combination,"[""dehydration""]",false,false,,,,2026-04-10 10:42:22.391877+00
+b58d8f58-9493-452a-b506-a3e5224b8681,f824b82b-0bcc-4d09-b558-9214d663f527,Jack,Ives,,,Oily,[],false,false,,"Oily, prone to congestion but otherwise clear.",,2026-03-26 07:56:53.555209+00
+bdde2e07-4582-418f-aacf-d3de83cf20c5,270e01ff-f87a-4af0-8291-7bde04257ec8,Sofiia,Fedorchuk,,sofia.fedorchuk@gearheart.io,Dry,"[""barrier damage"",""ageing""]",false,false,,,[j[oj,2026-04-07 19:01:19.440118+00
+cbf9df0d-351c-4565-b2ca-39d7dfefae57,9265dd02-a2b6-4de6-8d06-60b93dc8cdf3,Sophie,Test,,,combination,"[""acne"",""redness""]",false,false,,"Mild comedonal acne on forehead and chin, some reactivity.",,2026-03-23 20:35:21.928107+00

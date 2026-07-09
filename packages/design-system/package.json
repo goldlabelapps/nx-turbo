@@ -1,0 +1,34 @@
+{
+  "name": "@leida/design-system",
+  "version": "1.0.0",
+  "description": "Leida Design System: tokens, components, guidelines, and templates",
+  "private": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles": "./styles.css",
+    "./tokens": "./dist/tokens.js"
+  },
+  "files": [
+    "dist",
+    "styles.css",
+    "assets",
+    "components",
+    "guidelines",
+    "tokens",
+    "templates",
+    "ui_kits"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "type-check": "tsc --noEmit",
+    "lint": "echo 'No lint configured yet'"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

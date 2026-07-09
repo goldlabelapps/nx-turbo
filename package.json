@@ -1,0 +1,16 @@
+{
+  "name": "nx-turbo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Turborepo implementation of NX°",
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check"
+  },
+  "devDependencies": {
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@8.15.0"
+}

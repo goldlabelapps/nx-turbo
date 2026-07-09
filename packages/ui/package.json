@@ -1,0 +1,43 @@
+{
+  "name": "@leida/ui",
+  "version": "1.0.0",
+  "description": "Leida UI: Material-UI theme and component overrides",
+  "private": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./theme": "./dist/theme/index.js",
+    "./styles": "./dist/styles.css"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "type-check": "tsc --noEmit",
+    "lint": "echo 'No lint configured yet'"
+  },
+  "peerDependencies": {
+    "@mui/material": "^5.14.0",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "dependencies": {
+    "@leida/design-system": "workspace:*"
+  },
+  "devDependencies": {
+    "@mui/material": "^5.14.0",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.0.0"
+  }
+}

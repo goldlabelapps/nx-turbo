@@ -15,4 +15,23 @@
 
 NX° turborepo implementation
 
+- [Home](docs/README.md)
+- [Leida Guide](docs/leida.md)
+- [NX Guide](docs/nx.md)
+- [API + TypeScript Guide](docs/api-typescript.md)
+- [Testing Guide](docs/testing.md)
+- [Theme Guide](docs/theme.md)
 
+## Apps
+
+- [Overview](docs/apps/v3.md)
+- [NX Runtime Notes](docs/apps/nx-runtime.md)
+- [NX Shortcodes](docs/apps/nx-shortcodes.md)
+- [NX CleverText](docs/apps/nx-clevertext.md)
+- [NX Chatbot Flash Notes](docs/apps/nx-chatbot.md)
+
+## Packages
+
+### packages/design-system
+
+- [Overview](docs/packages/design-system.md)

@@ -8,10 +8,10 @@ export default function Home() {
     <Container maxWidth="md" sx={{ py: 8 }}>
       <Box sx={{ textAlign: 'center', mb: 6 }}>
         <Typography variant="h1" sx={{ mb: 2 }}>
-          Leida Design System
+          NX Design System
         </Typography>
         <Typography variant="body1" sx={{ fontSize: '1.125rem', color: 'text.secondary' }}>
-          Material-UI implementation with Leida tokens
+          Material-UI implementation with NX tokens
         </Typography>
       </Box>
 

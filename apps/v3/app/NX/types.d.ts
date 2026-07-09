@@ -30,7 +30,7 @@ export type T_Tenant = 'my-tenant' |
     'new-tenant' |
     'free' |
     'nhtfs' |
-    'askleida'
+    'asknx'
 ;
 
 export type T_Config = {

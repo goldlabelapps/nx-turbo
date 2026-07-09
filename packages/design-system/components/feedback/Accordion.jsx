@@ -40,7 +40,7 @@ export function Accordion({ items, allowMultiple = false, summaryStyle = "serif"
                 fontSize: serif ? "1.22rem" : "0.72rem",
                 letterSpacing: serif ? "0" : "0.06em",
                 textTransform: serif ? "none" : "uppercase",
-                color: "var(--leida-ink)",
+                color: "var(--nx-ink)",
               }}
             >
               {item.q}
@@ -49,8 +49,8 @@ export function Accordion({ items, allowMultiple = false, summaryStyle = "serif"
                   width: "10px",
                   height: "10px",
                   flex: "0 0 auto",
-                  borderRight: "1.5px solid var(--leida-clay)",
-                  borderBottom: "1.5px solid var(--leida-clay)",
+                  borderRight: "1.5px solid var(--nx-clay)",
+                  borderBottom: "1.5px solid var(--nx-clay)",
                   transform: isOpen ? "rotate(-135deg)" : "rotate(45deg)",
                   transition: "transform var(--dur-mid) var(--ease-out)",
                 }}
@@ -70,7 +70,7 @@ export function Accordion({ items, allowMultiple = false, summaryStyle = "serif"
                     fontFamily: "var(--font-sans)",
                     fontSize: "0.95rem",
                     lineHeight: 1.62,
-                    color: "var(--leida-body)",
+                    color: "var(--nx-body)",
                     maxWidth: "62ch",
                   }}
                 >

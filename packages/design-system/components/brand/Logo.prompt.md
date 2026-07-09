@@ -1,4 +1,4 @@
-Leida's editorial italic wordmark (sparkle over the i), or the sparkle mark alone. Use in nav bars, app headers, footers, and splash screens.
+NX's editorial italic wordmark (sparkle over the i), or the sparkle mark alone. Use in nav bars, app headers, footers, and splash screens.
 
 ```jsx
 <Logo height={44} />                       {/* full wordmark, ink */}

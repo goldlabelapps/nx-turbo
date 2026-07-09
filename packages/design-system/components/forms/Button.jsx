@@ -7,27 +7,27 @@ const SIZES = {
 
 const VARIANTS = {
   primary: {
-    background: "var(--leida-ink)",
-    color: "var(--leida-parchment)",
+    background: "var(--nx-ink)",
+    color: "var(--nx-parchment)",
     border: "1px solid transparent",
     boxShadow: "var(--shadow-button)",
   },
   ghost: {
     background: "rgba(255,255,255,0.4)",
-    color: "var(--leida-ink)",
-    border: "1px solid var(--leida-line)",
+    color: "var(--nx-ink)",
+    border: "1px solid var(--nx-line)",
     backdropFilter: "var(--blur-chip)",
     WebkitBackdropFilter: "var(--blur-chip)",
   },
   quiet: {
     background: "transparent",
-    color: "var(--leida-ink)",
+    color: "var(--nx-ink)",
     border: "1px solid rgba(40,34,28,0.28)",
   },
 };
 
 /**
- * The Leida pill button. Mono, uppercase, wide-tracked label; lifts on
+ * The NX pill button. Mono, uppercase, wide-tracked label; lifts on
  * hover. Primary (ink), ghost (frosted), and quiet (hairline) variants.
  */
 export function Button({

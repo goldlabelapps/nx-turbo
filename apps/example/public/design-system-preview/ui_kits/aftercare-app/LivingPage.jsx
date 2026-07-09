@@ -1,10 +1,10 @@
-/* Leida - Client Aftercare "living page"
+/* NX - Client Aftercare "living page"
    The page a client receives after a treatment. It carries the therapist's
-   clinic branding; Leida sits quietly in the footer. Composes DS primitives.
+   clinic branding; NX sits quietly in the footer. Composes DS primitives.
    Exposes window.LivingPage. */
 (function () {
   function build() {
-  const DS = window.LeidaDesignSystem_ab1d28;
+  const DS = window.NXDesignSystem_ab1d28;
   const { SegmentedToggle, ProductCard, Accordion, StarMark, Card } = DS;
 
   const PRODUCTS = {
@@ -50,18 +50,18 @@
           position: "sticky", top: 0, zIndex: 5, height: 56,
           display: "flex", alignItems: "center", justifyContent: "center",
           background: "rgba(247,247,244,0.82)", backdropFilter: "blur(10px)",
-          WebkitBackdropFilter: "blur(10px)", borderBottom: "1px solid var(--leida-line)",
+          WebkitBackdropFilter: "blur(10px)", borderBottom: "1px solid var(--nx-line)",
         },
       }, React.createElement("span", {
-        style: { fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.78rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--leida-ink)" },
+        style: { fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.78rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--nx-ink)" },
       }, "The Skin Studio")),
 
       // intro
       React.createElement("div", { style: { textAlign: "center", padding: "40px 24px 10px" } },
-        React.createElement("span", { style: { display: "block", fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.4rem", color: "var(--leida-body)", marginBottom: 6 } }, "Ellie, here's your"),
-        React.createElement("span", { style: { display: "block", fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "3rem", lineHeight: 0.95, letterSpacing: "-0.02em", color: "var(--leida-ink)" } }, "Updated Routine"),
-        React.createElement("p", { style: { fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.02rem", color: "var(--leida-sign)", maxWidth: "30ch", margin: "16px auto 0", lineHeight: 1.5 } }, "A few gentle changes after today's peel. Take it slowly, your skin will thank you."),
-        React.createElement("div", { style: { marginTop: 14, fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.05rem", color: "var(--leida-clay)" } }, ", Nadia"),
+        React.createElement("span", { style: { display: "block", fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.4rem", color: "var(--nx-body)", marginBottom: 6 } }, "Ellie, here's your"),
+        React.createElement("span", { style: { display: "block", fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "3rem", lineHeight: 0.95, letterSpacing: "-0.02em", color: "var(--nx-ink)" } }, "Updated Routine"),
+        React.createElement("p", { style: { fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.02rem", color: "var(--nx-sign)", maxWidth: "30ch", margin: "16px auto 0", lineHeight: 1.5 } }, "A few gentle changes after today's peel. Take it slowly, your skin will thank you."),
+        React.createElement("div", { style: { marginTop: 14, fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.05rem", color: "var(--nx-clay)" } }, ", Nadia"),
       ),
 
       // products
@@ -106,14 +106,14 @@
       // close
       React.createElement("div", { style: { textAlign: "center", padding: "20px 24px 8px" } },
         React.createElement("h2", { style: { fontSize: "2rem", margin: 0 } }, "That's everything for now."),
-        React.createElement("p", { style: { fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.05rem", color: "var(--leida-body)", marginTop: 14 } }, "Book your review for 3 weeks' time."),
+        React.createElement("p", { style: { fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.05rem", color: "var(--nx-body)", marginTop: 14 } }, "Book your review for 3 weeks' time."),
       ),
 
       // footer
-      React.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "center", gap: 7, padding: "20px 0 8px", fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--leida-muted)" } },
+      React.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "center", gap: 7, padding: "20px 0 8px", fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--nx-muted)" } },
         "Powered by",
         React.createElement(StarMark, { size: 12, tone: "clay" }),
-        React.createElement("span", { style: { fontFamily: "var(--font-serif)", fontStyle: "italic", textTransform: "none", letterSpacing: 0, fontSize: "0.9rem", color: "var(--leida-ink)" } }, "Leida"),
+        React.createElement("span", { style: { fontFamily: "var(--font-serif)", fontStyle: "italic", textTransform: "none", letterSpacing: 0, fontSize: "0.9rem", color: "var(--nx-ink)" } }, "NX"),
       ),
     );
   }
@@ -123,7 +123,7 @@
   // Define the global only once React + the DS bundle are ready, so
   // <x-import> waits for us and never renders against an undefined DS.
   (function wait(){
-    if (window.React && window.React.useState && window.LeidaDesignSystem_ab1d28) build();
+    if (window.React && window.React.useState && window.NXDesignSystem_ab1d28) build();
     else setTimeout(wait, 30);
   })();
 })();

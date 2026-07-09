@@ -11,18 +11,18 @@
 	</h1>
 </div>
 
-# Theme module
+### Theme module
 
-This module owns presentation integration for the Leida app, including the app's MUI theme adapter and the shared monorepo design-system wiring.
+This module owns presentation integration for the NX app, including the app's MUI theme adapter and the shared monorepo design-system wiring.
 
 ## Design-system integration
 
-Shared design-system integration now lives in `app/Leida/Theme/designSystem.ts`.
+Shared design-system integration now lives in `app/NX/Theme/designSystem.ts`.
 
 That file does two explicit things:
 
-- imports `@leida/design-system/styles` so shared design-system CSS is loaded with the Leida theme layer
-- re-exports approved shared presentational primitives for use by the app, currently `LeidaLogo`
+- imports `@nx/design-system/styles` so shared design-system CSS is loaded with the NX theme layer
+- re-exports approved shared presentational primitives for use by the app, currently `NXLogo`
 
 ## Why it lives here
 
@@ -38,12 +38,12 @@ Putting this logic in `Theme` makes the ownership clearer:
 
 Today the safe integration path is:
 
-- use `@leida/design-system/styles`
-- use selected source-level components from `@leida/design-system` when they are low-risk and presentational
+- use `@nx/design-system/styles`
+- use selected source-level components from `@nx/design-system` when they are low-risk and presentational
 - keep the app's local MUI theme adapter in place
 
-Direct use of `@leida/ui` remains deferred until its MUI version is aligned with `apps/v3`.
+Direct use of `@nx/ui` remains deferred until its MUI version is aligned with `apps/v3`.
 
 ## Usage rule
 
-If a Leida component needs a shared design-system primitive, import it from `app/Leida/Theme/designSystem.ts` rather than reaching into `@leida/design-system` directly.
+If a NX component needs a shared design-system primitive, import it from `app/NX/Theme/designSystem.ts` rather than reaching into `@nx/design-system` directly.

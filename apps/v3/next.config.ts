@@ -3,7 +3,7 @@ import withPWA from "@ducanh2912/next-pwa";
 
 const nextConfig: NextConfig = {
   devIndicators: false,
-  transpilePackages: ["@leida/ui", "@leida/design-system"],
+  transpilePackages: ["@nx/ui", "@nx/design-system"],
   // Server code reads tenant config/markdown from public at runtime.
   // Trace only those files into server functions on Vercel.
   outputFileTracingIncludes: {

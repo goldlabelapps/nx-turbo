@@ -25,7 +25,7 @@ export function Input({
             fontSize: "0.62rem",
             letterSpacing: "0.12em",
             textTransform: "uppercase",
-            color: "var(--leida-muted)",
+            color: "var(--nx-muted)",
           }}
         >
           {label}
@@ -36,17 +36,17 @@ export function Input({
         style={{
           fontFamily: "var(--font-sans)",
           fontSize: "0.95rem",
-          color: "var(--leida-ink)",
+          color: "var(--nx-ink)",
           padding: "14px 18px",
           borderRadius: "var(--radius-pill)",
-          border: `1px solid ${error ? "var(--leida-clay)" : "var(--leida-line)"}`,
+          border: `1px solid ${error ? "var(--nx-clay)" : "var(--nx-line)"}`,
           background: "rgba(251,250,247,0.92)",
           outline: "none",
           transition: "border-color var(--dur-fast)",
           ...style,
         }}
-        onFocus={(e) => (e.target.style.borderColor = "var(--leida-clay)")}
-        onBlur={(e) => (e.target.style.borderColor = error ? "var(--leida-clay)" : "var(--leida-line)")}
+        onFocus={(e) => (e.target.style.borderColor = "var(--nx-clay)")}
+        onBlur={(e) => (e.target.style.borderColor = error ? "var(--nx-clay)" : "var(--nx-line)")}
         {...rest}
       />
       {hint || error ? (
@@ -55,7 +55,7 @@ export function Input({
             fontFamily: "var(--font-mono)",
             fontSize: "0.62rem",
             letterSpacing: "0.04em",
-            color: error ? "var(--leida-clay)" : "var(--leida-muted)",
+            color: error ? "var(--nx-clay)" : "var(--nx-muted)",
             paddingLeft: "4px",
           }}
         >

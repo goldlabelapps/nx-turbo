@@ -11,15 +11,15 @@
 <style>
   body { margin: 0; background: var(--surface-page); padding: 26px; }
   .grid { display: flex; gap: 16px; align-items: stretch; }
-  .cell { flex: 1; background: var(--leida-paper); border: 1px solid var(--border-hairline); border-radius: var(--radius-xl); padding: 22px; display: flex; flex-direction: column; gap: 16px; align-items: flex-start; justify-content: center; }
-  .cell.ink { background: var(--leida-ink); border: 0; }
-  .lbl { font-family: var(--font-mono); font-size: 0.54rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--leida-muted); }
+  .cell { flex: 1; background: var(--nx-paper); border: 1px solid var(--border-hairline); border-radius: var(--radius-xl); padding: 22px; display: flex; flex-direction: column; gap: 16px; align-items: flex-start; justify-content: center; }
+  .cell.ink { background: var(--nx-ink); border: 0; }
+  .lbl { font-family: var(--font-mono); font-size: 0.54rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--nx-muted); }
 </style>
 </head>
 <body>
   <div id="root"></div>
   <script type="text/babel">
-    const { Logo, StarMark, Eyebrow } = window.LeidaDesignSystem_ab1d28;
+    const { Logo, StarMark, Eyebrow } = window.NXDesignSystem_ab1d28;
     function Demo() {
       return (
         <div className="grid">
@@ -33,7 +33,7 @@
             </div>
           </div>
           <div className="cell ink">
-            <span className="lbl" style={{color:"var(--leida-oat)"}}>On ink</span>
+            <span className="lbl" style={{color:"var(--nx-oat)"}}>On ink</span>
             <Logo height={38} tone="offwhite" />
             <StarMark size={28} tone="offwhite" />
           </div>

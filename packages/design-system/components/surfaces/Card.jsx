@@ -2,27 +2,27 @@ import React from "react";
 
 const VARIANTS = {
   paper: {
-    background: "var(--leida-paper)",
-    border: "1px solid var(--leida-line)",
+    background: "var(--nx-paper)",
+    border: "1px solid var(--nx-line)",
     boxShadow: "var(--shadow-card)",
   },
   glass: {
-    background: "var(--leida-glass)",
+    background: "var(--nx-glass)",
     border: "1px solid rgba(255,255,255,0.75)",
     boxShadow: "var(--shadow-glass)",
     backdropFilter: "var(--blur-panel)",
     WebkitBackdropFilter: "var(--blur-panel)",
   },
   tile: {
-    background: "var(--leida-tile)",
+    background: "var(--nx-tile)",
     border: "1px solid rgba(255,255,255,0.6)",
     boxShadow: "var(--shadow-card)",
     backdropFilter: "var(--blur-chip)",
     WebkitBackdropFilter: "var(--blur-chip)",
   },
   ink: {
-    background: "var(--leida-ink)",
-    color: "var(--leida-parchment)",
+    background: "var(--nx-ink)",
+    color: "var(--nx-parchment)",
     border: "1px solid transparent",
     boxShadow: "var(--shadow-card)",
   },
@@ -31,7 +31,7 @@ const VARIANTS = {
 const PADS = { sm: "18px", md: "26px 24px", lg: "34px 30px" };
 
 /**
- * The base Leida surface - a soft, generously rounded container. Paper,
+ * The base NX surface - a soft, generously rounded container. Paper,
  * frosted glass, tile, or ink. `hoverLift` adds the product-card rise.
  */
 export function Card({

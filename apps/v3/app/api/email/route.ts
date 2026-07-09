@@ -79,7 +79,7 @@ export async function POST(request: Request) {
 
         const resend = new Resend(apiKey);
         const { data, error } = await resend.emails.send({
-            from: 'Leida <leida@goldlabel.pro>',
+            from: 'NX <nx@goldlabel.pro>',
             to: [`${safeToName} <${safeToEmail}>`],
             subject: safeSubject,
             html: htmlBody,

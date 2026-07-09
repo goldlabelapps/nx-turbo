@@ -14,17 +14,17 @@ export function StatCard({ figure, children, source, variant = "paper", style, .
           fontStyle: "italic",
           fontSize: "clamp(2.2rem, 5vw, 3rem)",
           lineHeight: 1,
-          color: "var(--leida-ink)",
+          color: "var(--nx-ink)",
           marginBottom: "12px",
         }}
       >
         {figure}
       </div>
       {children ? (
-        <p style={{ fontSize: "1.12rem", lineHeight: 1.5, margin: "0 0 14px", color: "var(--leida-ink)" }}>{children}</p>
+        <p style={{ fontSize: "1.12rem", lineHeight: 1.5, margin: "0 0 14px", color: "var(--nx-ink)" }}>{children}</p>
       ) : null}
       {source ? (
-        <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.05em", textTransform: "uppercase", color: "var(--leida-muted)" }}>
+        <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.05em", textTransform: "uppercase", color: "var(--nx-muted)" }}>
           {source}
         </span>
       ) : null}

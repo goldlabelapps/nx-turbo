@@ -11,14 +11,14 @@
 <style>
   body { margin: 0; background: var(--surface-page); padding: 28px; }
   .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 34px; max-width: 640px; }
-  .lbl { font-family: var(--font-mono); font-size: 0.54rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--leida-muted); margin-bottom: 12px; display: block; }
+  .lbl { font-family: var(--font-mono); font-size: 0.54rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--nx-muted); margin-bottom: 12px; display: block; }
   .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
 </style>
 </head>
 <body>
   <div id="root"></div>
   <script type="text/babel">
-    const { Button, Input, RangeSlider, SegmentedToggle, StarMark } = window.LeidaDesignSystem_ab1d28;
+    const { Button, Input, RangeSlider, SegmentedToggle, StarMark } = window.NXDesignSystem_ab1d28;
     function Demo() {
       const [tab, setTab] = React.useState("am");
       const [n, setN] = React.useState(30);

@@ -17,7 +17,7 @@ const TONES = {
 };
 
 /**
- * The Leida logo. `variant="full"` renders the editorial italic wordmark
+ * The NX logo. `variant="full"` renders the editorial italic wordmark
  * (with the sparkle over the i); `variant="mark"` renders the sparkle
  * alone. Size is driven by `height` (px); colour by `tone`.
  */
@@ -33,7 +33,7 @@ export function Logo({ variant = "full", height = 40, tone = "ink", style, ...re
       width={height * ratio}
       fill={fill}
       role="img"
-      aria-label="Leida"
+      aria-label="NX"
       style={{ display: "block", ...style }}
       {...rest}
     >

@@ -2,7 +2,7 @@ The eight-point sparkle mark. Use as an app icon, favicon, loading glyph, or a q
 
 ```jsx
 <StarMark size={28} tone="clay" />
-<StarMark size={20} title="Leida" />   {/* labelled = non-decorative */}
+<StarMark size={20} title="NX" />   {/* labelled = non-decorative */}
 ```
 
 - `size`: square px (default 24)

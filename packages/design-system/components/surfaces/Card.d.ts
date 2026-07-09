@@ -1,7 +1,7 @@
 import React from "react";
 
 /**
- * The base Leida surface - a soft, generously rounded container.
+ * The base NX surface - a soft, generously rounded container.
  *
  * @startingPoint section="Surfaces" subtitle="Base card - paper / glass / tile / ink" viewport="360x200"
  */

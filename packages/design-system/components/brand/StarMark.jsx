@@ -12,7 +12,7 @@ const TONES = {
 };
 
 /**
- * Leida's signature eight-point sparkle - the mark lifted from the
+ * NX's signature eight-point sparkle - the mark lifted from the
  * dot of the "i" in the wordmark. Use as an app icon, favicon, quiet
  * inter-section accent, or loading glyph.
  */

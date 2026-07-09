@@ -10,15 +10,15 @@
 <script src="../../_ds_bundle.js"></script>
 <style>
   body { margin: 0; background: var(--surface-page); padding: 28px; }
-  .lbl { font-family: var(--font-mono); font-size: 0.54rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--leida-muted); margin: 0 0 12px; display: block; }
+  .lbl { font-family: var(--font-mono); font-size: 0.54rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--nx-muted); margin: 0 0 12px; display: block; }
   .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 24px; }
-  .panel { background: var(--leida-paper); border: 1px solid var(--border-hairline); border-radius: var(--radius-xl); padding: 6px 22px; max-width: 620px; }
+  .panel { background: var(--nx-paper); border: 1px solid var(--border-hairline); border-radius: var(--radius-xl); padding: 6px 22px; max-width: 620px; }
 </style>
 </head>
 <body>
   <div id="root"></div>
   <script type="text/babel">
-    const { Badge, Tag, Accordion, StarMark } = window.LeidaDesignSystem_ab1d28;
+    const { Badge, Tag, Accordion, StarMark } = window.NXDesignSystem_ab1d28;
     function Demo() {
       return (
         <div>
@@ -36,7 +36,7 @@
             <Accordion items={[
               { q: "Is it really faster than WhatsApp?", a: "Yes, one tap sends a living page that stays up to date, so you never re-type a routine again." },
               { q: "Do my clients need to download an app?", a: "No. The page saves to their home screen and opens like an app, with no store, login or friction." },
-              { q: "Can I use my own branding?", a: "Every page carries your clinic's name and colours; Leida sits quietly in the footer." },
+              { q: "Can I use my own branding?", a: "Every page carries your clinic's name and colours; NX sits quietly in the footer." },
             ]} />
           </div>
         </div>

@@ -1,6 +1,6 @@
 declare module '*.css';
 
-export type T_LeidaProps = {
+export type T_NXProps = {
 	config?: any;
 };
 
@@ -36,21 +36,21 @@ export type ProductRoutineCardProps = {
 	stepNumber: number;
 };
 
-export type LeidaRoutePath = '/' | '/theme' | '/routines' | '/products' | '/clients';
+export type NXRoutePath = '/' | '/theme' | '/routines' | '/products' | '/clients';
 
-export type T_LeidaNavigationItem = {
-	path: LeidaRoutePath;
+export type T_NXNavigationItem = {
+	path: NXRoutePath;
 	label: string;
 };
 
-export type T_LeidaNavigationProps = {
-	currentPath: LeidaRoutePath;
-	onNavigate: (path: LeidaRoutePath) => void;
+export type T_NXNavigationProps = {
+	currentPath: NXRoutePath;
+	onNavigate: (path: NXRoutePath) => void;
 };
 
-export type T_HeaderProps = T_LeidaNavigationProps;
+export type T_HeaderProps = T_NXNavigationProps;
 
-export type T_FooterProps = T_LeidaNavigationProps;
+export type T_FooterProps = T_NXNavigationProps;
 
 export type EmailFormState = {
 	toName: string;

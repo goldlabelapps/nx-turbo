@@ -1,7 +1,7 @@
 import React from "react";
 
 /**
- * Leida's eight-point sparkle mark, lifted from the dot of the "i".
+ * NX's eight-point sparkle mark, lifted from the dot of the "i".
  */
 export function StarMark(props: StarMarkProps): JSX.Element;
 

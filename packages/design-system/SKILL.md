@@ -1,6 +1,6 @@
 ---
-name: leida-design
-description: Use this skill to generate well-branded interfaces and assets for Leida (Ask Leida Ltd.), a B2B SaaS product giving solo skin therapists one living aftercare page per client. Contains essential design guidelines, colors, type, fonts, brand assets, and UI-kit components for prototyping or production. Editorial "skin & parchment" aesthetic: parchment grounds, italic Times display, DM Sans body, DM Mono labels, a single clay accent, frosted glass, warm shadows.
+name: nx-design
+description: Use this skill to generate well-branded interfaces and assets for NX (Ask NX Ltd.), a B2B SaaS product giving solo skin therapists one living aftercare page per client. Contains essential design guidelines, colors, type, fonts, brand assets, and UI-kit components for prototyping or production. Editorial "skin & parchment" aesthetic: parchment grounds, italic Times display, DM Sans body, DM Mono labels, a single clay accent, frosted glass, warm shadows.
 user-invocable: true
 ---
 
@@ -12,9 +12,9 @@ If the user invokes this skill without any other guidance, ask them what they wa
 
 ## Where things are
 - `readme.md` - the full design guide: brand context, content voice, visual foundations, iconography, component + UI-kit index.
-- `styles.css` - the single stylesheet to link; it `@import`s every token file. Reference tokens by their CSS custom properties (e.g. `var(--leida-clay)`, `var(--font-serif)`, `var(--shadow-card)`).
+- `styles.css` - the single stylesheet to link; it `@import`s every token file. Reference tokens by their CSS custom properties (e.g. `var(--nx-clay)`, `var(--font-serif)`, `var(--shadow-card)`).
 - `tokens/` - colour, type, spacing/radius/shadow/motion, base element styles.
-- `assets/logos/` - the Leida wordmark and sparkle mark (black / dusty / off-white SVGs). Copy these; never redraw them.
+- `assets/logos/` - the NX wordmark and sparkle mark (black / dusty / off-white SVGs). Copy these; never redraw them.
 - `components/` - React primitives (`brand/`, `forms/`, `feedback/`, `surfaces/`, `navigation/`); each has a `.d.ts` (props) and `.prompt.md` (usage).
 - `ui_kits/` - full page recreations: `marketing-site/`, `aftercare-app/`.
 - `guidelines/` - foundation specimen cards.

@@ -1,6 +1,6 @@
 import type { T_Tenant } from '../types';
 import freeConfig from '../../../public/free/config.json';
-import askleidaConfig from '../../../public/askleida/config.json';
+import asknxConfig from '../../../public/asknx/config.json';
 
 export const getTenant = (tenant?: T_Tenant) => {
 
@@ -10,9 +10,9 @@ export const getTenant = (tenant?: T_Tenant) => {
 
     switch (t) {      
 
-        case 'askleida':
-            config = askleidaConfig;
-            markdownDir = process.cwd() + '/public/askleida/markdown';
+        case 'asknx':
+            config = asknxConfig;
+            markdownDir = process.cwd() + '/public/asknx/markdown';
             break;
         case 'free':
             config = freeConfig;

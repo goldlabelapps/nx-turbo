@@ -14,9 +14,9 @@
     "moduleResolution": "bundler",
     "baseUrl": ".",
     "paths": {
-      "@leida/design-system": ["packages/design-system"],
-      "@leida/ui": ["packages/ui/src"],
-      "@leida/ui/*": ["packages/ui/src/*"]
+      "@nx/design-system": ["packages/design-system"],
+      "@nx/ui": ["packages/ui/src"],
+      "@nx/ui/*": ["packages/ui/src/*"]
     }
   }
 }

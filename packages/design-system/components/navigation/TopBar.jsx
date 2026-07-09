@@ -3,7 +3,7 @@ import { Logo } from "../brand/Logo.jsx";
 import { Button } from "../forms/Button.jsx";
 
 /**
- * The sticky, frosted top bar from the marketing site: the Leida logo,
+ * The sticky, frosted top bar from the marketing site: the NX logo,
  * mono-caps nav links, and a primary CTA. Translucent parchment ground
  * with a blur so page texture shows through.
  */
@@ -24,7 +24,7 @@ export function TopBar({ links = [], cta, onCta, logoHeight = 30, style, ...rest
       }}
       {...rest}
     >
-      <a href="#top" aria-label="Leida home" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+      <a href="#top" aria-label="NX home" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
         <Logo height={logoHeight} />
       </a>
       <nav style={{ display: "flex", alignItems: "center", gap: "24px" }}>
@@ -37,7 +37,7 @@ export function TopBar({ links = [], cta, onCta, logoHeight = 30, style, ...rest
               fontSize: "0.72rem",
               letterSpacing: "0.12em",
               textTransform: "uppercase",
-              color: "var(--leida-body)",
+              color: "var(--nx-body)",
               textDecoration: "none",
             }}
           >

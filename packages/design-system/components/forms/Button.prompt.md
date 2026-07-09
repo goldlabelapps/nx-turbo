@@ -1,4 +1,4 @@
-The Leida pill button, mono uppercase label, wide tracking, lifts 2px on hover.
+The NX pill button, mono uppercase label, wide tracking, lifts 2px on hover.
 
 ```jsx
 <Button>Become a member</Button>

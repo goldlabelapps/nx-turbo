@@ -13,11 +13,11 @@ export type BasicEmailTemplateProps = {
 const DEFAULTS = {
     heading: 'Hello',
     ctaLabel: 'Go',
-    productName: 'Leida',
+    productName: 'NX',
     sentUsingUrl: 'https://goldlabel.pro/nx',
     sentUsingLabel: 'NX°',
-    websiteUrl: 'https://app.askleida.com',
-    websiteLabel: 'askleida.com',
+    websiteUrl: 'https://app.asknx.com',
+    websiteLabel: 'asknx.com',
 } as const;
 
 function escapeHtml(value: string): string {
@@ -90,8 +90,8 @@ export function buildBasicEmailHtml(props: BasicEmailTemplateProps): string {
                 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;background-color:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #e0e0e0;">
                     <tr>
                         <td align="center" style="padding:32px 32px 24px 32px;background-color:#f7f7f4;border-bottom:1px solid #e0e0e0;">
-                            <a href="https://askleida.com" style="display:inline-block;text-decoration:none;">
-                                <img src="https://v3.askleida.com/askleida/svg/logo-dark.svg" alt="${productName}" width="148" height="48" style="display:block;" />
+                            <a href="https://asknx.com" style="display:inline-block;text-decoration:none;">
+                                <img src="https://v3.asknx.com/asknx/svg/logo-dark.svg" alt="${productName}" width="148" height="48" style="display:block;" />
                             </a>
                         </td>
                     </tr>
@@ -109,7 +109,7 @@ export function buildBasicEmailHtml(props: BasicEmailTemplateProps): string {
                                 Send by 
                                 <a href="${websiteUrl}" style="color:#888888;text-decoration:none;">
                                     <strong style="color:#555555;">
-                                        Leida
+                                        NX
                                     </strong>
                                 </a> 
                                 using 

@@ -1,12 +1,12 @@
 import { createTheme, ThemeOptions } from '@mui/material/styles';
 
 /**
- * Leida Design System Theme for Material-UI
- * Maps Leida tokens to MUI palette, typography, and component overrides
+ * NX Design System Theme for Material-UI
+ * Maps NX tokens to MUI palette, typography, and component overrides
  */
 
-// Leida Color Tokens
-const LEIDA_COLORS = {
+// NX Color Tokens
+const NX_COLORS = {
   parchment: '#f7f7f4',
   paper: '#fbfaf7',
   ink: '#1a1814',
@@ -20,7 +20,7 @@ const LEIDA_COLORS = {
   shadowDark: 'rgba(26,24,20,0.32)',
 } as const;
 
-// Leida Spacing Scale
+// NX Spacing Scale
 const SPACING_SCALE = {
   xs: '4px',
   sm: '8px',
@@ -33,7 +33,7 @@ const SPACING_SCALE = {
   '5xl': '96px',
 } as const;
 
-// Leida Border Radii
+// NX Border Radii
 const BORDER_RADII = {
   sm: '14px',
   md: '20px',
@@ -47,32 +47,32 @@ const BORDER_RADII = {
 const themeOptions: ThemeOptions = {
   palette: {
     primary: {
-      main: LEIDA_COLORS.clay,
+      main: NX_COLORS.clay,
       light: '#c9bfb3',
       dark: '#8b7a65',
-      contrastText: LEIDA_COLORS.paper,
+      contrastText: NX_COLORS.paper,
     },
     secondary: {
-      main: LEIDA_COLORS.ink,
-      light: LEIDA_COLORS.body,
-      dark: LEIDA_COLORS.ink,
-      contrastText: LEIDA_COLORS.paper,
+      main: NX_COLORS.ink,
+      light: NX_COLORS.body,
+      dark: NX_COLORS.ink,
+      contrastText: NX_COLORS.paper,
     },
     background: {
-      default: LEIDA_COLORS.parchment,
-      paper: LEIDA_COLORS.paper,
+      default: NX_COLORS.parchment,
+      paper: NX_COLORS.paper,
     },
     text: {
-      primary: LEIDA_COLORS.ink,
-      secondary: LEIDA_COLORS.body,
-      disabled: LEIDA_COLORS.textMuted,
+      primary: NX_COLORS.ink,
+      secondary: NX_COLORS.body,
+      disabled: NX_COLORS.textMuted,
     },
-    divider: LEIDA_COLORS.borderLight,
+    divider: NX_COLORS.borderLight,
     action: {
-      active: LEIDA_COLORS.clay,
+      active: NX_COLORS.clay,
       hover: 'rgba(168,146,122,0.08)',
       selected: 'rgba(168,146,122,0.12)',
-      disabled: LEIDA_COLORS.textMuted,
+      disabled: NX_COLORS.textMuted,
       disabledBackground: 'rgba(40,34,28,0.04)',
     },
     success: {
@@ -91,7 +91,7 @@ const themeOptions: ThemeOptions = {
       dark: '#991b1b',
     },
     info: {
-      main: LEIDA_COLORS.clay,
+      main: NX_COLORS.clay,
       light: '#c9bfb3',
       dark: '#8b7a65',
     },
@@ -209,30 +209,30 @@ const themeOptions: ThemeOptions = {
   spacing: 8,
   shadows: [
     'none',
-    `0 2px 4px ${LEIDA_COLORS.shadowLight}`,
-    `0 4px 8px ${LEIDA_COLORS.shadowLight}`,
-    `0 6px 12px ${LEIDA_COLORS.shadowLight}`,
-    `0 8px 16px ${LEIDA_COLORS.shadowLight}`,
-    `0 12px 24px ${LEIDA_COLORS.shadowMedium}`,
-    `0 12px 32px ${LEIDA_COLORS.shadowMedium}`,
-    `0 16px 40px ${LEIDA_COLORS.shadowMedium}`,
-    `0 20px 48px ${LEIDA_COLORS.shadowMedium}`,
-    `0 24px 56px ${LEIDA_COLORS.shadowMedium}`,
-    `0 28px 66px ${LEIDA_COLORS.shadowDark}`,
-    `0 32px 72px ${LEIDA_COLORS.shadowDark}`,
-    `0 36px 80px ${LEIDA_COLORS.shadowDark}`,
-    `0 40px 80px ${LEIDA_COLORS.shadowDark}`,
-    `0 40px 88px ${LEIDA_COLORS.shadowDark}`,
-    `0 48px 96px ${LEIDA_COLORS.shadowDark}`,
-    `0 52px 104px ${LEIDA_COLORS.shadowDark}`,
-    `0 56px 112px ${LEIDA_COLORS.shadowDark}`,
-    `0 60px 120px ${LEIDA_COLORS.shadowDark}`,
-    `0 64px 128px ${LEIDA_COLORS.shadowDark}`,
-    `0 68px 136px ${LEIDA_COLORS.shadowDark}`,
-    `0 72px 144px ${LEIDA_COLORS.shadowDark}`,
-    `0 76px 152px ${LEIDA_COLORS.shadowDark}`,
-    `0 80px 160px ${LEIDA_COLORS.shadowDark}`,
-    `0 84px 168px ${LEIDA_COLORS.shadowDark}`,
+    `0 2px 4px ${NX_COLORS.shadowLight}`,
+    `0 4px 8px ${NX_COLORS.shadowLight}`,
+    `0 6px 12px ${NX_COLORS.shadowLight}`,
+    `0 8px 16px ${NX_COLORS.shadowLight}`,
+    `0 12px 24px ${NX_COLORS.shadowMedium}`,
+    `0 12px 32px ${NX_COLORS.shadowMedium}`,
+    `0 16px 40px ${NX_COLORS.shadowMedium}`,
+    `0 20px 48px ${NX_COLORS.shadowMedium}`,
+    `0 24px 56px ${NX_COLORS.shadowMedium}`,
+    `0 28px 66px ${NX_COLORS.shadowDark}`,
+    `0 32px 72px ${NX_COLORS.shadowDark}`,
+    `0 36px 80px ${NX_COLORS.shadowDark}`,
+    `0 40px 80px ${NX_COLORS.shadowDark}`,
+    `0 40px 88px ${NX_COLORS.shadowDark}`,
+    `0 48px 96px ${NX_COLORS.shadowDark}`,
+    `0 52px 104px ${NX_COLORS.shadowDark}`,
+    `0 56px 112px ${NX_COLORS.shadowDark}`,
+    `0 60px 120px ${NX_COLORS.shadowDark}`,
+    `0 64px 128px ${NX_COLORS.shadowDark}`,
+    `0 68px 136px ${NX_COLORS.shadowDark}`,
+    `0 72px 144px ${NX_COLORS.shadowDark}`,
+    `0 76px 152px ${NX_COLORS.shadowDark}`,
+    `0 80px 160px ${NX_COLORS.shadowDark}`,
+    `0 84px 168px ${NX_COLORS.shadowDark}`,
   ],
   components: {
     MuiButton: {
@@ -248,28 +248,28 @@ const themeOptions: ThemeOptions = {
           transition: 'all 0.3s cubic-bezier(0.2, 0.7, 0.2, 1)',
           '&:hover': {
             transform: 'translateY(-2px)',
-            boxShadow: `0 12px 40px ${LEIDA_COLORS.shadowMedium}`,
+            boxShadow: `0 12px 40px ${NX_COLORS.shadowMedium}`,
           },
           '&:active': {
             transform: 'translateY(0)',
           },
         },
         contained: {
-          backgroundColor: LEIDA_COLORS.clay,
-          color: LEIDA_COLORS.paper,
+          backgroundColor: NX_COLORS.clay,
+          color: NX_COLORS.paper,
           '&:hover': {
             backgroundColor: '#8b7a65',
           },
         },
         outlined: {
-          borderColor: LEIDA_COLORS.clay,
-          color: LEIDA_COLORS.clay,
+          borderColor: NX_COLORS.clay,
+          color: NX_COLORS.clay,
           '&:hover': {
             backgroundColor: 'rgba(168,146,122,0.08)',
           },
         },
         text: {
-          color: LEIDA_COLORS.clay,
+          color: NX_COLORS.clay,
           '&:hover': {
             backgroundColor: 'rgba(168,146,122,0.08)',
           },
@@ -281,15 +281,15 @@ const themeOptions: ThemeOptions = {
         root: {
           '& .MuiOutlinedInput-root': {
             borderRadius: BORDER_RADII.pill,
-            backgroundColor: LEIDA_COLORS.paper,
+            backgroundColor: NX_COLORS.paper,
             '& fieldset': {
-              borderColor: LEIDA_COLORS.borderLight,
+              borderColor: NX_COLORS.borderLight,
             },
             '&:hover fieldset': {
-              borderColor: LEIDA_COLORS.borderLight,
+              borderColor: NX_COLORS.borderLight,
             },
             '&.Mui-focused fieldset': {
-              borderColor: LEIDA_COLORS.clay,
+              borderColor: NX_COLORS.clay,
               borderWidth: 2,
             },
           },
@@ -305,13 +305,13 @@ const themeOptions: ThemeOptions = {
       styleOverrides: {
         root: {
           borderRadius: BORDER_RADII.lg,
-          backgroundColor: LEIDA_COLORS.paper,
-          boxShadow: `0 12px 40px ${LEIDA_COLORS.shadowLight}`,
-          border: `1px solid ${LEIDA_COLORS.borderLight}`,
+          backgroundColor: NX_COLORS.paper,
+          boxShadow: `0 12px 40px ${NX_COLORS.shadowLight}`,
+          border: `1px solid ${NX_COLORS.borderLight}`,
           transition: 'all 0.3s cubic-bezier(0.2, 0.7, 0.2, 1)',
           '&:hover': {
             transform: 'translateY(-4px)',
-            boxShadow: `0 28px 66px ${LEIDA_COLORS.shadowMedium}`,
+            boxShadow: `0 28px 66px ${NX_COLORS.shadowMedium}`,
           },
         },
       },
@@ -326,17 +326,17 @@ const themeOptions: ThemeOptions = {
           textTransform: 'uppercase',
           letterSpacing: '0.12em',
           padding: '4px 12px',
-          backgroundColor: LEIDA_COLORS.clay,
-          color: LEIDA_COLORS.paper,
+          backgroundColor: NX_COLORS.clay,
+          color: NX_COLORS.paper,
         },
       },
     },
     MuiCheckbox: {
       styleOverrides: {
         root: {
-          color: LEIDA_COLORS.clay,
+          color: NX_COLORS.clay,
           '&.Mui-checked': {
-            color: LEIDA_COLORS.clay,
+            color: NX_COLORS.clay,
           },
         },
       },
@@ -344,9 +344,9 @@ const themeOptions: ThemeOptions = {
     MuiRadio: {
       styleOverrides: {
         root: {
-          color: LEIDA_COLORS.clay,
+          color: NX_COLORS.clay,
           '&.Mui-checked': {
-            color: LEIDA_COLORS.clay,
+            color: NX_COLORS.clay,
           },
         },
       },
@@ -356,7 +356,7 @@ const themeOptions: ThemeOptions = {
         root: {
           backgroundImage: 'none',
           backgroundColor: 'transparent',
-          border: `1px solid ${LEIDA_COLORS.borderLight}`,
+          border: `1px solid ${NX_COLORS.borderLight}`,
           boxShadow: 'none',
           '&:before': {
             display: 'none',

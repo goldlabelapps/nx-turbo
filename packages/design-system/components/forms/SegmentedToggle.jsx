@@ -19,7 +19,7 @@ export function SegmentedToggle({ options, value, onChange, style, ...rest }) {
         padding: "5px",
         borderRadius: "40px",
         background: "rgba(255,255,255,0.78)",
-        border: "1px solid var(--leida-line)",
+        border: "1px solid var(--nx-line)",
         boxShadow: "0 8px 30px rgba(40,34,28,0.10)",
         ...style,
       }}
@@ -47,8 +47,8 @@ export function SegmentedToggle({ options, value, onChange, style, ...rest }) {
               padding: "9px 20px",
               borderRadius: "30px",
               transition: "all var(--dur-mid) var(--ease-out)",
-              background: on ? "var(--leida-ink)" : "transparent",
-              color: on ? "var(--leida-parchment)" : "var(--leida-body)",
+              background: on ? "var(--nx-ink)" : "transparent",
+              color: on ? "var(--nx-parchment)" : "var(--nx-body)",
             }}
           >
             {opt.icon ? <span style={{ display: "inline-flex", lineHeight: 0 }}>{opt.icon}</span> : null}

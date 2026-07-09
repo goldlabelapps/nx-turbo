@@ -1,8 +1,8 @@
-/* @ds-bundle: {"format":4,"namespace":"LeidaDesignSystem_ab1d28","components":[{"name":"Eyebrow","sourcePath":"components/brand/Eyebrow.jsx"},{"name":"Logo","sourcePath":"components/brand/Logo.jsx"},{"name":"StarMark","sourcePath":"components/brand/StarMark.jsx"},{"name":"Accordion","sourcePath":"components/feedback/Accordion.jsx"},{"name":"Badge","sourcePath":"components/feedback/Badge.jsx"},{"name":"Tag","sourcePath":"components/feedback/Tag.jsx"},{"name":"Button","sourcePath":"components/forms/Button.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"RangeSlider","sourcePath":"components/forms/RangeSlider.jsx"},{"name":"SegmentedToggle","sourcePath":"components/forms/SegmentedToggle.jsx"},{"name":"TopBar","sourcePath":"components/navigation/TopBar.jsx"},{"name":"Card","sourcePath":"components/surfaces/Card.jsx"},{"name":"PriceTier","sourcePath":"components/surfaces/PriceTier.jsx"},{"name":"ProductCard","sourcePath":"components/surfaces/ProductCard.jsx"},{"name":"StatCard","sourcePath":"components/surfaces/StatCard.jsx"}],"sourceHashes":{"components/brand/Eyebrow.jsx":"de7667a0e3fa","components/brand/Logo.jsx":"d294a712d927","components/brand/StarMark.jsx":"b4fc7c4d9cc9","components/feedback/Accordion.jsx":"c47b879d95f0","components/feedback/Badge.jsx":"005fead33c0e","components/feedback/Tag.jsx":"83478e0683b2","components/forms/Button.jsx":"308d98b7322c","components/forms/Input.jsx":"e6daf6e287f2","components/forms/RangeSlider.jsx":"8d48b297e953","components/forms/SegmentedToggle.jsx":"854f0fde4419","components/navigation/TopBar.jsx":"2275c96ec654","components/surfaces/Card.jsx":"e3fb9d44879e","components/surfaces/PriceTier.jsx":"d8f2067a8f28","components/surfaces/ProductCard.jsx":"9453fc434f4d","components/surfaces/StatCard.jsx":"6105737b2b24","ui_kits/aftercare-app/LivingPage.jsx":"30429a988f84","ui_kits/marketing-site/MarketingSite.jsx":"2186bcca7e2d"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":4,"namespace":"NXDesignSystem_ab1d28","components":[{"name":"Eyebrow","sourcePath":"components/brand/Eyebrow.jsx"},{"name":"Logo","sourcePath":"components/brand/Logo.jsx"},{"name":"StarMark","sourcePath":"components/brand/StarMark.jsx"},{"name":"Accordion","sourcePath":"components/feedback/Accordion.jsx"},{"name":"Badge","sourcePath":"components/feedback/Badge.jsx"},{"name":"Tag","sourcePath":"components/feedback/Tag.jsx"},{"name":"Button","sourcePath":"components/forms/Button.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"RangeSlider","sourcePath":"components/forms/RangeSlider.jsx"},{"name":"SegmentedToggle","sourcePath":"components/forms/SegmentedToggle.jsx"},{"name":"TopBar","sourcePath":"components/navigation/TopBar.jsx"},{"name":"Card","sourcePath":"components/surfaces/Card.jsx"},{"name":"PriceTier","sourcePath":"components/surfaces/PriceTier.jsx"},{"name":"ProductCard","sourcePath":"components/surfaces/ProductCard.jsx"},{"name":"StatCard","sourcePath":"components/surfaces/StatCard.jsx"}],"sourceHashes":{"components/brand/Eyebrow.jsx":"de7667a0e3fa","components/brand/Logo.jsx":"d294a712d927","components/brand/StarMark.jsx":"b4fc7c4d9cc9","components/feedback/Accordion.jsx":"c47b879d95f0","components/feedback/Badge.jsx":"005fead33c0e","components/feedback/Tag.jsx":"83478e0683b2","components/forms/Button.jsx":"308d98b7322c","components/forms/Input.jsx":"e6daf6e287f2","components/forms/RangeSlider.jsx":"8d48b297e953","components/forms/SegmentedToggle.jsx":"854f0fde4419","components/navigation/TopBar.jsx":"2275c96ec654","components/surfaces/Card.jsx":"e3fb9d44879e","components/surfaces/PriceTier.jsx":"d8f2067a8f28","components/surfaces/ProductCard.jsx":"9453fc434f4d","components/surfaces/StatCard.jsx":"6105737b2b24","ui_kits/aftercare-app/LivingPage.jsx":"30429a988f84","ui_kits/marketing-site/MarketingSite.jsx":"2186bcca7e2d"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
-const __ds_ns = (window.LeidaDesignSystem_ab1d28 = window.LeidaDesignSystem_ab1d28 || {});
+const __ds_ns = (window.NXDesignSystem_ab1d28 = window.NXDesignSystem_ab1d28 || {});
 
 const __ds_scope = {};
 
@@ -12,13 +12,13 @@ const __ds_scope = {};
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const TONES = {
-  clay: "var(--leida-clay)",
-  ink: "var(--leida-ink)",
-  muted: "var(--leida-muted)"
+  clay: "var(--nx-clay)",
+  ink: "var(--nx-ink)",
+  muted: "var(--nx-muted)"
 };
 
 /**
- * A mono, all-caps, wide-tracked label - Leida's signature "eyebrow".
+ * A mono, all-caps, wide-tracked label - NX's signature "eyebrow".
  */
 function Eyebrow({
   children,
@@ -56,7 +56,7 @@ const TONES = {
 };
 
 /**
- * The Leida logo. `variant="full"` renders the editorial italic wordmark
+ * The NX logo. `variant="full"` renders the editorial italic wordmark
  * (with the sparkle over the i); `variant="mark"` renders the sparkle
  * alone. Size is driven by `height` (px); colour by `tone`.
  */
@@ -77,7 +77,7 @@ function Logo({
     width: height * ratio,
     fill: fill,
     role: "img",
-    "aria-label": "Leida",
+    "aria-label": "NX",
     style: {
       display: "block",
       ...style
@@ -104,7 +104,7 @@ const TONES = {
 };
 
 /**
- * Leida's signature eight-point sparkle - the mark lifted from the
+ * NX's signature eight-point sparkle - the mark lifted from the
  * dot of the "i" in the wordmark. Use as an app icon, favicon, quiet
  * inter-section accent, or loading glyph.
  */
@@ -188,15 +188,15 @@ function Accordion({
         fontSize: serif ? "1.22rem" : "0.72rem",
         letterSpacing: serif ? "0" : "0.06em",
         textTransform: serif ? "none" : "uppercase",
-        color: "var(--leida-ink)"
+        color: "var(--nx-ink)"
       }
     }, item.q, /*#__PURE__*/React.createElement("span", {
       style: {
         width: "10px",
         height: "10px",
         flex: "0 0 auto",
-        borderRight: "1.5px solid var(--leida-clay)",
-        borderBottom: "1.5px solid var(--leida-clay)",
+        borderRight: "1.5px solid var(--nx-clay)",
+        borderBottom: "1.5px solid var(--nx-clay)",
         transform: isOpen ? "rotate(-135deg)" : "rotate(45deg)",
         transition: "transform var(--dur-mid) var(--ease-out)"
       }
@@ -216,7 +216,7 @@ function Accordion({
         fontFamily: "var(--font-sans)",
         fontSize: "0.95rem",
         lineHeight: 1.62,
-        color: "var(--leida-body)",
+        color: "var(--nx-body)",
         maxWidth: "62ch"
       }
     }, item.a))));
@@ -230,12 +230,12 @@ try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const TONES = {
   ink: {
-    background: "var(--leida-ink)",
-    color: "var(--leida-parchment)"
+    background: "var(--nx-ink)",
+    color: "var(--nx-parchment)"
   },
   clay: {
-    background: "var(--leida-clay)",
-    color: "var(--leida-parchment)"
+    background: "var(--nx-clay)",
+    color: "var(--nx-parchment)"
   }
 };
 
@@ -274,19 +274,19 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 const VARIANTS = {
   frost: {
     background: "rgba(255,255,255,0.72)",
-    color: "var(--leida-ink)",
+    color: "var(--nx-ink)",
     boxShadow: "0 6px 18px rgba(40,34,28,0.12)",
     backdropFilter: "var(--blur-chip)",
     WebkitBackdropFilter: "var(--blur-chip)"
   },
   clay: {
-    background: "var(--leida-clay)",
-    color: "var(--leida-parchment)"
+    background: "var(--nx-clay)",
+    color: "var(--nx-parchment)"
   },
   outline: {
     background: "transparent",
-    color: "var(--leida-ink)",
-    border: "1px solid var(--leida-line)"
+    color: "var(--nx-ink)",
+    border: "1px solid var(--nx-line)"
   }
 };
 
@@ -341,27 +341,27 @@ const SIZES = {
 };
 const VARIANTS = {
   primary: {
-    background: "var(--leida-ink)",
-    color: "var(--leida-parchment)",
+    background: "var(--nx-ink)",
+    color: "var(--nx-parchment)",
     border: "1px solid transparent",
     boxShadow: "var(--shadow-button)"
   },
   ghost: {
     background: "rgba(255,255,255,0.4)",
-    color: "var(--leida-ink)",
-    border: "1px solid var(--leida-line)",
+    color: "var(--nx-ink)",
+    border: "1px solid var(--nx-line)",
     backdropFilter: "var(--blur-chip)",
     WebkitBackdropFilter: "var(--blur-chip)"
   },
   quiet: {
     background: "transparent",
-    color: "var(--leida-ink)",
+    color: "var(--nx-ink)",
     border: "1px solid rgba(40,34,28,0.28)"
   }
 };
 
 /**
- * The Leida pill button. Mono, uppercase, wide-tracked label; lifts on
+ * The NX pill button. Mono, uppercase, wide-tracked label; lifts on
  * hover. Primary (ink), ghost (frosted), and quiet (hairline) variants.
  */
 function Button({
@@ -449,30 +449,30 @@ function Input({
       fontSize: "0.62rem",
       letterSpacing: "0.12em",
       textTransform: "uppercase",
-      color: "var(--leida-muted)"
+      color: "var(--nx-muted)"
     }
   }, label) : null, /*#__PURE__*/React.createElement("input", _extends({
     id: inputId,
     style: {
       fontFamily: "var(--font-sans)",
       fontSize: "0.95rem",
-      color: "var(--leida-ink)",
+      color: "var(--nx-ink)",
       padding: "14px 18px",
       borderRadius: "var(--radius-pill)",
-      border: `1px solid ${error ? "var(--leida-clay)" : "var(--leida-line)"}`,
+      border: `1px solid ${error ? "var(--nx-clay)" : "var(--nx-line)"}`,
       background: "rgba(251,250,247,0.92)",
       outline: "none",
       transition: "border-color var(--dur-fast)",
       ...style
     },
-    onFocus: e => e.target.style.borderColor = "var(--leida-clay)",
-    onBlur: e => e.target.style.borderColor = error ? "var(--leida-clay)" : "var(--leida-line)"
+    onFocus: e => e.target.style.borderColor = "var(--nx-clay)",
+    onBlur: e => e.target.style.borderColor = error ? "var(--nx-clay)" : "var(--nx-line)"
   }, rest)), hint || error ? /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: "var(--font-mono)",
       fontSize: "0.62rem",
       letterSpacing: "0.04em",
-      color: error ? "var(--leida-clay)" : "var(--leida-muted)",
+      color: error ? "var(--nx-clay)" : "var(--nx-muted)",
       paddingLeft: "4px"
     }
   }, error || hint) : null);
@@ -527,14 +527,14 @@ function RangeSlider({
       fontSize: "0.7rem",
       letterSpacing: "0.08em",
       textTransform: "uppercase",
-      color: "var(--leida-body)"
+      color: "var(--nx-body)"
     }
   }, label) : /*#__PURE__*/React.createElement("span", null), /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: "var(--font-serif)",
       fontStyle: "italic",
       fontSize: "1.3rem",
-      color: "var(--leida-ink)"
+      color: "var(--nx-ink)"
     }
   }, display)), /*#__PURE__*/React.createElement("input", _extends({
     id: id,
@@ -544,11 +544,11 @@ function RangeSlider({
     step: step,
     value: val,
     onChange: handle,
-    className: "leida-range"
+    className: "nx-range"
   }, rest)), /*#__PURE__*/React.createElement("style", null, `
-        .leida-range { -webkit-appearance: none; appearance: none; width: 100%; height: 3px; border-radius: 3px; background: var(--leida-line); outline: none; margin: 0; }
-        .leida-range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; background: var(--leida-ink); cursor: pointer; border: 3px solid var(--leida-parchment); box-shadow: 0 2px 8px rgba(26,24,20,0.3); }
-        .leida-range::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: var(--leida-ink); cursor: pointer; border: 3px solid var(--leida-parchment); box-shadow: 0 2px 8px rgba(26,24,20,0.3); }
+        .nx-range { -webkit-appearance: none; appearance: none; width: 100%; height: 3px; border-radius: 3px; background: var(--nx-line); outline: none; margin: 0; }
+        .nx-range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; background: var(--nx-ink); cursor: pointer; border: 3px solid var(--nx-parchment); box-shadow: 0 2px 8px rgba(26,24,20,0.3); }
+        .nx-range::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: var(--nx-ink); cursor: pointer; border: 3px solid var(--nx-parchment); box-shadow: 0 2px 8px rgba(26,24,20,0.3); }
       `));
 }
 Object.assign(__ds_scope, { RangeSlider });
@@ -581,7 +581,7 @@ function SegmentedToggle({
       padding: "5px",
       borderRadius: "40px",
       background: "rgba(255,255,255,0.78)",
-      border: "1px solid var(--leida-line)",
+      border: "1px solid var(--nx-line)",
       boxShadow: "0 8px 30px rgba(40,34,28,0.10)",
       ...style
     },
@@ -606,8 +606,8 @@ function SegmentedToggle({
         padding: "9px 20px",
         borderRadius: "30px",
         transition: "all var(--dur-mid) var(--ease-out)",
-        background: on ? "var(--leida-ink)" : "transparent",
-        color: on ? "var(--leida-parchment)" : "var(--leida-body)"
+        background: on ? "var(--nx-ink)" : "transparent",
+        color: on ? "var(--nx-parchment)" : "var(--nx-body)"
       }
     }, opt.icon ? /*#__PURE__*/React.createElement("span", {
       style: {
@@ -624,7 +624,7 @@ Object.assign(__ds_scope, { SegmentedToggle });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /**
- * The sticky, frosted top bar from the marketing site: the Leida logo,
+ * The sticky, frosted top bar from the marketing site: the NX logo,
  * mono-caps nav links, and a primary CTA. Translucent parchment ground
  * with a blur so page texture shows through.
  */
@@ -651,7 +651,7 @@ function TopBar({
     }
   }, rest), /*#__PURE__*/React.createElement("a", {
     href: "#top",
-    "aria-label": "Leida home",
+    "aria-label": "NX home",
     style: {
       display: "flex",
       alignItems: "center",
@@ -673,7 +673,7 @@ function TopBar({
       fontSize: "0.72rem",
       letterSpacing: "0.12em",
       textTransform: "uppercase",
-      color: "var(--leida-body)",
+      color: "var(--nx-body)",
       textDecoration: "none"
     }
   }, l.label)), cta ? /*#__PURE__*/React.createElement(__ds_scope.Button, {
@@ -689,27 +689,27 @@ try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const VARIANTS = {
   paper: {
-    background: "var(--leida-paper)",
-    border: "1px solid var(--leida-line)",
+    background: "var(--nx-paper)",
+    border: "1px solid var(--nx-line)",
     boxShadow: "var(--shadow-card)"
   },
   glass: {
-    background: "var(--leida-glass)",
+    background: "var(--nx-glass)",
     border: "1px solid rgba(255,255,255,0.75)",
     boxShadow: "var(--shadow-glass)",
     backdropFilter: "var(--blur-panel)",
     WebkitBackdropFilter: "var(--blur-panel)"
   },
   tile: {
-    background: "var(--leida-tile)",
+    background: "var(--nx-tile)",
     border: "1px solid rgba(255,255,255,0.6)",
     boxShadow: "var(--shadow-card)",
     backdropFilter: "var(--blur-chip)",
     WebkitBackdropFilter: "var(--blur-chip)"
   },
   ink: {
-    background: "var(--leida-ink)",
-    color: "var(--leida-parchment)",
+    background: "var(--nx-ink)",
+    color: "var(--nx-parchment)",
     border: "1px solid transparent",
     boxShadow: "var(--shadow-card)"
   }
@@ -721,7 +721,7 @@ const PADS = {
 };
 
 /**
- * The base Leida surface - a soft, generously rounded container. Paper,
+ * The base NX surface - a soft, generously rounded container. Paper,
  * frosted glass, tile, or ink. `hoverLift` adds the product-card rise.
  */
 function Card({
@@ -795,7 +795,7 @@ function PriceTier({
       fontSize: "0.7rem",
       letterSpacing: "0.14em",
       textTransform: "uppercase",
-      color: featured ? "var(--leida-clay)" : "var(--leida-clay)",
+      color: featured ? "var(--nx-clay)" : "var(--nx-clay)",
       marginBottom: "14px"
     }
   }, name), /*#__PURE__*/React.createElement("div", {
@@ -810,19 +810,19 @@ function PriceTier({
       fontStyle: "italic",
       fontSize: "2.6rem",
       lineHeight: 1,
-      color: featured ? "var(--leida-parchment)" : "var(--leida-ink)"
+      color: featured ? "var(--nx-parchment)" : "var(--nx-ink)"
     }
   }, price), cadence ? /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: "var(--font-mono)",
       fontSize: "0.72rem",
       letterSpacing: "0.06em",
-      color: "var(--leida-muted)"
+      color: "var(--nx-muted)"
     }
   }, cadence) : null), description ? /*#__PURE__*/React.createElement("p", {
     style: {
       fontSize: "0.92rem",
-      color: featured ? "var(--leida-oat)" : "var(--leida-body)",
+      color: featured ? "var(--nx-oat)" : "var(--nx-body)",
       margin: "14px 0 22px",
       flex: "0 0 auto"
     }
@@ -843,13 +843,13 @@ function PriceTier({
       gap: "11px",
       alignItems: "flex-start",
       fontSize: "0.9rem",
-      color: featured ? "var(--leida-oat)" : "var(--leida-body)"
+      color: featured ? "var(--nx-oat)" : "var(--nx-body)"
     }
   }, /*#__PURE__*/React.createElement("svg", {
     width: "14",
     height: "14",
     viewBox: "65.62 68.752 326.868 312.495",
-    fill: featured ? "var(--leida-clay)" : "var(--leida-clay)",
+    fill: featured ? "var(--nx-clay)" : "var(--nx-clay)",
     style: {
       flex: "0 0 auto",
       marginTop: "3px"
@@ -861,8 +861,8 @@ function PriceTier({
     block: true,
     onClick: onCta,
     style: featured ? {
-      background: "var(--leida-parchment)",
-      color: "var(--leida-ink)"
+      background: "var(--nx-parchment)",
+      color: "var(--nx-ink)"
     } : undefined
   }, cta));
 }
@@ -929,7 +929,7 @@ function ProductCard({
       fontSize: "0.6rem",
       letterSpacing: "0.1em",
       textTransform: "uppercase",
-      color: "var(--leida-muted)"
+      color: "var(--nx-muted)"
     }
   }, "Product photo")), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -944,7 +944,7 @@ function ProductCard({
       fontSize: "0.66rem",
       letterSpacing: "0.12em",
       textTransform: "uppercase",
-      color: "var(--leida-clay)"
+      color: "var(--nx-clay)"
     }
   }, step) : null, /*#__PURE__*/React.createElement("span", {
     style: {
@@ -952,7 +952,7 @@ function ProductCard({
       fontStyle: "italic",
       fontSize: "1.6rem",
       lineHeight: 1.05,
-      color: "var(--leida-ink)",
+      color: "var(--nx-ink)",
       margin: "9px 0 4px"
     }
   }, name), brand ? /*#__PURE__*/React.createElement("span", {
@@ -961,7 +961,7 @@ function ProductCard({
       fontSize: "0.72rem",
       letterSpacing: "0.04em",
       textTransform: "uppercase",
-      color: "var(--leida-muted)"
+      color: "var(--nx-muted)"
     }
   }, brand) : null, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -974,7 +974,7 @@ function ProductCard({
     style: {
       fontFamily: "var(--font-mono)",
       fontSize: "0.95rem",
-      color: "var(--leida-ink)"
+      color: "var(--nx-ink)"
     }
   }, price) : /*#__PURE__*/React.createElement("span", null), /*#__PURE__*/React.createElement("button", {
     onClick: onBuy,
@@ -983,7 +983,7 @@ function ProductCard({
       fontSize: "0.68rem",
       letterSpacing: "0.1em",
       textTransform: "uppercase",
-      color: "var(--leida-ink)",
+      color: "var(--nx-ink)",
       background: "transparent",
       border: "1px solid rgba(40,34,28,0.28)",
       borderRadius: "30px",
@@ -1023,7 +1023,7 @@ function StatCard({
       fontStyle: "italic",
       fontSize: "clamp(2.2rem, 5vw, 3rem)",
       lineHeight: 1,
-      color: "var(--leida-ink)",
+      color: "var(--nx-ink)",
       marginBottom: "12px"
     }
   }, figure), children ? /*#__PURE__*/React.createElement("p", {
@@ -1031,7 +1031,7 @@ function StatCard({
       fontSize: "1.12rem",
       lineHeight: 1.5,
       margin: "0 0 14px",
-      color: "var(--leida-ink)"
+      color: "var(--nx-ink)"
     }
   }, children) : null, source ? /*#__PURE__*/React.createElement("span", {
     style: {
@@ -1039,7 +1039,7 @@ function StatCard({
       fontSize: "0.58rem",
       letterSpacing: "0.05em",
       textTransform: "uppercase",
-      color: "var(--leida-muted)"
+      color: "var(--nx-muted)"
     }
   }, source) : null);
 }
@@ -1048,13 +1048,13 @@ Object.assign(__ds_scope, { StatCard });
 
 // ui_kits/aftercare-app/LivingPage.jsx
 try { (() => {
-/* Leida - Client Aftercare "living page"
+/* NX - Client Aftercare "living page"
    The page a client receives after a treatment. It carries the therapist's
-   clinic branding; Leida sits quietly in the footer. Composes DS primitives.
+   clinic branding; NX sits quietly in the footer. Composes DS primitives.
    Exposes window.LivingPage. */
 (function () {
   function build() {
-    const DS = window.LeidaDesignSystem_ab1d28;
+    const DS = window.NXDesignSystem_ab1d28;
     const {
       SegmentedToggle,
       ProductCard,
@@ -1157,7 +1157,7 @@ try { (() => {
           background: "rgba(247,247,244,0.82)",
           backdropFilter: "blur(10px)",
           WebkitBackdropFilter: "blur(10px)",
-          borderBottom: "1px solid var(--leida-line)"
+          borderBottom: "1px solid var(--nx-line)"
         }
       }, React.createElement("span", {
         style: {
@@ -1166,7 +1166,7 @@ try { (() => {
           fontSize: "0.78rem",
           letterSpacing: "0.18em",
           textTransform: "uppercase",
-          color: "var(--leida-ink)"
+          color: "var(--nx-ink)"
         }
       }, "The Skin Studio")),
       // intro
@@ -1181,7 +1181,7 @@ try { (() => {
           fontFamily: "var(--font-serif)",
           fontStyle: "italic",
           fontSize: "1.4rem",
-          color: "var(--leida-body)",
+          color: "var(--nx-body)",
           marginBottom: 6
         }
       }, "Ellie, here's your"), React.createElement("span", {
@@ -1192,14 +1192,14 @@ try { (() => {
           fontSize: "3rem",
           lineHeight: 0.95,
           letterSpacing: "-0.02em",
-          color: "var(--leida-ink)"
+          color: "var(--nx-ink)"
         }
       }, "Updated Routine"), React.createElement("p", {
         style: {
           fontFamily: "var(--font-serif)",
           fontStyle: "italic",
           fontSize: "1.02rem",
-          color: "var(--leida-sign)",
+          color: "var(--nx-sign)",
           maxWidth: "30ch",
           margin: "16px auto 0",
           lineHeight: 1.5
@@ -1210,7 +1210,7 @@ try { (() => {
           fontFamily: "var(--font-serif)",
           fontStyle: "italic",
           fontSize: "1.05rem",
-          color: "var(--leida-clay)"
+          color: "var(--nx-clay)"
         }
       }, ", Nadia")),
       // products
@@ -1321,7 +1321,7 @@ try { (() => {
           fontFamily: "var(--font-serif)",
           fontStyle: "italic",
           fontSize: "1.05rem",
-          color: "var(--leida-body)",
+          color: "var(--nx-body)",
           marginTop: 14
         }
       }, "Book your review for 3 weeks' time.")),
@@ -1337,7 +1337,7 @@ try { (() => {
           fontSize: "0.6rem",
           letterSpacing: "0.16em",
           textTransform: "uppercase",
-          color: "var(--leida-muted)"
+          color: "var(--nx-muted)"
         }
       }, "Powered by", React.createElement(StarMark, {
         size: 12,
@@ -1349,28 +1349,28 @@ try { (() => {
           textTransform: "none",
           letterSpacing: 0,
           fontSize: "0.9rem",
-          color: "var(--leida-ink)"
+          color: "var(--nx-ink)"
         }
-      }, "Leida")));
+      }, "NX")));
     }
     window.LivingPage = LivingPage;
   }
   // Define the global only once React + the DS bundle are ready, so
   // <x-import> waits for us and never renders against an undefined DS.
   (function wait() {
-    if (window.React && window.React.useState && window.LeidaDesignSystem_ab1d28) build();else setTimeout(wait, 30);
+    if (window.React && window.React.useState && window.NXDesignSystem_ab1d28) build();else setTimeout(wait, 30);
   })();
 })();
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/aftercare-app/LivingPage.jsx", error: String((e && e.message) || e) }); }
 
 // ui_kits/marketing-site/MarketingSite.jsx
 try { (() => {
-/* Leida - Marketing website
+/* NX - Marketing website
    The public site: hero, how-it-works, cost calculator, pricing, FAQ,
    waitlist, footer. Composes DS primitives. Exposes window.MarketingSite. */
 (function () {
   function build() {
-    const DS = window.LeidaDesignSystem_ab1d28;
+    const DS = window.NXDesignSystem_ab1d28;
     const {
       TopBar,
       Button,
@@ -1416,7 +1416,7 @@ try { (() => {
         style: {
           borderRadius: 28,
           overflow: "hidden",
-          background: "var(--leida-paper)",
+          background: "var(--nx-paper)",
           height: 420,
           display: "flex",
           flexDirection: "column"
@@ -1427,13 +1427,13 @@ try { (() => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          borderBottom: "1px solid var(--leida-line)",
+          borderBottom: "1px solid var(--nx-line)",
           fontFamily: "var(--font-sans)",
           fontWeight: 700,
           fontSize: "0.62rem",
           letterSpacing: "0.16em",
           textTransform: "uppercase",
-          color: "var(--leida-ink)"
+          color: "var(--nx-ink)"
         }
       }, "The Skin Studio"), h("div", {
         style: {
@@ -1445,7 +1445,7 @@ try { (() => {
           fontFamily: "var(--font-serif)",
           fontStyle: "italic",
           fontSize: "1rem",
-          color: "var(--leida-body)"
+          color: "var(--nx-body)"
         }
       }, "Ellie, here's your"), h("div", {
         style: {
@@ -1453,7 +1453,7 @@ try { (() => {
           fontStyle: "italic",
           fontSize: "1.9rem",
           lineHeight: 0.95,
-          color: "var(--leida-ink)",
+          color: "var(--nx-ink)",
           marginTop: 4
         }
       }, "Updated Routine")), h("div", {
@@ -1469,7 +1469,7 @@ try { (() => {
           display: "flex",
           gap: 10,
           alignItems: "center",
-          background: "var(--leida-tile)",
+          background: "var(--nx-tile)",
           borderRadius: 16,
           padding: 8,
           boxShadow: "var(--shadow-card)"
@@ -1488,14 +1488,14 @@ try { (() => {
           fontSize: "0.5rem",
           letterSpacing: "0.12em",
           textTransform: "uppercase",
-          color: "var(--leida-clay)"
+          color: "var(--nx-clay)"
         }
       }, "Step 0" + (i + 1)), h("div", {
         style: {
           fontFamily: "var(--font-serif)",
           fontStyle: "italic",
           fontSize: "0.95rem",
-          color: "var(--leida-ink)"
+          color: "var(--nx-ink)"
         }
       }, label)))))));
     }
@@ -1534,8 +1534,8 @@ try { (() => {
       })), h("div", {
         style: {
           marginTop: 24,
-          background: "var(--leida-ink)",
-          color: "var(--leida-parchment)",
+          background: "var(--nx-ink)",
+          color: "var(--nx-parchment)",
           borderRadius: 16,
           padding: "18px 22px",
           textAlign: "center",
@@ -1566,7 +1566,7 @@ try { (() => {
           fontFamily: "var(--font-serif)",
           fontStyle: "italic",
           fontSize: "1.5rem",
-          color: "var(--leida-ink)",
+          color: "var(--nx-ink)",
           lineHeight: 1
         }
       }, n), h("div", {
@@ -1575,7 +1575,7 @@ try { (() => {
           fontSize: "0.56rem",
           letterSpacing: "0.08em",
           textTransform: "uppercase",
-          color: "var(--leida-muted)",
+          color: "var(--nx-muted)",
           marginTop: 7
         }
       }, k));
@@ -1596,11 +1596,11 @@ try { (() => {
           justifyContent: "center",
           width: 34,
           height: 34,
-          border: "1px solid var(--leida-clay)",
+          border: "1px solid var(--nx-clay)",
           borderRadius: "50%",
           fontFamily: "var(--font-mono)",
           fontSize: "0.78rem",
-          color: "var(--leida-ink)",
+          color: "var(--nx-ink)",
           marginBottom: 16
         }
       }, n), h("h3", {
@@ -1610,13 +1610,13 @@ try { (() => {
           fontWeight: 400,
           fontSize: "1.28rem",
           margin: "0 0 9px",
-          color: "var(--leida-ink)"
+          color: "var(--nx-ink)"
         }
       }, title), h("p", {
         style: {
           fontSize: "0.92rem",
           lineHeight: 1.55,
-          color: "var(--leida-body)",
+          color: "var(--nx-body)",
           margin: 0
         }
       }, body));
@@ -1624,7 +1624,7 @@ try { (() => {
     function MarketingSite() {
       return h("div", {
         style: {
-          background: "var(--leida-parchment)"
+          background: "var(--nx-parchment)"
         }
       }, h("div", {
         style: {
@@ -1666,14 +1666,14 @@ try { (() => {
           fontSize: "clamp(2.3rem,4vw,3.4rem)",
           lineHeight: 1.06,
           letterSpacing: "-0.022em",
-          color: "var(--leida-ink)",
+          color: "var(--nx-ink)",
           margin: "0 0 20px"
         }
       }, "The app that gives your clients aftercare ", h("em", null, "they'll actually follow.")), h("p", {
         style: {
           fontSize: "1.06rem",
           lineHeight: 1.6,
-          color: "var(--leida-body)",
+          color: "var(--nx-body)",
           maxWidth: "44ch",
           margin: "0 0 28px"
         }
@@ -1697,7 +1697,7 @@ try { (() => {
           fontSize: "0.7rem",
           letterSpacing: "0.1em",
           textTransform: "uppercase",
-          color: "var(--leida-muted)"
+          color: "var(--nx-muted)"
         }
       }, "Built by a skin therapist, for skin therapists")), h(HeroPhone)),
       // HOW IT WORKS
@@ -1768,7 +1768,7 @@ try { (() => {
         children: [h(StatCard, {
           key: "s1",
           figure: "3×",
-          source: "Leida pilot, 2025"
+          source: "NX pilot, 2025"
         }, "clients follow their routine when it lives on their phone."), h(StatCard, {
           key: "s2",
           figure: "9 min",
@@ -1841,7 +1841,7 @@ try { (() => {
             a: "No. The page saves to their home screen and opens like an app, no store, no login, no friction."
           }, {
             q: "Can I use my own branding?",
-            a: "Yes. Every page carries your clinic's name and colours. Leida sits quietly in the footer."
+            a: "Yes. Every page carries your clinic's name and colours. NX sits quietly in the footer."
           }, {
             q: "Is it really faster than WhatsApp?",
             a: "One tap sends a living page that stays up to date, so you never re-type or re-send a routine again."
@@ -1873,7 +1873,7 @@ try { (() => {
           key: "p",
           style: {
             fontSize: "0.95rem",
-            color: "var(--leida-body)",
+            color: "var(--nx-body)",
             maxWidth: "42ch",
             margin: "14px auto 24px"
           }
@@ -1897,8 +1897,8 @@ try { (() => {
       // FOOTER
       h("footer", {
         style: {
-          background: "var(--leida-ink)",
-          color: "var(--leida-oat)",
+          background: "var(--nx-ink)",
+          color: "var(--nx-oat)",
           padding: "54px 24px 40px",
           marginTop: 20
         }
@@ -1930,17 +1930,17 @@ try { (() => {
           fontFamily: "var(--font-mono)",
           fontSize: "0.62rem",
           letterSpacing: "0.04em",
-          color: "var(--leida-fog)",
+          color: "var(--nx-fog)",
           marginTop: 10
         }
-      }, "© 2026 Ask Leida Ltd., Built by a skin therapist, for skin therapists."))));
+      }, "© 2026 Ask NX Ltd., Built by a skin therapist, for skin therapists."))));
     }
     window.MarketingSite = MarketingSite;
   }
   // Define the global only once React + the DS bundle are ready, so
   // <x-import> waits for us and never renders against an undefined DS.
   (function wait() {
-    if (window.React && window.React.useState && window.LeidaDesignSystem_ab1d28) build();else setTimeout(wait, 30);
+    if (window.React && window.React.useState && window.NXDesignSystem_ab1d28) build();else setTimeout(wait, 30);
   })();
 })();
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/marketing-site/MarketingSite.jsx", error: String((e && e.message) || e) }); }

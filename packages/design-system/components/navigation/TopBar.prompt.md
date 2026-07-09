@@ -1,4 +1,4 @@
-The sticky, frosted marketing top bar, Leida logo, mono-caps nav links, primary CTA. Sits on translucent parchment so page texture shows through.
+The sticky, frosted marketing top bar, NX logo, mono-caps nav links, primary CTA. Sits on translucent parchment so page texture shows through.
 
 ```jsx
 <TopBar

@@ -2,14 +2,14 @@
   "name": "nx",
   "version": "3.0.0",
   "scripts": {
-    "dev": "yarn kill && yarn install && rm -rf .next && next dev -p 1999 --webpack",
+    "dev": "pnpm run kill && rm -rf .next && next dev -p 1999 --webpack",
     "build": "next build --webpack",
     "start": "next start",
     "test": "jest --runInBand --passWithNoTests",
     "test:watch": "jest --watch",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "clean": "yarn kill && bash app/NX/lib/bash/clean.sh",
+    "clean": "pnpm run kill && bash app/NX/lib/bash/clean.sh",
     "kill": "bash app/NX/lib/bash/kill.sh",
     "open": "bash app/NX/lib/bash/open.sh"
   },

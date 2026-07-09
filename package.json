@@ -4,7 +4,7 @@
   "private": true,
   "description": "Turborepo implementation of NX°",
   "scripts": {
-    "dev": "turbo run dev --parallel",
+    "dev": "turbo run dev",
     "build": "turbo run build",
     "lint": "turbo run lint",
     "type-check": "turbo run type-check"

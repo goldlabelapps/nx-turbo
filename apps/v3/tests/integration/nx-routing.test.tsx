@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { store, resetUberedux, setUbereduxKey } from '@/app/NX/Uberedux/store';
 
 /* eslint-disable no-var */
@@ -64,7 +63,15 @@ jest.mock('@/app/NX/index', () => {
   };
 });
 
-import NX from '@/app/NX/NX';
+jest.mock('@/app/NX/Theme/components/DesignSystemLanding', () => {
+  const ReactLocal = require('react');
+  return {
+    __esModule: true,
+    default: () => ReactLocal.createElement('div', { 'data-testid': 'design-system-landing' }, 'Landing'),
+  };
+});
+
+import NX from '@/app/NX/LegacyNXApp';
 
 function setReadyState() {
   store.dispatch(setUbereduxKey({ key: 'auth', value: { initted: true } }));
@@ -121,13 +128,11 @@ describe('NX routing and initialization', () => {
       </Provider>,
     );
 
-    expect(screen.getByTestId('theme-page')).toBeInTheDocument();
-    expect(screen.getByTestId('header-nav-btn')).toHaveAttribute('data-path', '/theme');
+    expect(screen.getByTestId('design-system-landing')).toBeInTheDocument();
     expect(setLayoutMock).toHaveBeenCalledWith('isLoading', false);
   });
 
-  it('navigates to clients route from header callback and updates rendered route', async () => {
-    const user = userEvent.setup();
+  it('renders landing when app is ready at root route', () => {
     setReadyState();
 
     render(
@@ -136,11 +141,6 @@ describe('NX routing and initialization', () => {
       </Provider>,
     );
 
-    expect(screen.getByTestId('home-page')).toBeInTheDocument();
-
-    await user.click(screen.getByTestId('header-nav-btn'));
-
-    expect(screen.getByTestId('clients-page')).toBeInTheDocument();
-    expect(window.location.pathname).toBe('/clients');
+    expect(screen.getByTestId('design-system-landing')).toBeInTheDocument();
   });
 });

@@ -15,10 +15,10 @@
   <script src="../../ui_kits/aftercare-app/LivingPage.jsx"></script>
   <script>
     (function mount(){
-      var el = document.getElementById("leida-living");
+      var el = document.getElementById("nx-living");
       if (el && window.ReactDOM && window.LivingPage) {
-        if (!el.__leidaRoot) el.__leidaRoot = ReactDOM.createRoot(el);
-        el.__leidaRoot.render(React.createElement(window.LivingPage));
+        if (!el.__nxRoot) el.__nxRoot = ReactDOM.createRoot(el);
+        el.__nxRoot.render(React.createElement(window.LivingPage));
       } else { setTimeout(mount, 30); }
     })();
   </script>
@@ -26,7 +26,7 @@
 <div style="min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:30px;background:radial-gradient(130% 120% at 20% 0%, #e6dccb 0%, #c9b9a3 45%, #8f9384 100%)">
   <div style="width:390px;border-radius:46px;padding:13px;background:linear-gradient(160deg,#2a2620,#15130f);box-shadow:0 40px 80px rgba(26,24,20,0.32),0 4px 0 rgba(255,255,255,0.05) inset">
     <div style="border-radius:34px;overflow:hidden;background:#fbfaf7;height:740px;overflow-y:auto">
-      <div id="leida-living"></div>
+      <div id="nx-living"></div>
     </div>
   </div>
 </div>

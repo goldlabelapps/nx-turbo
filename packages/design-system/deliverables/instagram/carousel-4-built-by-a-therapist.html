@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Leida - Carousel 4: Built by a skin therapist</title>
+<title>NX - Carousel 4: Built by a skin therapist</title>
 <link rel="stylesheet" href="../../styles.css">
 <style>
   :root { --scale: 0.42; }
@@ -25,42 +25,42 @@
   .slide {
     width: 1080px; height: 1350px; box-sizing: border-box;
     position: relative; display: flex; flex-direction: column;
-    padding: 108px 96px; background: var(--leida-parchment); overflow: hidden;
+    padding: 108px 96px; background: var(--nx-parchment); overflow: hidden;
   }
   .slide.center { justify-content: center; }
-  .slide.ink { background: var(--leida-ink); }
-  .slide.clay { background: var(--leida-clay); }
+  .slide.ink { background: var(--nx-ink); }
+  .slide.clay { background: var(--nx-clay); }
   .slide.ink .eye, .slide.clay .eye { color: rgba(247,247,244,.7); }
   .slide.ink .h, .slide.clay .h { color: #f7f7f4; }
   .slide.ink .body, .slide.clay .body { color: rgba(247,247,244,.82); }
   .slide.ink .meta, .slide.clay .meta { color: rgba(247,247,244,.55); }
 
-  .eye { font-family: var(--font-mono); font-size: 30px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--leida-clay); }
-  .h { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: var(--leida-ink); line-height: 1.0; letter-spacing: -0.02em; }
+  .eye { font-family: var(--font-mono); font-size: 30px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--nx-clay); }
+  .h { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: var(--nx-ink); line-height: 1.0; letter-spacing: -0.02em; }
   .h.xl { font-size: 132px; }
   .h.lg { font-size: 104px; }
   .h.md { font-size: 82px; }
-  .body { font-family: var(--font-sans); font-size: 42px; line-height: 1.5; color: var(--leida-body); max-width: 20ch; }
+  .body { font-family: var(--font-sans); font-size: 42px; line-height: 1.5; color: var(--nx-body); max-width: 20ch; }
   .handle { font-family: var(--font-mono); font-size: 26px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,247,244,.7); margin-top: 34px; }
 
   .topmark { position: absolute; top: 96px; left: 96px; }
   .foot { position: absolute; left: 96px; right: 96px; bottom: 84px; display: flex; align-items: center; justify-content: space-between; }
-  .foot .meta { font-family: var(--font-mono); font-size: 24px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--leida-muted); }
+  .foot .meta { font-family: var(--font-mono); font-size: 24px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--nx-muted); }
   .foot .wm { display: flex; align-items: center; gap: 12px; }
-  .foot .wm span { font-family: var(--font-serif); font-style: italic; font-size: 34px; color: var(--leida-ink); }
+  .foot .wm span { font-family: var(--font-serif); font-style: italic; font-size: 34px; color: var(--nx-ink); }
   .slide.ink .foot .wm span, .slide.clay .foot .wm span { color: #f7f7f4; }
   img.star { display: block; }
-  .rule { width: 88px; height: 2px; background: var(--leida-clay); margin: 0 0 40px; border: 0; }
-  .btn { display: inline-flex; align-items: center; gap: 16px; align-self: flex-start; font-family: var(--font-mono); font-size: 30px; letter-spacing: 0.1em; text-transform: uppercase; padding: 30px 52px; border-radius: 999px; background: var(--leida-parchment); color: var(--leida-ink); margin-top: 20px; }
+  .rule { width: 88px; height: 2px; background: var(--nx-clay); margin: 0 0 40px; border: 0; }
+  .btn { display: inline-flex; align-items: center; gap: 16px; align-self: flex-start; font-family: var(--font-mono); font-size: 30px; letter-spacing: 0.1em; text-transform: uppercase; padding: 30px 52px; border-radius: 999px; background: var(--nx-parchment); color: var(--nx-ink); margin-top: 20px; }
 
   /* ---- Full-bleed photo cover with frosted glass panel ---- */
-  .slide.photo { padding: 0; justify-content: flex-end; background-size: cover; background-position: center; background-color: var(--leida-parchment); }
+  .slide.photo { padding: 0; justify-content: flex-end; background-size: cover; background-position: center; background-color: var(--nx-parchment); }
   .panel { position: relative; margin: 64px; padding: 66px 58px 54px; background: rgba(251,250,247,.62); backdrop-filter: blur(30px) saturate(120%); -webkit-backdrop-filter: blur(30px) saturate(120%); border: 1px solid rgba(255,255,255,.6); border-radius: 40px; box-shadow: 0 30px 70px rgba(40,34,28,.22); }
   .panel .rule { margin-top: 28px; }
   .panelfoot { display: flex; align-items: center; justify-content: space-between; margin-top: 46px; }
-  .panelfoot .meta { font-family: var(--font-mono); font-size: 24px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--leida-muted); }
+  .panelfoot .meta { font-family: var(--font-mono); font-size: 24px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--nx-muted); }
   .panelfoot .wm { display: flex; align-items: center; gap: 12px; }
-  .panelfoot .wm span { font-family: var(--font-serif); font-style: italic; font-size: 34px; color: var(--leida-ink); }
+  .panelfoot .wm span { font-family: var(--font-serif); font-style: italic; font-size: 34px; color: var(--nx-ink); }
 </style>
 </head>
 <body>
@@ -82,11 +82,11 @@
     <div class="item">
       <div class="thumb"><div class="slide photo" style="background-image:url('img/silk.png')">
         <div class="panel">
-          <img class="star" src="../../assets/logos/leida-star-black.svg" width="60" height="60" alt="">
+          <img class="star" src="../../assets/logos/nx-star-black.svg" width="60" height="60" alt="">
           <div class="eye" style="margin-top:26px">The story</div>
           <hr class="rule">
           <div class="h lg">Built by a<br>skin <em>therapist.</em></div>
-          <div class="panelfoot"><span class="meta">01 / 06</span><span class="wm"><img class="star" src="../../assets/logos/leida-star-black.svg" width="34" height="34" alt=""><span>Leida</span></span></div>
+          <div class="panelfoot"><span class="meta">01 / 06</span><span class="wm"><img class="star" src="../../assets/logos/nx-star-black.svg" width="34" height="34" alt=""><span>NX</span></span></div>
         </div>
       </div></div>
       <div class="cap">Slide 1 · Cover</div>
@@ -99,7 +99,7 @@
         <hr class="rule" style="margin-top:36px">
         <div class="h lg">I kept sending<br>PDFs that <em>aged<br>overnight.</em></div>
         <p class="body" style="margin-top:56px">Every review meant a new export, a new attachment, and a client still following last month's routine.</p>
-        <div class="foot"><span class="meta">02 / 06</span><span class="wm"><img class="star" src="../../assets/logos/leida-star-black.svg" width="34" height="34" alt=""><span>Leida</span></span></div>
+        <div class="foot"><span class="meta">02 / 06</span><span class="wm"><img class="star" src="../../assets/logos/nx-star-black.svg" width="34" height="34" alt=""><span>NX</span></span></div>
       </div></div>
       <div class="cap">Slide 2</div>
     </div>
@@ -111,7 +111,7 @@
         <hr class="rule" style="margin-top:36px">
         <div class="h lg">One link I could<br><em>update</em> once.</div>
         <p class="body" style="margin-top:56px">Not a redesign. Not another app to learn. Just the current routine, always, in one place.</p>
-        <div class="foot"><span class="meta">03 / 06</span><span class="wm"><img class="star" src="../../assets/logos/leida-star-black.svg" width="34" height="34" alt=""><span>Leida</span></span></div>
+        <div class="foot"><span class="meta">03 / 06</span><span class="wm"><img class="star" src="../../assets/logos/nx-star-black.svg" width="34" height="34" alt=""><span>NX</span></span></div>
       </div></div>
       <div class="cap">Slide 3</div>
     </div>
@@ -123,7 +123,7 @@
         <hr class="rule" style="margin-top:36px">
         <div class="h lg">A page that<br>stays <em>current</em><br>for you.</div>
         <p class="body" style="margin-top:56px">You change a product; the client's page changes with it. No re-sending, no second version, ever.</p>
-        <div class="foot"><span class="meta">04 / 06</span><span class="wm"><img class="star" src="../../assets/logos/leida-star-black.svg" width="34" height="34" alt=""><span>Leida</span></span></div>
+        <div class="foot"><span class="meta">04 / 06</span><span class="wm"><img class="star" src="../../assets/logos/nx-star-black.svg" width="34" height="34" alt=""><span>NX</span></span></div>
       </div></div>
       <div class="cap">Slide 4</div>
     </div>
@@ -131,12 +131,12 @@
     <!-- 5 - turn -->
     <div class="item">
       <div class="thumb"><div class="slide center ink">
-        <img class="star topmark" src="../../assets/logos/leida-star-offwhite.svg" width="72" height="72" alt="">
+        <img class="star topmark" src="../../assets/logos/nx-star-offwhite.svg" width="72" height="72" alt="">
         <div class="eye">For solo therapists</div>
         <hr class="rule" style="margin-top:36px">
         <div class="h md">Made for one<br>chair, <em>not</em> a<br>marketing team.</div>
         <p class="body" style="margin-top:44px">Quiet, warm and quick. It respects your time, because it was built around it.</p>
-        <div class="foot"><span class="meta">05 / 06</span><span class="wm"><img class="star" src="../../assets/logos/leida-star-offwhite.svg" width="34" height="34" alt=""><span>Leida</span></span></div>
+        <div class="foot"><span class="meta">05 / 06</span><span class="wm"><img class="star" src="../../assets/logos/nx-star-offwhite.svg" width="34" height="34" alt=""><span>NX</span></span></div>
       </div></div>
       <div class="cap">Slide 5</div>
     </div>
@@ -144,12 +144,12 @@
     <!-- 6 - CTA -->
     <div class="item">
       <div class="thumb"><div class="slide center clay">
-        <img class="star topmark" src="../../assets/logos/leida-star-offwhite.svg" width="72" height="72" alt="">
+        <img class="star topmark" src="../../assets/logos/nx-star-offwhite.svg" width="72" height="72" alt="">
         <div class="h md" style="color:#fff">Come build it<br><em>with us.</em></div>
-        <p class="body" style="margin-top:44px;color:rgba(255,255,255,.9)">Join the founding members shaping Leida, client aftercare, reimagined.</p>
-        <div class="handle">askleida.com · @askleida</div>
+        <p class="body" style="margin-top:44px;color:rgba(255,255,255,.9)">Join the founding members shaping NX, client aftercare, reimagined.</p>
+        <div class="handle">asknx.com · @asknx</div>
         <span class="btn">Join the waitlist →</span>
-        <div class="foot"><span class="meta">06 / 06</span><span class="wm"><img class="star" src="../../assets/logos/leida-star-offwhite.svg" width="34" height="34" alt=""><span>Leida</span></span></div>
+        <div class="foot"><span class="meta">06 / 06</span><span class="wm"><img class="star" src="../../assets/logos/nx-star-offwhite.svg" width="34" height="34" alt=""><span>NX</span></span></div>
       </div></div>
       <div class="cap">Slide 6 · CTA</div>
     </div>

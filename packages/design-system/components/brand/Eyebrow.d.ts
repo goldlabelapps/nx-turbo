@@ -2,7 +2,7 @@ import React from "react";
 
 /**
  * A mono, all-caps, wide-tracked label that sits above a heading or
- * labels a group - Leida's signature "eyebrow". Renders clay by default.
+ * labels a group - NX's signature "eyebrow". Renders clay by default.
  */
 export function Eyebrow(props: EyebrowProps): JSX.Element;
 

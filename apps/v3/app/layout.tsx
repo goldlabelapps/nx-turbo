@@ -8,20 +8,20 @@ const configPath = path.join(process.cwd(), 'public', tenant, 'config.json');
 const configRaw = fs.readFileSync(configPath, 'utf-8');
 const config = JSON.parse(configRaw);
 const { title, description, favicon } = config;
-const ogImage = '/askleida/jpg/og.jpg';
+const ogImage = '/asknx/jpg/og.jpg';
 
 export const metadata: Metadata = {
-  title: `Leida`,
+  title: `NX`,
   description,
   openGraph: {
-    title: 'Leida',
+    title: 'NX',
     description,
     images: [{ url: ogImage }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Leida',
+    title: 'NX',
     description,
     images: [ogImage],
   },

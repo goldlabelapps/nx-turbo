@@ -65,7 +65,7 @@ Project-level and NX types are defined in:
 
 Notable shared types include:
 
-- `T_LeidaProps`, `LeidaRoutePath`, email payload/response types
+- `T_NXProps`, `NXRoutePath`, email payload/response types
 - `T_Config`, `T_Theme`, `T_Frontmatter`, nav interfaces
 - `I_NX`, `I_DesignSystem`, `I_MakeRes`, and severity enums
 

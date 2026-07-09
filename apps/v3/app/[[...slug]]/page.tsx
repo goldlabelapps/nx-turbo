@@ -5,11 +5,11 @@ import {
     getTenant,
     getMeta,
 } from '../NX/lib/index.server';
-import {Leida} from '../Leida'
+import {NX} from '../NX'
 
 export default async function Page(props: any) {   
 
-    const config = getTenant('askleida');
+    const config = getTenant('asknx');
 
-    return <Leida config={config} />;
+    return <NX config={config} />;
 }

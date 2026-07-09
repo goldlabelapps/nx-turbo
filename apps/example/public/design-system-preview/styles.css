@@ -1,5 +1,5 @@
 /* ============================================================
-   Leida Design System, global entry point
+   NX Design System, global entry point
    Consumers link THIS file. It only @imports; no rules live here.
    ============================================================ */
 @import "tokens/fonts.css";

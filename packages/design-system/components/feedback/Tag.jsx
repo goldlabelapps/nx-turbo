@@ -3,19 +3,19 @@ import React from "react";
 const VARIANTS = {
   frost: {
     background: "rgba(255,255,255,0.72)",
-    color: "var(--leida-ink)",
+    color: "var(--nx-ink)",
     boxShadow: "0 6px 18px rgba(40,34,28,0.12)",
     backdropFilter: "var(--blur-chip)",
     WebkitBackdropFilter: "var(--blur-chip)",
   },
   clay: {
-    background: "var(--leida-clay)",
-    color: "var(--leida-parchment)",
+    background: "var(--nx-clay)",
+    color: "var(--nx-parchment)",
   },
   outline: {
     background: "transparent",
-    color: "var(--leida-ink)",
-    border: "1px solid var(--leida-line)",
+    color: "var(--nx-ink)",
+    border: "1px solid var(--nx-line)",
   },
 };
 

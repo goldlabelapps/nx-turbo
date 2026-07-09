@@ -1,7 +1,7 @@
 import React from "react";
 
 /**
- * The Leida pill button - mono, uppercase, wide-tracked, lifts on hover.
+ * The NX pill button - mono, uppercase, wide-tracked, lifts on hover.
  *
  * @startingPoint section="Forms" subtitle="Pill button - primary / ghost / quiet" viewport="360x120"
  */

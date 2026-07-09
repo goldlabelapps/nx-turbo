@@ -1,8 +1,8 @@
 import React from "react";
 
 const TONES = {
-  ink: { background: "var(--leida-ink)", color: "var(--leida-parchment)" },
-  clay: { background: "var(--leida-clay)", color: "var(--leida-parchment)" },
+  ink: { background: "var(--nx-ink)", color: "var(--nx-parchment)" },
+  clay: { background: "var(--nx-clay)", color: "var(--nx-parchment)" },
 };
 
 /**

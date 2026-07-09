@@ -1,7 +1,7 @@
 {
-  "name": "@leida/ui",
+  "name": "@nx/ui",
   "version": "1.0.0",
-  "description": "Leida UI: Material-UI theme and component overrides",
+  "description": "NX UI: Material-UI theme and component overrides",
   "private": false,
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -30,7 +30,7 @@
     "react-dom": "^18.0.0"
   },
   "dependencies": {
-    "@leida/design-system": "workspace:*"
+    "@nx/design-system": "workspace:*"
   },
   "devDependencies": {
     "@mui/material": "^5.14.0",

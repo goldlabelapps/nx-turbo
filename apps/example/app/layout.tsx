@@ -3,7 +3,7 @@
 import { CacheProvider } from '@emotion/react';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { theme } from '@leida/ui';
+import { theme } from '@nx/ui';
 import { ReactNode } from 'react';
 import createEmotionCache from './createEmotionCache';
 

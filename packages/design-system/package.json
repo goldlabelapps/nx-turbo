@@ -1,7 +1,7 @@
 {
-  "name": "@leida/design-system",
+  "name": "@nx/design-system",
   "version": "1.0.0",
-  "description": "Leida Design System: tokens, components, guidelines, and templates",
+  "description": "NX Design System: tokens, components, guidelines, and templates",
   "private": false,
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

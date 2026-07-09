@@ -1,0 +1,153 @@
+﻿Title,Category,Chris Notes,Code,Done When,Phase,Status,Story
+Sign Up,Auth,,AUTH 01,"• Practitioner can sign up with email and password
+• Confirmation email is sent
+• Practitioner is directed to onboarding flow on first login
+• Error states handled — duplicate email, weak password",Phase 1,Not started,"As a practitioner, I want to create an account using my email address and a password, so that I can access NX securely from any device."
+Log In,Auth,,AUTH 02,"• Practitioner can log in with email and password
+• Failed login shows a clear error message
+• Session persists so they don't have to log in every time on the same device",Phase 1,Not started,"As a practitioner, I want to log in to my existing account, so that I can access my clients, products and recommendations."
+Clinic Profile Setup,Onboarding,,ONBOARD 01,"Exact onboarding flow needs to be decided.
+• Practitioner enters clinic name, their name and email
+• Logo upload available during onboarding
+• Logo appears at the top of generated PDFs
+• Profile saved and editable after onboarding",Phase 1,Not started,"As a new practitioner, I want to set up my clinic profile during onboarding, including uploading my logo, so that my client recommendations are presented professionally under my clinic's identity."
+First Recommendation for Self,Onboarding,,ONBOARD 03,"• Onboarding guides practitioner to create a recommendation using their own skin profile
+• PDF preview shown before onboarding completes
+• Practitioner can download or share the PDF
+• Onboarding marked complete after this step",Phase 1,Not started,"As a new practitioner, I want to build my first recommendation for myself during onboarding, so that I experience exactly what my clients will receive before I use NX with a real client."
+Forgot Password,Auth,,AUTH 03,"• Forgot password link on login screen
+• Reset email sent within 60 seconds
+• Password successfully updated and practitioner can log in with new password
+I would love to keep the team as lean as possible to be reticent of where we can reduce the need for real-human customer service.",Phase 1,Not started,"As a practitioner, I want to reset my password if I've forgotten it, so that I can regain access to my account without contacting support."
+Add First Products,Onboarding,,ONBOARD 02,"• Onboarding prompts practitioner to add minimum 4 products
+• Products saved to their database
+• Cannot skip this step — it is the gateway to the wow moment
+• Progress indicator shows where they are in onboarding",Phase 1,Not started,"As a new practitioner, I want to add at least four products to my database during onboarding, so that I have enough to build my first recommendation and experience NX's value immediately."
+"Search Product Database ",Products,,PROD 01,"• Search bar available on the product screen
+• Results appear as practitioner types (minimum 2 characters)
+• Results show product name, brand and an image where available
+  • ‘Add to database’ option (simple plus sign?) appears next to products that aren't in practitioner database.
+  • Option to also open product card and have a closer look at all the details. ‘Add to my database’ somewhere obvious within the product card. 
+• Search works on product name & brand name",Phase 1,Not started,"As a practitioner, I want to search for a product by name or brand so that I can quickly find it in the master database without scrolling through a long list and add it to my personal database."
+Add Product from Master Database,Products,,PROD 02,"• Practitioner can tap a search result and add it to their database in one action
+• Product appears in their product list immediately
+• Duplicate products not added — if already saved, show that it is
+• Works correctly on iPhone (keyboard does not obscure the dropdown)",Phase 1,Not started,"As a practitioner, I want to select a product from the master database and save it to my personal product list, so that it's available for me to include in future recommendations."
+Add Product Manually (Not in Master Database yet),Products,,PROD 03,"• Manual add option available if search returns no results or practitioner selects it
+• Required fields: product name, brand, category (cleanse / treat / moisturise / SPF / other) Auto capitalise first letter.
+• Optional fields: description, how to apply, contraindications, price, link, image (need to think about what fields would be required in order to best produce recommendation each time)
+• Product saved to their personal database only and available for recommendations",Phase 1,Not started,"As a practitioner, I want to add a product that isn't in the master database by entering the details myself, so that I can include any product I use."
+View and Edit My Products,Products,,PROD 04,"• Product list shows all saved products, sortable by category or brand
+• Tapping a product opens the full detail view
+• Practitioner can edit any field (TBC)
+• Changes save immediately with confirmation
+  • When a Practitioner edits a product it does not alter the Master Database",Phase 1,Not started,"As a practitioner, I want to view all the products in my database and edit their details, so that I can keep my product information accurate and up to date."
+Remove a Product,Products,,PROD 05,"• Delete option available on each product
+• Confirmation step before deletion — cannot be undone, but can be readied if they change their mind
+• Product removed from list immediately
+• Does not affect existing recommendations that already used this product",Phase 1,Not started,"As a practitioner, I want to remove a product from my database, so that my product list only contains products I currently use and recommend."
+Add a New Client,Clients,,CLIENT 01,"• New client form collects: name, skin type, skin concerns (multi-select from predefined list) (fields TBC)
+• Client saved and appears in client list
+• No duplicate clients with the same name and email",Phase 1,Not started,"As a practitioner, I want to add a new client with their name and basic skin information, so that I can build personalised recommendations for them."
+View Client Profile,Clients,,CLIENT 02,"• Client profile shows: name, skin type, concerns, notes, all previous recommendations in date order
+• Previous recommendations are viewable in full
+• Profile is quick to load on mobile",Phase 1,Not started,"As a practitioner, I want to view a client's profile including their skin details and recommendation history, so that I have full context before their appointment and can track their progress over time."
+Edit Client Details,Clients,,CLIENT 03,"  • There should be two boxes for client notes, one which NX uses when writing the PDF copy to make it more personalised & one that is just for the practitioner to look at, must NOT be used by the Claude API.
+• All client fields editable after creation
+• Changes saved immediately
+• Edit history not required at this stage
+• Practitioner can upload a client photo which displays on their profile
+• A personal notes field available for conversational context not used by NX
+• A skin-relevant events field available for upcoming occasions or life changes that NX can reference when generating recommendations
+• Skin-relevant events field is passed to the AI as context during recommendation generation",Phase 1,Not started,"As a practitioner, I want to update a client's skin profile as their skin changes, so that future recommendations always reflect their current skin condition. Also edit & add new context about the client such as children's names or future events. "
+Search for a Client,Clients,,CLIENT 04,"• Search bar on client list screen
+• Results appear as practitioner types
+• Works correctly when client list is large",Phase 1,Not started,"As a practitioner, I want to search for a client by name, so that I can find them quickly without scrolling through my entire client list."
+Start a New Recommendation,Recommendations,,REC 01,"• New recommendation button clearly visible on client profile
+• Client's skin type and concerns pre-populated into the recommendation
+• Practitioner taken to product selection step
+  • Need to decide whether NX should suggest products in their database that suit the clients skin type & condition, but I’m leaning towards its safer not to, as we want to stay very clear from the AI ‘recommending’ products and this may be a grey area.",Phase 1,Not started,"As a practitioner, I want to start a new recommendation for a client from their profile, so that the recommendation is automatically linked to the right person."
+Select Products for a Recommendation,Recommendations,,REC 02,"• Products displayed grouped by routine step
+• Products filtered by client's skin type and concerns by default
+• Practitioner can select multiple products per step
+• Practitioner can override the filter and add any product from their database
+• Selected products clearly shown with ability to remove before generating
+  • When selecting each product, there is an option for the Practitioner to add a note, eg, how often to use",Phase 1,Not started,"As a practitioner, I want to select products from my database for each step of the routine (cleanse, treat, moisturise, SPF), so that I can build a complete morning and evening routine for my client."
+Generate the Recommendation,"PDF, Recommendations",,REC 03,"• Generation triggered by a single button tap
+• Loading state shown with estimated time — should complete in under 30 seconds
+• Generated recommendation includes: personal opening note, product cards with images and descriptions, morning and evening routine, how to apply instructions, what to expect section 
+• Each section individually editable after generation
+• If generation fails, clear error message and option to retry",Phase 1,Not started,"As a practitioner, I want NX to generate the full recommendation document from the products and note I've provided, so that I receive a professional, personalised homecare plan in my voice without spending approx 19 minutes writing it myself."
+Preview the Recommendation,"PDF, Recommendations",,REC 04,"• Full preview shown after generation — matches the final PDF layout exactly
+• Practitioner can edit any section in preview
+• Cannot share until practitioner has seen the preview
+• Preview looks correct on iPhone screen
+  • It might be better to do the preview & edit each field option before the PDF is generated, TBD. It’s important for the Practitioner to be able to edit the AI generated parts too as the tone might be off. Note: Can the ai easily learn the practitioners tone from their edits? Or would this be a later addition? ",Phase 1,Not started,"As a practitioner, I want to preview the recommendation before sharing it with my client, so that I can check it is accurate, personal and professional before anything goes to the client."
+Generate and Download PDF,"PDF, Recommendations",,REC 05,"• Download PDF button on the preview screen
+• Example PDF for ‘Philippa’ is below this table, but note that this serves as the general structure, the design needs to be improved by the branding guy (Lee).
+• PDF includes: clinic name, date, client name, product cards with images and affiliate links, routine summary, tips section
+• PDF downloads to device quickly
+• PDF is correctly formatted. There should be a set of rules for things like amount of products per page, spacing, logo size and position etc, probably with hierarchy structure. ",Phase 1,Not started,"As a practitioner, I want to download the recommendation as a beautifully designed PDF, so that I can share it with my client via WhatsApp, email or any other channel."
+View Recommendation History,Recommendations,,REC 06,"• Recommendation history visible on client profile
+• Each recommendation shows date created and summary of products
+• Full recommendation viewable by tapping
+• Previous PDFs can be re-downloaded & shared",Phase 1,Not started,"As a practitioner, I want to view all recommendations I have previously created for a client, so that I can track what has been recommended over time and avoid repeating myself."
+Free Trial and Subscribe via Stripe,Payments,,PAY 01,"  • 14 day free trial available on sign up — no credit card required
+• Trial period clearly communicated during onboarding — day count visible in the app
+• On day 15 Stripe automatically charges the chosen tier — practitioner is prompted to select tier and add card before trial ends
+• Reminder notification sent at day 10 — 4 days remaining on your trial
+• Reminder notification sent at day 13 — your trial ends tomorrow
+• If practitioner adds card and selects tier before day 15 — subscription activates immediately
+• If practitioner does not add card by day 15 — access pauses, not deleted. Data retained. Clear prompt to reactivate.
+• Founding Member (£29), Standard (£39) and Unlimited (£59) tiers available at conversion (TBC)
+• Failed payment shows clear error with option to retry
+• Practitioner receives confirmation email on subscription activation",Phase 1,Not started,"As a practitioner, I want to try NX free for 14 days without entering my card details, so that I can experience the full product before committing to a subscription."
+Manage Subscription,Payments,,PAY 02,"• Subscription details visible in account settings
+• Practitioner can update payment method
+• Cancellation option available — cancels at end of current billing period, not immediately
+• Cancelled accounts retain read access to existing recommendations (TBD)",Phase 1,Not started,"As a practitioner, I want to view and manage my subscription, so that I can see when I am billed, update my card details, or cancel if needed."
+Affiliate Links in PDF,"PDF, Recommendations",,REC 07,"  • Affiliate links pulled from Awin product data feed for supported retailers
+  • Links display as retailer name in the PDF — for example LOOKFANTASTIC, Cult Beauty
+  • Links are tracked via NX's Awin affiliate account — commission goes to NX not the practitioner
+  • Links open correctly in browser
+  • Where no affiliate link is available product is shown without a link — does not error
+  • Affiliate disclosure statement included in PDF footer as required by Awin terms & law
+  • Practitioner is not shown commission data — this is internal to NX only",Phase 1,Not started,"As a practitioner, I want the products in my client's PDF to include clickable purchase links where available, so that my clients can easily buy the products I have recommended directly from trusted retailers."
+Add Product (Product cannot be found in Affiliate database),Products,,PROD 02b,"  • When a search returns no results NX automatically queries external sources including the Awin product data feed 
+  • A suggested product card appears with name, brand, image, description and category pre-populated from the external source
+  • Practitioner sees two clear options — confirm (yes that's the one) or reject (no try again)
+  • Confirmed products are added to the practitioner's personal list immediately
+  • Confirmed products are also added to the master database simultaneously so other practitioners can find them in future
+  • Duplicate detection prevents the same product being added twice — unique identifier used is the Awin product ID or EAN barcode rather than product name (?)
+  • If Awin returns no result the practitioner is directed to PROD-03 manual entry
+  • Product is marked as ‘verified’ in the database to distinguish it from manually entered products",Phase 1,Not started,"As a practitioner, I want NX to automatically find and suggest a product when it doesn't appear in the master database, so that I can add it quickly without entering all the details manually."
+Referral Dashboard,Referrals,,REF 01,"  • Practitioner has a unique referral link available in their account
+• Referral link can be copied and shared via WhatsApp, email or any channel
+• Dashboard shows number of referrals sent, number who signed up for trial, number who converted to paid
+• Practitioner receives one free month of their current tier for every referral who converts to a paid subscription
+• Free month applied automatically to next billing cycle — no manual action required (is this possible?)
+• Practitioner notified when a referral converts — ""someone you referred just joined NX""
+• Free months stack — referring three people gives three free months
+• Referral attribution tracked for 30 days — if someone signs up within 30 days of clicking the link it counts",Phase 1,Not started,"As a practitioner, I want to share a unique referral link with colleagues and track how many have signed up through my recommendation, so that I am rewarded for helping NX grow."
+Edit Skincare Tips in Database,"PDF, Recommendations, Tips",,TIPS 01,"  • Practitioner can access a tips library within their account settings
+• Default tips provided by NX as a starting point
+• Practitioner can edit any default tip
+• Practitioner can add new custom tips
+• Practitioner can delete tips they do not want to use
+• Tips are categorised
+• Edited tips appear in future recommendations automatically
+• Changes do not affect previously generated recommendations",Phase 1,Not started,"As a practitioner, I want to edit the tips and aftercare advice that appear in my client recommendations, so that the guidance reflects my professional approach and the way I communicate with my clients."
+,,,,,Phase 1,,
+Add Treatment Notes,"Clients, Recommendations",,REC 08,"  • Treatment notes field available within the recommendation builder flow before generation
+  • Treatment notes also accessible and editable via the client profile
+  • Field accepts free text
+  • Treatment notes build a picture of the client’s skincare journey - part of the proprietary data and creates further stickiness due to AI learning mechanism
+  • Treatment notes saved to client history and visible on their profile
+  • Treatment notes contribute to the compliance documentation trail
+  • Date and treatment type timestamped automatically",Phase 1,Not started,"As a practitioner, I want to record what treatment a client received during their appointment, so that NX can factor this into the recommendation and I have a documented record for compliance purposes."
+Add New Client from Recommendation Flow,"Clients, Recommendations",,CLIENT 05,"  • Option to add new client at the start of the recommendation flow
+• Minimum fields required at this stage — name and basic skin type only
+• Full profile can be completed later from the client profile page
+• New client saved and linked to the recommendation being built
+• Practitioner returned to recommendation flow immediately after adding client details
+• No duplicate clients created if client already exists — search checks existing clients first, with option to ‘add new client’",Phase 1,Not started,"As a practitioner, I want to add a new client directly from the start a recommendation button, so that I can begin building their recommendation immediately without navigating away to create their profile first."

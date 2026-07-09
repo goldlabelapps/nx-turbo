@@ -1,13 +1,13 @@
 import React from "react";
 
 const TONES = {
-  clay: "var(--leida-clay)",
-  ink: "var(--leida-ink)",
-  muted: "var(--leida-muted)",
+  clay: "var(--nx-clay)",
+  ink: "var(--nx-ink)",
+  muted: "var(--nx-muted)",
 };
 
 /**
- * A mono, all-caps, wide-tracked label - Leida's signature "eyebrow".
+ * A mono, all-caps, wide-tracked label - NX's signature "eyebrow".
  */
 export function Eyebrow({ children, tone = "clay", as = "block", style, ...rest }) {
   return (

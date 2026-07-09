@@ -1,10 +1,10 @@
 import React from "react";
 
 /**
- * The Leida logo - editorial italic wordmark with the sparkle over the i,
+ * The NX logo - editorial italic wordmark with the sparkle over the i,
  * or the sparkle alone.
  *
- * @startingPoint section="Brand" subtitle="Leida logo lockup" viewport="360x120"
+ * @startingPoint section="Brand" subtitle="NX logo lockup" viewport="360x120"
  */
 export function Logo(props: LogoProps): JSX.Element;
 

@@ -37,7 +37,7 @@
 - API helpers and route responses (`makeRes`, `makeTime`, `getEndpoints`, `/api` root route)
 - Server markdown/navigation resolution (`serverUseMDBySlug`, `serverUseNav`, `serverUseAllMd`, `serverUseSlugs`, `serverUseRelated`)
 - Redux and client actions (`setDesignSystem`, `navigateTo`, `setFlash`, paywall actions)
-- UI integration (`Nav` theme toggle, `ShareVirus`, Leida routing, NX bootstrap)
+- UI integration (`Nav` theme toggle, `ShareVirus`, NX routing, NX bootstrap)
 - Utility modules (`createSlug`, `militaryTime`, `makeIdentity`, `ageFromDoB`)
 
 ## Notes

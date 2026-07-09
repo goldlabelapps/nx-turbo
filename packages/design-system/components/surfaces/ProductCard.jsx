@@ -40,7 +40,7 @@ export function ProductCard({
           <img src={image} alt={name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         ) : (
           image || (
-            <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--leida-muted)" }}>
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--nx-muted)" }}>
               Product photo
             </span>
           )
@@ -48,21 +48,21 @@ export function ProductCard({
       </div>
       <div style={{ padding: "18px 8px 4px", display: "flex", flexDirection: "column", flex: 1 }}>
         {step ? (
-          <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.66rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--leida-clay)" }}>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.66rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--nx-clay)" }}>
             {step}
           </span>
         ) : null}
-        <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.6rem", lineHeight: 1.05, color: "var(--leida-ink)", margin: "9px 0 4px" }}>
+        <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.6rem", lineHeight: 1.05, color: "var(--nx-ink)", margin: "9px 0 4px" }}>
           {name}
         </span>
         {brand ? (
-          <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.72rem", letterSpacing: "0.04em", textTransform: "uppercase", color: "var(--leida-muted)" }}>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.72rem", letterSpacing: "0.04em", textTransform: "uppercase", color: "var(--nx-muted)" }}>
             {brand}
           </span>
         ) : null}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "16px" }}>
           {price ? (
-            <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.95rem", color: "var(--leida-ink)" }}>{price}</span>
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.95rem", color: "var(--nx-ink)" }}>{price}</span>
           ) : <span />}
           <button
             onClick={onBuy}
@@ -71,7 +71,7 @@ export function ProductCard({
               fontSize: "0.68rem",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
-              color: "var(--leida-ink)",
+              color: "var(--nx-ink)",
               background: "transparent",
               border: "1px solid rgba(40,34,28,0.28)",
               borderRadius: "30px",

@@ -15,7 +15,7 @@
 
 ## Purpose
 
-This UI kit models the public `leida.app` landing page for solo skin therapists.
+This UI kit models the public `nx.app` landing page for solo skin therapists.
 
 ## Composition
 

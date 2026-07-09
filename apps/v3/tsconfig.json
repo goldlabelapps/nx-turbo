@@ -21,8 +21,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@leida/design-system": ["../../packages/design-system"],
-      "@leida/design-system/*": ["../../packages/design-system/*"]
+      "@nx/design-system": ["../../packages/design-system"],
+      "@nx/design-system/*": ["../../packages/design-system/*"]
     }
   },
   "include": [

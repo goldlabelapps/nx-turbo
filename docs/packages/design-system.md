@@ -15,7 +15,7 @@
 
 ## Purpose
 
-The Leida design system provides tokens, brand assets, reusable components, and UI kits.
+The NX design system provides tokens, brand assets, reusable components, and UI kits.
 
 ## Core Structure
 

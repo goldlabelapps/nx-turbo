@@ -1,4 +1,4 @@
-The base Leida surface, soft, generously rounded (26px). Paper, frosted glass, tile, or ink.
+The base NX surface, soft, generously rounded (26px). Paper, frosted glass, tile, or ink.
 
 ```jsx
 <Card>Default paper card</Card>

@@ -16,7 +16,7 @@
 NX° turborepo implementation
 
 - [Home](docs/README.md)
-- [Leida Guide](docs/leida.md)
+- [NX Guide](docs/nx.md)
 - [NX Guide](docs/nx.md)
 - [API + TypeScript Guide](docs/api-typescript.md)
 - [Testing Guide](docs/testing.md)

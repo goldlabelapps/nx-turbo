@@ -1,4 +1,4 @@
-export { default as NX } from './NX';
+export { default as NX } from './LegacyNXApp';
 export { default as Auth } from './Auth/Theme';
 export { default as Clients } from './Clients/Clients';
 export { default as Products } from './Products/Products';

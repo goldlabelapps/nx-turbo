@@ -23,4 +23,4 @@ NX uses Jest with Testing Library and keeps tests under `tests/`.
 - `tests/jest.setup.ts` loads `jest-dom` and browser shims
 - the alias `@/` maps to the repository root
 
-Run the suite with `yarn test`.
+Run the suite with `pnpm --filter ./apps/nx.goldlabel.pro test`.

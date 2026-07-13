@@ -10,6 +10,7 @@ declare global {
 import React, { useRef, useEffect } from 'react';
 import { Button } from '@mui/material';
 import { DesignSystem, Icon } from '../../../../app/NX/DesignSystem';
+import { normalizeTenant } from '../../../../app/NX/lib/normalizeTenant';
 import {
     Flash,
     MovieClip,
@@ -21,7 +22,7 @@ export const ShareVirus: React.FC<{
     is404?: boolean;
 }> = ({ config, is404 }) => {
 
-    const tenant = config?.tenant || process.env.NEXT_PUBLIC_TENANT || 'nx';
+    const tenant = normalizeTenant(config?.tenant);
     const theme = config?.cartridges?.designSystem?.themes?.light;
     const [replay, setReplay] = React.useState(0);
     const logoRef = useRef<HTMLImageElement>(null);

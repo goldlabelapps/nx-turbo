@@ -28,6 +28,7 @@ export type T_Email = {
 
 export type T_Tenant = 'my-tenant' |
     'new-tenant' |
+    'free' |
     'nx' |
     'nhtfs'
 ;

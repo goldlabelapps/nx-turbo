@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { normalizeTenant } from '../normalizeTenant';
 
 /**
  * Recursively finds a markdown file by its slug array.
@@ -9,9 +10,7 @@ import matter from "gray-matter";
  * @returns The file path if found, otherwise null
  */
 export function serverUseMDBySlug(slugArr: string[] = [], project: string = "nx"): string | null {
-    if (!project) {
-        project = process.env.NEXT_PUBLIC_TENANT || "nx";
-    }
+    project = normalizeTenant(project);
     // Remove trailing empty strings from slugArr
     let normalizedSlugArr = Array.isArray(slugArr) ? [...slugArr] : [];
     while (normalizedSlugArr.length > 1 && normalizedSlugArr[normalizedSlugArr.length - 1] === "") {

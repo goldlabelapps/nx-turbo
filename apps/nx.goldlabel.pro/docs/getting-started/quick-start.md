@@ -23,7 +23,7 @@ pnpm install
 ## Run the development server
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 The app runs at [http://localhost:1999](http://localhost:1999).

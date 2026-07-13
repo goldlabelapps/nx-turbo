@@ -15,4 +15,12 @@ describe('getTenant', () => {
     expect(result.tenant).toBe('nx');
     expect(result.config?.siteName).toBeTruthy();
   });
+
+  it('maps legacy free tenant to nx', () => {
+    const result = getTenant('free');
+
+    expect(result.tenant).toBe('nx');
+    expect(result.markdownDir.endsWith('/public/nx/markdown')).toBe(true);
+    expect(result.config?.tenant).toBe('nx');
+  });
 });

@@ -3,8 +3,9 @@ import type { Metadata } from "next";
 import fs from 'fs';
 import path from 'path';
 import { UbereduxProvider } from './NX/Uberedux';
+import { normalizeTenant } from './NX/lib/normalizeTenant';
 
-const tenant = process.env.NEXT_PUBLIC_TENANT || "nx";
+const tenant = normalizeTenant();
 const configPath = path.join(process.cwd(), 'public', tenant, 'config.json');
 const configRaw = fs.readFileSync(configPath, 'utf-8');
 const config = JSON.parse(configRaw);

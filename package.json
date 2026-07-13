@@ -1,7 +1,7 @@
 {
   "name": "nx-turbo",
   "version": "1.0.1",
-  "packageManager": "pnpm@8.15.0",
+  "packageManager": "pnpm@10.12.4",
   "private": true,
   "scripts": {
     "dev": "turbo run dev",

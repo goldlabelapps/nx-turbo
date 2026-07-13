@@ -60,17 +60,17 @@ describe('ShareVirus logic', () => {
     process.env.NEXT_PUBLIC_TENANT = originalTenant;
   });
 
-  it('uses free tenant logo by default', () => {
+  it('uses nx tenant logo by default', () => {
     process.env.NEXT_PUBLIC_TENANT = '';
     render(<ShareVirus />);
 
-    expect(screen.getByTestId('nx-logo')).toHaveAttribute('data-svg-src', '/free/svg/NXLogo.svg');
+    expect(screen.getByTestId('nx-logo')).toHaveAttribute('data-svg-src', '/nx/svg/NXLogo.svg');
   });
 
   it('uses 404 logo variant when is404 is true', () => {
-    render(<ShareVirus config={{ tenant: 'free' }} is404 />);
+    render(<ShareVirus config={{ tenant: 'nx' }} is404 />);
 
-    expect(screen.getByTestId('nx-logo')).toHaveAttribute('data-svg-src', '/free/svg/NXLogo404.svg');
+    expect(screen.getByTestId('nx-logo')).toHaveAttribute('data-svg-src', '/nx/svg/NXLogo404.svg');
   });
 
   it('uses tenant-specific logo path when tenant is provided', () => {
@@ -80,7 +80,7 @@ describe('ShareVirus logic', () => {
   });
 
   it('initializes and destroys animation lifecycle hooks', () => {
-    const { unmount } = render(<ShareVirus config={{ tenant: 'free' }} />);
+    const { unmount } = render(<ShareVirus config={{ tenant: 'nx' }} />);
 
     expect(initMock).toHaveBeenCalled();
 

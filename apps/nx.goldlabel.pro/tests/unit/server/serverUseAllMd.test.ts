@@ -1,8 +1,8 @@
 import { serverUseAllMd } from '@/app/NX/lib/serverHooks/serverUseAllMd';
 
 describe('server/serverUseAllMd', () => {
-  it('returns root slug and nested slugs for free tenant markdown', () => {
-    const slugs = serverUseAllMd(undefined, 'free');
+  it('returns root slug and nested slugs for nx tenant markdown', () => {
+    const slugs = serverUseAllMd(undefined, 'nx');
 
     expect(Array.isArray(slugs)).toBe(true);
     expect(slugs.length).toBeGreaterThan(0);
@@ -11,7 +11,7 @@ describe('server/serverUseAllMd', () => {
   });
 
   it('returns empty array for missing directory', () => {
-    const slugs = serverUseAllMd('public/does-not-exist', 'free');
+    const slugs = serverUseAllMd('public/does-not-exist', 'nx');
     expect(slugs).toEqual([]);
   });
 });

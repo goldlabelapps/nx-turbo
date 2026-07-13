@@ -5,12 +5,12 @@ import matter from "gray-matter";
 /**
  * Finds markdown files by a comma-separated list of slugs and returns their content objects.
  * @param slugs Comma-separated string or array of slugs
- * @param project Project name (default: "free")
+ * @param project Project name (default: "nx")
  * @returns Array of content objects for each slug
  */
-export function serverUseSlugs(slugs: string[] | string = [], project: string = "free"): any[] {
+export function serverUseSlugs(slugs: string[] | string = [], project: string = "nx"): any[] {
     if (!project) {
-        project = process.env.NEXT_PUBLIC_TENANT || "free";
+        project = process.env.NEXT_PUBLIC_TENANT || "nx";
     }
     // Normalize slugs to array
     let slugArr: string[] = [];

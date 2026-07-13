@@ -29,7 +29,7 @@ import { ShareVirus } from '../../public/shared/flash';
 export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
     const resolvedParams = typeof params.then === 'function' ? await params : params;
     const slugArr = resolvedParams?.slug || [];
-    const tenant = process.env.NEXT_PUBLIC_TENANT || "free";
+    const tenant = process.env.NEXT_PUBLIC_TENANT || "nx";
     const { config } = getTenant(tenant as T_Tenant);
     const filePath = serverUseMDBySlug(slugArr, tenant);
     let url = config.url || "";
@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
 }
 
 export async function generateStaticParams() {
-    const tenant = process.env.NEXT_PUBLIC_TENANT || "free";
+    const tenant = process.env.NEXT_PUBLIC_TENANT || "nx";
     const { markdownDir } = getTenant(tenant as T_Tenant);
     let allSlugs = serverUseAllMd(markdownDir, tenant);
     return allSlugs.map((slugArr) => {
@@ -74,7 +74,7 @@ export default async function Page(props: any) {
     const resolvedParams = typeof params?.then === 'function' ? await params : params;
     let slugArr = resolvedParams?.slug || [];
     while (slugArr.length > 1 && slugArr[slugArr.length - 1] === "") slugArr.pop();
-    const tenant = process.env.NEXT_PUBLIC_TENANT || "free";
+    const tenant = process.env.NEXT_PUBLIC_TENANT || "nx";
     const { config: rawConfig } = getTenant(tenant as T_Tenant);
     const config = { ...rawConfig, tenant: tenant as T_Tenant };
     const filePath = serverUseMDBySlug(slugArr, tenant);

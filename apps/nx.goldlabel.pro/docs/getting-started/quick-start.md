@@ -11,7 +11,7 @@ cd nx
 
 ```bash
 cp .env.example .env.local
-# Set NEXT_PUBLIC_TENANT=free
+# Set NEXT_PUBLIC_TENANT=nx
 ```
 
 ## Install dependencies

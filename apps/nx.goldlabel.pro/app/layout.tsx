@@ -4,7 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import { UbereduxProvider } from './NX/Uberedux';
 
-const tenant = process.env.NEXT_PUBLIC_TENANT || "free";
+const tenant = process.env.NEXT_PUBLIC_TENANT || "nx";
 const configPath = path.join(process.cwd(), 'public', tenant, 'config.json');
 const configRaw = fs.readFileSync(configPath, 'utf-8');
 const config = JSON.parse(configRaw);

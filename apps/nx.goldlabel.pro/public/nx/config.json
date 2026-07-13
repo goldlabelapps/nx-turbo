@@ -1,20 +1,20 @@
 {
-    "tenant": "free",
+    "tenant": "nx",
     "siteName": "NX° Turbo",
     "description": "Open Source & Free",
-    "url": "https://free.goldlabel.pro",
+    "url": "https://nx.goldlabel.pro",
     "owner": {
         "name": "NX°",
         "email": "nx@goldlabel.pro"
     },
-    "favicon": "/free/png/favicon.png",
+    "favicon": "/nx/png/favicon.png",
     "avatars": {
-        "light": "/free/svg/avatarLight.svg",
-        "dark": "/free/svg/avatarDark.svg"
+        "light": "/nx/svg/avatarLight.svg",
+        "dark": "/nx/svg/avatarDark.svg"
     },
     "images": {
-        "light": "/free/png/apps.png",
-        "dark": "/free/png/apps.png"
+        "light": "/nx/png/apps.png",
+        "dark": "/nx/png/apps.png"
     },
     "cartridges": {
         "paywall": {

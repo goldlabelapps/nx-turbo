@@ -27,7 +27,7 @@ function HiddenMessageInner({
 }: {
   slug?: string;
 }) {
-  const tenant = process.env.NEXT_PUBLIC_TENANT || 'free';
+  const tenant = process.env.NEXT_PUBLIC_TENANT || 'nx';
   const [hiddenMessages, setHiddenMessages] = React.useState<HiddenMessageItem[]>([]);
   const searchParams = useSearchParams();
   const querySlug = searchParams.get('slug');

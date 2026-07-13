@@ -14,7 +14,7 @@ export interface NavItem {
 }
 
 async function getMarkdownRoot() {
-    const project = process.env.NEXT_PUBLIC_TENANT || "free";
+    const project = process.env.NEXT_PUBLIC_TENANT || "nx";
     return path.join(process.cwd(), `public/${project}/markdown`);
 }
 
@@ -90,7 +90,7 @@ function buildNavTree(dir: string, baseUrl: string): NavItem[] {
 }
 
 export async function serverUseNav(): Promise<NavItem[]> {
-    const tenant = process.env.NEXT_PUBLIC_TENANT || "free";
+    const tenant = process.env.NEXT_PUBLIC_TENANT || "nx";
     const markdownRoot = await getMarkdownRoot();
     const baseUrl = `/${tenant}/markdown`;
     return buildNavTree(markdownRoot, baseUrl);

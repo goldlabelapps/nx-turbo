@@ -14,7 +14,7 @@ describe('getMeta', () => {
     const meta = getMeta({
       title: 'Custom Title',
       description: 'Custom Description',
-      image: '/free/png/python.png',
+      image: '/nx/png/python.png',
       url: 'https://example.com/custom',
       siteName: 'Custom Site',
     });
@@ -23,6 +23,6 @@ describe('getMeta', () => {
     expect(meta.description).toBe('Custom Description');
     expect(meta.openGraph.siteName).toBe('Custom Site');
     expect(meta.openGraph.url).toBe('https://example.com/custom');
-    expect(meta.twitter.images).toContain('/free/png/python.png');
+    expect(meta.twitter.images).toContain('/nx/png/python.png');
   });
 });

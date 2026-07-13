@@ -5,6 +5,7 @@ title: NX°
 description: Open Source & Free
 tags: NX, free, framework, fullstack, Multi-tenant, Tenant, JavaScript, Vanilla JavaScript, TypeScript, React, Material UI, Flash, Server Side JavaScript, Node, NextJS, Headless CMS
 icon: ai
+image: https://live.staticflickr.com/65535/55389698357_c019ec2039_b.jpg
 ---
 
 NX° is a high-level framework for rapidly bootstrapping modern PWAs. Built on modular JavaScript and NextJS, it streamlines fullstack development for both server-side Node and client-side React—so you can launch new web apps fast, without starting from scratch.

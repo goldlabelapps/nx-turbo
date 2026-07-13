@@ -21,7 +21,7 @@ export const ShareVirus: React.FC<{
     is404?: boolean;
 }> = ({ config, is404 }) => {
 
-    const tenant = config?.tenant || process.env.NEXT_PUBLIC_TENANT || 'free';
+    const tenant = config?.tenant || process.env.NEXT_PUBLIC_TENANT || 'nx';
     const theme = config?.cartridges?.designSystem?.themes?.light;
     const [replay, setReplay] = React.useState(0);
     const logoRef = useRef<HTMLImageElement>(null);

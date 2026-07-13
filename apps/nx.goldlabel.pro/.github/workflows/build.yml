@@ -15,20 +15,24 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: yarn
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Enable Corepack
+        run: corepack enable
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Lint
-        run: yarn lint
+        run: pnpm --filter ./apps/nx.goldlabel.pro lint
 
       - name: Typecheck
-        run: yarn typecheck
+        run: pnpm --filter ./apps/nx.goldlabel.pro typecheck
 
       - name: Test
-        run: yarn test --runInBand
+        run: pnpm --filter ./apps/nx.goldlabel.pro test --runInBand
 
       - name: Build
-        run: yarn build
+        run: pnpm --filter ./apps/nx.goldlabel.pro build

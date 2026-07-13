@@ -2,6 +2,9 @@
   "name": "nx-turbo",
   "version": "1.0.1",
   "packageManager": "pnpm@10.12.4",
+  "engines": {
+    "node": ">=20 <23"
+  },
   "private": true,
   "scripts": {
     "dev": "turbo run dev",
@@ -10,6 +13,6 @@
     "type-check": "turbo run type-check"
   },
   "devDependencies": {
-    "turbo": "latest"
+    "turbo": "2.10.4"
   }
 }

@@ -1,6 +1,6 @@
 {
-  "name": "nx",
-  "version": "3.0.1",
+  "name": "free",
+  "version": "3.0.2",
   "scripts": {
     "dev": "pnpm run kill && rm -rf .next && next dev -p 1999 --webpack",
     "build": "next build --webpack",

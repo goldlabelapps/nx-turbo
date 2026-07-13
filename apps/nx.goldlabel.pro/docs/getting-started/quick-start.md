@@ -17,7 +17,7 @@ cp .env.example .env.local
 ## Install dependencies
 
 ```bash
-yarn install
+pnpm install
 ```
 
 ## Run the development server

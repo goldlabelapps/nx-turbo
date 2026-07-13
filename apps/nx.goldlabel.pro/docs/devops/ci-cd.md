@@ -14,7 +14,7 @@ It runs on every pull request against any branch and treats the repo like a fram
 
 1. checks out the repository
 2. sets up Node.js 20 with Yarn cache
-3. installs dependencies with `yarn install --frozen-lockfile`
+3. installs dependencies with `pnpm install --frozen-lockfile`
 4. runs `yarn lint`
 5. runs `yarn typecheck`
 6. runs `yarn test --runInBand`

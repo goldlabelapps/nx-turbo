@@ -1,8 +1,8 @@
 {
   "name": "nx-turbo",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "packageManager": "pnpm@8.15.0",
   "private": true,
-  "description": "Turborepo implementation of NX°",
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
@@ -11,6 +11,5 @@
   },
   "devDependencies": {
     "turbo": "latest"
-  },
-  "packageManager": "pnpm@8.15.0"
+  }
 }

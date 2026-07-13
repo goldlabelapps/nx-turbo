@@ -6,4 +6,4 @@ It is designed as an opinionated template for shipping modern web apps quickly: 
 
 The public repo is the framework itself. Clone it, configure a tenant, and use the NX runtime as a starting point for a branded Next.js application instead of assembling the stack from scratch.
 
-![NX](../public/shared/png/opengraph/apps.png)
+![NX](../../public/shared/png/opengraph/apps.png)

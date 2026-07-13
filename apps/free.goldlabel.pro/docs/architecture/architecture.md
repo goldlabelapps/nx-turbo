@@ -52,4 +52,4 @@ URL -> [[...slug]]/page.tsx
   -> rendered page
 ```
 
-For implementation detail, see [NX folders](nx-folders.md), [API](api.md), and [Testing](testing.md).
+For implementation detail, see [NX folders](nx-folders.md), [API](../devops/api.md), and [Testing](../devops/testing.md).

@@ -6,7 +6,7 @@ For larger changes, open an issue first so the approach can be discussed before 
 
 ## License
 
-This project is licensed under the MIT License. See [../LICENSE](../LICENSE).
+This project is licensed under the MIT License. See [../../LICENSE](../../LICENSE).
 
 ## Owner
 

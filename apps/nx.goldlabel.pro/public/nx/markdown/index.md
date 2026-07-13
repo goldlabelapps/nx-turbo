@@ -1,10 +1,10 @@
 ---
 order: 1 
 slug: /
-title: NX°
-description: Open Source & Free
-tags: NX, free, framework, fullstack, Multi-tenant, Tenant, JavaScript, Vanilla JavaScript, TypeScript, React, Material UI, Flash, Server Side JavaScript, Node, NextJS, Headless CMS
-icon: ai
+title: NX° Turbo
+description: Turbo Boost Your Stuff
+tags: NX°, free, framework, fullstack, JavaScript, Vanilla JavaScript, TypeScript, React, Material UI, Flash, SSG, Server Side JavaScript, Node, NextJS
+icon: rocket
 image: https://live.staticflickr.com/65535/55389698357_c019ec2039_b.jpg
 ---
 

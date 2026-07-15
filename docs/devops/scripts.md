@@ -1,5 +1,14 @@
 # Scripts
 
+## Monorepo root
+
+| Command | Description |
+| --- | --- |
+| `pnpm dev` | Start all JavaScript/TypeScript dev tasks via Turbo, excluding `apps/python` |
+| `pnpm run dev:all` | Start all dev tasks including `apps/python` |
+
+## NX app
+
 | Command | Description |
 | --- | --- |
 | `pnpm --filter ./apps/nx.goldlabel.pro dev` | Start the development server on port 1999 |

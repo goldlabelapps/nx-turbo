@@ -10,21 +10,6 @@ export interface I_MakeRes {
     other?: any;
 }
 
-export type T_Email = {
-    from: {
-        label: string;
-        email: string;
-    },
-    to: {
-        label: string;
-        email: string;
-    }
-    subject: string;
-    body: string; // Markdown or HTML content?  
-    template?: string;
-
-};
-
 
 export type T_Tenant = 'my-tenant' |
     'new-tenant' |
@@ -139,10 +124,6 @@ export interface I_NX {
     flash?: string;
 }
 
-export interface I_SmartImage {
-    smartImage?: T_SmartImage;
-}
-
 export type T_SmartImage = {
     src: string;
     meta?: {
@@ -164,59 +145,6 @@ export type T_Ad =
         affiliate?: string;
         target?: string;
     };
-
-export type T_CommerceFeature = {
-    enabled: boolean;
-    ads: boolean | T_Ad[];
-};
-
-export type T_CommerceShortcode = {
-    [key: string]: any;
-};
-
-// Lingua
-export type T_LinguaFeature = {
-    enabled: boolean;
-    defaultLanguage: string;
-    languages: {
-        [code: string]: {
-            name: string;
-            flag: string;
-        };
-    };
-};
-
-// EchoPay
-export type T_EchoPayFeature = Record<string, unknown>;
-
-// Uberedux
-export type T_UbereduxFeature = Record<string, unknown>;
-
-// DesignSystem
-export type T_DesignSystemFeature = {
-    allowTheme: boolean;
-    defaultTheme: string;
-    smartImages?: boolean | T_SmartImage[];
-    themes: {
-        [key: string]: {
-            mode: string;
-            primary: string;
-            secondary: string;
-            background: string;
-            paper: string;
-            border: string;
-            text: string;
-        };
-    };
-};
-
-// Images feature types
-export type T_ImagesFeature = {
-    enabled: boolean;
-    description?: string;
-    mode?: string;
-    flickr: T_FlickrImage[];
-};
 
 export type T_FlickrImage = {
     title: string;
@@ -260,14 +188,6 @@ export type T_Frontmatter = {
     hideInNav?: boolean | string;
 };
 
-export type T_Markdown = {
-    id: string;
-    published: boolean;
-    createdAt: string;
-    updatedAt: string;
-    frontmatter?: T_Frontmatter;
-};
-
 export interface I_Header {
     title: string;
     description?: string;
@@ -291,25 +211,6 @@ export interface I_DesignSystem {
     theme?: T_Theme;
     config?: T_Config;
     children: React.ReactNode;
-}
-
-export interface I_Terminal {
-    children: React.ReactNode;
-}
-
-
-export interface I_Paywall {
-    children: React.ReactNode;
-}
-
-export interface I_FeaturedImage {
-    frontmatter?: T_Frontmatter;
-    config?: T_Config;
-}
-
-export interface I_Ad {
-    frontmatter?: T_Frontmatter;
-    config?: T_Config;
 }
 
 export type I_Icon = {

@@ -1,17 +1,4 @@
-<div>
-	<h1 style="display: flex; align-items: center; gap: 8px;">
-				<a href="../README.md" target="_blank" rel="noreferrer" style="display: inline-flex; align-items: center;">
-		<img
-			src="./media/nx-icon.png"
-			width="24"
-			height="24"
-		/>
-		</a>
-		<span>NX° Turbo</span>
-	</h1>
-</div>
-
-### Docs
+# Documentation
 
 This folder is the canonical location for repository documentation.
 
@@ -22,7 +9,34 @@ This folder is the canonical location for repository documentation.
 - [Testing Guide](./testing.md)
 - [Theme Guide](./theme.md)
 
-## App Documentation
+## Getting Started
+
+- [Overview](./getting-started/overview.md)
+- [Quick Start](./getting-started/quick-start.md)
+- [Contributing](./getting-started/contributing.md)
+
+## Architecture
+
+- [Architecture](./architecture/architecture.md)
+- [Framework](./architecture/framework.md)
+- [Framework Core](./architecture/framework-core.md)
+- [NX Folders](./architecture/nx-folders.md)
+- [NX Lib](./architecture/nx-lib.md)
+- [Tech Stack](./architecture/tech-stack.md)
+
+## Features
+
+- [Features Overview](./features/features.md)
+- [Design System](./features/design-system.md)
+- [Flash](./features/flash.md)
+- [Paywall](./features/paywall.md)
+- [Shortcodes](./features/shortcodes.md)
+- [Uberedux](./features/uberedux.md)
+- [ShareVirus](./features/share-virus.md)
+- [CleverText](./features/clever-text.md)
+- [Chatbot MovieClip](./features/chatbot-movieclip.md)
+
+## Apps
 
 - [apps/v3 Overview](./apps/v3.md)
 - [apps/v3 NX Runtime Notes](./apps/nx-runtime.md)
@@ -30,12 +44,23 @@ This folder is the canonical location for repository documentation.
 - [apps/v3 NX CleverText](./apps/nx-clevertext.md)
 - [apps/v3 NX Chatbot Flash Notes](./apps/nx-chatbot.md)
 
-## Package Documentation
+## Packages
 
 - [Design System Overview](./packages/design-system.md)
 - [Design System UI Kit: Marketing Site](./packages/design-system-ui-kit-marketing-site.md)
 - [Design System UI Kit: Aftercare App](./packages/design-system-ui-kit-aftercare-app.md)
 
+## DevOps
+
+- [API](./devops/api.md)
+- [CI/CD](./devops/ci-cd.md)
+- [Scripts](./devops/scripts.md)
+- [Testing](./devops/testing.md)
+
+## Decisions
+
+- [Architecture Decision Records](./decisions/README.md)
+
 ## Notes
 
-- Runtime markdown content under `apps/v3/public/**` is application content, not repository documentation
+- Runtime markdown content under `apps/*/public/**` is application content, not repository documentation.

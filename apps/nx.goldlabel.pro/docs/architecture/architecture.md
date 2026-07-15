@@ -9,7 +9,7 @@
 |  |- api/                 REST API handlers and utilities
 |  \- NX/                  Framework core, design system, state, and cartridges
 \- public/
-   |- free/
+  |- nx/
    |  |- config.json       Tenant configuration
    |  \- markdown/         Tenant content
    \- shared/              Shared static assets

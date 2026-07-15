@@ -2,7 +2,7 @@
     <h1 style="display: flex; align-items: center; gap: 8px;">
         <a href="https://goldlabel.pro/nx" target="_blank" rel="noreferrer" style="display: inline-flex; align-items: center;">
         <img
-            src="public/free/png/favicon.png"
+            src="public/nx/png/favicon.png"
             width="24"
             height="24"
         />

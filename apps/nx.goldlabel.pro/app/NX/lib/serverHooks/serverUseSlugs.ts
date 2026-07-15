@@ -1,17 +1,16 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { normalizeTenant } from '../normalizeTenant';
 
 /**
  * Finds markdown files by a comma-separated list of slugs and returns their content objects.
  * @param slugs Comma-separated string or array of slugs
- * @param project Project name (default: "free")
+ * @param project Project name (default: "nx")
  * @returns Array of content objects for each slug
  */
-export function serverUseSlugs(slugs: string[] | string = [], project: string = "free"): any[] {
-    if (!project) {
-        project = process.env.NEXT_PUBLIC_TENANT || "free";
-    }
+export function serverUseSlugs(slugs: string[] | string = [], project: string = "nx"): any[] {
+    project = normalizeTenant(project);
     // Normalize slugs to array
     let slugArr: string[] = [];
     if (typeof slugs === "string") {

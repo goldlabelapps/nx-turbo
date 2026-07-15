@@ -10,13 +10,13 @@
   "splash_pages": null,
   "icons": [
     {
-      "src": "/free/png/favicon.png",
+      "src": "/nx/png/favicon.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any maskable"
     },
     {
-      "src": "/free/svg/favicon.svg",
+      "src": "/nx/svg/favicon.svg",
       "type": "image/svg+xml",
       "sizes": "512x512",
       "purpose": "any"

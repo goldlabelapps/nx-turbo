@@ -11,19 +11,19 @@ cd nx
 
 ```bash
 cp .env.example .env.local
-# Set NEXT_PUBLIC_TENANT=free
+# Set NEXT_PUBLIC_TENANT=nx
 ```
 
 ## Install dependencies
 
 ```bash
-yarn install
+pnpm install
 ```
 
 ## Run the development server
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 The app runs at [http://localhost:1999](http://localhost:1999).

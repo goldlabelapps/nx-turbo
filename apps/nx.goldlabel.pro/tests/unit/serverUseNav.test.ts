@@ -1,9 +1,9 @@
 import { serverUseNav } from '@/app/NX/lib/serverHooks/serverUseNav';
 
 describe('serverUseNav', () => {
-  it('builds a navigation tree from free tenant markdown', async () => {
+  it('builds a navigation tree from nx tenant markdown', async () => {
     const originalTenant = process.env.NEXT_PUBLIC_TENANT;
-    process.env.NEXT_PUBLIC_TENANT = 'free';
+    process.env.NEXT_PUBLIC_TENANT = 'nx';
 
     const nav = await serverUseNav();
 

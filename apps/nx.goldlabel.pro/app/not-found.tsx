@@ -3,7 +3,7 @@ import React from 'react';
 import { T_Theme } from './NX/types';
 import { NotFound as Clip404 } from '../public/shared/flash'
 import { DesignSystem } from './NX/DesignSystem';
-import config from '../public/free/config.json';
+import config from '../public/nx/config.json';
 
 export default function NotFound() {
 

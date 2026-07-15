@@ -19,12 +19,3 @@ export interface I_Chatbot {
     // Example: theme?: string;
     [key: string]: any; // Placeholder for extensibility
 }
-
-
-// Optional options
-export interface I_Resonse {
-    text: string;
-    from: 'user' | 'bot';
-    avatar?: React.ReactNode;
-    [key: string]: any; // Placeholder for extensibility
-}

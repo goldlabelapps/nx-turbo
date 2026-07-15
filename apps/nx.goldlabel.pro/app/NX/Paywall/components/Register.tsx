@@ -5,11 +5,7 @@ import { Icon } from '../../DesignSystem';
 import { useDispatch } from '../../Uberedux';
 import { setPaywall } from '../../Paywall';
 
-export interface I_Register {
-    onSignIn?: (email: string, password: string) => void;
-}
-
-export default function Register({ onSignIn: _onSignIn }: I_Register) {
+export default function Register() {
 
     const dispatch = useDispatch();
     const [email, setEmail] = useState('');

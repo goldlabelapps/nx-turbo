@@ -1,5 +1,4 @@
 "use client";
-import React from 'react';
 import { 
     Box,
 } from '@mui/material';
@@ -13,10 +12,6 @@ import {
     Register,
  } from '../../Paywall';
 import { useDispatch } from '../../Uberedux';
-
-export interface I_Account {
-    onClick?: React.MouseEventHandler<HTMLButtonElement>;
-}
 
 export default function Account() {
     const isAuthed = useIsAuthed();
@@ -40,7 +35,7 @@ export default function Account() {
     // Show Register or SimpleSignIn based on paywall.mode
     let content = null;
     if (paywall?.mode === 'register') {
-        content = <Register onSignIn={handleSignin} />;
+        content = <Register />;
     } else if (paywall?.mode === 'signin') {
         content = <SimpleSignIn onSignIn={handleSignin} />;
     } else {

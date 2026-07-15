@@ -26,7 +26,8 @@
   "scripts": {
     "build": "tsc",
     "type-check": "tsc --noEmit",
-    "lint": "echo 'No lint configured yet'"
+    "lint": "echo 'No lint configured yet'",
+    "preview:concept-lab": "open templates/concept-lab/ConceptLab.dc.html"
   },
   "devDependencies": {
     "typescript": "^5.0.0"

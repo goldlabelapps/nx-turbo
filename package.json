@@ -11,7 +11,8 @@
     "dev:all": "turbo run dev",
     "build": "turbo run build",
     "lint": "turbo run lint",
-    "type-check": "turbo run type-check"
+    "type-check": "turbo run type-check",
+    "preview:concept-lab": "open 'packages/design-system/templates/concept-lab/ConceptLab.dc.html'"
   },
   "devDependencies": {
     "turbo": "2.10.5"

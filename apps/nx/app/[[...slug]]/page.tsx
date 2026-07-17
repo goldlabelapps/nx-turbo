@@ -1,4 +1,5 @@
 import type { T_Tenant } from '../NX/types';
+import type { ReactNode } from 'react';
 import fs from "fs";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
@@ -7,12 +8,51 @@ import { NX } from '../NX';
 import {
     serverUseMDBySlug,
     serverUseAllMd,
+    serverUseNav,
     getTenant,
     getMeta,
 } from '../NX/lib/index.server';
 import { normalizeTenant } from '../NX/lib/normalizeTenant';
 import { RenderMarkdown } from '../NX/Shortcodes';
 import { ShareVirus } from '../../public/shared/flash';
+
+type T_NavNode = {
+    title?: string;
+    slug?: string;
+    path?: string;
+    children?: T_NavNode[];
+};
+
+function getNavHref(item: T_NavNode): string {
+    if (typeof item.slug === 'string' && item.slug.trim()) {
+        return item.slug;
+    }
+    if (typeof item.path === 'string' && item.path.trim()) {
+        return item.path;
+    }
+    return '#';
+}
+
+function renderNavItems(items: T_NavNode[], keyPrefix = 'nav'): ReactNode {
+    if (!Array.isArray(items) || !items.length) {
+        return null;
+    }
+
+    return (
+        <ul className="site-nav-list">
+            {items.map((item, index) => {
+                const key = `${keyPrefix}-${index}-${item.title || item.slug || item.path || 'node'}`;
+                const hasChildren = Array.isArray(item.children) && item.children.length > 0;
+                return (
+                    <li key={key}>
+                        <a href={getNavHref(item)}>{item.title || 'Untitled'}</a>
+                        {hasChildren ? renderNavItems(item.children as T_NavNode[], key) : null}
+                    </li>
+                );
+            })}
+        </ul>
+    );
+}
 
 export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
     const resolvedParams = typeof params.then === 'function' ? await params : params;
@@ -73,50 +113,63 @@ export default async function Page(props: any) {
     const { content, data } = matter(md);
     if (data.title) title = data.title;
     if (data.description) description = data.description;
-        const themedImage = config?.images?.light || null;
-
-    // Use data.image if it's a non-empty string, otherwise fallback to themedImage
-    const meta = getMeta({
-        siteName: config.siteName,
-        title,
-        description,
-        url: config.url || "",
-        image: (typeof data.image === 'string' && data.image.trim()) ? data.image : themedImage,
-    });
+    const navItems = (await serverUseNav()) as T_NavNode[];
+    const siteName = config?.siteName || tenant.toUpperCase();
+    const pageDescription = description || config?.description || '';
+    const currentPath = Array.isArray(slugArr) && slugArr.length
+        ? `/${slugArr.join('/')}`
+        : '/';
 
     return (
-            <NX config={config} frontmatter={data}>
-                {data.cartridge ? (
-                    data.cartridge === 'virus' ? (
-                        <section id="main" style={{ marginTop: '100px', paddingBottom: '90px' }}>
-                            <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <NX config={config} frontmatter={data}>
+            <div className="site-shell">
+                <header className="site-header">
+                    <h1>{siteName}</h1>
+                    <p>{title}</p>
+                </header>
+
+                <main className="site-main" id="main">
+                    <aside className="site-col site-col-left" aria-label="Primary navigation">
+                        <h2>Navigation</h2>
+                        {renderNavItems(navItems)}
+                    </aside>
+
+                    <section className="site-col site-col-center" aria-label="Page content">
+                        {pageDescription ? <p className="page-kicker">{pageDescription}</p> : null}
+                        {data.cartridge ? (
+                            data.cartridge === 'virus' ? (
                                 <ShareVirus config={config} />
-                            </div>
-                        </section>
-                    ) : (
-                        <section id="main" style={{ marginTop: '100px', paddingBottom: '90px' }}>
-                            <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                                <h2>
-                                    {data.title || title} (CARTRIDGE)
-                                </h2>
-                                <div>
+                            ) : (
+                                <>
+                                    <h2>{data.title || title} (CARTRIDGE)</h2>
                                     <RenderMarkdown config={config}>
                                         {content}
                                     </RenderMarkdown>
-                                </div>
-                            </div>
-                        </section>
-                    )
-                ) : (
-                    <section id="main" style={{ marginTop: '100px', paddingBottom: '90px' }}>
-                        <main style={{ width: '100%', minWidth: 0, padding: '0 1rem' }}>
-                            {description ? <p>{description}</p> : null}
-                                <RenderMarkdown config={config}>
-                                    {content}
-                                </RenderMarkdown>
-                        </main>
+                                </>
+                            )
+                        ) : (
+                            <RenderMarkdown config={config}>
+                                {content}
+                            </RenderMarkdown>
+                        )}
                     </section>
-                )}
-            </NX>
+
+                    <aside className="site-col site-col-right" aria-label="Page information">
+                        <h2>Info</h2>
+                        <ul className="site-meta-list">
+                            <li>Tenant: {tenant}</li>
+                            <li>Path: {currentPath}</li>
+                            <li>
+                                Source: <a href={config?.url || '/'}>{config?.url || '/'}</a>
+                            </li>
+                        </ul>
+                    </aside>
+                </main>
+
+                <footer className="site-footer">
+                    <p>{siteName}</p>
+                </footer>
+            </div>
+        </NX>
     );
 }

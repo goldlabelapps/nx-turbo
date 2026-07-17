@@ -66,7 +66,7 @@ export default function SignIn({ onSignIn, config, error: externalError }: I_Sig
     const [imgLoaded, setImgLoaded] = useState(false);
 
     return (
-            <Container maxWidth="xs" sx={{ mt: 3 }}>
+            <Container maxWidth="xs">
             <form onSubmit={handleSubmit}>
                 
                 <CardHeader
@@ -81,22 +81,14 @@ export default function SignIn({ onSignIn, config, error: externalError }: I_Sig
                         component="img"
                         image={image}
                         alt={siteName || 'image'}
-                        sx={{
-                            display: imgLoaded ? 'block' : 'none',
-                            width: '100%',
-                            height: 175,
-                            objectFit: 'contain',
-                            objectPosition: 'center',
-                            borderRadius: 0,
-                            mt: 1
-                        }}
+                        hidden={!imgLoaded}
                         onLoad={() => setImgLoaded(true)}
                         onError={() => setImgLoaded(true)}
                     />
                     
                     {(error || externalError) &&
                         <CardContent>
-                            <Typography sx={{ mt: 2 }} color="primary">
+                            <Typography color="primary">
                                 {error || externalError}
                             </Typography>
                         </CardContent>
@@ -138,14 +130,13 @@ export default function SignIn({ onSignIn, config, error: externalError }: I_Sig
                         />
                     </CardContent>
                     <CardActions>
-                        <Box sx={{flexGrow:1}}/>
+                        <Box />
 
                         <Button
                             fullWidth
                             type="submit"
                             endIcon={<Icon icon="signup" />}
                             variant="outlined"
-                            sx={{ mx: 0 }}
                             disabled={userMode !== 'single' && (!isValidEmail(email) || password.length < 1)}
                         >
                             Register
@@ -156,12 +147,11 @@ export default function SignIn({ onSignIn, config, error: externalError }: I_Sig
                             type="submit"
                             endIcon={<Icon icon="signin" />}
                             variant="contained"
-                            sx={{ mx: 0 }}
                             disabled={userMode !== 'single' && (!isValidEmail(email) || password.length < 1)}
                         >
                             Sign In
                         </Button>
-                        <Box sx={{ flexGrow: 1 }} />
+                        <Box />
                     </CardActions>
                     
                         

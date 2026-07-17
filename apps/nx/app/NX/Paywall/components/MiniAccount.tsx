@@ -72,7 +72,7 @@ export default function MiniAccount({ onCloseDrawer }: { onCloseDrawer?: () => v
         </Box>
         <Dialog open={open} onClose={handleClose} fullWidth maxWidth="xs">
             <DialogTitle>
-                <Typography variant="h6" component="span" sx={{mt:1}}>
+                <Typography variant="h6" component="span">
                     Sign {name} out?
                 </Typography>
             </DialogTitle>

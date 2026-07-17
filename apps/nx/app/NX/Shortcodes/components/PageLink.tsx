@@ -37,22 +37,9 @@ export default function PageLink({
   const iconNode = <Icon icon={icon as any} color="primary" />;
 
   return (
-    <ButtonBase 
-      onClick={handleClick}
-      sx={{
-        textAlign: 'left', 
-        width: '100%',
-      }}
-    >
-      <Paper variant="outlined" sx={{ width: '100%' }}>
-        <CardHeader 
-          sx={{
-            width: '100%',
-            '& .MuiCardHeader-action': {
-              alignSelf: 'center',
-              margin: 0,
-            },
-          }}
+    <ButtonBase onClick={handleClick}>
+      <Paper variant="outlined">
+        <CardHeader
           title={title}
           subheader={description}
           avatar={!isRightAligned ? iconNode : undefined}

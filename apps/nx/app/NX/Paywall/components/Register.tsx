@@ -37,7 +37,6 @@ export default function Register() {
                 fullWidth
                 endIcon={<Icon icon="signin" />}
                 variant="text"
-                sx={{ mt: 1, mr: 2 }}
                 onClick={handleSignin}
             >
                 Sign In
@@ -46,7 +45,6 @@ export default function Register() {
                 fullWidth
                 startIcon={<Icon icon="signup" />}
                 variant="outlined"
-                sx={{ mt: 1, mr: 2 }}
                 onClick={handleSignup}
                 disabled
             >

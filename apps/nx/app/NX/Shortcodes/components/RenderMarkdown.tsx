@@ -2,13 +2,6 @@
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 import {
-  Box,
-  Link as MuiLink,
-  Typography,
-  useTheme,
-  alpha,
-} from '@mui/material';
-import {
   HiddenMessage,
   FeedbackBtn,
   CleverTextShortcode,
@@ -28,9 +21,6 @@ export default function RenderMarkdown({
   config,
   slug,
 }: I_RenderMarkdown) {
-  const theme = useTheme();
-  const scrollRef = React.useRef<HTMLDivElement>(null);
-
   // --- Normalize children to array to prevent map errors ---
   const normalizeChildren = (children: any) =>
     Array.isArray(children) ? children : [children];
@@ -95,90 +85,24 @@ export default function RenderMarkdown({
   };
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 1,
-      }}
-    >
-      <Box
-        ref={scrollRef}
-        sx={{
-          flexGrow: 1,
-          overflowY: 'auto',
-          scrollbarWidth: 'auto',
-          scrollbarColor: `${theme.palette.primary.main} ${theme.palette.background.paper}`,
-          '&::-webkit-scrollbar': { width: '12px' },
-          '&::-webkit-scrollbar-thumb': {
-            backgroundColor: theme.palette.primary.main,
-            borderRadius: 6,
-          },
-          '&::-webkit-scrollbar-track': {
-            backgroundColor: theme.palette.background.paper,
-          },
-        }}
-        tabIndex={0}
-      >
+    <div>
         <ReactMarkdown
           components={{
-            h1: ({ children }) => (
-              <Typography variant="h4" sx={{ my: 1, fontWeight: 'lighter' }}>
-                {children}
-              </Typography>
-            ),
-            h2: ({ children }) => (
-              <Typography variant="h5" sx={{ my: 1, fontWeight: 'lighter' }}>
-                {children}
-              </Typography>
-            ),
-            h3: ({ children }) => (
-              <Typography variant="h6" sx={{ my: 1, fontWeight: 'lighter' }}>
-                {children}
-              </Typography>
-            ),
-
-            blockquote: ({ children }) => (
-              <Box
-                component="blockquote"
-                sx={{
-                  borderLeft: `2px solid ${theme.palette.primary.main}`,
-                  pl: 2,
-                  ml: 0,
-                  my: 2,
-                  color: theme.palette.text.secondary,
-                  fontStyle: 'italic',
-                  backgroundColor:
-                    theme.palette.mode === 'dark'
-                      ? alpha(theme.palette.primary.main, 0.05)
-                      : alpha(theme.palette.primary.main, 0.02),
-                }}
-              >
-                {children}
-              </Box>
-            ),
-
+            h1: ({ children }) => <h1>{children}</h1>,
+            h2: ({ children }) => <h2>{children}</h2>,
+            h3: ({ children }) => <h3>{children}</h3>,
             p: ({ children }) => (
-              <Typography
-                variant="body1"
-                component="span"
-                display="block"
-                sx={{ my: 1, fontWeight: 'normal' }}
-              >
+              <p>
                 {normalizeChildren(children).map((child, i) => (
                   <React.Fragment key={i}>
                     {typeof child === 'string' ? renderShortcode(child) : child}
                   </React.Fragment>
                 ))}
-              </Typography>
+              </p>
             ),
             li: ({ children }) => (
               <li>
-                <Typography
-                  variant="body1"
-                  component="span"
-                  sx={{ fontWeight: 'normal' }}
-                >
+                <span>
                   {normalizeChildren(children).map((child, i) => (
                     <React.Fragment key={i}>
                       {typeof child === 'string'
@@ -186,7 +110,7 @@ export default function RenderMarkdown({
                         : child}
                     </React.Fragment>
                   ))}
-                </Typography>
+                </span>
               </li>
             ),
             strong: ({ children }) => <strong>{children}</strong>,
@@ -194,22 +118,19 @@ export default function RenderMarkdown({
             a: ({ href = '', children }) => {
               const isExternal = /^https?:\/\//.test(href);
               return (
-                <MuiLink
+                <a
                   href={href}
                   target={isExternal ? '_blank' : '_self'}
                   rel={isExternal ? 'noopener noreferrer' : undefined}
-                  color={theme.palette.text.primary}
-                  underline="none"
                 >
                   <strong>{children}</strong>
-                </MuiLink>
+                </a>
               );
             },
           }}
         >
           {children as string}
         </ReactMarkdown>
-      </Box>
-    </Box>
+    </div>
   );
 }

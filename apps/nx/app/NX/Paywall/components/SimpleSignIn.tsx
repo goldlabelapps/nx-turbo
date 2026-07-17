@@ -79,7 +79,6 @@ export default function SimpleSignIn({ onSignIn}: I_SimpleSignIn) {
                 fullWidth
                 startIcon={<Icon icon="signup" />}
                 variant="text"
-                sx={{ mt: 1, mr: 2 }}
                 onClick={handleRegister}
             >
                 Register
@@ -89,7 +88,6 @@ export default function SimpleSignIn({ onSignIn}: I_SimpleSignIn) {
                 fullWidth
                 endIcon={<Icon icon="signin" />}
                 variant="outlined"
-                sx={{ mt: 1 }}
                 disabled={!isFormValid}
                 onClick={handleSubmit}
             >

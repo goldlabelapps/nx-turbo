@@ -19,7 +19,7 @@
 <body>
   <div id="root"></div>
   <script type="text/babel">
-    const { Logo, StarMark } = window.NXDesignSystem_ab1d28;
+    const { Logo, Favicon } = window.NXDesignSystem_ab1d28;
     function Demo() {
       return (
         <div className="grid">
@@ -28,14 +28,14 @@
             <Logo height={40} />
             <span className="lbl">Sparkle</span>
             <div style={{display:"flex",gap:14,alignItems:"center"}}>
-              <StarMark size={30} tone="ink" />
-              <StarMark size={30} tone="clay" />
+              <Favicon size={30} tone="ink" />
+              <Favicon size={30} tone="clay" />
             </div>
           </div>
           <div className="cell ink">
             <span className="lbl" style={{color:"var(--nx-oat)"}}>On ink</span>
             <Logo height={38} tone="offwhite" />
-            <StarMark size={28} tone="offwhite" />
+            <Favicon size={28} tone="offwhite" />
           </div>
           <div className="cell">
             <span className="lbl">Eyebrow class</span>

@@ -1,12 +1,17 @@
-import { StarMark } from "./StarMark";
+import { Favicon } from "./Favicon";
 
 export default {
-  title: "Brand/StarMark",
-  component: StarMark,
+  title: "Brand/Favicon",
+  component: Favicon,
   tags: ["autodocs"],
   argTypes: {
     tone: {
-      control: "select",
+      control: {
+        type: "select",
+        labels: {
+          clay: "secondary",
+        },
+      },
       options: ["ink", "dusty", "clay", "offwhite", "current"],
     },
     size: {
@@ -22,7 +27,7 @@ export default {
 
 export const Default = {};
 
-export const Clay = {
+export const Secondary = {
   args: {
     tone: "clay",
   },

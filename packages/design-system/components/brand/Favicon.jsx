@@ -17,8 +17,9 @@ const TONES = {
 /**
  * Ping-pong ball icon used as the NX brand mark variant.
  */
-export function StarMark({ size = 24, tone = "ink", title, style, ...rest }) {
+export function Favicon({ size = 24, tone = "ink", title, style, ...rest }) {
   const mainColor = TONES[tone] || tone;
+  const smileColor = tone === "offwhite" ? "#0b1020" : "#fff";
   return (
     <svg
       viewBox="0 0 24 24"
@@ -36,7 +37,7 @@ export function StarMark({ size = 24, tone = "ink", title, style, ...rest }) {
           <rect fillOpacity="0" x="0" y="0" width="24" height="24" />
           <g transform="translate(1, 1)" fillRule="nonzero">
             <path d={BALL_PATH} fill={mainColor} />
-            <path d={SMILE_PATH} fill="#fff" />
+            <path d={SMILE_PATH} fill={smileColor} />
           </g>
         </g>
       </g>

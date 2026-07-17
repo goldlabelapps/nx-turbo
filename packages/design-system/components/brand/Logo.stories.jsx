@@ -24,16 +24,16 @@ export default {
   },
 };
 
-export const Wordmark = {};
+export const Default = {};
 
-export const Mark = {
+export const Favicon = {
   args: {
     variant: "mark",
     height: 72,
   },
 };
 
-export const LightTone = {
+export const Darkmode = {
   parameters: {
     backgrounds: { default: "ink" },
   },

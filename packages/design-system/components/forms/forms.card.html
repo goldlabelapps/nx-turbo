@@ -18,7 +18,7 @@
 <body>
   <div id="root"></div>
   <script type="text/babel">
-    const { Button, Input, RangeSlider, SegmentedToggle, StarMark } = window.NXDesignSystem_ab1d28;
+    const { Button, Input, RangeSlider, SegmentedToggle, Favicon } = window.NXDesignSystem_ab1d28;
     function Demo() {
       const [tab, setTab] = React.useState("am");
       const [n, setN] = React.useState(30);
@@ -31,7 +31,7 @@
               <Button variant="ghost">How it works</Button>
               <Button variant="quiet" size="sm">Buy</Button>
               <Button disabled>Sold out</Button>
-              <Button icon={<StarMark size={13} tone="offwhite" />}>Start</Button>
+              <Button icon={<Favicon size={13} tone="offwhite" />}>Start</Button>
             </div>
           </div>
           <div>

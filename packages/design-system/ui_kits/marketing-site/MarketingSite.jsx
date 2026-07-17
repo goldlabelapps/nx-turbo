@@ -4,7 +4,7 @@
 (function () {
   function build() {
   const DS = window.NXDesignSystem_ab1d28;
-  const { TopBar, Button, PriceTier, Accordion, StatCard, RangeSlider, StarMark, Logo, Card, Input } = DS;
+  const { TopBar, Button, PriceTier, Accordion, StatCard, RangeSlider, Favicon, Logo, Card, Input } = DS;
   const h = React.createElement;
 
   function Section({ id, children, style }) {
@@ -91,7 +91,7 @@
           h("p", { style: { fontSize: "1.06rem", lineHeight: 1.6, color: "var(--nx-body)", maxWidth: "44ch", margin: "0 0 28px" } },
             "Quicker than a WhatsApp, more beautiful than a Canva PDF, and never out of date. One living page per client that updates itself and saves to their phone like an app."),
           h("div", { style: { display: "flex", gap: 14, flexWrap: "wrap" } },
-            h(Button, { icon: h(StarMark, { size: 13, tone: "offwhite" }) }, "Become a member"),
+            h(Button, { icon: h(Favicon, { size: 13, tone: "offwhite" }) }, "Become a member"),
             h(Button, { variant: "ghost" }, "See how it works"),
           ),
           h("div", { style: { marginTop: 24, fontFamily: "var(--font-mono)", fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--nx-muted)" } }, "Built by a skin therapist, for skin therapists"),
@@ -172,7 +172,7 @@
       // WAITLIST
       h(Section, { style: { textAlign: "center", maxWidth: 560 },
         children: [
-          h(StarMark, { key: "s", size: 26, tone: "clay", style: { margin: "0 auto 16px" } }),
+          h(Favicon, { key: "s", size: 26, tone: "clay", style: { margin: "0 auto 16px" } }),
           h("h2", { key: "h", style: { fontSize: "clamp(1.7rem,3vw,2.2rem)" } }, "Join the founding members."),
           h("p", { key: "p", style: { fontSize: "0.95rem", color: "var(--nx-body)", maxWidth: "42ch", margin: "14px auto 24px" } }, "We're onboarding solo therapists in small groups. Leave your email and we'll be in touch."),
           h("div", { key: "f", style: { display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" } },

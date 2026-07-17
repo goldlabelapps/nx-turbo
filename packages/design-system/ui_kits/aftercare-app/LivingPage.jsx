@@ -5,7 +5,7 @@
 (function () {
   function build() {
   const DS = window.NXDesignSystem_ab1d28;
-  const { SegmentedToggle, ProductCard, Accordion, StarMark, Card } = DS;
+  const { SegmentedToggle, ProductCard, Accordion, Favicon, Card } = DS;
 
   const PRODUCTS = {
     am: [
@@ -72,7 +72,7 @@
           React.createElement("div", { style: { display: "flex", justifyContent: "center" } },
             React.createElement(SegmentedToggle, {
               options: [
-                { value: "am", label: "Morning", icon: React.createElement(StarMark, { size: 12, tone: tab === "am" ? "offwhite" : "clay" }) },
+                { value: "am", label: "Morning", icon: React.createElement(Favicon, { size: 12, tone: tab === "am" ? "offwhite" : "clay" }) },
                 { value: "pm", label: "Evening" },
               ],
               value: tab, onChange: setTab,
@@ -112,7 +112,7 @@
       // footer
       React.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "center", gap: 7, padding: "20px 0 8px", fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--nx-muted)" } },
         "Powered by",
-        React.createElement(StarMark, { size: 12, tone: "clay" }),
+        React.createElement(Favicon, { size: 12, tone: "clay" }),
         React.createElement("span", { style: { fontFamily: "var(--font-serif)", fontStyle: "italic", textTransform: "none", letterSpacing: 0, fontSize: "0.9rem", color: "var(--nx-ink)" } }, "NX"),
       ),
     );

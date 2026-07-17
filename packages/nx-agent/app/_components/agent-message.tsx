@@ -206,7 +206,7 @@ function AuthorizationPrompt({ part }: { readonly part: EveAuthorizationPart }) 
             <Button asChild size="sm">
               <a href={part.authorization.url} rel="noreferrer" target="_blank">
                 <ExternalLinkIcon className="size-4" />
-                Sign in with {part.displayName}
+                Sign in
               </a>
             </Button>
           ) : null}
@@ -221,20 +221,19 @@ function authorizationTitle(part: EveAuthorizationPart): string {
     return `Connect ${part.displayName}`;
   }
   if (part.outcome === "authorized") {
-    return `${part.displayName} connected`;
+    return "Connected";
   }
-  return `${part.displayName} authorization ${formatAuthorizationOutcome(part.outcome)}`;
+  return `${part.displayName}: ${formatAuthorizationOutcome(part.outcome)}`;
 }
 
 function authorizationDescription(part: EveAuthorizationPart): string {
   if (part.state === "required") {
-    return part.description;
+    return "Sign in to continue.";
   }
   if (part.outcome === "authorized") {
-    return `${part.displayName} connected.`;
+    return "Ready.";
   }
-  const tail = part.reason !== undefined ? ` (${part.reason})` : "";
-  return `${part.displayName} authorization ${formatAuthorizationOutcome(part.outcome)}${tail}.`;
+  return `Authorization ${formatAuthorizationOutcome(part.outcome)}.`;
 }
 
 function formatAuthorizationOutcome(outcome: NonNullable<EveAuthorizationPart["outcome"]>): string {
@@ -287,7 +286,7 @@ function InputRequestActions({
       <p className="text-muted-foreground text-sm">{inputRequest.prompt}</p>
       {inputResponse ? (
         <p className="font-medium text-sm">
-          Responded: {selectedOption?.label ?? inputResponse.text ?? inputResponse.optionId}
+          Selected: {selectedOption?.label ?? inputResponse.text ?? inputResponse.optionId}
         </p>
       ) : (
         <div className="flex flex-wrap gap-2">

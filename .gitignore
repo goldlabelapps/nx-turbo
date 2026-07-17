@@ -146,3 +146,5 @@ vite.config.ts.timestamp-*
 
 # Monorepo-specific
 .turbo/
+packages/design-system/storybook-static/
+apps/agent/next-env.d.ts

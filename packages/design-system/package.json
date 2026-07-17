@@ -3,18 +3,19 @@
   "version": "1.0.0",
   "description": "NX Design System: tokens, components, guidelines, and templates",
   "private": false,
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "types": "./index.d.ts",
+      "import": "./index.js"
     },
     "./styles": "./styles.css",
     "./tokens": "./dist/tokens.js"
   },
   "files": [
-    "dist",
+    "index.js",
+    "index.d.ts",
     "styles.css",
     "assets",
     "components",
@@ -27,9 +28,24 @@
     "build": "tsc",
     "type-check": "tsc --noEmit",
     "lint": "echo 'No lint configured yet'",
-    "preview:concept-lab": "open templates/concept-lab/ConceptLab.dc.html"
+    "preview:concept-lab": "open templates/concept-lab/ConceptLab.dc.html",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.0.0"
+    "@storybook/addon-a11y": "^8.6.14",
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/addon-interactions": "^8.6.14",
+    "@storybook/react": "^8.6.14",
+    "@storybook/react-vite": "^8.6.14",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "storybook": "^8.6.14",
+    "typescript": "^5.0.0",
+    "vite": "^6.3.5"
   }
 }

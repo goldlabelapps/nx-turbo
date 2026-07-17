@@ -17,7 +17,7 @@ export function TopBar({ links = [], cta, onCta, logoHeight = 30, style, ...rest
         gap: "24px",
         padding: "0 24px",
         height: "80px",
-        background: "rgba(247,247,244,0.80)",
+          background: "rgba(244,247,255,0.80)",
         backdropFilter: "var(--blur-bar)",
         WebkitBackdropFilter: "var(--blur-bar)",
         ...style,

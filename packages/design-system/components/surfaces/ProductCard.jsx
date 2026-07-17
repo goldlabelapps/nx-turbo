@@ -40,7 +40,7 @@ export function ProductCard({
           <img src={image} alt={name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         ) : (
           image || (
-            <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--nx-muted)" }}>
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: "var(--type-label)", fontWeight: "var(--weight-semibold)", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--nx-muted)" }}>
               Product photo
             </span>
           )
@@ -48,7 +48,7 @@ export function ProductCard({
       </div>
       <div style={{ padding: "18px 8px 4px", display: "flex", flexDirection: "column", flex: 1 }}>
         {step ? (
-          <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.66rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--nx-clay)" }}>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: "var(--type-label)", fontWeight: "var(--weight-semibold)", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--nx-clay)" }}>
             {step}
           </span>
         ) : null}
@@ -56,7 +56,7 @@ export function ProductCard({
           {name}
         </span>
         {brand ? (
-          <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.72rem", letterSpacing: "0.04em", textTransform: "uppercase", color: "var(--nx-muted)" }}>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.8rem", fontWeight: "var(--weight-medium)", letterSpacing: "0.04em", textTransform: "uppercase", color: "var(--nx-muted)" }}>
             {brand}
           </span>
         ) : null}
@@ -68,13 +68,14 @@ export function ProductCard({
             onClick={onBuy}
             style={{
               fontFamily: "var(--font-mono)",
-              fontSize: "0.68rem",
+              fontSize: "var(--type-label)",
+              fontWeight: "var(--weight-semibold)",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               color: "var(--nx-ink)",
               background: "transparent",
               border: "1px solid rgba(40,34,28,0.28)",
-              borderRadius: "30px",
+              borderRadius: "var(--radius-pill)",
               padding: "9px 18px",
               cursor: "pointer",
             }}

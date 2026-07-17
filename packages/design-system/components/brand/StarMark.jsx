@@ -1,29 +1,29 @@
 import React from "react";
 
-const STAR_PATH =
-  "M363.016,126.741L363.016,126.741c-49,30.938-80.537,49.425-106.386,53.948c-7.069-24.185-4.695-58.59,0.83-111.937c-13.971,53.275-24.017,86.695-39.851,106.678c-22.963-11.048-46.62-36.682-82.476-78.408c28.295,45.473,45.492,75.342,49.761,100.16c-25.218,7.258-61.668,4.454-119.274-1.895c57.386,14.647,92.789,24.982,113.674,41.246c-11.668,23.749-38.958,48.537-84.088,86.806c48.945-30.904,80.467-49.384,106.3-53.934c7.035,24.18,4.66,58.565-0.858,111.842c13.966-53.257,24.01-86.673,39.835-106.658c23.004,11.014,46.683,36.663,82.606,78.468c-28.337-45.54-45.542-75.43-49.779-100.269c25.215-7.223,61.646-4.417,119.178,1.924c-57.285-14.621-92.663-24.947-113.562-41.161C290.592,189.802,317.882,165.012,363.016,126.741z";
+const BALL_PATH =
+  "M11.9316955,0.00778516743 C18.2793961,0.234625 23.2318292,5.339499 22.9916183,11.4103978 C22.7565183,17.4812966 17.4207699,22.2190224 11.0730694,21.9921826 C4.72536881,21.7653428 -0.227064254,16.6604688 0.00803576687,10.58957 C0.248246659,4.51867123 5.58399495,-0.218565786 11.9316955,0.00778516743 Z";
+
+const SMILE_PATH =
+  "M8,12 C12.6203742,21.9973959 20,13.9133228 20,13.9133228 C14.7209979,15.4126605 8,12 8,12 Z";
 
 const TONES = {
-  ink: "#1a1814",
-  dusty: "#2c2c2a",
-  clay: "#a8927a",
-  offwhite: "#f7f7f4",
+  ink: "#0b1020",
+  dusty: "#1a2340",
+  clay: "#ff4d00",
+  offwhite: "#f4f7ff",
   current: "currentColor",
 };
 
 /**
- * NX's signature eight-point sparkle - the mark lifted from the
- * dot of the "i" in the wordmark. Use as an app icon, favicon, quiet
- * inter-section accent, or loading glyph.
+ * Ping-pong ball icon used as the NX brand mark variant.
  */
 export function StarMark({ size = 24, tone = "ink", title, style, ...rest }) {
-  const fill = TONES[tone] || tone;
+  const mainColor = TONES[tone] || tone;
   return (
     <svg
-      viewBox="65.62 68.752 326.868 312.495"
+      viewBox="0 0 24 24"
       width={size}
       height={size}
-      fill={fill}
       role={title ? "img" : "presentation"}
       aria-hidden={title ? undefined : true}
       aria-label={title}
@@ -31,7 +31,15 @@ export function StarMark({ size = 24, tone = "ink", title, style, ...rest }) {
       {...rest}
     >
       {title ? <title>{title}</title> : null}
-      <path d={STAR_PATH} />
+      <g stroke="none" fill="none" fillRule="evenodd">
+        <g>
+          <rect fillOpacity="0" x="0" y="0" width="24" height="24" />
+          <g transform="translate(1, 1)" fillRule="nonzero">
+            <path d={BALL_PATH} fill={mainColor} />
+            <path d={SMILE_PATH} fill="#fff" />
+          </g>
+        </g>
+      </g>
     </svg>
   );
 }

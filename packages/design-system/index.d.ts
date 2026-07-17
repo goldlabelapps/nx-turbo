@@ -4,9 +4,6 @@ export type { LogoProps } from "./components/brand/Logo";
 export { StarMark } from "./components/brand/StarMark";
 export type { StarMarkProps } from "./components/brand/StarMark";
 
-export { Eyebrow } from "./components/brand/Eyebrow";
-export type { EyebrowProps } from "./components/brand/Eyebrow";
-
 export { Button } from "./components/forms/Button";
 export type { ButtonProps } from "./components/forms/Button";
 

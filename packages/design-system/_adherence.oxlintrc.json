@@ -80,18 +80,6 @@
         "message": "<Card> variant must be one of 'paper' | 'glass' | 'tile' | 'ink'."
       },
       {
-        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|tone|as|key|ref|className|style|children)$/]",
-        "message": "<Eyebrow> doesn't accept that prop. Declared props: children, tone, as."
-      },
-      {
-        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:clay|ink|muted)$/]",
-        "message": "<Eyebrow> tone must be one of 'clay' | 'ink' | 'muted'."
-      },
-      {
-        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute[name.name='as'] > Literal[value!=/^(?:block|inline)$/]",
-        "message": "<Eyebrow> as must be one of 'block' | 'inline'."
-      },
-      {
         "selector": "JSXOpeningElement[name.name='Input'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|hint|error|wrapStyle|key|ref|className|style|children)$/]",
         "message": "<Input> doesn't accept that prop. Declared props: label, hint, error, wrapStyle."
       },
@@ -175,9 +163,6 @@
         "replaces": []
       },
       "Card": {
-        "replaces": []
-      },
-      "Eyebrow": {
         "replaces": []
       },
       "Input": {

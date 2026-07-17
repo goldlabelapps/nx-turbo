@@ -67,8 +67,8 @@ export function RangeSlider({
       />
       <style>{`
         .nx-range { -webkit-appearance: none; appearance: none; width: 100%; height: 3px; border-radius: 3px; background: var(--nx-line); outline: none; margin: 0; }
-        .nx-range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; background: var(--nx-ink); cursor: pointer; border: 3px solid var(--nx-parchment); box-shadow: 0 2px 8px rgba(26,24,20,0.3); }
-        .nx-range::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: var(--nx-ink); cursor: pointer; border: 3px solid var(--nx-parchment); box-shadow: 0 2px 8px rgba(26,24,20,0.3); }
+        .nx-range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; background: var(--nx-ink); cursor: pointer; border: 3px solid var(--nx-parchment); box-shadow: 0 2px 8px rgba(11,16,32,0.3); }
+        .nx-range::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: var(--nx-ink); cursor: pointer; border: 3px solid var(--nx-parchment); box-shadow: 0 2px 8px rgba(11,16,32,0.3); }
       `}</style>
     </div>
   );

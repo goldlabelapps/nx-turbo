@@ -1,4 +1,4 @@
-<!-- @dsCard group="Components" viewport="700x260" name="Brand - Logo, mark & eyebrow" -->
+<!-- @dsCard group="Components" viewport="700x260" name="Brand - Logo & mark" -->
 <!doctype html>
 <html>
 <head>
@@ -19,7 +19,7 @@
 <body>
   <div id="root"></div>
   <script type="text/babel">
-    const { Logo, StarMark, Eyebrow } = window.NXDesignSystem_ab1d28;
+    const { Logo, StarMark } = window.NXDesignSystem_ab1d28;
     function Demo() {
       return (
         <div className="grid">
@@ -38,10 +38,10 @@
             <StarMark size={28} tone="offwhite" />
           </div>
           <div className="cell">
-            <span className="lbl">Eyebrow</span>
-            <Eyebrow>Client aftercare</Eyebrow>
-            <Eyebrow tone="muted">Your products</Eyebrow>
-            <Eyebrow tone="muted">Morning &amp; evening</Eyebrow>
+            <span className="lbl">Eyebrow class</span>
+            <span className="eyebrow">Client aftercare</span>
+            <span className="eyebrow" style={{color:"var(--nx-muted)"}}>Your products</span>
+            <span className="eyebrow" style={{color:"var(--nx-muted)"}}>Morning &amp; evening</span>
           </div>
         </div>
       );

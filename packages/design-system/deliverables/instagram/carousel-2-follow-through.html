@@ -8,25 +8,25 @@
 <style>
   :root { --scale: 0.42; }
   body { margin: 0; background: #6f6a60; padding: 48px 0 72px; font-family: var(--font-sans); }
-  .head { text-align: center; color: #f7f7f4; max-width: 900px; margin: 0 auto 40px; }
+  .head { text-align: center; color: #f4f7ff; max-width: 900px; margin: 0 auto 40px; }
   .head .kick { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; color: #d9cdbb; }
   .head h1 { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: #fff; font-size: 2rem; margin: 10px 0 4px; }
   .head p { font-size: 0.9rem; color: #d7d0c4; margin: 0; }
   .strip { display: flex; gap: 26px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 8px 48px 20px; }
   .strip::-webkit-scrollbar { height: 8px; }
-  .strip::-webkit-scrollbar-thumb { background: rgba(255,255,255,.25); border-radius: 8px; }
+  .strip::-webkit-scrollbar-thumb { background: rgba(255,255,255,.25); border-radius: 3px; }
   .item { scroll-snap-align: center; flex: 0 0 auto; }
-  .thumb { width: calc(1080px * var(--scale)); height: calc(1350px * var(--scale)); border-radius: 18px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,.35); }
+  .thumb { width: calc(1080px * var(--scale)); height: calc(1350px * var(--scale)); border-radius: 3px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,.35); }
   .thumb .slide { transform: scale(var(--scale)); transform-origin: top left; }
-  .cap { text-align: center; font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: #cfc8bd; margin-top: 12px; }
+  .cap { text-align: center; font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: #d6e1ff; margin-top: 12px; }
   .slide { width: 1080px; height: 1350px; box-sizing: border-box; position: relative; display: flex; flex-direction: column; padding: 108px 96px; background: var(--nx-parchment); overflow: hidden; }
   .slide.center { justify-content: center; }
   .slide.ink { background: var(--nx-ink); }
   .slide.clay { background: var(--nx-clay); }
-  .slide.ink .eye, .slide.clay .eye { color: rgba(247,247,244,.7); }
-  .slide.ink .h, .slide.clay .h { color: #f7f7f4; }
-  .slide.ink .body, .slide.clay .body { color: rgba(247,247,244,.82); }
-  .slide.ink .meta, .slide.clay .meta { color: rgba(247,247,244,.55); }
+  .slide.ink .eye, .slide.clay .eye { color: rgba(244,247,255,.7); }
+  .slide.ink .h, .slide.clay .h { color: #f4f7ff; }
+  .slide.ink .body, .slide.clay .body { color: rgba(244,247,255,.82); }
+  .slide.ink .meta, .slide.clay .meta { color: rgba(244,247,255,.55); }
   .eye { font-family: var(--font-mono); font-size: 30px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--nx-clay); }
   .h { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: var(--nx-ink); line-height: 1.0; letter-spacing: -0.02em; }
   .h.xl { font-size: 132px; }
@@ -39,11 +39,11 @@
   .foot .meta { font-family: var(--font-mono); font-size: 24px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--nx-muted); }
   .foot .wm { display: flex; align-items: center; gap: 12px; }
   .foot .wm span { font-family: var(--font-serif); font-style: italic; font-size: 34px; color: var(--nx-ink); }
-  .slide.ink .foot .wm span, .slide.clay .foot .wm span { color: #f7f7f4; }
+  .slide.ink .foot .wm span, .slide.clay .foot .wm span { color: #f4f7ff; }
   img.star { display: block; }
   .rule { width: 88px; height: 2px; background: var(--nx-clay); margin: 0 0 40px; border: 0; }
-  .btn { display: inline-flex; align-items: center; gap: 16px; align-self: flex-start; font-family: var(--font-mono); font-size: 30px; letter-spacing: 0.1em; text-transform: uppercase; padding: 30px 52px; border-radius: 999px; background: var(--nx-parchment); color: var(--nx-ink); margin-top: 20px; }
-  .src { font-family: var(--font-mono); font-size: 24px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(247,247,244,.55); margin-top: 40px; }
+  .btn { display: inline-flex; align-items: center; gap: 16px; align-self: flex-start; font-family: var(--font-mono); font-size: 30px; letter-spacing: 0.1em; text-transform: uppercase; padding: 30px 52px; border-radius: 3px; background: var(--nx-parchment); color: var(--nx-ink); margin-top: 20px; }
+  .src { font-family: var(--font-mono); font-size: 24px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(244,247,255,.55); margin-top: 40px; }
 </style>
 </head>
 <body>

@@ -4,7 +4,7 @@
 (function () {
   function build() {
   const DS = window.NXDesignSystem_ab1d28;
-  const { TopBar, Button, PriceTier, Accordion, StatCard, RangeSlider, StarMark, Logo, Card, Eyebrow, Input } = DS;
+  const { TopBar, Button, PriceTier, Accordion, StatCard, RangeSlider, StarMark, Logo, Card, Input } = DS;
   const h = React.createElement;
 
   function Section({ id, children, style }) {
@@ -13,17 +13,17 @@
 
   // A small stylised phone showing the living page hero
   function HeroPhone() {
-    return h("div", { style: { width: 250, borderRadius: 38, padding: 11, background: "linear-gradient(160deg,#2a2620,#15130f)", boxShadow: "var(--shadow-float)", margin: "0 auto" } },
-      h("div", { style: { borderRadius: 28, overflow: "hidden", background: "var(--nx-paper)", height: 420, display: "flex", flexDirection: "column" } },
+    return h("div", { style: { width: 250, borderRadius: 3, padding: 11, background: "linear-gradient(160deg,#1a2340,#0b1020)", boxShadow: "var(--shadow-float)", margin: "0 auto" } },
+      h("div", { style: { borderRadius: 3, overflow: "hidden", background: "var(--nx-paper)", height: 420, display: "flex", flexDirection: "column" } },
         h("div", { style: { height: 40, display: "flex", alignItems: "center", justifyContent: "center", borderBottom: "1px solid var(--nx-line)", fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--nx-ink)" } }, "The Skin Studio"),
         h("div", { style: { padding: "28px 20px", textAlign: "center" } },
           h("div", { style: { fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1rem", color: "var(--nx-body)" } }, "Ellie, here's your"),
           h("div", { style: { fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.9rem", lineHeight: 0.95, color: "var(--nx-ink)", marginTop: 4 } }, "Updated Routine"),
         ),
         h("div", { style: { padding: "0 16px", display: "flex", flexDirection: "column", gap: 10 } },
-          [["Cleanse", "#efe7dc"], ["Serum", "#f0e3cf"], ["Protect", "#e8ece2"]].map(([label, hue], i) =>
-            h("div", { key: i, style: { display: "flex", gap: 10, alignItems: "center", background: "var(--nx-tile)", borderRadius: 16, padding: 8, boxShadow: "var(--shadow-card)" } },
-              h("div", { style: { width: 44, height: 44, borderRadius: 12, background: hue, flex: "0 0 auto" } }),
+          [["Cleanse", "#d9e4ff"], ["Serum", "#ffd7c7"], ["Protect", "#d0dcff"]].map(([label, hue], i) =>
+            h("div", { key: i, style: { display: "flex", gap: 10, alignItems: "center", background: "var(--nx-tile)", borderRadius: 3, padding: 8, boxShadow: "var(--shadow-card)" } },
+              h("div", { style: { width: 44, height: 44, borderRadius: 3, background: hue, flex: "0 0 auto" } }),
               h("div", null,
                 h("div", { style: { fontFamily: "var(--font-mono)", fontSize: "0.5rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--nx-clay)" } }, "Step 0" + (i + 1)),
                 h("div", { style: { fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "0.95rem", color: "var(--nx-ink)" } }, label),
@@ -46,14 +46,14 @@
         h(Stat, { n: "£0", k: "Printing & re-sends" }),
         h(Stat, { n: "1 tap", k: "To update a routine" }),
       ),
-      h("div", { style: { marginTop: 24, background: "var(--nx-ink)", color: "var(--nx-parchment)", borderRadius: 16, padding: "18px 22px", textAlign: "center", fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.3rem" } },
+      h("div", { style: { marginTop: 24, background: "var(--nx-ink)", color: "var(--nx-parchment)", borderRadius: 3, padding: "18px 22px", textAlign: "center", fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.3rem" } },
         "That's ", h("b", { style: { fontWeight: 700 } }, hours, " hours"), " back for actual skin therapy.",
       ),
     );
   }
 
   function Stat({ n, k }) {
-    return h("div", { style: { flex: 1, textAlign: "center", padding: "14px 8px", borderRadius: 14, background: "rgba(255,255,255,0.55)" } },
+    return h("div", { style: { flex: 1, textAlign: "center", padding: "14px 8px", borderRadius: 3, background: "rgba(255,255,255,0.55)" } },
       h("div", { style: { fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.5rem", color: "var(--nx-ink)", lineHeight: 1 } }, n),
       h("div", { style: { fontFamily: "var(--font-mono)", fontSize: "0.56rem", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--nx-muted)", marginTop: 7 } }, k),
     );
@@ -103,7 +103,7 @@
       h(Section, { id: "how", style: { paddingTop: 40 },
         children: [
           h("div", { key: "eh", style: { textAlign: "center", marginBottom: 40 } },
-            h(Eyebrow, null, "How it works"),
+            h("div", { className: "eyebrow" }, "How it works"),
             h("h2", { style: { fontSize: "2.4rem", marginTop: 10 } }, "Three taps, not three emails."),
           ),
           h("div", { key: "steps", style: { display: "flex", gap: 34 } },
@@ -118,7 +118,7 @@
       h(Section, { id: "calc", style: { background: "transparent" },
         children: [
           h("div", { key: "e", style: { textAlign: "center", marginBottom: 34 } },
-            h(Eyebrow, null, "The cost of not"),
+            h("div", { className: "eyebrow" }, "The cost of not"),
             h("h2", { style: { fontSize: "2.4rem", marginTop: 10 } }, "What re-typing aftercare really costs."),
           ),
           h(CostCalculator, { key: "c" }),
@@ -137,7 +137,7 @@
       h(Section, { id: "join",
         children: [
           h("div", { key: "e", style: { textAlign: "center", marginBottom: 40 } },
-            h(Eyebrow, null, "Membership"),
+            h("div", { className: "eyebrow" }, "Membership"),
             h("h2", { style: { fontSize: "2.4rem", marginTop: 10 } }, "One price. Every client."),
           ),
           h("div", { key: "tiers", style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 22, maxWidth: 720, margin: "0 auto" } },
@@ -157,7 +157,7 @@
       h(Section, { style: { maxWidth: 720 },
         children: [
           h("div", { key: "e", style: { textAlign: "center", marginBottom: 24 } },
-            h(Eyebrow, null, "Questions"),
+            h("div", { className: "eyebrow" }, "Questions"),
             h("h2", { style: { fontSize: "2.2rem", marginTop: 10 } }, "The honest answers."),
           ),
           h(Accordion, { key: "a", items: [

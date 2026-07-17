@@ -1,14 +1,14 @@
 import React from "react";
 
 const TONES = {
-  ink: "#1a1814",
-  dusty: "#2c2c2a",
-  offwhite: "#f7f7f4",
+  ink: "#0b1020",
+  dusty: "#1a2340",
+  offwhite: "#f4f7ff",
   current: "currentColor",
 };
 
-const PLACEHOLDER_FILL = "#FF5A1F";
-const PLACEHOLDER_STROKE = "#1B1F24";
+const PLACEHOLDER_FILL = "#ff4d00";
+const PLACEHOLDER_STROKE = "#0b1020";
 
 /**
  * Temporary logo placeholder renderer. This intentionally avoids shipping
@@ -36,7 +36,7 @@ export function Logo({ variant = "full", height = 40, tone = "ink", style, ...re
             y="12"
             width="232"
             height="232"
-            rx="28"
+            rx="3"
             fill={PLACEHOLDER_FILL}
             stroke={PLACEHOLDER_STROKE}
             strokeWidth="12"
@@ -46,7 +46,7 @@ export function Logo({ variant = "full", height = 40, tone = "ink", style, ...re
             y="44"
             width="168"
             height="168"
-            rx="16"
+            rx="3"
             fill="none"
             stroke="#FFFFFF"
             strokeWidth="6"
@@ -72,7 +72,7 @@ export function Logo({ variant = "full", height = 40, tone = "ink", style, ...re
             y="4"
             width="312"
             height="88"
-            rx="14"
+            rx="3"
             fill={PLACEHOLDER_FILL}
             stroke={stroke}
             strokeWidth="8"
@@ -82,7 +82,7 @@ export function Logo({ variant = "full", height = 40, tone = "ink", style, ...re
             y="24"
             width="272"
             height="48"
-            rx="8"
+            rx="3"
             fill="none"
             stroke="#FFFFFF"
             strokeWidth="4"

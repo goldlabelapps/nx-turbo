@@ -9,14 +9,14 @@
 
   const PRODUCTS = {
     am: [
-      { step: "Step 01 · Cleanse", name: "Gentle Milk Cleanser", brand: "Your Clinic Range", price: "£24", hue: "#efe7dc" },
-      { step: "Step 02 · Serum", name: "Vitamin C15", brand: "Medik8", price: "£38", hue: "#f0e3cf", tag: "New" },
-      { step: "Step 03 · Protect", name: "Advanced Day SPF50", brand: "Heliocare", price: "£30", hue: "#e8ece2" },
+      { step: "Step 01 · Cleanse", name: "Gentle Milk Cleanser", brand: "Your Clinic Range", price: "£24", hue: "#d9e4ff" },
+      { step: "Step 02 · Serum", name: "Vitamin C15", brand: "Medik8", price: "£38", hue: "#ffd7c7", tag: "New" },
+      { step: "Step 03 · Protect", name: "Advanced Day SPF50", brand: "Heliocare", price: "£30", hue: "#d0dcff" },
     ],
     pm: [
-      { step: "Step 01 · Cleanse", name: "Balancing Gel Wash", brand: "Your Clinic Range", price: "£22", hue: "#e9e5df" },
-      { step: "Step 02 · Active", name: "Retinal 0.2", brand: "Medik8", price: "£45", hue: "#efe0da" },
-      { step: "Step 03 · Recover", name: "Ceramide Night Balm", brand: "Your Clinic Range", price: "£34", hue: "#eae7de" },
+      { step: "Step 01 · Cleanse", name: "Balancing Gel Wash", brand: "Your Clinic Range", price: "£22", hue: "#dbe1f7" },
+      { step: "Step 02 · Active", name: "Retinal 0.2", brand: "Medik8", price: "£45", hue: "#ffd0bc" },
+      { step: "Step 03 · Recover", name: "Ceramide Night Balm", brand: "Your Clinic Range", price: "£34", hue: "#d6e2ff" },
     ],
   };
 
@@ -27,7 +27,7 @@
         display: "flex", alignItems: "flex-end", justifyContent: "flex-start", padding: 12,
       },
     }, React.createElement("span", {
-      style: { fontFamily: "var(--font-mono)", fontSize: "0.5rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#8a7f6d" },
+      style: { fontFamily: "var(--font-mono)", fontSize: "0.5rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#2f4580" },
     }, label))
   );
 
@@ -40,7 +40,7 @@
     const products = PRODUCTS[tab];
     return React.createElement("div", {
       style: {
-        background: "linear-gradient(180deg,#f7f7f4 0%,#f2efe8 100%)",
+        background: "linear-gradient(180deg,#f4f7ff 0%,#dfe9ff 100%)",
         minHeight: "100%", paddingBottom: 40, position: "relative",
       },
     },
@@ -49,7 +49,7 @@
         style: {
           position: "sticky", top: 0, zIndex: 5, height: 56,
           display: "flex", alignItems: "center", justifyContent: "center",
-          background: "rgba(247,247,244,0.82)", backdropFilter: "blur(10px)",
+          background: "rgba(244,247,255,0.82)", backdropFilter: "blur(10px)",
           WebkitBackdropFilter: "blur(10px)", borderBottom: "1px solid var(--nx-line)",
         },
       }, React.createElement("span", {

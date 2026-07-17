@@ -1,7 +1,7 @@
 import React from "react";
 
 /**
- * NX's eight-point sparkle mark, lifted from the dot of the "i".
+ * NX ping-pong ball brand mark.
  */
 export function StarMark(props: StarMarkProps): JSX.Element;
 

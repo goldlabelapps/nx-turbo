@@ -1,27 +1,18 @@
 import { Badge, Button, Card, Tag } from "@nx/design-system";
+import { readHistory } from "../../lib/agent-history";
 
-const sessions = [
-  {
-    title: "Homepage narrative rewrite",
-    time: "2026-07-17 09:20",
-    status: "Published",
-    summary: "Reframed hero copy and action hierarchy for better clarity.",
-  },
-  {
-    title: "Workbench prompt format",
-    time: "2026-07-16 16:48",
-    status: "Draft",
-    summary: "Defined structure for goal, context, and output constraints.",
-  },
-  {
-    title: "Loading and error hardening",
-    time: "2026-07-15 14:02",
-    status: "Validated",
-    summary: "Added resilient fallback states for route transitions and render failures.",
-  },
-];
+function formatTime(value: string) {
+  return new Intl.DateTimeFormat("en", {
+    dateStyle: "medium",
+    timeStyle: "short",
+  }).format(new Date(value));
+}
 
-export default function HistoryPage() {
+export const dynamic = "force-dynamic";
+
+export default async function HistoryPage() {
+  const sessions = await readHistory();
+
   return (
     <main className="page">
       <section className="shell">
@@ -32,16 +23,26 @@ export default function HistoryPage() {
         </div>
 
         <div className="route-grid">
+          {sessions.length === 0 ? (
+            <Card padding="lg" variant="paper">
+              <h2>No sessions yet</h2>
+              <p>Run a workbench generation or send a chat message to start building timeline history.</p>
+              <Button as="a" href="/Agent" size="sm" variant="ghost">
+                Open workbench
+              </Button>
+            </Card>
+          ) : null}
+
           {sessions.map((session) => (
-            <Card key={session.title} padding="lg" hoverLift>
+            <Card key={session.id} padding="lg" hoverLift>
               <div className="card-head">
                 <h2>{session.title}</h2>
                 <Tag variant={session.status === "Published" ? "clay" : "outline"}>{session.status}</Tag>
               </div>
-              <p className="eyebrow">{session.time}</p>
+              <p className="eyebrow">{formatTime(session.createdAt)}</p>
               <p>{session.summary}</p>
-              <Button as="a" href="/Agent" variant="ghost" size="sm">
-                Re-open in workbench
+              <Button as="a" href={session.link} variant="ghost" size="sm">
+                Re-open session
               </Button>
             </Card>
           ))}

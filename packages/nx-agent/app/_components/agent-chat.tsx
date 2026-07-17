@@ -17,9 +17,7 @@ import {
 import { cn } from "@/lib/utils";
 import { AgentMessage } from "./agent-message";
 
-const AGENT_NAME = "nx-agent";
-
-type AgentStatus = ReturnType<typeof useEveAgent>["status"];
+const AGENT_NAME = "Goldlabel AI";
 
 export function AgentChat() {
   const agent = useEveAgent();
@@ -53,28 +51,19 @@ export function AgentChat() {
 
   const composer = (
     <PromptInput onSubmit={handleSubmit}>
-      <PromptInputTextarea placeholder="Send a message…" />
+      <PromptInputTextarea placeholder="Type request. Press Enter." />
       <PromptInputSubmit onStop={agent.stop} status={agent.status} />
     </PromptInput>
   );
 
   return (
     <main className="flex h-dvh flex-col overflow-hidden bg-background text-foreground">
-      {isEmpty ? null : (
-        <header className="flex h-14 shrink-0 items-center justify-center gap-3 pl-4 pr-2">
-          <span className="flex min-w-0 items-center gap-2">
-            <span className="truncate text-muted-foreground text-sm">{AGENT_NAME}</span>
-            <StatusDot status={agent.status} />
-          </span>
-        </header>
-      )}
-
       {agent.error ? (
         <div className="mx-auto w-full max-w-3xl shrink-0 px-4 pt-2 sm:px-6">
           <div className="flex items-start gap-3 rounded-lg border border-destructive/30 bg-destructive/5 px-3 py-2.5 text-sm">
             <AlertCircleIcon className="mt-0.5 size-4 shrink-0 text-destructive" />
             <div>
-              <p className="font-medium">Request failed</p>
+              <p className="font-medium">Failed</p>
               <p className="mt-0.5 text-muted-foreground">{agent.error.message}</p>
             </div>
           </div>
@@ -109,38 +98,15 @@ export function AgentChat() {
         )}
       >
         {isEmpty ? (
-          <div className="flex flex-col items-center gap-3 text-center">
+          <div className="flex w-full flex-col items-center gap-3 text-center">
             <h1 className="font-medium text-5xl tracking-tighter">{AGENT_NAME}</h1>
+            <p className="max-w-xl text-balance text-muted-foreground text-sm sm:text-base">
+              Type what you need. Press Enter.
+            </p>
           </div>
         ) : null}
         <div className="w-full">{composer}</div>
       </div>
     </main>
-  );
-}
-
-function StatusDot({ status }: { readonly status: AgentStatus }) {
-  const isLive = status === "submitted" || status === "streaming";
-  const tone =
-    status === "error"
-      ? "bg-destructive"
-      : isLive
-        ? "bg-emerald-500"
-        : status === "ready"
-          ? "bg-muted-foreground"
-          : "bg-muted-foreground/50";
-
-  return (
-    <span className="relative flex size-1">
-      {isLive ? (
-        <span
-          className={cn(
-            "absolute inline-flex size-full animate-ping rounded-full opacity-75",
-            tone,
-          )}
-        />
-      ) : null}
-      <span className={cn("relative inline-flex size-1 rounded-full transition-colors", tone)} />
-    </span>
   );
 }

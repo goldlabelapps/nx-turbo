@@ -41,11 +41,11 @@ export type ToolHeaderProps = {
 );
 
 const statusLabels: Record<ToolPart["state"], string> = {
-  "approval-requested": "Awaiting Approval",
-  "approval-responded": "Responded",
+  "approval-requested": "Approval",
+  "approval-responded": "Approved",
   "input-available": "Running",
-  "input-streaming": "Pending",
-  "output-available": "Completed",
+  "input-streaming": "Waiting",
+  "output-available": "Done",
   "output-denied": "Denied",
   "output-error": "Error",
 };
@@ -111,7 +111,7 @@ export type ToolInputProps = ComponentProps<"div"> & {
 export const ToolInput = ({ className, input, ...props }: ToolInputProps) => (
   <div className={cn("space-y-2 overflow-hidden", className)} {...props}>
     <h4 className="font-medium text-muted-foreground text-xs uppercase tracking-wide">
-      Parameters
+      Input
     </h4>
     <div className="rounded-md bg-muted/50">
       <CodeBlock code={JSON.stringify(input, null, 2)} language="json" />
@@ -140,7 +140,7 @@ export const ToolOutput = ({ className, output, errorText, ...props }: ToolOutpu
   return (
     <div className={cn("space-y-2", className)} {...props}>
       <h4 className="font-medium text-muted-foreground text-xs uppercase tracking-wide">
-        {errorText ? "Error" : "Result"}
+        {errorText ? "Error" : "Output"}
       </h4>
       <div
         className={cn(

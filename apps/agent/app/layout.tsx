@@ -8,6 +8,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://agent.local";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  manifest: "/manifest.webmanifest",
   title: {
     default: "NX Agent Frontend",
     template: "%s | NX Agent",
@@ -27,6 +28,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "NX Agent Frontend",
     description: "A polished and resilient frontend for Agent workflows.",
+  },
+  icons: {
+    icon: [
+      { url: "/icon-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   robots: {
     index: true,

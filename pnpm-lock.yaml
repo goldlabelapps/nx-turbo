@@ -136,7 +136,7 @@ importers:
         specifier: ^5
         version: 5.9.3
 
-  apps/nx.goldlabel.pro:
+  apps/nx:
     dependencies:
       '@ducanh2912/next-pwa':
         specifier: ^10.2.9

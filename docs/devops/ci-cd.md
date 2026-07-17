@@ -15,10 +15,10 @@ It runs on every pull request against any branch and treats the repo like a fram
 1. checks out the repository
 2. sets up Node.js 20 with Yarn cache
 3. installs dependencies with `pnpm install --frozen-lockfile`
-4. runs `pnpm --filter ./apps/nx.goldlabel.pro lint`
-5. runs `pnpm --filter ./apps/nx.goldlabel.pro typecheck`
-6. runs `pnpm --filter ./apps/nx.goldlabel.pro test --runInBand`
-7. runs `pnpm --filter ./apps/nx.goldlabel.pro build`
+4. runs `pnpm --filter ./apps/nx lint`
+5. runs `pnpm --filter ./apps/nx typecheck`
+6. runs `pnpm --filter ./apps/nx test --runInBand`
+7. runs `pnpm --filter ./apps/nx build`
 
 ## Why this matters
 

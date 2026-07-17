@@ -27,16 +27,10 @@ export default function GithubLink({
   };
 
   return (
-    <ButtonBase 
-      onClick={handleClick}
-      sx={{
-        textAlign: 'left', 
-        width: '100%',
-      }}
-    >
-      <Paper variant="outlined" sx={{ p: 2, width: '100%', display: 'flex' }}>
+    <ButtonBase onClick={handleClick}>
+      <Paper variant="outlined">
         <Icon icon="github" color="primary" />
-        <Typography variant="h6" sx={{ ml: 2 }}>
+        <Typography variant="h6">
           {label}
         </Typography>
       </Paper>

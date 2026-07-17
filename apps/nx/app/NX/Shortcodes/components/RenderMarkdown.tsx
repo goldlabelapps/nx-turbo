@@ -2,13 +2,6 @@
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 import {
-  Box,
-  Link as MuiLink,
-  Typography,
-  useTheme,
-  alpha,
-} from '@mui/material';
-import {
   HiddenMessage,
   FeedbackBtn,
   CleverTextShortcode,
@@ -28,12 +21,62 @@ export default function RenderMarkdown({
   config,
   slug,
 }: I_RenderMarkdown) {
-  const theme = useTheme();
-  const scrollRef = React.useRef<HTMLDivElement>(null);
-
   // --- Normalize children to array to prevent map errors ---
   const normalizeChildren = (children: any) =>
     Array.isArray(children) ? children : [children];
+
+  const isBlockLikeNode = (node: React.ReactNode) => {
+    if (!React.isValidElement(node)) return false;
+    if (node.type === React.Fragment) return false;
+    if (typeof node.type !== 'string') return true;
+
+    const inlineTags = new Set([
+      'a',
+      'abbr',
+      'b',
+      'bdi',
+      'bdo',
+      'br',
+      'cite',
+      'code',
+      'data',
+      'dfn',
+      'em',
+      'i',
+      'img',
+      'kbd',
+      'label',
+      'mark',
+      'q',
+      'ruby',
+      's',
+      'samp',
+      'small',
+      'span',
+      'strong',
+      'sub',
+      'sup',
+      'time',
+      'u',
+      'var',
+      'wbr',
+    ]);
+
+    return !inlineTags.has(node.type);
+  };
+
+  const renderChildrenWithShortcodes = (children: React.ReactNode) =>
+    normalizeChildren(children).map((child, index) => {
+      const renderedChild = typeof child === 'string' ? renderShortcode(child) : child;
+
+      if (React.isValidElement(renderedChild)) {
+        return React.cloneElement(renderedChild, {
+          key: renderedChild.key ?? `md-${index}`,
+        });
+      }
+
+      return renderedChild;
+    });
 
   // --- Shortcode parser ---
   const renderShortcode = (text: string) => {
@@ -95,121 +138,50 @@ export default function RenderMarkdown({
   };
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 1,
-      }}
-    >
-      <Box
-        ref={scrollRef}
-        sx={{
-          flexGrow: 1,
-          overflowY: 'auto',
-          scrollbarWidth: 'auto',
-          scrollbarColor: `${theme.palette.primary.main} ${theme.palette.background.paper}`,
-          '&::-webkit-scrollbar': { width: '12px' },
-          '&::-webkit-scrollbar-thumb': {
-            backgroundColor: theme.palette.primary.main,
-            borderRadius: 6,
-          },
-          '&::-webkit-scrollbar-track': {
-            backgroundColor: theme.palette.background.paper,
-          },
-        }}
-        tabIndex={0}
-      >
+    <div>
         <ReactMarkdown
           components={{
-            h1: ({ children }) => (
-              <Typography variant="h4" sx={{ my: 1, fontWeight: 'lighter' }}>
-                {children}
-              </Typography>
-            ),
-            h2: ({ children }) => (
-              <Typography variant="h5" sx={{ my: 1, fontWeight: 'lighter' }}>
-                {children}
-              </Typography>
-            ),
-            h3: ({ children }) => (
-              <Typography variant="h6" sx={{ my: 1, fontWeight: 'lighter' }}>
-                {children}
-              </Typography>
-            ),
+            h1: ({ children }) => <h1>{children}</h1>,
+            h2: ({ children }) => <h2>{children}</h2>,
+            h3: ({ children }) => <h3>{children}</h3>,
+            p: ({ children }) => {
+              const renderedChildren = renderChildrenWithShortcodes(children);
+              const hasBlockChild = renderedChildren.some(isBlockLikeNode);
 
-            blockquote: ({ children }) => (
-              <Box
-                component="blockquote"
-                sx={{
-                  borderLeft: `2px solid ${theme.palette.primary.main}`,
-                  pl: 2,
-                  ml: 0,
-                  my: 2,
-                  color: theme.palette.text.secondary,
-                  fontStyle: 'italic',
-                  backgroundColor:
-                    theme.palette.mode === 'dark'
-                      ? alpha(theme.palette.primary.main, 0.05)
-                      : alpha(theme.palette.primary.main, 0.02),
-                }}
-              >
-                {children}
-              </Box>
-            ),
+              if (hasBlockChild) {
+                return <div>{renderedChildren}</div>;
+              }
 
-            p: ({ children }) => (
-              <Typography
-                variant="body1"
-                component="span"
-                display="block"
-                sx={{ my: 1, fontWeight: 'normal' }}
-              >
-                {normalizeChildren(children).map((child, i) => (
-                  <React.Fragment key={i}>
-                    {typeof child === 'string' ? renderShortcode(child) : child}
-                  </React.Fragment>
-                ))}
-              </Typography>
-            ),
-            li: ({ children }) => (
-              <li>
-                <Typography
-                  variant="body1"
-                  component="span"
-                  sx={{ fontWeight: 'normal' }}
-                >
-                  {normalizeChildren(children).map((child, i) => (
-                    <React.Fragment key={i}>
-                      {typeof child === 'string'
-                        ? renderShortcode(child)
-                        : child}
-                    </React.Fragment>
-                  ))}
-                </Typography>
-              </li>
-            ),
+              return <p>{renderedChildren}</p>;
+            },
+            li: ({ children }) => {
+              const renderedChildren = renderChildrenWithShortcodes(children);
+              const hasBlockChild = renderedChildren.some(isBlockLikeNode);
+
+              if (hasBlockChild) {
+                return <li>{renderedChildren}</li>;
+              }
+
+              return <li><span>{renderedChildren}</span></li>;
+            },
             strong: ({ children }) => <strong>{children}</strong>,
             em: ({ children }) => <em>{children}</em>,
             a: ({ href = '', children }) => {
               const isExternal = /^https?:\/\//.test(href);
               return (
-                <MuiLink
+                <a
                   href={href}
                   target={isExternal ? '_blank' : '_self'}
                   rel={isExternal ? 'noopener noreferrer' : undefined}
-                  color={theme.palette.text.primary}
-                  underline="none"
                 >
                   <strong>{children}</strong>
-                </MuiLink>
+                </a>
               );
             },
           }}
         >
           {children as string}
         </ReactMarkdown>
-      </Box>
-    </Box>
+    </div>
   );
 }

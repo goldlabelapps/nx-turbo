@@ -30,10 +30,10 @@ export default function RequireAuth({ children, config }: { children: React.Reac
     });
 
     if (loading) return (
-        <Backdrop open sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, color: '#fff' }}>
+        <Backdrop open>
             <Box display="flex" flexDirection="column" alignItems="center">
                 <CircularProgress color="inherit" />
-                <Typography variant="h6" sx={{ mt: 2 }}>
+                <Typography variant="h6">
                     Checking credentials...
                 </Typography>
             </Box>

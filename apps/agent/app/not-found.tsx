@@ -1,18 +1,28 @@
-import { Button, Card, Eyebrow } from "@nx/design-system";
+import { Button, Card } from "@nx/design-system";
 
 export default function NotFound() {
   return (
-    <main className="shell shell--centered">
-      <div style={{ maxWidth: "620px", width: "100%" }}>
+    <main className="page">
+      <section className="shell shell--centered">
+        <div style={{ maxWidth: "720px", width: "100%" }}>
         <Card padding="lg">
-          <Eyebrow tone="muted">404</Eyebrow>
-          <h1>That page is not here.</h1>
-          <p className="lede">The starter app is set up, but the route you asked for does not exist yet.</p>
-          <Button as="a" href="/">
-            Back home
-          </Button>
+            <div className="eyebrow" style={{ color: "var(--nx-muted)" }}>404</div>
+            <h1>That route does not exist.</h1>
+            <p className="lede">Use the core routes below to get back to the active frontend flow.</p>
+            <div className="actions">
+              <Button as="a" href="/">
+                Home
+              </Button>
+              <Button as="a" href="/Agent" variant="ghost">
+                Workbench
+              </Button>
+              <Button as="a" href="/chat" variant="ghost">
+                Chat
+              </Button>
+            </div>
         </Card>
-      </div>
+        </div>
+      </section>
     </main>
   );
 }

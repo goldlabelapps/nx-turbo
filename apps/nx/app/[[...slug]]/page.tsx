@@ -1,9 +1,9 @@
 import type { T_Tenant } from '../NX/types';
 import type { ReactNode } from 'react';
+import type { Metadata } from "next";
 import fs from "fs";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
-import { Metadata } from "next";
 import { NX } from '../NX';
 import {
     serverUseMDBySlug,
@@ -22,6 +22,14 @@ type T_NavNode = {
     slug?: string;
     path?: string;
     children?: T_NavNode[];
+};
+
+type T_PageParams = {
+    slug?: string[];
+};
+
+type T_PageProps = {
+    params: Promise<T_PageParams>;
 };
 
 function getNavHref(item: T_NavNode): string {
@@ -65,9 +73,9 @@ function renderNavItems(items: T_NavNode[], keyPrefix = 'nav'): ReactNode {
     );
 }
 
-export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
-    const resolvedParams = typeof params.then === 'function' ? await params : params;
-    const slugArr = resolvedParams?.slug || [];
+export async function generateMetadata({ params }: T_PageProps): Promise<Metadata> {
+    const resolvedParams = await params;
+    const slugArr = Array.isArray(resolvedParams?.slug) ? resolvedParams.slug : [];
     const tenant = normalizeTenant();
     const { config } = getTenant(tenant as T_Tenant);
     const filePath = serverUseMDBySlug(slugArr, tenant);
@@ -101,17 +109,16 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
 export async function generateStaticParams() {
     const tenant = normalizeTenant();
     const { markdownDir } = getTenant(tenant as T_Tenant);
-    let allSlugs = serverUseAllMd(markdownDir, tenant);
+    const allSlugs = serverUseAllMd(markdownDir, tenant);
     return allSlugs.map((slugArr) => {
         const normalized = slugArr.filter(Boolean);
         return { slug: normalized.length ? normalized : undefined };
     });
 }
 
-export default async function Page(props: any) {
-    const { params } = props;
-    const resolvedParams = typeof params?.then === 'function' ? await params : params;
-    let slugArr = resolvedParams?.slug || [];
+export default async function Page({ params }: T_PageProps) {
+    const resolvedParams = await params;
+    const slugArr = Array.isArray(resolvedParams?.slug) ? [...resolvedParams.slug] : [];
     while (slugArr.length > 1 && slugArr[slugArr.length - 1] === "") slugArr.pop();
     const tenant = normalizeTenant();
     const { config: rawConfig } = getTenant(tenant as T_Tenant);
@@ -250,11 +257,16 @@ export default async function Page(props: any) {
                     </div>
 
                     <div className="site-footer-bottom">
-                        
                         <ul className="site-footer-social" aria-label="Social links">
-                            <li><a href="https://github.com/goldlabelapps/nx-turbo">
-                                github
-                                </a></li>
+                            <li>
+                                <a
+                                    href="https://github.com/goldlabelapps/nx-turbo"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Open source on GitHub
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </footer>

@@ -61,8 +61,9 @@ nx-agent uses Eve as the agent runtime layer and Vercel primitives for model acc
 - evals/
   - evals.config.ts
   - smoke.eval.ts
-- docs/nx-agent/
-  - project-charter.md
-  - architecture.md
-  - mvp-backlog.md
-  - deployment-plan.md
+- docs/package pages
+  - nx-agent-eve-overview.md
+  - nx-agent-project-charter.md
+  - nx-agent-architecture.md
+  - nx-agent-mvp-backlog.md
+  - nx-agent-deployment-plan.md

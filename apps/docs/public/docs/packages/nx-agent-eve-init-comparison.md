@@ -23,17 +23,17 @@ Result: this repository is intentionally more product-doc heavy, while the offic
 
 - `.nvmrc`
 - `README.md`
-- `agents/leida-chat/agent.ts`
-- `agents/leida-chat/instructions.md`
-- `agents/leida-chat/skills/research.md`
-- `agents/leida-chat/tools/getProjectContext.ts`
-- `agents/leida-chat/tools/proposeSensitiveAction.ts`
-- `docs/eve-overview.md`
-- `docs/leida-ai-chat/architecture.md`
-- `docs/leida-ai-chat/deployment-plan.md`
-- `docs/leida-ai-chat/local-setup.md`
-- `docs/leida-ai-chat/mvp-backlog.md`
-- `docs/leida-ai-chat/project-charter.md`
+- `agent/agent.ts`
+- `agent/instructions.md`
+- `agent/skills/research.md`
+- `agent/tools/getProjectContext.ts`
+- `agent/tools/proposeSensitiveAction.ts`
+- `docs/packages/nx-agent-eve-overview.md`
+- `docs/packages/nx-agent-architecture.md`
+- `docs/packages/nx-agent-deployment-plan.md`
+- `docs/packages/nx-agent-local-setup.md`
+- `docs/packages/nx-agent-mvp-backlog.md`
+- `docs/packages/nx-agent-project-charter.md`
 
 ## Important Content Differences
 

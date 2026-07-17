@@ -1,18 +1,19 @@
 # nx-agent Documentation
 
-This repository keeps project documentation in the `docs/` directory.
-The root README serves as the table of contents.
+The authoritative docs now live in `apps/docs/public/docs/packages/`.
+The package README remains a lightweight pointer for source files and agent tooling.
 
 ## Table of Contents
 
-1. [Eve Overview](docs/eve-overview.md)
-2. [nx-agent Project Charter](docs/nx-agent/project-charter.md)
-3. [nx-agent Architecture](docs/nx-agent/architecture.md)
-4. [nx-agent MVP Backlog](docs/nx-agent/mvp-backlog.md)
-5. [nx-agent Deployment Plan](docs/nx-agent/deployment-plan.md)
-6. [nx-agent Local Setup](docs/nx-agent/local-setup.md)
-7. [Eve Init Comparison](docs/nx-agent/eve-init-comparison.md)
-8. [nx-agent Verification](docs/nx-agent/verification.md)
+1. [Eve Overview](../../apps/docs/public/docs/packages/nx-agent-eve-overview.md)
+2. [nx-agent overview](../../apps/docs/public/docs/packages/nx-agent.md)
+3. [nx-agent Project Charter](../../apps/docs/public/docs/packages/nx-agent-project-charter.md)
+4. [nx-agent Architecture](../../apps/docs/public/docs/packages/nx-agent-architecture.md)
+5. [nx-agent MVP Backlog](../../apps/docs/public/docs/packages/nx-agent-mvp-backlog.md)
+6. [nx-agent Deployment Plan](../../apps/docs/public/docs/packages/nx-agent-deployment-plan.md)
+7. [nx-agent Local Setup](../../apps/docs/public/docs/packages/nx-agent-local-setup.md)
+8. [Eve Init Comparison](../../apps/docs/public/docs/packages/nx-agent-eve-init-comparison.md)
+9. [nx-agent Verification](../../apps/docs/public/docs/packages/nx-agent-verification.md)
 
 ## Agent Scaffold
 
@@ -36,6 +37,6 @@ The root README serves as the table of contents.
 
 ## Docs Conventions
 
-- Add and update documentation in `docs/`.
-- Keep this README updated as the docs index.
+- Add and update documentation in `apps/docs/public/docs/packages/`.
+- Keep this README aligned with the docs-site pages.
 - Prefer concise, implementation-focused docs with links to official sources.

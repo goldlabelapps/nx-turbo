@@ -41,9 +41,16 @@ EVE_USE_MOCK_MODEL=1 npx eve eval
 
 ## Agent Entry
 
-The nx-agent path is:
+The nx-agent docs now live in the docs site package pages:
 
-- `agent`
+- `docs/packages/nx-agent.md`
+- `docs/packages/nx-agent-architecture.md`
+- `docs/packages/nx-agent-deployment-plan.md`
+- `docs/packages/nx-agent-eve-init-comparison.md`
+- `docs/packages/nx-agent-local-setup.md`
+- `docs/packages/nx-agent-mvp-backlog.md`
+- `docs/packages/nx-agent-project-charter.md`
+- `docs/packages/nx-agent-verification.md`
 
 ## Notes
 

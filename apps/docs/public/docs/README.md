@@ -49,6 +49,7 @@ This folder is the canonical location for repository documentation.
 - [Design System Overview](./packages/design-system.md)
 - [Design System UI Kit: Marketing Site](./packages/design-system-ui-kit-marketing-site.md)
 - [Design System UI Kit: Aftercare App](./packages/design-system-ui-kit-aftercare-app.md)
+- [nx-agent](./packages/nx-agent.md)
 
 ## DevOps
 

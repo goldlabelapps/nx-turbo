@@ -80,18 +80,6 @@
         "message": "<Card> variant must be one of 'paper' | 'glass' | 'tile' | 'ink'."
       },
       {
-        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|tone|as|key|ref|className|style|children)$/]",
-        "message": "<Eyebrow> doesn't accept that prop. Declared props: children, tone, as."
-      },
-      {
-        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:clay|ink|muted)$/]",
-        "message": "<Eyebrow> tone must be one of 'clay' | 'ink' | 'muted'."
-      },
-      {
-        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute[name.name='as'] > Literal[value!=/^(?:block|inline)$/]",
-        "message": "<Eyebrow> as must be one of 'block' | 'inline'."
-      },
-      {
         "selector": "JSXOpeningElement[name.name='Input'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|hint|error|wrapStyle|key|ref|className|style|children)$/]",
         "message": "<Input> doesn't accept that prop. Declared props: label, hint, error, wrapStyle."
       },
@@ -124,12 +112,12 @@
         "message": "<SegmentedToggleOption> doesn't accept that prop. Declared props: value, label, icon."
       },
       {
-        "selector": "JSXOpeningElement[name.name='StarMark'] > JSXAttribute > JSXIdentifier[name!=/^(?:size|tone|title|key|ref|className|style|children)$/]",
-        "message": "<StarMark> doesn't accept that prop. Declared props: size, tone, title."
+        "selector": "JSXOpeningElement[name.name='Favicon'] > JSXAttribute > JSXIdentifier[name!=/^(?:size|tone|title|key|ref|className|style|children)$/]",
+        "message": "<Favicon> doesn't accept that prop. Declared props: size, tone, title."
       },
       {
-        "selector": "JSXOpeningElement[name.name='StarMark'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:ink|dusty|clay|offwhite|current)$/]",
-        "message": "<StarMark> tone must be one of 'ink' | 'dusty' | 'clay' | 'offwhite' | 'current'."
+        "selector": "JSXOpeningElement[name.name='Favicon'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:ink|dusty|clay|offwhite|current)$/]",
+        "message": "<Favicon> tone must be one of 'ink' | 'dusty' | 'clay' | 'offwhite' | 'current'."
       },
       {
         "selector": "JSXOpeningElement[name.name='StatCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:figure|children|source|variant|key|ref|className|style|children)$/]",
@@ -177,9 +165,6 @@
       "Card": {
         "replaces": []
       },
-      "Eyebrow": {
-        "replaces": []
-      },
       "Input": {
         "replaces": []
       },
@@ -198,7 +183,7 @@
       "SegmentedToggleOption": {
         "replaces": []
       },
-      "StarMark": {
+      "Favicon": {
         "replaces": []
       },
       "StatCard": {

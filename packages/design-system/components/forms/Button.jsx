@@ -3,8 +3,8 @@
 import React from "react";
 
 const SIZES = {
-  sm: { padding: "10px 18px", fontSize: "0.72rem" },
-  md: { padding: "15px 26px", fontSize: "0.78rem" },
+  sm: { padding: "10px 18px", fontSize: "var(--type-label)", fontWeight: "var(--weight-semibold)" },
+  md: { padding: "15px 26px", fontSize: "0.88rem", fontWeight: "var(--weight-bold)" },
 };
 
 const VARIANTS = {

@@ -1,34 +1,34 @@
 /* ============================================================
    NX, Colour tokens
-   A warm, editorial "skin & parchment" palette. Everything is
-   built on paper-white grounds with a single soft clay accent.
+   A bold, high-contrast palette with deep night inks, electric
+   cobalt neutrals, and a vivid signal accent.
    ============================================================ */
 :root {
-  /* --- Base neutrals (warm, low-chroma) --- */
-  --nx-ink:        #1a1814; /* near-black, warm - headings, primary UI */
-  --nx-ink-logo:   #1b1617; /* exact logo black */
-  --nx-dusty:      #2c2c2a; /* "dusty black" logo variant */
-  --nx-body:       #3a3530; /* body copy - soft dark brown */
-  --nx-sign:       #574f43; /* italic sign-off / secondary ink */
-  --nx-ash:        #675f52; /* tertiary label ink */
-  --nx-muted:      #9a9080; /* muted taupe - captions, meta */
-  --nx-fog:        #8c8478; /* fine print on dark grounds */
+  /* --- Base neutrals (cool, saturated) --- */
+  --nx-ink:        #0b1020; /* deep night ink - headings, primary UI */
+  --nx-ink-logo:   #0a0f1d; /* exact logo black */
+  --nx-dusty:      #1a2340; /* dark cobalt shade */
+  --nx-body:       #24335c; /* body copy - strong blue charcoal */
+  --nx-sign:       #2f4580; /* italic sign-off / secondary ink */
+  --nx-ash:        #3d58a4; /* tertiary label ink */
+  --nx-muted:      #5d7bd4; /* muted but saturated metadata tone */
+  --nx-fog:        #89a1e8; /* fine print on dark grounds */
 
   /* --- Grounds / papers --- */
-  --nx-parchment:  #f7f7f4; /* primary page ground */
-  --nx-paper:      #fbfaf7; /* raised paper (cards, screens) */
-  --nx-oat:        #cfc8bd; /* muted text on ink grounds */
+  --nx-parchment:  #f4f7ff; /* primary page ground */
+  --nx-paper:      #ffffff; /* raised paper (cards, screens) */
+  --nx-oat:        #d6e1ff; /* muted text on ink grounds */
 
-  /* --- Accent (the only "colour") --- */
-  --nx-clay:       #a8927a; /* tan/clay - eyebrows, accents, marks */
+  /* --- Accent --- */
+  --nx-clay:       #ff4d00; /* vivid signal accent for highlights */
 
   /* --- Translucent surfaces (glass over texture) --- */
-  --nx-line:       rgba(40, 34, 28, 0.12);  /* hairline border */
-  --nx-line-soft:  rgba(40, 34, 28, 0.06);  /* faint divider */
-  --nx-glass:      rgba(255, 255, 255, 0.42);/* frosted panel */
-  --nx-glass-hi:   rgba(255, 255, 255, 0.5); /* frosted panel, lighter */
-  --nx-tile:       rgba(255, 255, 255, 0.72);/* opaque-ish card tile */
-  --nx-scrim:      rgba(26, 24, 20, 0.93);   /* toast / overlay ground */
+  --nx-line:       rgba(11, 16, 32, 0.18);   /* hairline border */
+  --nx-line-soft:  rgba(11, 16, 32, 0.09);   /* faint divider */
+  --nx-glass:      rgba(244, 247, 255, 0.58);/* frosted panel */
+  --nx-glass-hi:   rgba(255, 255, 255, 0.75);/* frosted panel, lighter */
+  --nx-tile:       rgba(255, 255, 255, 0.9); /* opaque-ish card tile */
+  --nx-scrim:      rgba(11, 16, 32, 0.92);   /* toast / overlay ground */
 
   /* ============================================================
      Semantic aliases, reference these in components

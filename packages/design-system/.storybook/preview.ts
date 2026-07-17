@@ -12,8 +12,8 @@ const preview = {
     backgrounds: {
       default: "parchment",
       values: [
-        { name: "parchment", value: "#f6f2ea" },
-        { name: "ink", value: "#1a1814" },
+        { name: "parchment", value: "#f4f7ff" },
+        { name: "ink", value: "#0b1020" },
       ],
     },
   },

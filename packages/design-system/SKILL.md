@@ -23,5 +23,5 @@ If the user invokes this skill without any other guidance, ask them what they wa
 - Grounds = parchment/paper; text = warm brown ink; **one** accent = clay, and only clay. No pure black/white, no cool grey, no decorative gradients, **no emoji**, **no em dashes** in copy.
 - Display type is **italic Times**, sentence case. Labels/buttons are **DM Mono UPPERCASE**, wide-tracked. Body is DM Sans.
 - Everything interactive is a **pill**; cards are soft (26px) with **warm brown shadows**; float things on **frosted glass**.
-- The **sparkle star** is the only recurring icon, use `StarMark` / the SVGs, not an icon library.
+- The **sparkle star** is the only recurring icon, use `Favicon` / the SVGs, not an icon library.
 - Voice: a trusted colleague, plain, warm, second person, no hype.

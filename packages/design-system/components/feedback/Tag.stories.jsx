@@ -6,7 +6,12 @@ export default {
   tags: ["autodocs"],
   argTypes: {
     variant: {
-      control: "select",
+      control: {
+        type: "select",
+        labels: {
+          clay: "secondary",
+        },
+      },
       options: ["frost", "clay", "outline"],
     },
   },
@@ -18,7 +23,7 @@ export default {
 
 export const Default = {};
 
-export const Clay = {
+export const Secondary = {
   args: {
     variant: "clay",
   },

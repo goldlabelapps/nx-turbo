@@ -13,8 +13,8 @@
   },
   "scripts": {
     "build": "next build",
-    "dev": "next dev",
-    "start": "next start",
+    "dev": "next dev -p 1991",
+    "start": "next start -p 1991",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "check": "npm run typecheck",
     "build:eve": "eve build",

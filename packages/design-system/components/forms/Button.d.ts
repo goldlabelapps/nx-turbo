@@ -7,7 +7,7 @@ import React from "react";
  */
 export function Button(props: ButtonProps): JSX.Element;
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+type ButtonSharedProps = {
   /** Label. */
   children: React.ReactNode;
   /** Visual weight. @default "primary" */
@@ -21,4 +21,8 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   /** Render as another element, e.g. "a". @default "button" */
   as?: "button" | "a";
   disabled?: boolean;
-}
+};
+
+export type ButtonProps =
+  | (ButtonSharedProps & React.ButtonHTMLAttributes<HTMLButtonElement> & { as?: "button" })
+  | (ButtonSharedProps & React.AnchorHTMLAttributes<HTMLAnchorElement> & { as: "a" });

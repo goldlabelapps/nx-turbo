@@ -15,7 +15,7 @@ import {
     InputAdornment, 
     CardMedia 
 } from '@mui/material';
-import { DesignSystem, Icon } from '../../DesignSystem';
+import { Icon } from '../../DesignSystem';
 
 export interface I_SignIn {
     onSignIn: (email: string, password: string) => void;
@@ -60,17 +60,12 @@ export default function SignIn({ onSignIn, config, error: externalError }: I_Sig
         }
     };
     const themeMode: 'light' | 'dark' = config?.features?.designSystem?.defaultTheme || 'light';
-    let theme = config?.features?.designSystem?.themes?.[themeMode];
-    if (theme) {
-        theme = { ...theme, mode: themeMode };
-    }
     const { siteName, description, images } = config;
     const image = images?.[themeMode] || '';
     const avatar = config?.avatars?.[themeMode] || '';
     const [imgLoaded, setImgLoaded] = useState(false);
 
     return (
-        <DesignSystem theme={theme} config={config}>
             <Container maxWidth="xs" sx={{ mt: 3 }}>
             <form onSubmit={handleSubmit}>
                 
@@ -173,6 +168,5 @@ export default function SignIn({ onSignIn, config, error: externalError }: I_Sig
                     
             </form>
             </Container>
-        </DesignSystem>
     );
 }

@@ -1,15 +1,10 @@
 "use client";
 import React from 'react';
-import { T_Theme } from './NX/types';
 import { NotFound as Clip404 } from '../public/shared/flash'
-import { DesignSystem } from './NX/DesignSystem';
-import config from '../public/nx/config.json';
 
 export default function NotFound() {
-
-    const theme = config?.cartridges?.designSystem?.themes?.['dark'];
-
-    return <DesignSystem theme={theme as T_Theme} config={config}>
+    return (
+        <>
             <Clip404 />
             <div
                 style={{
@@ -21,5 +16,6 @@ export default function NotFound() {
                 }}
             >
             </div>
-        </DesignSystem>;
+        </>
+    );
 }

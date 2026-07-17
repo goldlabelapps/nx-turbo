@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "id": "sess_1784287856858_8y6ph4",
+    "createdAt": "2026-07-17T11:30:56.858Z",
+    "kind": "chat",
+    "title": "Chat: cqwdqead",
+    "summary": "Objective: cqwdqead\nConstraints: Keep it implementation-ready, concise, and tied to route outcomes.\nOutput: Provide a short execu...",
+    "status": "Draft",
+    "link": "/chat"
+  },
+  {
+    "id": "sess_1784287847925_u86uu8",
+    "createdAt": "2026-07-17T11:30:47.925Z",
+    "kind": "workbench",
+    "title": "Workbench: Plan a launch announcement for a ...",
+    "summary": "strict mode, 38% creativity",
+    "status": "Validated",
+    "link": "/Agent"
+  }
+]

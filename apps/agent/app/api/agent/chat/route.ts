@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { runChat } from "@/lib/agent-history";
+import { runChat } from "../../../../lib/agent-history";
 
 export async function POST(request: Request) {
   try {

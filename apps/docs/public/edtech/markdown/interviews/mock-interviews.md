@@ -3,7 +3,7 @@ order: 49
 slug: /interviews/mock-interviews
 title: Mock
 description: Deliberate Practice for Interview Success
-tags: ed-tech, interviews, practice, preparation
+tags: docs, interviews, practice, preparation
 smartImage: teams
 icon: user
 ---

@@ -8,7 +8,7 @@ tags: edtech
 image: https://live.staticflickr.com/65535/55065814741_d54d903eba_b.jpg
 ---
 
-[PageLink icon="rocket" title="Edtech°" description="ed-tech.co" url="https://ed-tech.co/"]  
+[PageLink icon="rocket" title="Edtech°" description="docs.goldlabel.pro" url="https://docs.goldlabel.pro/"]  
 
 Master technical interview communication, behavioral questions, system design explanations, and English interview skills. Ace your software developer interviews. Master technical interview communication, behavioral questions, system design explanations, and English interview skills.
 

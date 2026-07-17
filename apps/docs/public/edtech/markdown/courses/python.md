@@ -4,7 +4,7 @@ slug: /courses/python
 title: Python
 description: Get started with Python
 icon: book
-tags: ed-tech, copilot, ai, free, GitHub, Python
+tags: docs, copilot, ai, free, GitHub, Python
 image: /edtech/png/python.png
 ---
 

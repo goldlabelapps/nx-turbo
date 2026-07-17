@@ -3,7 +3,7 @@ order: 30
 slug: /interviews
 title: Interview Skills
 description: Preparation
-tags: ed-tech, interviews, career, communication
+tags: docs, interviews, career, communication
 icon: user
 ---
 > [CleverText text="Ace software developer interviews."]

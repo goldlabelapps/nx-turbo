@@ -4,7 +4,7 @@ slug: /courses/push-notifications
 title: PWA
 description: How to set up and trigger FCM (Firebase Cloud Messaging)
 icon: book
-tags: ed-tech, copilot, ai, free, GitHub, Python, fcm, push notifications, notfify
+tags: docs, copilot, ai, free, GitHub, Python, fcm, push notifications, notfify
 image: /edtech/png/push.png
 ---
 > [CleverText text="How to set up and trigger FCM (Firebase Cloud Messaging)"]

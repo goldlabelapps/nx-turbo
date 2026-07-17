@@ -3,7 +3,7 @@ order: 48
 slug: /interviews/coding-interviews
 title: Coding
 description: Mastering Technical Problem-Solving
-tags: ed-tech, interviews, coding, algorithms
+tags: docs, interviews, coding, algorithms
 icon: user
 ---
 Coding interviews test your ability to solve algorithmic problems under pressure while communicating your thought process. Success requires technical skills, problem-solving strategies, and effective communication—especially in English.

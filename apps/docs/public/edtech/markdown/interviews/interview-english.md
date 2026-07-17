@@ -3,7 +3,7 @@ order: 52
 slug: /interviews/interview-english
 title: Technical English
 description: For non-native English speakers
-tags: ed-tech, interviews, english, language-learning
+tags: docs, interviews, english, language-learning
 icon: user
 ---
 

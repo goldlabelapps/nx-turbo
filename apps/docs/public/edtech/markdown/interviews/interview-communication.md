@@ -3,7 +3,7 @@ order: 51
 slug: /interviews/interview-communication
 title: Communication
 description: Articulating Technical Thinking Clearly
-tags: ed-tech, interviews, communication, soft-skills
+tags: docs, interviews, communication, soft-skills
 icon: user
 ---
 

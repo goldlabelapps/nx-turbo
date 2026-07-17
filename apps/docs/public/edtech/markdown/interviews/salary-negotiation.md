@@ -3,7 +3,7 @@ order: 54
 slug: /interviews/salary-negotiation
 title: Salary
 description: Maximizing Your Compensation Package
-tags: ed-tech, interviews, salary, negotiation, career
+tags: docs, interviews, salary, negotiation, career
 icon: user
 ---
 

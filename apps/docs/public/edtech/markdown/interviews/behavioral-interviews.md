@@ -3,7 +3,7 @@ order: 50
 slug: interviews/behavioral-interviews
 title: Behavioral
 description: Telling Your Professional Story Effectively
-tags: ed-tech, interviews, behavioral, soft-skills
+tags: docs, interviews, behavioral, soft-skills
 icon: user
 ---
 

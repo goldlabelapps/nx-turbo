@@ -44,11 +44,12 @@ export default function ChatPage() {
       });
 
       const payload = (await response.json()) as { reply?: string; error?: string };
-      if (!response.ok || !payload.reply) {
+      const reply = payload.reply;
+      if (!response.ok || typeof reply !== "string") {
         throw new Error(payload.error || "Unable to generate chat reply.");
       }
 
-      setMessages((previous) => [...previous, { role: "agent", text: payload.reply }]);
+      setMessages((previous) => [...previous, { role: "agent", text: reply }]);
       setStatusNote("Saved to history.");
     } catch (error) {
       const message = error instanceof Error ? error.message : "Unable to process chat request.";

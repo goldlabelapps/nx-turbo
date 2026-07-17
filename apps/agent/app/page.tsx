@@ -1,57 +1,68 @@
-import { Badge, Button, Card, Eyebrow, Logo, StarMark } from "@nx/design-system";
+import { Badge, Button, Card, StatCard } from "@nx/design-system";
 
-const highlights = [
+const routes = [
   {
-    title: "Design system first",
-    copy: "Typography, buttons, cards, and the temporary logo placeholders are imported directly into the app.",
+    title: "Agent Workbench",
+    href: "/Agent",
+    copy: "Build task intent, tune behavior controls, and generate structured output drafts.",
   },
   {
-    title: "Plain Next.js",
-    copy: "No product logic yet. This is a clean starter with a few deliberate sections and room to grow.",
+    title: "Chat",
+    href: "/chat",
+    copy: "Run fast conversational prompts with starter chips and a live message stream.",
   },
   {
-    title: "Easy to extend",
-    copy: "Add pages, layouts, and data flows without untangling old app structure first.",
+    title: "History",
+    href: "/history",
+    copy: "Review previous sessions and reopen outcomes back in the workbench.",
+  },
+  {
+    title: "Settings",
+    href: "/settings",
+    copy: "Adjust safety posture, style voice, and default response budgets.",
   },
 ];
 
 export default function Home() {
   return (
-    <main className="shell">
-      <section className="hero">
-        <div className="hero-mark">
-          <Logo height={56} />
-          <StarMark size={28} tone="current" />
-        </div>
-        <Eyebrow>Starter app</Eyebrow>
-        <h1>A clean Next.js base with the design system already in place.</h1>
-        <p className="lede">
-          This app is intentionally lightweight: a polished shell, a few pieces of content,
-          and shared UI primitives ready to use on the first commit.
-        </p>
-        <div className="actions">
-          <Button as="a" href="#content">
-            Explore the starter
-          </Button>
-          <Button as="a" href="/" variant="ghost">
-            Reset the layout
-          </Button>
-        </div>
-      </section>
-
-      <section className="content" id="content">
-        <div className="content-head">
-          <Badge tone="clay">Ready now</Badge>
-          <h2>Built to be the starting point, not a placeholder app.</h2>
+    <main className="page page-home">
+      <section className="shell">
+        <div className="hero hero-home">
+          <Badge tone="clay">Agent Frontend</Badge>
+          <h1>Operational routes, production guardrails, and a visual system with intent.</h1>
+          <p className="lede">
+            This app is now a complete frontend surface: route navigation, a real Agent workbench,
+            dedicated chat and history views, runtime settings, loading/error resilience, and analytics-ready hooks.
+          </p>
+          <div className="actions">
+            <Button as="a" href="/Agent">
+              Open workbench
+            </Button>
+            <Button as="a" href="/chat" variant="ghost">
+              Start chat
+            </Button>
+          </div>
         </div>
 
-        <div className="grid">
-          {highlights.map((item) => (
+        <div className="route-grid" id="content">
+          {routes.map((item) => (
             <Card key={item.title} padding="lg" hoverLift>
-              <Eyebrow tone="muted">{item.title}</Eyebrow>
+              <h2>{item.title}</h2>
               <p>{item.copy}</p>
+              <Button as="a" href={item.href} size="sm" variant="quiet">
+                Go to route
+              </Button>
             </Card>
           ))}
+        </div>
+
+        <div className="stats-grid">
+          <StatCard figure="4 routes" source="Navigation">
+            Home, chat, history, and settings are now wired under a shared shell.
+          </StatCard>
+          <StatCard figure="3 safeguards" source="Reliability">
+            Global loading state, error boundary UI, and not-found fallbacks are active.
+          </StatCard>
         </div>
       </section>
     </main>

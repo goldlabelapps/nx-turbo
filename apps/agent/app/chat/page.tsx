@@ -19,18 +19,50 @@ export default function ChatPage() {
     { role: "agent", text: "Agent is online. Share a task, and I\'ll produce a structured draft." },
   ]);
   const [input, setInput] = useState("");
+  const [isSending, setIsSending] = useState(false);
+  const [statusNote, setStatusNote] = useState<string | null>(null);
 
-  const submit = (event: FormEvent<HTMLFormElement>) => {
+  const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!input.trim()) return;
+    if (!input.trim() || isSending) return;
 
     const text = input.trim();
     setMessages((previous) => [
       ...previous,
       { role: "user", text },
-      { role: "agent", text: `Received. I\'ll break this into objective, constraints, and first-pass output for: \"${text}\".` },
     ]);
     setInput("");
+
+    try {
+      setIsSending(true);
+      setStatusNote(null);
+
+      const response = await fetch("/api/agent/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text }),
+      });
+
+      const payload = (await response.json()) as { reply?: string; error?: string };
+      if (!response.ok || !payload.reply) {
+        throw new Error(payload.error || "Unable to generate chat reply.");
+      }
+
+      setMessages((previous) => [...previous, { role: "agent", text: payload.reply }]);
+      setStatusNote("Saved to history.");
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "Unable to process chat request.";
+      setMessages((previous) => [
+        ...previous,
+        {
+          role: "agent",
+          text: `${message} I can still help: objective, constraints, and draft can be generated after backend recovery.`,
+        },
+      ]);
+      setStatusNote("Response used fallback path.");
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -71,10 +103,12 @@ export default function ChatPage() {
               value={input}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => setInput(event.target.value)}
               placeholder="Ask for copy, code plans, or QA steps"
+              disabled={isSending}
             />
-            <Button as="button" type="submit">
-              Send
+            <Button as="button" type="submit" disabled={isSending}>
+              {isSending ? "Sending" : "Send"}
             </Button>
+            {statusNote ? <span className="status-note">{statusNote}</span> : null}
           </form>
           </Card>
         </div>

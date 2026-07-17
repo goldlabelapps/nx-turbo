@@ -349,6 +349,15 @@ p {
   align-self: center;
 }
 
+.status-note {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--nx-muted);
+  align-self: center;
+}
+
 .loading-layout {
   width: min(760px, 100%);
 }

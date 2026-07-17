@@ -24,6 +24,8 @@ export default function AgentWorkbenchPage() {
   const [mode, setMode] = useState<Mode>("balanced");
   const [creativity, setCreativity] = useState(42);
   const [result, setResult] = useState("");
+  const [isRunning, setIsRunning] = useState(false);
+  const [statusNote, setStatusNote] = useState<string | null>(null);
 
   const summary = useMemo(() => {
     const direction =
@@ -41,8 +43,31 @@ export default function AgentWorkbenchPage() {
     ].join("\n");
   }, [goal, context, mode, creativity]);
 
-  const runPrompt = () => {
-    setResult(`${summary}\n\nDraft output:\n- Hero message with one core value proposition.\n- Three supporting proof points mapped to user outcomes.\n- Clear CTA hierarchy for the workbench, chat, and history routes.`);
+  const runPrompt = async () => {
+    setIsRunning(true);
+    setStatusNote(null);
+
+    try {
+      const response = await fetch("/api/agent/workbench", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ goal, context, mode, creativity }),
+      });
+
+      const payload = (await response.json()) as { draft?: string; error?: string };
+      if (!response.ok || !payload.draft) {
+        throw new Error(payload.error || "Unable to generate workbench draft.");
+      }
+
+      setResult(payload.draft);
+      setStatusNote("Saved to history.");
+    } catch (error) {
+      const fallback = `${summary}\n\nDraft output:\n- Hero message with one core value proposition.\n- Three supporting proof points mapped to user outcomes.\n- Clear CTA hierarchy for the workbench, chat, and history routes.`;
+      setResult(fallback);
+      setStatusNote(error instanceof Error ? error.message : "Fallback output generated locally.");
+    } finally {
+      setIsRunning(false);
+    }
   };
 
   return (
@@ -106,10 +131,13 @@ export default function AgentWorkbenchPage() {
             </div>
 
             <div className="actions">
-              <Button onClick={runPrompt}>Generate draft</Button>
+              <Button onClick={runPrompt} disabled={isRunning}>
+                {isRunning ? "Generating" : "Generate draft"}
+              </Button>
               <Button as="a" href="/chat" variant="ghost">
                 Open Chat
               </Button>
+              {statusNote ? <span className="status-note">{statusNote}</span> : null}
             </div>
             </Card>
           </div>

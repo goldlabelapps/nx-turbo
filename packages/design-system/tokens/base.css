@@ -18,10 +18,10 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Display headings - editorial serif, italic, warm ink */
+/* Display headings - editorial serif, warm ink */
 h1, h2, h3 {
   font-family: var(--font-serif);
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--weight-semibold);
   color: var(--text-strong);
   letter-spacing: var(--track-display);
@@ -37,7 +37,7 @@ p  { margin: 0 0 1em; font-size: var(--type-body); text-wrap: pretty; }
 a  { color: inherit; }
 
 /* --- Signature helper classes --- */
-.serif   { font-family: var(--font-serif); font-style: italic; }
+.serif   { font-family: var(--font-serif); font-style: normal; }
 .mono    { font-family: var(--font-mono); }
 
 .eyebrow {

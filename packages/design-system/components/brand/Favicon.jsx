@@ -17,7 +17,7 @@ const TONES = {
 /**
  * Ping-pong ball icon used as the NX brand mark variant.
  */
-export function Favicon({ size = 24, tone = "ink", title, style, ...rest }) {
+export function Favicon({ size = 24, tone = "clay", title, style, ...rest }) {
   const mainColor = TONES[tone] || tone;
   const smileColor = tone === "offwhite" ? "#0b1020" : "#fff";
   return (

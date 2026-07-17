@@ -15,6 +15,7 @@ import {
 import { normalizeTenant } from '../NX/lib/normalizeTenant';
 import { RenderMarkdown } from '../NX/Shortcodes';
 import { ShareVirus } from '../../public/shared/flash';
+import { Favicon } from '@nx/design-system';
 
 type T_NavNode = {
     title?: string;
@@ -116,26 +117,49 @@ export default async function Page(props: any) {
     const navItems = (await serverUseNav()) as T_NavNode[];
     const siteName = config?.siteName || tenant.toUpperCase();
     const pageDescription = description || config?.description || '';
-    const currentPath = Array.isArray(slugArr) && slugArr.length
-        ? `/${slugArr.join('/')}`
-        : '/';
 
     return (
         <NX config={config} frontmatter={data}>
             <div className="site-shell">
                 <header className="site-header">
-                    <h1>{siteName}</h1>
-                    <p>{title}</p>
+                    <div className="site-header-top" aria-label="Main header bar">
+                        <div className="site-brand">
+                            <a className="site-home-reset" href="/" aria-label="Home and reset to root">
+                                <Favicon size={35} tone="ink" aria-hidden={true} />
+                            </a>
+                            <a className="site-brand-name" href="/" aria-label={`${siteName} home`}>
+                                {siteName}
+                            </a>
+                        </div>
+
+                        <div className="site-header-actions" aria-label="Header actions">
+                            <details className="site-mobile-nav" aria-label="Mobile navigation">
+                                <summary className="site-mobile-nav-trigger">Menu</summary>
+                                <nav className="site-mobile-nav-panel" aria-label="Primary navigation">
+                                    {renderNavItems(navItems)}
+                                </nav>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div className="site-header-hero" aria-label="Page introduction">
+                        <div className="site-header-copy">
+                            <p className="site-header-eyebrow">{data.title || title}</p>
+                            <p>{pageDescription}</p>
+                        </div>
+                    </div>
                 </header>
 
                 <main className="site-main" id="main">
                     <aside className="site-col site-col-left" aria-label="Primary navigation">
-                        <h2>Navigation</h2>
                         {renderNavItems(navItems)}
                     </aside>
 
                     <section className="site-col site-col-center" aria-label="Page content">
-                        {pageDescription ? <p className="page-kicker">{pageDescription}</p> : null}
+                        <div className="site-featured-image" aria-label="Featured image" aria-hidden="true">
+                            <img className="site-featured-image-bg" src="/nx/jpg/target.jpg" alt="" />
+                            <img className="site-featured-image-avatar" src="/nx/svg/avatarLight.svg" alt="" />
+                        </div>
                         {data.cartridge ? (
                             data.cartridge === 'virus' ? (
                                 <ShareVirus config={config} />
@@ -154,20 +178,75 @@ export default async function Page(props: any) {
                         )}
                     </section>
 
-                    <aside className="site-col site-col-right" aria-label="Page information">
-                        <h2>Info</h2>
-                        <ul className="site-meta-list">
-                            <li>Tenant: {tenant}</li>
-                            <li>Path: {currentPath}</li>
-                            <li>
-                                Source: <a href={config?.url || '/'}>{config?.url || '/'}</a>
-                            </li>
-                        </ul>
+                    <aside className="site-col site-col-right" aria-label="Sidebar placeholder">
+                        <section className="site-sidebar-placeholder">
+                            <p className="site-sidebar-placeholder-label">Placeholder</p>
+                            <p className="site-sidebar-placeholder-text">
+                                Sidebar module intentionally muted for now.
+                            </p>
+                        </section>
                     </aside>
                 </main>
 
                 <footer className="site-footer">
-                    <p>{siteName}</p>
+                    <div className="site-footer-top">
+                        <div className="site-footer-brand" aria-label="Brand and overview">
+                            <h2>{siteName}</h2>
+                            <p>{config?.description || 'Docs, updates, and product resources in one place.'}</p>
+                        </div>
+
+                        <nav className="site-footer-columns" aria-label="Footer links">
+                            <section className="site-footer-section" aria-label="Product links">
+                                <h3>Product</h3>
+                                <ul>
+                                    <li><a href="/">Overview</a></li>
+                                    <li><a href="/NX">Features</a></li>
+                                    <li><a href="/account">Account</a></li>
+                                    <li><a href="/settings">Settings</a></li>
+                                </ul>
+                            </section>
+
+                            <section className="site-footer-section" aria-label="Resources links">
+                                <h3>Resources</h3>
+                                <ul>
+                                    <li><a href="/docs">Documentation</a></li>
+                                    <li><a href="/free">Free tools</a></li>
+                                    <li><a href="/shared">Templates</a></li>
+                                    <li><a href="/history">Release notes</a></li>
+                                </ul>
+                            </section>
+
+                            <section className="site-footer-section" aria-label="Company links">
+                                <h3>Company</h3>
+                                <ul>
+                                    <li><a href="/about">About</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+                                    <li><a href="/careers">Careers</a></li>
+                                    <li><a href="/status">Status</a></li>
+                                </ul>
+                            </section>
+
+                            <section className="site-footer-section" aria-label="Legal links">
+                                <h3>Legal</h3>
+                                <ul>
+                                    <li><a href="/privacy">Privacy</a></li>
+                                    <li><a href="/terms">Terms</a></li>
+                                    <li><a href="/security">Security</a></li>
+                                    <li><a href="/cookies">Cookies</a></li>
+                                </ul>
+                            </section>
+                        </nav>
+                    </div>
+
+                    <div className="site-footer-bottom">
+                        <p>© {new Date().getFullYear()} {siteName}. All rights reserved.</p>
+                        <ul className="site-footer-social" aria-label="Social links">
+                            <li><a href={config?.url || '/'}>Website</a></li>
+                            <li><a href="https://github.com">GitHub</a></li>
+                            <li><a href="https://x.com">X</a></li>
+                            <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+                        </ul>
+                    </div>
                 </footer>
             </div>
         </NX>

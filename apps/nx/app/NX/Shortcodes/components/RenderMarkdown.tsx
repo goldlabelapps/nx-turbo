@@ -25,6 +25,59 @@ export default function RenderMarkdown({
   const normalizeChildren = (children: any) =>
     Array.isArray(children) ? children : [children];
 
+  const isBlockLikeNode = (node: React.ReactNode) => {
+    if (!React.isValidElement(node)) return false;
+    if (node.type === React.Fragment) return false;
+    if (typeof node.type !== 'string') return true;
+
+    const inlineTags = new Set([
+      'a',
+      'abbr',
+      'b',
+      'bdi',
+      'bdo',
+      'br',
+      'cite',
+      'code',
+      'data',
+      'dfn',
+      'em',
+      'i',
+      'img',
+      'kbd',
+      'label',
+      'mark',
+      'q',
+      'ruby',
+      's',
+      'samp',
+      'small',
+      'span',
+      'strong',
+      'sub',
+      'sup',
+      'time',
+      'u',
+      'var',
+      'wbr',
+    ]);
+
+    return !inlineTags.has(node.type);
+  };
+
+  const renderChildrenWithShortcodes = (children: React.ReactNode) =>
+    normalizeChildren(children).map((child, index) => {
+      const renderedChild = typeof child === 'string' ? renderShortcode(child) : child;
+
+      if (React.isValidElement(renderedChild)) {
+        return React.cloneElement(renderedChild, {
+          key: renderedChild.key ?? `md-${index}`,
+        });
+      }
+
+      return renderedChild;
+    });
+
   // --- Shortcode parser ---
   const renderShortcode = (text: string) => {
     const parseShortcode = (
@@ -91,28 +144,26 @@ export default function RenderMarkdown({
             h1: ({ children }) => <h1>{children}</h1>,
             h2: ({ children }) => <h2>{children}</h2>,
             h3: ({ children }) => <h3>{children}</h3>,
-            p: ({ children }) => (
-              <p>
-                {normalizeChildren(children).map((child, i) => (
-                  <React.Fragment key={i}>
-                    {typeof child === 'string' ? renderShortcode(child) : child}
-                  </React.Fragment>
-                ))}
-              </p>
-            ),
-            li: ({ children }) => (
-              <li>
-                <span>
-                  {normalizeChildren(children).map((child, i) => (
-                    <React.Fragment key={i}>
-                      {typeof child === 'string'
-                        ? renderShortcode(child)
-                        : child}
-                    </React.Fragment>
-                  ))}
-                </span>
-              </li>
-            ),
+            p: ({ children }) => {
+              const renderedChildren = renderChildrenWithShortcodes(children);
+              const hasBlockChild = renderedChildren.some(isBlockLikeNode);
+
+              if (hasBlockChild) {
+                return <div>{renderedChildren}</div>;
+              }
+
+              return <p>{renderedChildren}</p>;
+            },
+            li: ({ children }) => {
+              const renderedChildren = renderChildrenWithShortcodes(children);
+              const hasBlockChild = renderedChildren.some(isBlockLikeNode);
+
+              if (hasBlockChild) {
+                return <li>{renderedChildren}</li>;
+              }
+
+              return <li><span>{renderedChildren}</span></li>;
+            },
             strong: ({ children }) => <strong>{children}</strong>,
             em: ({ children }) => <em>{children}</em>,
             a: ({ href = '', children }) => {

@@ -12,7 +12,29 @@ const configRaw = fs.readFileSync(configPath, 'utf-8');
 const config = JSON.parse(configRaw);
 const { title, description, favicon } = config;
 
+function resolveMetadataBase(input: unknown): URL {
+  if (typeof input === 'string') {
+    const value = input.trim();
+    if (value) {
+      try {
+        return new URL(value);
+      } catch {
+        try {
+          return new URL(`https://${value.replace(/^\/+/, '')}`);
+        } catch {
+          // Fall through to default URL.
+        }
+      }
+    }
+  }
+
+  return new URL('https://nx');
+}
+
+const metadataBase = resolveMetadataBase(config?.url);
+
 export const metadata: Metadata = {
+  metadataBase,
   title: `${title}, ${description}`,
   description,
   icons: {

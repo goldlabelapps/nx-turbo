@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { readHistory } from "@/lib/agent-history";
+import { readHistory } from "../../../../lib/agent-history";
 
 export async function GET() {
   try {

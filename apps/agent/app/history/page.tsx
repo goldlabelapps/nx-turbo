@@ -1,5 +1,5 @@
 import { Badge, Button, Card, Tag } from "@nx/design-system";
-import { readHistory } from "@/lib/agent-history";
+import { readHistory } from "../../lib/agent-history";
 
 function formatTime(value: string) {
   return new Intl.DateTimeFormat("en", {

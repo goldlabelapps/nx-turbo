@@ -1,4 +1,4 @@
-# edtech
+# docs
 
 ## How to update this codebase from upstream (goldlabelapps/nx)
 

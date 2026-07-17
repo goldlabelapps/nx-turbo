@@ -1,5 +1,5 @@
 {
-  "name": "ed-tech",
+  "name": "docs",
   "version": "2.1.3",
   "scripts": {
     "dev": "pnpm run kill && rm -rf .next && next dev -p 1998 --webpack",

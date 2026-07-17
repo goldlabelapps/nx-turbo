@@ -2,6 +2,11 @@ import "server-only";
 
 import { promises as fs } from "fs";
 import path from "path";
+import {
+  addHistoryEntry as addFirebaseHistoryEntry,
+  isFirebaseHistoryEnabled,
+  readHistoryEntries,
+} from "@nx/firebase-adapter";
 
 export type SessionKind = "chat" | "workbench";
 export type SessionStatus = "Draft" | "Published" | "Validated";
@@ -39,6 +44,14 @@ async function ensureStoreFile() {
 }
 
 export async function readHistory(): Promise<HistoryEntry[]> {
+  if (isFirebaseHistoryEnabled()) {
+    try {
+      return (await readHistoryEntries(120)) as HistoryEntry[];
+    } catch {
+      // Fall back to file history if Firestore is temporarily unavailable.
+    }
+  }
+
   await ensureStoreFile();
   const raw = await fs.readFile(STORE_PATH, "utf8");
 
@@ -63,6 +76,14 @@ function makeId() {
 }
 
 export async function addHistoryEntry(entry: Omit<HistoryEntry, "id" | "createdAt">) {
+  if (isFirebaseHistoryEnabled()) {
+    try {
+      return (await addFirebaseHistoryEntry(entry)) as HistoryEntry;
+    } catch {
+      // Fall back to file history if Firestore is temporarily unavailable.
+    }
+  }
+
   const existing = await readHistory();
   const next: HistoryEntry = {
     id: makeId(),

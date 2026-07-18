@@ -182,7 +182,7 @@ export default function RenderMarkdown({
                 </Typography>
               </li>
             ),
-            strong: ({ children }) => <strong>{children}</strong>,
+            strong: ({ children }) => <span>{children}</span>,
             em: ({ children }) => <em>{children}</em>,
             a: ({ href = '', children }) => {
               const isExternal = /^https?:\/\//.test(href);
@@ -194,7 +194,7 @@ export default function RenderMarkdown({
                   color={theme.palette.text.primary}
                   underline="none"
                 >
-                  <strong>{children}</strong>
+                  <span>{children}</span>
                 </MuiLink>
               );
             },

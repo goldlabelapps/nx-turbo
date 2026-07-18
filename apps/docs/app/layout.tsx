@@ -1,5 +1,5 @@
 import "./globals.css";
-import "@nx/design-system/styles";
+import "@nx/ui/styles";
 import "@nx/newspaper/styles";
 import type { Metadata } from "next";
 import { NewspaperShell } from "@nx/newspaper";

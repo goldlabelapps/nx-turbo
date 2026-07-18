@@ -32,6 +32,6 @@ NX° turborepo implementation
 
 ## Packages
 
-### packages/design-system
+### packages/ui
 
 - [Overview](apps/docs/public/docs/packages/design-system.md)

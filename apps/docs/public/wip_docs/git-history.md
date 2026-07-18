@@ -80,7 +80,7 @@ This made NX° Turbo one of the few JavaScript monorepos with a first-class Pyth
 - Dead Flash hooks (`useIsMobile`, `usePrefersColorScheme`) and a no-op paywall init action were removed, simplifying the NX app.
 - All NX app documentation was **centralised into the root `docs/` tree** (removing per-app `docs/` folders). Four **Architecture Decision Records (ADRs)** were added.
 - A `dev:all` workspace script was added (default `dev` excludes the Python app).
-- A **design-system concept-lab toolkit** landed: three GitHub Copilot prompt commands (`generate-concepts`, `review-concept`, `systemize-patterns`), a formal design-review checklist (`docs/features/design-system-review-checklist.md`), and a disposable concept-lab HTML template (`packages/design-system/templates/concept-lab/`).
+- A **design-system concept-lab toolkit** landed: three GitHub Copilot prompt commands (`generate-concepts`, `review-concept`, `systemize-patterns`), a formal design-review checklist (`docs/features/design-system-review-checklist.md`), and a disposable concept-lab HTML template (`packages/ui/templates/concept-lab/`).
 - The `ed-tech` dev script was fixed to skip a redundant `pnpm install` on startup.
 
 ---
@@ -102,11 +102,11 @@ The entire `docs/` tree was moved to **`apps/docs/public/docs/`**, aligning docu
 ### Agent App (`apps/agent`)
 A new **Next.js agent frontend** was built from scratch:
 
-1. **Scaffold** — Base layout, home page, 404 page, global styling, wired to `@nx/design-system`.
+1. **Scaffold** — Base layout, home page, 404 page, global styling, wired to `@nx/ui`.
 2. **Shell & Routes** — Full App Router structure with Workbench, Chat, History, and Settings routes inside a shared `AppFrame` with global navigation, route analytics, sitemap/robots, and loading/error states.
 3. **API & Persistence** — Server routes for chat, workbench generation, and history retrieval. A `data/agent-history.json` file-based store was introduced, with async page rendering for real session data.
 4. **PWA** — `next-pwa` integration with web app manifest, app icons, and installable metadata.
-5. **Firebase Adapter** — A new `packages/firebase-adapter` workspace package using `firebase-admin` to read/write agent history from Firestore, with graceful fallback to the file store.
+5. **Firebase Adapter** — A new `packages/nx-firebase` workspace package using `firebase-admin` to read/write agent history from Firestore, with graceful fallback to the file store.
 
 ### nx-agent Package (`packages/nx-agent`)
 A production-style **Eve framework** AI agent was scaffolded:
@@ -191,7 +191,7 @@ Monorepo root version bumped to **v1.0.4**.
 | Package manager | pnpm (v10 → v11) |
 | Primary framework | Next.js 14+ (App Router) |
 | Language | TypeScript |
-| Design system | Custom CSS token system (`@nx/design-system`) with Storybook 8 |
+| Design system | Custom CSS token system (`@nx/ui`) with Storybook 8 |
 | UI components | shadcn/ui (agent), MUI (legacy NX app) |
 | Webfonts | Instrument Sans · IBM Plex Mono · Cormorant Garamond |
 | AI / Agent | Vercel Eve framework (`packages/nx-agent`) |
@@ -214,7 +214,7 @@ nx-turbo/
 │   └── python/         # Python CLI app
 ├── packages/
 │   ├── design-system/  # CSS token design system + Storybook
-│   ├── firebase-adapter/ # Firestore adapter for agent history
+│   ├── nx-firebase/ # Firestore adapter for agent history
 │   ├── nx-agent/       # Eve-based AI agent package
 │   ├── nx-flash/       # Flash-style animation primitives
 │   └── ui/             # Legacy MUI theme package

@@ -215,11 +215,11 @@ Reject concepts that score high visually but low on token discipline or reuse po
 5. Use Prompt 5 to decide what enters the design system.
 6. Use Prompt 6 to hand the result to implementation.
 
-Prototype disposable concepts in [packages/design-system/templates/concept-lab/ConceptLab.dc.html](../../packages/design-system/templates/concept-lab/ConceptLab.dc.html) before moving anything into app code. Usage notes live in [packages/design-system/templates/concept-lab/README.md](../../packages/design-system/templates/concept-lab/README.md), and you can open the lab from the repo root with `pnpm preview:concept-lab`.
+Prototype disposable concepts in [packages/ui/templates/concept-lab/ConceptLab.dc.html](../../packages/ui/templates/concept-lab/ConceptLab.dc.html) before moving anything into app code. Usage notes live in [packages/ui/templates/concept-lab/README.md](../../packages/ui/templates/concept-lab/README.md), and you can open the lab from the repo root with `pnpm preview:concept-lab`.
 
 ## Notes for this repo
 
 - Keep design-token decisions aligned with [docs/decisions/002-design-tokens.md](../decisions/002-design-tokens.md).
 - Treat [docs/features/design-system.md](./design-system.md) as the feature-level overview.
-- Reuse the branding and house rules from [packages/design-system/SKILL.md](../../packages/design-system/SKILL.md) when generating concepts.
+- Reuse the branding and house rules from [packages/ui/SKILL.md](../../packages/ui/SKILL.md) when generating concepts.
 - Use [docs/features/design-system-review-checklist.md](./design-system-review-checklist.md) before promoting a concept into shared system primitives.

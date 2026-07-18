@@ -6,7 +6,7 @@ import {
   addHistoryEntry as addFirebaseHistoryEntry,
   isFirebaseHistoryEnabled,
   readHistoryEntries,
-} from "@nx/firebase-adapter";
+} from "@nx/nx-firebase";
 
 export type SessionKind = "chat" | "workbench";
 export type SessionStatus = "Draft" | "Published" | "Validated";

@@ -6,7 +6,7 @@ import {
   NewspaperShell,
   StoryCard,
   StoryGrid,
-} from "@nx/newspaper";
+} from "../../newspaper/src";
 
 const meta = {
   title: "Themes/Newspaper Showcase",

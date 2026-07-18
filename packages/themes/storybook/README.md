@@ -20,6 +20,19 @@ Build static output:
 pnpm --filter @nx/themes-storybook build-storybook
 ```
 
+## Deploy to Vercel
+
+Use a dedicated Vercel project for this package.
+
+Required project settings:
+
+1. Root Directory: `packages/themes/storybook`
+2. Framework Preset: `Other`
+3. Build Command: `corepack pnpm build-storybook`
+4. Output Directory: `storybook-static`
+
+This package includes `vercel.json` with those build defaults so Vercel does not try to treat this deploy as Next.js.
+
 ## Add a new theme
 
 1. Register it in `.storybook/themes.ts`.

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
 import {
   BreakingBar,
   LeadStoryCard,
@@ -6,7 +7,7 @@ import {
   NewspaperShell,
   StoryCard,
   StoryGrid,
-} from "@nx/newspaper";
+} from "../../newspaper/src";
 
 const meta = {
   title: "Themes/Newspaper Showcase",

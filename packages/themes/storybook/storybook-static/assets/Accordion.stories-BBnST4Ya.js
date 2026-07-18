@@ -1,0 +1,5 @@
+import{A as m}from"./Accordion-DmbwJmm3.js";import"./index-Bp2yA9Wa.js";import"./_commonjsHelpers-CqkleIqs.js";const d=[{q:"What is included?",a:"A lightweight starter shell, a clean landing page, and shared design-system components."},{q:"Can I extend it?",a:"Yes. It is set up as a simple Next app so you can add routes, data fetching, and layouts as needed."},{q:"Is the design system wired in?",a:"Yes. The app imports the design-system styles and components directly from the workspace package."}],l={title:"Feedback/Accordion",component:m,tags:["autodocs"],args:{items:d}},e={},s={args:{summaryStyle:"mono"}};var a,o,t;e.parameters={...e.parameters,docs:{...(a=e.parameters)==null?void 0:a.docs,source:{originalSource:"{}",...(t=(o=e.parameters)==null?void 0:o.docs)==null?void 0:t.source}}};var r,n,c;s.parameters={...s.parameters,docs:{...(r=s.parameters)==null?void 0:r.docs,source:{originalSource:`{
+  args: {
+    summaryStyle: "mono"
+  }
+}`,...(c=(n=s.parameters)==null?void 0:n.docs)==null?void 0:c.source}}};const g=["Default","MonoSummary"];export{e as Default,s as MonoSummary,g as __namedExportsOrder,l as default};

@@ -104,11 +104,15 @@ export default async function Page(props: any) {
 
     return (
             <NX config={config} frontmatter={data}>
-                <Breadcrumb
-                    navItems={navItems as I_NestedNav["navItems"]}
-                    pathname={breadcrumbPath}
-                    currentLabel={title}
-                />
+                {slugArr.length > 0 ? (
+                    <Breadcrumb
+                        navItems={navItems as I_NestedNav["navItems"]}
+                        pathname={breadcrumbPath}
+                        currentLabel={title}
+                        variant="stacked"
+                    />
+                ) : null}
+
                 {data.cartridge ? (
                     data.cartridge === 'virus' ? (
                         <section id="main" style={{ paddingBottom: '90px' }}>
@@ -153,7 +157,7 @@ export default async function Page(props: any) {
                                 sx={{
                                     fontSize: { xs: '2rem', md: '2.6rem' },
                                     lineHeight: 1.05,
-                                    fontWeight: 800,
+                                    fontWeight: 400,
                                     color: 'text.primary',
                                     mb: 1.25,
                                 }}
@@ -199,7 +203,7 @@ export default async function Page(props: any) {
                             <Box sx={{ gridColumn: { xs: '1', md: '2' }, display: 'grid', gap: 1.5 }}>
                                 <Box>
                                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 1 }}>
-                                        <Typography component="h2" sx={{ fontSize: '1.05rem', fontWeight: 800 }}>
+                                        <Typography component="h2" sx={{ fontSize: '1.05rem', fontWeight: 400 }}>
                                             Sections
                                         </Typography>
                                     </Box>
@@ -225,14 +229,14 @@ export default async function Page(props: any) {
                                             },
                                         }}
                                     >
-                                        <Typography sx={{ fontSize: '1.05rem', fontWeight: 700, lineHeight: 1.2 }}>
+                                        <Typography sx={{ fontSize: '1.05rem', fontWeight: 400, lineHeight: 1.2 }}>
                                             {item.label}
                                         </Typography>
                                     </Paper>
                                 ))}
 
                                 <Box sx={{ mt: 1 }}>
-                                    <Typography component="h2" sx={{ fontSize: '1.05rem', fontWeight: 800, mb: 1 }}>
+                                    <Typography component="h2" sx={{ fontSize: '1.05rem', fontWeight: 400, mb: 1 }}>
                                         Read Next
                                     </Typography>
                                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '0.8rem' }}>

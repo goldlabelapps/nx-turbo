@@ -35,11 +35,11 @@
   border-bottom: 1px solid var(--np-color-line);
   padding-block: 0.75rem 1.1rem;
   margin-bottom: 1rem;
+  position: relative;
 }
 
 .np-masthead-top-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 0.75rem;
 }
@@ -50,9 +50,13 @@
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  font-weight: 400;
 }
 
 .np-masthead-utility-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
   display: inline-flex;
   gap: 1rem;
 }
@@ -69,6 +73,7 @@
   line-height: 1;
   margin: 0.35rem 0 0.25rem;
   letter-spacing: -0.015em;
+  font-weight: 400;
 }
 
 .np-masthead-strapline {
@@ -165,7 +170,7 @@
   text-decoration: none;
   font-family: var(--np-font-serif);
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 0.35rem;
 }
 
@@ -207,7 +212,7 @@
 .np-masthead-section-link {
   text-decoration: none;
   color: var(--np-color-ink);
-  font-weight: 600;
+  font-weight: 400;
   font-size: 0.92rem;
 }
 
@@ -228,7 +233,7 @@
   font-size: 0.74rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .np-breaking-list {
@@ -243,7 +248,7 @@
 .np-breaking-list a {
   color: var(--np-color-ink);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 0.92rem;
 }
 
@@ -309,7 +314,7 @@
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .np-story-title {

@@ -22,7 +22,7 @@ body {
 }
 
 .np-masthead-dateline {
-    font-weight: 700;
+    font-weight: 400;
 }
 
 #main {
@@ -140,10 +140,30 @@ blockquote {
     background: var(--np-color-accent-soft);
     color: var(--np-color-accent);
     font-size: 0.8rem;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.np-masthead-title,
+.np-masthead-strapline,
+.np-masthead-section-link,
+.np-dropdown-column-title,
+.np-dropdown-list li > a,
+.np-breaking-label,
+.np-breaking-list a,
+.np-story-eyebrow,
+.np-story-title,
+strong,
+b,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
 }
 
 .np-masthead-utility-nav a:hover,

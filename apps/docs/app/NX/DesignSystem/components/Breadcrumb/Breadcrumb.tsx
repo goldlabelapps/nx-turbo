@@ -16,6 +16,7 @@ export interface BreadcrumbProps {
   pathname?: string;
   currentLabel?: string;
   label?: string;
+  variant?: 'inline' | 'stacked';
 }
 
 function normalizePath(path: string) {
@@ -83,8 +84,17 @@ export default function Breadcrumb({
   pathname = '/',
   currentLabel,
   label,
+  variant = 'inline',
 }: BreadcrumbProps) {
   const crumbs = buildCrumbs({ navItems, pathname, currentLabel });
+  const isStacked = variant === 'stacked';
+  const crumbTextSx = {
+    fontFamily: 'inherit',
+    fontSize: '0.95rem',
+    lineHeight: 1.4,
+    fontWeight: 400,
+    letterSpacing: 0,
+  } as const;
 
   return (
     <Box
@@ -92,11 +102,12 @@ export default function Breadcrumb({
       aria-label="Breadcrumb"
       sx={{
         display: 'flex',
+        flexDirection: isStacked ? 'column' : 'row',
         flexWrap: 'wrap',
-        justifyContent: 'space-between',
-        gap: 1,
-        alignItems: 'center',
-        mb: 2,
+        justifyContent: isStacked ? 'flex-start' : 'space-between',
+        gap: isStacked ? 1.25 : 1,
+        alignItems: isStacked ? 'flex-start' : 'center',
+        mb: isStacked ? 3 : 2,
       }}
     >
       <Box
@@ -108,9 +119,8 @@ export default function Breadcrumb({
           display: 'flex',
           alignItems: 'center',
           flexWrap: 'wrap',
-          gap: 0.75,
+          gap: isStacked ? 1 : 0.75,
           color: 'text.secondary',
-          fontSize: '0.92rem',
           '& li': { display: 'inline-flex', alignItems: 'center' },
         }}
       >
@@ -118,17 +128,39 @@ export default function Breadcrumb({
           const isLast = index === crumbs.length - 1;
           return (
             <li key={`${item.label}-${index}`}>
+              {index > 0 ? (
+                <Box
+                  component="span"
+                  aria-hidden="true"
+                  sx={{
+                    mx: 0.85,
+                    color: 'text.disabled',
+                    fontFamily: 'inherit',
+                    fontSize: '0.95rem',
+                    lineHeight: 1.4,
+                    fontWeight: 400,
+                  }}
+                >
+                  &gt;
+                </Box>
+              ) : null}
               {item.href && !isLast ? (
                 <MuiLink
                   href={item.href}
                   underline="hover"
                   color="inherit"
-                  sx={{ fontWeight: 600 }}
+                  sx={crumbTextSx}
                 >
                   {item.label}
                 </MuiLink>
               ) : (
-                <Typography component="span" sx={{ fontWeight: isLast ? 700 : 600, color: isLast ? 'text.primary' : 'text.secondary' }}>
+                <Typography
+                  component="span"
+                  sx={{
+                    ...crumbTextSx,
+                  color: isLast ? 'text.primary' : 'text.secondary',
+                  }}
+                >
                   {item.label}
                 </Typography>
               )}
@@ -151,6 +183,7 @@ export default function Breadcrumb({
             fontWeight: 700,
             bgcolor: 'var(--np-color-accent)',
             color: '#fff',
+            mt: isStacked ? 0.25 : 0,
           }}
         >
           {label}

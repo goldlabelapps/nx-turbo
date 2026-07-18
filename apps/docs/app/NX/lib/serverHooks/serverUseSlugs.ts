@@ -5,14 +5,9 @@ import matter from "gray-matter";
 /**
  * Finds markdown files by a comma-separated list of slugs and returns their content objects.
  * @param slugs Comma-separated string or array of slugs
- * @param project Project name (default: "docs")
  * @returns Array of content objects for each slug
  */
-export function serverUseSlugs(slugs: string[] | string = [], project: string = "docs"): any[] {
-    if (!project) {
-        project = process.env.NEXT_PUBLIC_TENANT || "docs";
-    }
-    project = project === 'free' || project === 'edtech' ? 'docs' : project;
+export function serverUseSlugs(slugs: string[] | string = []): any[] {
     // Normalize slugs to array
     let slugArr: string[] = [];
     if (typeof slugs === "string") {
@@ -20,7 +15,7 @@ export function serverUseSlugs(slugs: string[] | string = [], project: string = 
     } else if (Array.isArray(slugs)) {
         slugArr = slugs.map(s => s.trim()).filter(Boolean);
     }
-    const markdownDir = `public/${project}/markdown`;
+    const markdownDir = `public/markdown`;
 
     // Helper to find a file by slug
     function findFileBySlug(targetSlug: string): string | null {

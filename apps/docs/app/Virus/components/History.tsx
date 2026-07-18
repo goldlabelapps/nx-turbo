@@ -64,11 +64,6 @@ export default function History({ history }: HistoryProps) {
 											{entry.siteName}
 										</Typography>
 									)}
-									{entry.tenant && (
-										<Typography variant="caption" color="textSecondary">
-											({entry.tenant})
-										</Typography>
-									)}
 								</Box> */}
 								{/* <Typography variant="body2" color="textSecondary">
 									{entry.timestamp ? moment(entry.timestamp).fromNow() : ''}

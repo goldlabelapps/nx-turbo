@@ -1,10 +1,9 @@
 // import type { I_Meta } from '../types';
-import { getTenant } from './getTenant';
+import { getDocsContext } from './getDocsContext';
 
 export const getMeta = (props: any) => {
 
-    const tenant = getTenant();
-    const { config } = tenant;
+    const { config } = getDocsContext();
 
     const meta: any = {
         siteName: props?.siteName ?? config.siteName ?? '',

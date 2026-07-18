@@ -5,7 +5,7 @@ title: Python
 description: Get started with Python
 icon: book
 tags: docs, copilot, ai, free, GitHub, Python
-image: /docs/png/python.png
+image: /png/python.png
 ---
 
 [CleverText text="Python for the Hesitant Developer: A Friendly Introduction"]

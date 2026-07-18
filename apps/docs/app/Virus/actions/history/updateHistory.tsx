@@ -23,7 +23,6 @@ export const getHistoryEntry = (): T_HistoryEntry | null => {
 		featuredImage: featuredImageMeta?.content || twitterImageMeta?.content || '',
 		url,
 		slug: new URL(url).pathname,
-		tenant: '',
 		siteName: '',
 		favicon: '',
 	};
@@ -48,8 +47,7 @@ export const updateHistory = () => async (
 			return;
 		}
 
-		// Add tenant and siteName from config
-		historyEntry.tenant = config?.tenant || '';
+		// Add site metadata from config
 		historyEntry.siteName = config?.siteName || '';
 		historyEntry.favicon = config?.favicon 
 			? window.location.origin + config.favicon

@@ -24,15 +24,8 @@ export type T_Email = {
     template?: string;
 
 };
-
-
-export type T_Tenant = 'my-tenant' |
-    'new-tenant'
-;
-
 export type T_Config = {
     siteName: string;
-    tenant: string;
     description: string;
     url: string;
     owner: {
@@ -333,7 +326,6 @@ export type I_Icon = {
     | 'plus'
     | 'dog'
     | 'about'
-    | 'tenant'
     | 'public'
     | 'experience'
     | 'clients'

@@ -1,4 +1,4 @@
-import type { I_NestedNav, T_Tenant, T_Frontmatter } from '../NX/types';
+import type { I_NestedNav, T_Frontmatter } from '../NX/types';
 import fs from "fs";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
@@ -9,7 +9,7 @@ import {
     serverUseMDBySlug, 
     serverUseAllMd, 
     serverUseNav, 
-    getTenant, 
+    getDocsContext, 
     getMeta 
 } from '../NX/lib/index.server';
 import {
@@ -24,9 +24,8 @@ import {
 export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
     const resolvedParams = typeof params.then === 'function' ? await params : params;
     const slugArr = resolvedParams?.slug || [];
-    const tenant = process.env.NEXT_PUBLIC_TENANT || "nx";
-    const { config } = getTenant(tenant as T_Tenant);
-    const filePath = serverUseMDBySlug(slugArr, tenant);
+    const { config } = getDocsContext();
+    const filePath = serverUseMDBySlug(slugArr);
     let frontmatter: T_Frontmatter = {};
     if (filePath && fs.existsSync(filePath)) {
         const md = fs.readFileSync(filePath, "utf-8");
@@ -65,9 +64,8 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
 }
 
 export async function generateStaticParams() {
-    const tenant = process.env.NEXT_PUBLIC_TENANT || "nx";
-    const { markdownDir } = getTenant(tenant as T_Tenant);
-    let allSlugs = serverUseAllMd(markdownDir, tenant);
+    const { markdownDir } = getDocsContext();
+    let allSlugs = serverUseAllMd(markdownDir);
     return allSlugs.map((slugArr) => {
         const normalized = slugArr.filter(Boolean);
         return { slug: normalized.length ? normalized : undefined };
@@ -79,12 +77,10 @@ export default async function Page(props: any) {
     const resolvedParams = typeof params?.then === 'function' ? await params : params;
     let slugArr = resolvedParams?.slug || [];
     while (slugArr.length > 1 && slugArr[slugArr.length - 1] === "") slugArr.pop();
-    const tenant = process.env.NEXT_PUBLIC_TENANT || "nx";
-    const { config: rawConfig } = getTenant(tenant as T_Tenant);
-    const config = { ...rawConfig, tenant: tenant as T_Tenant };
-    const filePath = serverUseMDBySlug(slugArr, tenant);
+    const { config } = getDocsContext();
+    const filePath = serverUseMDBySlug(slugArr);
     if (!filePath || !fs.existsSync(filePath)) notFound();
-    let title = tenant.toUpperCase();
+    let title = config.siteName || 'DOCS';
     let description = "";
     const md = fs.readFileSync(filePath, "utf-8");
     const { content, data } = matter(md);

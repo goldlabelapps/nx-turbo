@@ -1,5 +1,4 @@
 {
-    "tenant": "docs",
     "siteName": "Docs°",
     "description": "NX° Turbo",
     "url": "https://docs.goldlabel.pro",
@@ -7,14 +6,14 @@
         "name": "Ed",
         "email": "ed@goldlabel.pro"
     },
-    "favicon": "/docs/png/favicon.png",
+    "favicon": "/png/favicon.png",
     "avatars": {
-        "light": "/docs/svg/avatarLight.svg",
-        "dark": "/docs/svg/avatarDark.svg"
+        "light": "/svg/avatarLight.svg",
+        "dark": "/svg/avatarDark.svg"
     },
     "images": {
-        "light": "/docs/png/python.png",
-        "dark": "/docs/png/python.png"
+        "light": "/png/python.png",
+        "dark": "/png/python.png"
     },
     "cartridges": {
         "paywall": {

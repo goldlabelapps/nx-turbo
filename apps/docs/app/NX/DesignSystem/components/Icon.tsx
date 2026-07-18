@@ -170,7 +170,6 @@ import ForwardIcon from '@mui/icons-material/Send';
 import FirebaseIcon from '@mui/icons-material/Whatshot';
 import MediaIcon from '@mui/icons-material/AttachFile';
 import CashIcon from '@mui/icons-material/Savings';
-import TenantIcon from '@mui/icons-material/Anchor';
 import RequiredIcon from '@mui/icons-material/PriorityHigh';
 import HeartIcon from '@mui/icons-material/Favorite';
 import DessertIcon from '@mui/icons-material/Cake';
@@ -273,9 +272,6 @@ export default function Icon({ icon, color }: I_Icon) {
       break;
     case 'png':
       iconFragment = <PhotoIcon color={color} />;
-      break;
-    case 'tenant':
-      iconFragment = <TenantIcon color={color} />;
       break;
     case 'cash':
       iconFragment = <CashIcon color={color} />;

@@ -1,6 +1,6 @@
 ---
 title: Tamagotchi APP°
-description: multi-tenant Python app that recreates the classic handheld digital pet experience via a REST API
+description: Python app that recreates the classic handheld digital pet experience via a REST API
 order: 1 
 slug: /tamagotchi
 icon: api

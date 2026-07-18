@@ -101,10 +101,10 @@ import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import InterpreterModeIcon from "@mui/icons-material/InterpreterMode";
 import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice";
 import StoreIcon from "@mui/icons-material/Store";
-import BarcodeReaderIcon from "@mui/icons-material/BarcodeReader";
+import QrCode2Icon from "@mui/icons-material/QrCode2";
 import CopyAllOutlinedIcon from "@mui/icons-material/CopyAllOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import EditSquareIcon from "@mui/icons-material/EditSquare";
+import EditNoteIcon from "@mui/icons-material/EditNote";
 import DownloadIcon from "@mui/icons-material/Download";
 import AddIcon from "@mui/icons-material/Add";
 import PreviewIcon from "@mui/icons-material/Preview";
@@ -210,7 +210,7 @@ const ICON_COMPONENTS = {
   send: SendIcon,
   vape: SmokeFreeIcon,
   terminal: TerminalIcon,
-  core: BarcodeReaderIcon,
+  core: QrCode2Icon,
   tags: LocalOfferIcon,
   film: TheatersIcon,
   free: CurrencyExchangeIcon,
@@ -380,7 +380,7 @@ const ICON_COMPONENTS = {
   random: ShuffleIcon,
   copy: CopyAllOutlinedIcon,
   linkedin: LinkedInIcon,
-  job: EditSquareIcon,
+  job: EditNoteIcon,
   download: DownloadIcon,
   preview: PreviewIcon,
   flickr: CameraAltIcon,

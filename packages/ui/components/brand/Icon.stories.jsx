@@ -1,3 +1,4 @@
+import React from "react";
 import { Icon, ICON_NAMES } from "./Icon";
 
 export default {

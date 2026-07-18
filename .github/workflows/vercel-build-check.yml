@@ -1,0 +1,44 @@
+name: Vercel Build Check
+
+on:
+  push:
+  pull_request:
+
+concurrency:
+  group: vercel-build-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  vercel-build:
+    name: Vercel Build Parity
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Prepare pnpm (match vercel.json)
+        run: |
+          corepack enable
+          corepack prepare pnpm@11.13.0 --activate
+          corepack pnpm --version
+
+      - name: Install dependencies (frozen lockfile)
+        run: corepack pnpm install --frozen-lockfile
+
+      - name: Build (match vercel.json)
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
+        run: |
+          if [ -d apps/nx ]; then
+            corepack pnpm --dir apps/nx build
+          else
+            corepack pnpm build
+          fi

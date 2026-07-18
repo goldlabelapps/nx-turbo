@@ -16,6 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@nx/design-system": ["packages/design-system"],
+      "@nx/newspaper": ["packages/themes/newspaper/src"],
+      "@nx/newspaper/*": ["packages/themes/newspaper/src/*"],
       "@nx/ui": ["packages/ui/src"],
       "@nx/ui/*": ["packages/ui/src/*"]
     }

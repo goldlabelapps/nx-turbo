@@ -7,6 +7,7 @@ import {
   isFirebaseHistoryEnabled,
   readHistoryEntries,
 } from "@nx/nx-firebase";
+import { runNxAgentChat } from "nx-agent/server";
 
 export type SessionKind = "chat" | "workbench";
 export type SessionStatus = "Draft" | "Published" | "Validated";
@@ -97,11 +98,8 @@ export async function addHistoryEntry(entry: Omit<HistoryEntry, "id" | "createdA
 
 export async function runChat(input: ChatInput) {
   const cleanMessage = input.message.trim();
-  const reply = [
-    `Objective: ${shorten(cleanMessage, 88)}`,
-    "Constraints: Keep it implementation-ready, concise, and tied to route outcomes.",
-    "Output: Provide a short execution plan, then an actionable first draft.",
-  ].join("\n");
+  const agentResult = runNxAgentChat({ message: cleanMessage });
+  const reply = agentResult.reply;
 
   const entry = await addHistoryEntry({
     kind: "chat",

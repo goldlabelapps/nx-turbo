@@ -1,0 +1,15 @@
+.sb-theme-frame {
+  min-height: 100vh;
+  padding: 1.25rem;
+  box-sizing: border-box;
+}
+
+.sb-theme-frame.sb-theme-unix {
+  background: #090f18;
+  color: #f4f8ff;
+}
+
+.sb-theme-frame.sb-theme-newspaper {
+  background: #f6f2e8;
+  color: #222;
+}

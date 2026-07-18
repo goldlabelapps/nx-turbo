@@ -75,14 +75,7 @@ export default async function RootLayout({
   const navItems = await serverUseNav();
   const searchEntries = await serverUseSearchIndex();
   const mastheadMenu = toMastheadMenu(navItems as RawNavItem[]);
-  const content = (
-    <>
-      <div className="wrapper-inner" style={{ paddingTop: 16 }}>
-        <SearchBar entries={searchEntries} />
-      </div>
-      {children}
-    </>
-  );
+  const utilityStart = <SearchBar entries={searchEntries} compact />;
 
   return (
     <html lang="en" data-design-system={designSystemId}>
@@ -101,15 +94,12 @@ export default async function RootLayout({
             title={siteName}
             strapline={description}
             menuItems={mastheadMenu}
+            utilityStart={utilityStart}
             utilityLinks={[{ label: "Home", href: "/" }]}
           />
           <div className="wrapper">
             <UbereduxProvider config={config}>
-              {paywall ? (
-                <RequireAuthWrapper config={config}>{content}</RequireAuthWrapper>
-              ) : (
-                content
-              )}
+              {paywall ? <RequireAuthWrapper config={config}>{children}</RequireAuthWrapper> : children}
             </UbereduxProvider>
           </div>
         </NewspaperShell>

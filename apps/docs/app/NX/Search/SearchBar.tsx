@@ -18,9 +18,10 @@ import { filterSearchEntries, highlightText, type SearchEntry } from './search-u
 
 type SearchBarProps = {
   entries: SearchEntry[];
+  compact?: boolean;
 };
 
-export default function SearchBar({ entries }: SearchBarProps) {
+export default function SearchBar({ entries, compact = false }: SearchBarProps) {
   const router = useRouter();
   const [query, setQuery] = React.useState('');
   const [open, setOpen] = React.useState(false);
@@ -63,11 +64,12 @@ export default function SearchBar({ entries }: SearchBarProps) {
   };
 
   const trimmedQuery = query.trim();
+  const popupWidth = compact ? 'min(960px, calc(100vw - 32px))' : '100%';
 
   return (
-    <Box sx={{ position: 'relative', width: '100%', maxWidth: 960, mx: 'auto' }}>
+    <Box sx={{ position: 'relative', width: compact ? 260 : '100%', maxWidth: compact ? 260 : 960, mx: compact ? 0 : 'auto' }}>
       <TextField
-        fullWidth
+        fullWidth={!compact}
         variant="outlined"
         size="small"
         placeholder="Search titles, tags, and body text"
@@ -92,6 +94,7 @@ export default function SearchBar({ entries }: SearchBarProps) {
         sx={{
           background: 'background.paper',
           borderRadius: 999,
+          minWidth: compact ? 260 : undefined,
           '& .MuiOutlinedInput-root': {
             borderRadius: 999,
           },
@@ -105,7 +108,8 @@ export default function SearchBar({ entries }: SearchBarProps) {
             position: 'absolute',
             top: 'calc(100% + 8px)',
             left: 0,
-            right: 0,
+            width: popupWidth,
+            maxWidth: 'calc(100vw - 32px)',
             zIndex: 20,
             overflow: 'hidden',
             borderRadius: 3,

@@ -1,17 +1,12 @@
-<div>
-	<h1 style="display: flex; align-items: center; gap: 8px;">
-				<a href="../README.md" target="_blank" rel="noreferrer" style="display: inline-flex; align-items: center;">
-		<img
-			src="./media/nx-icon.png"
-			width="24"
-			height="24"
-		/>
-		</a>
-		<span>NX° Turbo</span>
-	</h1>
-</div>
-
-### API + TypeScript Guide
+---
+order: 40
+slug: /api-typescript
+title: API + TypeScript
+description: Guide to NX API routes, shared utilities, contracts, and tests
+tags: docs, nx, api, typescript
+icon: api
+---
+# API + TypeScript Guide
 
 ## API Location
 

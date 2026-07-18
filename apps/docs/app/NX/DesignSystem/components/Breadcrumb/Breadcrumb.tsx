@@ -91,35 +91,14 @@ export default function Breadcrumb({
       component="nav"
       aria-label="Breadcrumb"
       sx={{
-        display: 'grid',
-        gridTemplateColumns: { xs: '1fr', sm: 'auto 1fr' },
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
         gap: 1,
         alignItems: 'center',
         mb: 2,
-        pb: 1,
-        borderBottom: '1px solid',
-        borderColor: 'divider',
       }}
     >
-      <Typography
-        component="span"
-        sx={{
-          justifySelf: 'start',
-          display: 'inline-flex',
-          alignItems: 'center',
-          px: 0.8,
-          py: 0.3,
-          fontSize: '0.72rem',
-          letterSpacing: '0.06em',
-          textTransform: 'uppercase',
-          fontWeight: 700,
-          bgcolor: 'var(--np-color-accent)',
-          color: '#fff',
-        }}
-      >
-        {label}
-      </Typography>
-
       <Box
         component="ol"
         sx={{
@@ -153,15 +132,28 @@ export default function Breadcrumb({
                   {item.label}
                 </Typography>
               )}
-              {!isLast ? (
-                <Typography component="span" sx={{ mx: 0.75, color: 'text.disabled' }}>
-                  /
-                </Typography>
-              ) : null}
             </li>
           );
         })}
       </Box>
+
+      <Typography
+        component="span"
+        sx={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          px: 0.8,
+          py: 0.3,
+          fontSize: '0.72rem',
+          letterSpacing: '0.06em',
+          textTransform: 'uppercase',
+          fontWeight: 700,
+          bgcolor: 'var(--np-color-accent)',
+          color: '#fff',
+        }}
+      >
+        {label}
+      </Typography>
     </Box>
   );
 }

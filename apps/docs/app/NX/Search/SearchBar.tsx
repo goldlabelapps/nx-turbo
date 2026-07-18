@@ -41,10 +41,16 @@ export default function SearchBar({ entries, compact = false }: SearchBarProps) 
     setOpen(false);
   }, [query, router]);
 
+  const goToResultsIfAny = React.useCallback(() => {
+    if (allResults.length > 0) {
+      goToSearchPage();
+    }
+  }, [allResults.length, goToSearchPage]);
+
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
       event.preventDefault();
-      goToSearchPage();
+      goToResultsIfAny();
     }
 
     if (event.key === 'Escape') {

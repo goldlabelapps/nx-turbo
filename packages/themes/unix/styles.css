@@ -45,24 +45,24 @@
 
   --focus-ring:     #98bdff;
 
-  --font-serif: "Sora", "Instrument Sans", "Avenir Next", system-ui, sans-serif;
-  --font-sans:  "Sora", "Instrument Sans", "Avenir Next", system-ui, sans-serif;
+  --font-serif: "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
+  --font-sans:  "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
   --font-mono:  "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
-  --font-heading: "Sora", "Instrument Sans", "Avenir Next", system-ui, sans-serif;
+  --font-heading: "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
 
-  --radius-sm:   8px;
-  --radius-md:   12px;
-  --radius-lg:   16px;
-  --radius-xl:   20px;
-  --radius-2xl:  24px;
-  --radius-phone:18px;
-  --radius-pill: 999px;
+  --radius-sm:   1px;
+  --radius-md:   1px;
+  --radius-lg:   2px;
+  --radius-xl:   2px;
+  --radius-2xl:  2px;
+  --radius-phone:2px;
+  --radius-pill: 2px;
 
-  --shadow-card:       0 14px 42px rgba(2, 6, 16, 0.34);
-  --shadow-card-hover: 0 24px 56px rgba(2, 6, 16, 0.42);
-  --shadow-glass:      0 18px 48px rgba(2, 6, 16, 0.4);
-  --shadow-button:     0 12px 26px rgba(2, 6, 16, 0.36);
-  --shadow-button-hi:  0 20px 34px rgba(2, 6, 16, 0.42);
-  --shadow-float:      0 28px 64px rgba(2, 6, 16, 0.48);
-  --shadow-pop:        0 16px 36px rgba(2, 6, 16, 0.4);
+  --shadow-card:       0 0 0 1px rgba(168, 191, 227, 0.22);
+  --shadow-card-hover: 0 0 0 1px rgba(168, 191, 227, 0.32);
+  --shadow-glass:      0 0 0 1px rgba(168, 191, 227, 0.24);
+  --shadow-button:     0 0 0 1px rgba(168, 191, 227, 0.28);
+  --shadow-button-hi:  0 0 0 1px rgba(168, 191, 227, 0.38);
+  --shadow-float:      0 0 0 1px rgba(168, 191, 227, 0.24);
+  --shadow-pop:        0 0 0 1px rgba(168, 191, 227, 0.28);
 }

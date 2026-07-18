@@ -20,7 +20,7 @@
   --nx-oat:        #d6f0ee; /* muted text on ink grounds */
 
   /* --- Accent (neon energy) --- */
-  --nx-clay:       #3be8b8; /* electric mint accent */
+   --nx-clay:       #1f9a7e; /* deeper teal-mint accent for better contrast */
 
   /* --- Translucent surfaces (glow glass) --- */
   --nx-line:       rgba(7, 39, 52, 0.2);     /* hairline border */

@@ -1,5 +1,11 @@
-# NX lib
-
+---
+order: 54
+slug: /architecture/nx-lib
+title: NX Lib
+description: Server-side and shared helper layer for metadata, slugs, nav, and runtime utilities
+tags: docs, nx, architecture
+icon: settings
+---
 `app/NX/lib/` contains the framework's server-side and cross-cutting helpers.
 
 ## Key areas

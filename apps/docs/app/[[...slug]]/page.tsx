@@ -3,10 +3,9 @@ import fs from "fs";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import { Box, Link as MuiLink, Paper, Typography } from '@mui/material';
+import { Box, Paper, Typography } from '@mui/material';
 import {
     SectionBlock,
-    StoryGrid,
     TopicChip,
 } from '@nx/newspaper';
 import { NX } from '../NX';
@@ -109,7 +108,6 @@ export default async function Page(props: any) {
                     navItems={navItems as I_NestedNav["navItems"]}
                     pathname={breadcrumbPath}
                     currentLabel={title}
-                    label="Now Reading"
                 />
                 {data.cartridge ? (
                     data.cartridge === 'virus' ? (
@@ -141,114 +139,110 @@ export default async function Page(props: any) {
                     )
                 ) : (
                     <section id="main" style={{ paddingBottom: '90px' }}>
-                        <StoryGrid
-                            lead={
-                                <Paper
-                                    sx={{
-                                        p: { xs: 2, sm: 3 },
-                                        borderRadius: 3,
-                                        background: 'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(248,249,252,1) 100%)',
-                                        border: 'none',
-                                        boxShadow: 'none',
-                                    }}
-                                >
-                                    <Typography
-                                        component="p"
-                                        sx={{
-                                            textTransform: 'uppercase',
-                                            letterSpacing: '0.08em',
-                                            fontSize: '0.75rem',
-                                            fontWeight: 700,
-                                            color: 'text.secondary',
-                                            mb: 1,
-                                        }}
-                                    >
-                                        Documentation
-                                    </Typography>
-                                    <Typography
-                                        component="h1"
-                                        sx={{
-                                            fontSize: { xs: '2rem', md: '2.6rem' },
-                                            lineHeight: 1.05,
-                                            fontWeight: 800,
-                                            color: 'text.primary',
-                                            mb: 1.25,
-                                        }}
-                                    >
-                                        {title}
-                                    </Typography>
-                                    <Typography
-                                        component="p"
-                                        sx={{
-                                            fontSize: { xs: '1rem', md: '1.15rem' },
-                                            lineHeight: 1.6,
-                                            color: 'text.secondary',
-                                            maxWidth: '62ch',
-                                            mb: 1,
-                                        }}
-                                    >
-                                        {primaryDescription}
-                                    </Typography>
-                                    <Box sx={{ mt: 1.5 }}>
-                                        <Hero
-                                            config={config}
-                                            frontmatter={data}
-                                            navItems={navItems as I_NestedNav["navItems"]}
-                                        />
-                                    </Box>
-                                </Paper>
-                            }
-                            stories={topCategories.map((item, index) => (
-                                <Paper
-                                    key={item.href}
-                                    component="a"
-                                    href={item.href}
-                                    variant="outlined"
-                                    sx={{
-                                        display: 'block',
-                                        p: 1.5,
-                                        borderRadius: 2,
-                                        textDecoration: 'none',
-                                        color: 'inherit',
-                                        transition: 'all 0.2s ease',
-                                        '&:hover': {
-                                            transform: 'translateY(-2px)',
-                                            boxShadow: 2,
-                                            borderColor: 'text.primary',
-                                        },
-                                    }}
-                                >
-                                    <Typography sx={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'text.secondary' }}>
-                                        Top Category {index + 1}
-                                    </Typography>
-                                    <Typography sx={{ fontSize: '1.05rem', fontWeight: 700, lineHeight: 1.2, mt: 0.4 }}>
-                                        {item.label}
-                                    </Typography>
-                                </Paper>
-                            ))}
-                        />
-
-                        <Box sx={{ mt: 3 }}>
-                            <RenderMarkdown config={config}>
-                                {content}
-                            </RenderMarkdown>
-                        </Box>
-
-                        <Box sx={{ mt: 5 }}>
-                            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 2, mb: 1.5 }}>
-                                <Typography component="h2" sx={{ fontSize: { xs: '1.25rem', md: '1.4rem' }, fontWeight: 800 }}>
-                                    Read Next
-                                </Typography>
-                                <MuiLink href="/" underline="hover" sx={{ fontWeight: 600 }}>
-                                    All Sections
-                                </MuiLink>
+                        <Paper
+                            sx={{
+                                p: { xs: 2, sm: 3 },
+                                borderRadius: 3,
+                                background: 'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(248,249,252,1) 100%)',
+                                border: 'none',
+                                boxShadow: 'none',
+                            }}
+                        >
+                            <Typography
+                                component="h1"
+                                sx={{
+                                    fontSize: { xs: '2rem', md: '2.6rem' },
+                                    lineHeight: 1.05,
+                                    fontWeight: 800,
+                                    color: 'text.primary',
+                                    mb: 1.25,
+                                }}
+                            >
+                                {title}
+                            </Typography>
+                            <Typography
+                                component="p"
+                                sx={{
+                                    fontSize: { xs: '1rem', md: '1.15rem' },
+                                    lineHeight: 1.6,
+                                    color: 'text.secondary',
+                                    maxWidth: '62ch',
+                                    mb: 1,
+                                }}
+                            >
+                                {primaryDescription}
+                            </Typography>
+                            <Box sx={{ mt: 1.5 }}>
+                                <Hero
+                                    config={config}
+                                    frontmatter={data}
+                                    navItems={navItems as I_NestedNav["navItems"]}
+                                />
                             </Box>
-                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '0.8rem' }}>
-                                {sectionLinks.slice(0, 12).map((item) => (
-                                    <TopicChip key={item.href} label={item.label} href={item.href} tone="muted" />
+                        </Paper>
+
+                        <Box
+                            sx={{
+                                mt: 3,
+                                display: 'grid',
+                                gap: 2,
+                                gridTemplateColumns: { xs: '1fr', md: 'minmax(0, 1fr) 320px' },
+                                alignItems: 'start',
+                            }}
+                        >
+                            <Box sx={{ gridColumn: { xs: '1', md: '1' } }}>
+                                <RenderMarkdown config={config}>
+                                    {content}
+                                </RenderMarkdown>
+                            </Box>
+
+                            <Box sx={{ gridColumn: { xs: '1', md: '2' }, display: 'grid', gap: 1.5 }}>
+                                <Box>
+                                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 1 }}>
+                                        <Typography component="h2" sx={{ fontSize: '1.05rem', fontWeight: 800 }}>
+                                            Sections
+                                        </Typography>
+                                    </Box>
+                                </Box>
+
+                                {topCategories.map((item) => (
+                                    <Paper
+                                        key={item.href}
+                                        component="a"
+                                        href={item.href}
+                                        variant="outlined"
+                                        sx={{
+                                            display: 'block',
+                                            p: 1.5,
+                                            borderRadius: 2,
+                                            textDecoration: 'none',
+                                            color: 'inherit',
+                                            transition: 'all 0.2s ease',
+                                            '&:hover': {
+                                                transform: 'translateY(-2px)',
+                                                boxShadow: 2,
+                                                borderColor: 'text.primary',
+                                            },
+                                        }}
+                                    >
+                                        <Typography sx={{ fontSize: '1.05rem', fontWeight: 700, lineHeight: 1.2 }}>
+                                            {item.label}
+                                        </Typography>
+                                    </Paper>
                                 ))}
-                            </div>
-                            <TreeNav navItems={navItems}/>
+
+                                <Box sx={{ mt: 1 }}>
+                                    <Typography component="h2" sx={{ fontSize: '1.05rem', fontWeight: 800, mb: 1 }}>
+                                        Read Next
+                                    </Typography>
+                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '0.8rem' }}>
+                                        {sectionLinks.slice(0, 12).map((item) => (
+                                            <TopicChip key={item.href} label={item.label} href={item.href} tone="muted" />
+                                        ))}
+                                    </div>
+                                    <TreeNav navItems={navItems}/>
+                                </Box>
+                            </Box>
                         </Box>
                     </section>
                 )}

@@ -1,5 +1,11 @@
-# Framework
-
+---
+order: 51
+slug: /architecture/framework
+title: Framework
+description: NX as a reusable application framework and starter architecture
+tags: docs, nx, architecture, framework
+icon: settings
+---
 NX is not a single app. It is a reusable framework and starter architecture for building Next.js products fast.
 
 ## What it gives you

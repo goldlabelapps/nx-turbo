@@ -82,7 +82,7 @@ export default function Breadcrumb({
   navItems = [],
   pathname = '/',
   currentLabel,
-  label = 'Now Reading',
+  label,
 }: BreadcrumbProps) {
   const crumbs = buildCrumbs({ navItems, pathname, currentLabel });
 
@@ -137,23 +137,25 @@ export default function Breadcrumb({
         })}
       </Box>
 
-      <Typography
-        component="span"
-        sx={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          px: 0.8,
-          py: 0.3,
-          fontSize: '0.72rem',
-          letterSpacing: '0.06em',
-          textTransform: 'uppercase',
-          fontWeight: 700,
-          bgcolor: 'var(--np-color-accent)',
-          color: '#fff',
-        }}
-      >
-        {label}
-      </Typography>
+      {label ? (
+        <Typography
+          component="span"
+          sx={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            px: 0.8,
+            py: 0.3,
+            fontSize: '0.72rem',
+            letterSpacing: '0.06em',
+            textTransform: 'uppercase',
+            fontWeight: 700,
+            bgcolor: 'var(--np-color-accent)',
+            color: '#fff',
+          }}
+        >
+          {label}
+        </Typography>
+      ) : null}
     </Box>
   );
 }

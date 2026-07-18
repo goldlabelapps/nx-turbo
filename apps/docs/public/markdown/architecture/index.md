@@ -1,5 +1,11 @@
-# Architecture
-
+---
+order: 50
+slug: /architecture
+title: Architecture
+description: Codebase structure, runtime flow, tenant model, and cartridge architecture
+tags: docs, nx, architecture
+icon: settings
+---
 ## Codebase structure
 
 ```text
@@ -52,4 +58,4 @@ URL -> [[...slug]]/page.tsx
   -> rendered page
 ```
 
-For implementation detail, see [NX folders](nx-folders.md), [API](../devops/api.md), and [Testing](../devops/testing.md).
+For implementation detail, see [NX folders](/architecture/nx-folders), [Framework](/architecture/framework), [Framework core](/architecture/framework-core), [NX lib](/architecture/nx-lib), and [Tech stack](/architecture/tech-stack).

@@ -1,5 +1,11 @@
-# Tech stack
-
+---
+order: 55
+slug: /architecture/tech-stack
+title: Tech Stack
+description: Core technologies used by the NX runtime and app experience
+tags: docs, nx, architecture, techstack
+icon: settings
+---
 | Technology | Role |
 | --- | --- |
 | [Next.js 16](https://nextjs.org/) | Core framework |

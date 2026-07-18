@@ -1,5 +1,11 @@
-# NX folders
-
+---
+order: 53
+slug: /architecture/nx-folders
+title: NX Folders
+description: Capability-based map of the app/NX runtime folders
+tags: docs, nx, architecture
+icon: settings
+---
 `app/NX/` is the framework runtime. It is organised by capability rather than by page.
 
 | Folder | Purpose |

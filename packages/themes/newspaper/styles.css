@@ -32,7 +32,6 @@
 }
 
 .np-masthead {
-  border-top: 3px solid var(--np-color-ink);
   border-bottom: 1px solid var(--np-color-line);
   padding-block: 0.75rem 1.1rem;
   margin-bottom: 1rem;

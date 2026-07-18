@@ -10,6 +10,7 @@
   "dependencies": {
     "@nx/design-system": "workspace:*",
     "@nx/newspaper": "workspace:*",
+    "@nx/oldfashioned": "workspace:*",
     "@nx/unix": "workspace:*"
   },
   "devDependencies": {

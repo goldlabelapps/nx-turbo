@@ -537,6 +537,9 @@ importers:
       '@nx/newspaper':
         specifier: workspace:*
         version: link:../newspaper
+      '@nx/oldfashioned':
+        specifier: workspace:*
+        version: link:../oldfashioned
       '@nx/unix':
         specifier: workspace:*
         version: link:../unix

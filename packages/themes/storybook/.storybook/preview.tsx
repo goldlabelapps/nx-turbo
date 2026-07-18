@@ -2,6 +2,7 @@ import type { Preview } from "@storybook/react";
 import React from "react";
 import "@nx/design-system/styles";
 import "@nx/newspaper/styles";
+import "@nx/oldfashioned/styles";
 import "@nx/unix/styles";
 import "./preview.css";
 import { defaultThemeId, themeRegistry } from "./themes";

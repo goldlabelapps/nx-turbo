@@ -10,7 +10,7 @@ import {
 } from "../../newspaper/src";
 
 const meta = {
-  title: "Themes/Newspaper Showcase",
+  title: "Themes/Newspaper Theme",
   parameters: {
     layout: "fullscreen",
   },

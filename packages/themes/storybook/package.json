@@ -8,9 +8,9 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@nx/design-system": "workspace:*",
     "@nx/newspaper": "workspace:*",
     "@nx/oldfashioned": "workspace:*",
+    "@nx/ui": "workspace:*",
     "@nx/unix": "workspace:*"
   },
   "devDependencies": {

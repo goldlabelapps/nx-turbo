@@ -15,13 +15,12 @@
     "moduleResolution": "bundler",
     "baseUrl": ".",
     "paths": {
-      "@nx/design-system": ["packages/design-system"],
       "@nx/unix": ["packages/themes/unix"],
       "@nx/unix/*": ["packages/themes/unix/*"],
       "@nx/newspaper": ["packages/themes/newspaper/src"],
       "@nx/newspaper/*": ["packages/themes/newspaper/src/*"],
-      "@nx/ui": ["packages/ui/src"],
-      "@nx/ui/*": ["packages/ui/src/*"]
+      "@nx/ui": ["packages/ui"],
+      "@nx/ui/*": ["packages/ui/*"]
     }
   }
 }

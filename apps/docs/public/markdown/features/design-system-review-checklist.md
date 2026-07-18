@@ -156,4 +156,4 @@ High visual appeal does not outweigh weak token discipline, poor reuse potential
 - Token decisions should stay aligned with [docs/decisions/002-design-tokens.md](../decisions/002-design-tokens.md).
 - The feature-level design-system overview lives in [docs/features/design-system.md](./design-system.md).
 - The Copilot generation and critique prompts live in [docs/features/design-system-copilot-prompts.md](./design-system-copilot-prompts.md).
-- Brand-specific rules and component guidance live in [packages/design-system/SKILL.md](../../packages/design-system/SKILL.md).
+- Brand-specific rules and component guidance live in [packages/ui/SKILL.md](../../packages/ui/SKILL.md).

@@ -16,7 +16,7 @@
     "ci:full": "corepack enable && corepack prepare pnpm@11.13.0 --activate && corepack pnpm install --frozen-lockfile && corepack pnpm lint && corepack pnpm type-check && corepack pnpm -r --if-present test && corepack pnpm build",
     "storybook": "turbo run storybook --filter=@nx/themes-storybook",
     "build-storybook": "turbo run build-storybook --filter=@nx/themes-storybook",
-    "preview:concept-lab": "open 'packages/design-system/templates/concept-lab/ConceptLab.dc.html'"
+    "preview:concept-lab": "open 'packages/ui/templates/concept-lab/ConceptLab.dc.html'"
   },
   "devDependencies": {
     "turbo": "2.10.5"

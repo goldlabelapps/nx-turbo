@@ -1,19 +1,29 @@
 {
   "name": "@nx/ui",
   "version": "1.0.0",
-  "description": "NX UI: Material-UI theme and component overrides",
+  "description": "NX shared UI package: theme primitives, tokens, and components",
   "private": false,
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "types": "./index.d.ts",
+      "import": "./index.js"
     },
     "./theme": "./dist/theme/index.js",
-    "./styles": "./dist/styles.css"
+    "./styles": "./styles.css"
   },
   "files": [
+    "index.js",
+    "index.d.ts",
+    "styles.css",
+    "assets",
+    "components",
+    "guidelines",
+    "templates",
+    "tokens",
+    "ui_kits",
+    "SKILL.md",
     "dist",
     "src"
   ],
@@ -29,9 +39,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
-  "dependencies": {
-    "@nx/design-system": "workspace:*"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@mui/material": "^5.14.0",
     "@emotion/react": "^11.11.0",

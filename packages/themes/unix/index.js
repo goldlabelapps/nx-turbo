@@ -1,4 +1,4 @@
-export { Logo } from "@nx/design-system";
-export { Badge } from "@nx/design-system";
-export { Button } from "@nx/design-system";
-export { Card } from "@nx/design-system";
+export { Logo } from "@nx/ui";
+export { Badge } from "@nx/ui";
+export { Button } from "@nx/ui";
+export { Card } from "@nx/ui";

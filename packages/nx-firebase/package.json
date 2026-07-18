@@ -1,5 +1,5 @@
 {
-  "name": "@nx/firebase-adapter",
+  "name": "@nx/nx-firebase",
   "version": "1.0.0",
   "private": true,
   "type": "module",

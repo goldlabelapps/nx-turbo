@@ -1,4 +1,4 @@
-@import "@nx/design-system/styles";
+@import "@nx/ui/styles";
 
 [data-design-system="unix"],
 [data-design-system="agentic"] {

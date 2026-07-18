@@ -1,6 +1,6 @@
 @import "@nx/design-system/styles";
 
-[data-design-system="nx-core"] {
+[data-design-system="oldfashioned"] {
   --nx-ink: #072734;
   --nx-ink-logo: #061f2a;
   --nx-dusty: #0f3d4d;

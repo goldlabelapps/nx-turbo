@@ -19,7 +19,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@nx/newspaper": ["../../packages/themes/newspaper/src"],
+      "@nx/newspaper/*": ["../../packages/themes/newspaper/src/*"]
     }
   },
   "include": [

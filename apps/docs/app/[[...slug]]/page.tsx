@@ -3,11 +3,11 @@ import fs from "fs";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
+import { Box, Paper, Typography } from '@mui/material';
 import {
-    Box,
-    Container,
-    Typography,
-} from '@mui/material';
+    SectionBlock,
+    TopicChip,
+} from '@nx/newspaper';
 import { NX } from '../NX';
 import {
     serverUseMDBySlug,
@@ -17,10 +17,8 @@ import {
     getMeta,
 } from '../NX/lib/index.server';
 import {
-    Icon,
-    Header,
+    Breadcrumb,
     Hero,
-    Footer,
     TreeNav,
 } from '../NX/DesignSystem';
 import { RenderMarkdown } from '../NX/Shortcodes';
@@ -93,95 +91,161 @@ export default async function Page(props: any) {
     const { content, data } = matter(md);
     if (data.title) title = data.title;
     if (data.description) description = data.description;
-    const icon = (typeof data.icon === 'string' && data.icon.trim()) ? data.icon : null;
     const navItems = await serverUseNav();
-    const themeMode: 'light' | 'dark' = (config?.cartridges?.designSystem?.defaultTheme 
-            === 'dark') ? 'dark' : 'light';
-    const themedImage = config?.images?.[themeMode] || config?.images?.light || null;
 
-    // Use data.image if it's a non-empty string, otherwise fallback to themedImage
-    const meta = getMeta({
-        siteName: config.siteName,
-        title,
-        description,
-        url: config.url || "",
-        image: (typeof data.image === 'string' && data.image.trim()) ? data.image : themedImage,
-    });
+    const sectionLinks = (navItems || [])
+        .filter((item: any) => item?.path && item?.title)
+        .slice(0, 8)
+        .map((item: any) => ({ label: item.title, href: item.path }));
+
+    const primaryDescription = description || config.description || "Documentation";
+    const topCategories = sectionLinks.slice(0, 6);
+    const breadcrumbPath = slugArr.length > 0 ? `/${slugArr.join('/')}` : '/';
 
     return (
             <NX config={config} frontmatter={data}>
-                <Header config={config} frontmatter={data} />
+                <Breadcrumb
+                    navItems={navItems as I_NestedNav["navItems"]}
+                    pathname={breadcrumbPath}
+                    currentLabel={title}
+                />
                 {data.cartridge ? (
                     data.cartridge === 'virus' ? (
-                        <Container id="main" maxWidth="lg" sx={{ mt: '100px', pb: '90px' }}>
-                            <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 2 }}>
+                        <section id="main" style={{ paddingBottom: '90px' }}>
+                            <SectionBlock title={data.title || title} tone="accent">
                                 <Virus />
-                            </Box>
-                        </Container>
+                            </SectionBlock>
+                        </section>
                     ) : data.cartridge === 'orders' ? (
-                        <Container id="main" maxWidth="lg" sx={{ mt: '100px', pb: '90px' }}>
-                            <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 2 }}>
+                        <section id="main" style={{ paddingBottom: '90px' }}>
+                            <SectionBlock title={data.title || title} tone="accent">
                                 <Orders />
-                            </Box>
-                        </Container>
+                            </SectionBlock>
+                        </section>
                     ) : data.cartridge === 'prospects' ? (
-                        <Container id="main" maxWidth="lg" sx={{ mt: '100px', pb: '90px' }}>
-                            <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 2 }}>
+                        <section id="main" style={{ paddingBottom: '90px' }}>
+                            <SectionBlock title={data.title || title} tone="accent">
                                 <Prospects />
-                            </Box>
-                        </Container>
+                            </SectionBlock>
+                        </section>
                     ) : (
-                        <Container id="main" maxWidth="lg" sx={{ mt: '100px', pb: '90px' }}>
-                            <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 2 }}>
-                                <Typography variant="h4" color="primary" sx={{ mb: 2 }}>
-                                    {data.title || title} (CARTRIDGE)
-                                </Typography>
-                                <Box>
-                                    <RenderMarkdown config={config}>
-                                        {content}
-                                    </RenderMarkdown>
-                                </Box>
-                            </Box>
-                        </Container>
+                        <section id="main" style={{ paddingBottom: '90px' }}>
+                            <SectionBlock title={`${data.title || title} (CARTRIDGE)`} tone="accent">
+                                <RenderMarkdown config={config}>
+                                    {content}
+                                </RenderMarkdown>
+                            </SectionBlock>
+                        </section>
                     )
                 ) : (
-                    <Container id="main" maxWidth="lg" 
-                        sx={{ mt: '100px', pb: '90px' }}>
-                        <Box sx={{ width: '100%', display: 'flex', gap: 1 }}>
-                            <Box sx={{ display: { xs: 'none', sm: 'flex' }, flexDirection: 'column' }}>
-                                <Box sx={{ flexGrow: 1, minHeight: 0, minWidth: 200 }}>
-                                    <TreeNav navItems={navItems}/>
-                                </Box>
-                            </Box>
-                            <Box component="main" sx={{ gridColumn: { lg: '1' }, width: '100%', minWidth: 0, pr: { xs: 2, lg: 3 }, pl: { xs: 2, lg: 0 }, flexGrow: 1 }}>
-                                <Typography sx={{ display: 'flex', mt: 1 }} color='secondary' variant="h6" component="h2">
-                                    <Box sx={{ display: 'flex', width: '100%' }}>
-                                        {data.icon && <Box sx={{ mx: 2 }}><Icon icon={data.icon} color="primary" /></Box>}
-                                        <Box sx={{ flexGrow: 1 }}>
-                                            {description}
-                                        </Box>
-                                    </Box>
-                                </Typography>
+                    <section id="main" style={{ paddingBottom: '90px' }}>
+                        <Paper
+                            sx={{
+                                p: { xs: 2, sm: 3 },
+                                borderRadius: 3,
+                                background: 'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(248,249,252,1) 100%)',
+                                border: 'none',
+                                boxShadow: 'none',
+                            }}
+                        >
+                            <Typography
+                                component="h1"
+                                sx={{
+                                    fontSize: { xs: '2rem', md: '2.6rem' },
+                                    lineHeight: 1.05,
+                                    fontWeight: 800,
+                                    color: 'text.primary',
+                                    mb: 1.25,
+                                }}
+                            >
+                                {title}
+                            </Typography>
+                            <Typography
+                                component="p"
+                                sx={{
+                                    fontSize: { xs: '1rem', md: '1.15rem' },
+                                    lineHeight: 1.6,
+                                    color: 'text.secondary',
+                                    maxWidth: '62ch',
+                                    mb: 1,
+                                }}
+                            >
+                                {primaryDescription}
+                            </Typography>
+                            <Box sx={{ mt: 1.5 }}>
                                 <Hero
                                     config={config}
                                     frontmatter={data}
                                     navItems={navItems as I_NestedNav["navItems"]}
                                 />
+                            </Box>
+                        </Paper>
+
+                        <Box
+                            sx={{
+                                mt: 3,
+                                display: 'grid',
+                                gap: 2,
+                                gridTemplateColumns: { xs: '1fr', md: 'minmax(0, 1fr) 320px' },
+                                alignItems: 'start',
+                            }}
+                        >
+                            <Box sx={{ gridColumn: { xs: '1', md: '1' } }}>
                                 <RenderMarkdown config={config}>
                                     {content}
                                 </RenderMarkdown>
                             </Box>
+
+                            <Box sx={{ gridColumn: { xs: '1', md: '2' }, display: 'grid', gap: 1.5 }}>
+                                <Box>
+                                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 1 }}>
+                                        <Typography component="h2" sx={{ fontSize: '1.05rem', fontWeight: 800 }}>
+                                            Sections
+                                        </Typography>
+                                    </Box>
+                                </Box>
+
+                                {topCategories.map((item) => (
+                                    <Paper
+                                        key={item.href}
+                                        component="a"
+                                        href={item.href}
+                                        variant="outlined"
+                                        sx={{
+                                            display: 'block',
+                                            p: 1.5,
+                                            borderRadius: 2,
+                                            textDecoration: 'none',
+                                            color: 'inherit',
+                                            transition: 'all 0.2s ease',
+                                            '&:hover': {
+                                                transform: 'translateY(-2px)',
+                                                boxShadow: 2,
+                                                borderColor: 'text.primary',
+                                            },
+                                        }}
+                                    >
+                                        <Typography sx={{ fontSize: '1.05rem', fontWeight: 700, lineHeight: 1.2 }}>
+                                            {item.label}
+                                        </Typography>
+                                    </Paper>
+                                ))}
+
+                                <Box sx={{ mt: 1 }}>
+                                    <Typography component="h2" sx={{ fontSize: '1.05rem', fontWeight: 800, mb: 1 }}>
+                                        Read Next
+                                    </Typography>
+                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '0.8rem' }}>
+                                        {sectionLinks.slice(0, 12).map((item) => (
+                                            <TopicChip key={item.href} label={item.label} href={item.href} tone="muted" />
+                                        ))}
+                                    </div>
+                                    <TreeNav navItems={navItems}/>
+                                </Box>
+                            </Box>
                         </Box>
-                    </Container>
+                    </section>
                 )}
-                <footer>
-                    <Footer
-                        meta={meta as any}
-                        frontmatter={data}
-                        navItems={navItems as I_NestedNav["navItems"]}
-                    >
-                    </Footer>
-                </footer>
             </NX>
     );
 }

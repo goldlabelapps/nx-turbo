@@ -1,9 +1,12 @@
-import type { I_NestedNav, T_Frontmatter } from '../NX/types';
+import type { T_Frontmatter } from '../NX/types';
 import fs from "fs";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import { Box, Container } from '@mui/material';
+import { Box, Paper, Typography } from '@mui/material';
+import {
+    TopicChip,
+} from '@nx/newspaper';
 import { NX } from '../NX';
 import { 
     serverUseMDBySlug, 
@@ -13,8 +16,7 @@ import {
     getMeta 
 } from '../NX/lib/index.server';
 import {
-    Header,
-    Footer,
+    Breadcrumb,
     TreeNav,
 } from '../NX/DesignSystem';
 import {
@@ -86,61 +88,124 @@ export default async function Page(props: any) {
     const { content, data } = matter(md);
     if (data.title) title = data.title;
     if (data.description) description = data.description;
-    const icon = (typeof data.icon === 'string' && data.icon.trim()) ? data.icon : null;
     const navItems = await serverUseNav();
-    const themeMode: 'light' | 'dark' = (config?.cartridges?.designSystem?.defaultTheme 
-            === 'dark') ? 'dark' : 'light';
-    const themedImage = config?.images?.[themeMode] || config?.images?.light || null;
 
-    // Use data.image if it's a non-empty string, otherwise fallback to themedImage
-    const meta = getMeta({
-        siteName: config.siteName,
-        title,
-        description,
-        url: config.url || "",
-        image: (typeof data.image === 'string' && data.image.trim()) ? data.image : themedImage,
-    });
+    const sectionLinks = (navItems || [])
+        .filter((item: any) => item?.path && item?.title)
+        .slice(0, 10)
+        .map((item: any) => ({ label: item.title, href: item.path }));
+    const topCategories = sectionLinks.slice(0, 6);
+
+    const primaryDescription = description || config.description || 'Account overview';
 
     return (
             <NX config={config} frontmatter={data}>
-                <Header config={config} frontmatter={data} />
-                
-                <Container id="main" maxWidth="lg" 
-                    sx={{ mt: '100px', pb: '90px' }}>
-                    <Box sx={{ width: '100%', display: 'flex', gap: 1 }}>
-                        <Box sx={{ 
-                            display: { xs: 'none', sm: 'flex' }, 
-                            flexDirection: 'column' 
-                        }}>
-                            <Box sx={{ 
-                                flexGrow: 1, 
-                                minHeight: 0, 
-                                minWidth: 200 
-                            }}>
+                <Breadcrumb
+                    navItems={navItems as any[]}
+                    pathname="/account"
+                    currentLabel="Account"
+                />
+
+                <section id="main" style={{ paddingBottom: '90px' }}>
+                    <Paper
+                        sx={{
+                            p: { xs: 2, sm: 3 },
+                            borderRadius: 3,
+                            background: 'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(248,249,252,1) 100%)',
+                            border: 'none',
+                            boxShadow: 'none',
+                        }}
+                    >
+                        <Typography
+                            component="h1"
+                            sx={{
+                                fontSize: { xs: '2rem', md: '2.4rem' },
+                                lineHeight: 1.05,
+                                fontWeight: 800,
+                                color: 'text.primary',
+                                mb: 1.25,
+                            }}
+                        >
+                            {title}
+                        </Typography>
+                        <Typography
+                            component="p"
+                            sx={{
+                                fontSize: { xs: '1rem', md: '1.1rem' },
+                                lineHeight: 1.6,
+                                color: 'text.secondary',
+                                maxWidth: '62ch',
+                            }}
+                        >
+                            {primaryDescription}
+                        </Typography>
+                    </Paper>
+
+                    <Box
+                        sx={{
+                            mt: 3,
+                            display: 'grid',
+                            gap: 2,
+                            gridTemplateColumns: { xs: '1fr', md: 'minmax(0, 1fr) 320px' },
+                            alignItems: 'start',
+                        }}
+                    >
+                        <Box sx={{ gridColumn: { xs: '1', md: '1' } }}>
+                            <Typography component="h2" sx={{ fontSize: { xs: '1.35rem', md: '1.6rem' }, fontWeight: 800, mb: 1.25 }}>
+                                Your Account
+                            </Typography>
+                            <Account />
+                        </Box>
+
+                        <Box sx={{ gridColumn: { xs: '1', md: '2' }, display: 'grid', gap: 1.5 }}>
+                            <Box>
+                                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 1 }}>
+                                    <Typography component="h2" sx={{ fontSize: '1.05rem', fontWeight: 800 }}>
+                                        Sections
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+                            {topCategories.map((item) => (
+                                <Paper
+                                    key={item.href}
+                                    component="a"
+                                    href={item.href}
+                                    variant="outlined"
+                                    sx={{
+                                        display: 'block',
+                                        p: 1.5,
+                                        borderRadius: 2,
+                                        textDecoration: 'none',
+                                        color: 'inherit',
+                                        transition: 'all 0.2s ease',
+                                        '&:hover': {
+                                            transform: 'translateY(-2px)',
+                                            boxShadow: 2,
+                                            borderColor: 'text.primary',
+                                        },
+                                    }}
+                                >
+                                    <Typography sx={{ fontSize: '1.05rem', fontWeight: 700, lineHeight: 1.2 }}>
+                                        {item.label}
+                                    </Typography>
+                                </Paper>
+                            ))}
+
+                            <Box sx={{ mt: 1 }}>
+                                <Typography component="h2" sx={{ fontSize: '1.05rem', fontWeight: 800, mb: 1 }}>
+                                    Read Next
+                                </Typography>
+                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '0.8rem' }}>
+                                    {sectionLinks.slice(0, 12).map((item) => (
+                                        <TopicChip key={item.href} label={item.label} href={item.href} tone="muted" />
+                                    ))}
+                                </div>
                                 <TreeNav navItems={navItems}/>
                             </Box>
                         </Box>
-                        <Box component="main" 
-                            sx={{ 
-                                gridColumn: { lg: '1' }, 
-                                width: '100%', 
-                                minWidth: 0, 
-                                pr: { xs: 2, lg: 3 }, 
-                                pl: { xs: 2, lg: 0 }, 
-                                flexGrow: 1,
-                            }}>
-                            <Account />
-                        </Box>
                     </Box>
-                </Container>
-                <footer>
-                    <Footer
-                        meta={meta as any}
-                        frontmatter={data}
-                        navItems={navItems as I_NestedNav["navItems"]}
-                    >
-                    </Footer>
-                </footer>
+                </section>
             </NX>
     );
 }

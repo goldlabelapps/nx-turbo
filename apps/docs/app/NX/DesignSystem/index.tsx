@@ -10,7 +10,6 @@ import DesignSystem from "./DesignSystem";
 import EditableStr from './components/Forms/EditableStr';
 import Feedback from './components/Feedback';
 import { Mapbox, MapPin } from './components/Mapbox';
-import Footer from './components/Footer';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Icon from './components/Icon';
@@ -20,6 +19,7 @@ import { CleverText } from './components/CleverText';
 import Related from './components/Related';
 import TreeNav from "./components/TreeNav";
 import ConfirmAction from './components/ConfirmAction';
+import Breadcrumb from './components/Breadcrumb';
 import { Fullscreen, FullscreenToggle } from './components/Fullscreen';
 
 // Hooks
@@ -42,7 +42,6 @@ export {
     DesignSystem,
     EditableStr,
     Feedback,
-    Footer,
     Header,
     Hero,
     Icon,
@@ -53,6 +52,7 @@ export {
     Mapbox,
     TreeNav,
     ConfirmAction,
+    Breadcrumb,
     Fullscreen,
     FullscreenToggle,
     

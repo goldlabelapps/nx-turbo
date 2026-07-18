@@ -3,7 +3,7 @@ import React from "react";
 import { Badge, Button, Card, Favicon } from "@nx/oldfashioned";
 
 const meta = {
-  title: "Themes/Oldfashioned Showcase",
+  title: "Themes/Oldfashioned Theme",
   parameters: {
     layout: "fullscreen",
   },

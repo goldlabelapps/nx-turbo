@@ -3,7 +3,7 @@ import React from "react";
 import { Badge, Button, Card } from "@nx/unix";
 
 const meta = {
-  title: "Themes/Unix Showcase",
+  title: "Themes/Unix Theme",
   parameters: {
     layout: "fullscreen",
   },

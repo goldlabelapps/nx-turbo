@@ -3,6 +3,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
+import ReactMarkdown from "react-markdown";
 import { Box, Paper, Typography } from '@mui/material';
 import {
     SectionBlock,
@@ -13,6 +14,7 @@ import {
     serverUseMDBySlug,
     serverUseAllMd,
     serverUseNav,
+    serverUseRightRailCards,
     getDocsContext,
     getMeta,
 } from '../NX/lib/index.server';
@@ -98,9 +100,25 @@ export default async function Page(props: any) {
         .slice(0, 8)
         .map((item: any) => ({ label: item.title, href: item.path }));
 
+    const normalizePath = (value: string) => {
+        const trimmed = value.trim();
+        if (!trimmed) return '/';
+        const withoutOrigin = trimmed.replace(/^https?:\/\/[^/]+/i, '');
+        const [pathOnly] = withoutOrigin.split(/[?#]/);
+        const normalized = pathOnly || '/';
+        if (normalized === '/') return '/';
+        return normalized.replace(/\/+$/, '');
+    };
+
     const primaryDescription = description || config.description || "Documentation";
-    const topCategories = sectionLinks.slice(0, 6);
     const breadcrumbPath = slugArr.length > 0 ? `/${slugArr.join('/')}` : '/';
+    const currentPath = normalizePath(breadcrumbPath);
+    const topCategories = serverUseRightRailCards(sectionLinks, 6)
+        .filter((item: { href?: string }) => {
+            if (!item?.href) return true;
+            return normalizePath(item.href) !== currentPath;
+        });
+    const sectionGutter = { xs: 2, sm: 3 };
 
     return (
             <NX config={config} frontmatter={data}>
@@ -145,7 +163,8 @@ export default async function Page(props: any) {
                     <section id="main" style={{ paddingBottom: '90px' }}>
                         <Paper
                             sx={{
-                                p: { xs: 2, sm: 3 },
+                                py: { xs: 2, sm: 3 },
+                                px: sectionGutter,
                                 borderRadius: 3,
                                 background: 'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(248,249,252,1) 100%)',
                                 border: 'none',
@@ -188,6 +207,8 @@ export default async function Page(props: any) {
                         <Box
                             sx={{
                                 mt: 3,
+                                px: sectionGutter,
+                                boxSizing: 'border-box',
                                 display: 'grid',
                                 gap: 2,
                                 gridTemplateColumns: { xs: '1fr', md: 'minmax(0, 1fr) 320px' },
@@ -201,14 +222,6 @@ export default async function Page(props: any) {
                             </Box>
 
                             <Box sx={{ gridColumn: { xs: '1', md: '2' }, display: 'grid', gap: 1.5 }}>
-                                <Box>
-                                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 1 }}>
-                                        <Typography component="h2" sx={{ fontSize: '1.05rem', fontWeight: 400 }}>
-                                            Sections
-                                        </Typography>
-                                    </Box>
-                                </Box>
-
                                 {topCategories.map((item) => (
                                     <Paper
                                         key={item.href}
@@ -217,10 +230,10 @@ export default async function Page(props: any) {
                                         variant="outlined"
                                         sx={{
                                             display: 'block',
-                                            p: 1.5,
                                             borderRadius: 2,
                                             textDecoration: 'none',
                                             color: 'inherit',
+                                            overflow: 'hidden',
                                             transition: 'all 0.2s ease',
                                             '&:hover': {
                                                 transform: 'translateY(-2px)',
@@ -229,21 +242,55 @@ export default async function Page(props: any) {
                                             },
                                         }}
                                     >
-                                        <Typography sx={{ fontSize: '1.05rem', fontWeight: 400, lineHeight: 1.2 }}>
-                                            {item.label}
-                                        </Typography>
+                                        {item.image ? (
+                                            <Box
+                                                component="img"
+                                                src={item.image}
+                                                alt={item.label}
+                                                loading="lazy"
+                                                sx={{
+                                                    display: 'block',
+                                                    width: '100%',
+                                                    height: 136,
+                                                    objectFit: 'cover',
+                                                    borderBottom: '1px solid',
+                                                    borderColor: 'divider',
+                                                }}
+                                            />
+                                        ) : null}
+                                        <Box sx={{ p: 1.5 }}>
+                                            <Typography sx={{ fontSize: '1.05rem', fontWeight: 400, lineHeight: 1.2, mb: item.snippet ? 0.75 : 0 }}>
+                                                {item.label}
+                                            </Typography>
+                                            {item.snippet ? (
+                                                <Box
+                                                    sx={{
+                                                        fontSize: '0.92rem',
+                                                        color: 'text.secondary',
+                                                        lineHeight: 1.45,
+                                                        '& p': { m: 0 },
+                                                        '& a': { color: 'inherit' },
+                                                    }}
+                                                >
+                                                    <ReactMarkdown>{item.snippet}</ReactMarkdown>
+                                                </Box>
+                                            ) : null}
+                                        </Box>
                                     </Paper>
                                 ))}
 
                                 <Box sx={{ mt: 1 }}>
                                     <Typography component="h2" sx={{ fontSize: '1.05rem', fontWeight: 400, mb: 1 }}>
-                                        Read Next
+                                        Topic Shortcuts
                                     </Typography>
                                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '0.8rem' }}>
                                         {sectionLinks.slice(0, 12).map((item) => (
                                             <TopicChip key={item.href} label={item.label} href={item.href} tone="muted" />
                                         ))}
                                     </div>
+                                    <Typography component="h2" sx={{ fontSize: '1.05rem', fontWeight: 400, mb: 1 }}>
+                                        Full Navigation
+                                    </Typography>
                                     <TreeNav navItems={navItems}/>
                                 </Box>
                             </Box>

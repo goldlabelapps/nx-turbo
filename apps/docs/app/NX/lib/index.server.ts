@@ -4,6 +4,7 @@ import { serverUseMDBySlug } from './serverHooks/serverUseMDBySlug';
 import { serverUseAllMd } from './serverHooks/serverUseAllMd';
 import { serverUseSlugs } from './serverHooks/serverUseSlugs';
 import { serverUseRelated } from './serverHooks/serverUseRelated';
+import { serverUseRightRailCards } from './serverHooks/serverUseRightRailCards';
 import { getDocsContext } from './getDocsContext';
 import { getMeta } from './getMeta';
 
@@ -14,6 +15,7 @@ export {
     serverUseAllMd,
     serverUseSlugs,
     serverUseRelated,
+    serverUseRightRailCards,
     getDocsContext,
     getMeta,
 };

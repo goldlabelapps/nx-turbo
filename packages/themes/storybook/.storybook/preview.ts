@@ -1,4 +1,4 @@
-import "../styles.css";
+import "@nx/design-system/styles";
 
 const preview = {
   parameters: {

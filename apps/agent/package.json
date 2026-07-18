@@ -10,7 +10,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@nx/design-system": "workspace:*",
+    "@nx/unix": "workspace:*",
     "@nx/firebase-adapter": "workspace:*",
     "next": "16.1.1",
     "react": "19.2.3",

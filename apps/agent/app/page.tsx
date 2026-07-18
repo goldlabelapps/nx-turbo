@@ -1,4 +1,4 @@
-import { Badge, Card } from "@nx/design-system";
+import { Badge, Card } from "@nx/unix";
 
 export default function Home() {
   return (

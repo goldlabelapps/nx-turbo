@@ -93,7 +93,6 @@ export function NewspaperMasthead({
   return (
     <header className="np-masthead" role="banner">
       <div className="np-masthead-top-row">
-        <p className="np-masthead-dateline">Theme: newspaper</p>
         {utilityLinks.length > 0 ? (
           <nav aria-label="Utility" className="np-masthead-utility-nav">
             {utilityLinks.map((link) => (

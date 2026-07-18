@@ -1,4 +1,4 @@
-import { Card } from "@nx/design-system";
+import { Card } from "@nx/unix";
 
 export default function Loading() {
   return (

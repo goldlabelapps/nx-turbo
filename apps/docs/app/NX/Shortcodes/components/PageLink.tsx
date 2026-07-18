@@ -1,8 +1,7 @@
 'use client';
 import React from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import {
-  Typography,
   Paper,
   ButtonBase,
   CardHeader,
@@ -10,9 +9,19 @@ import {
 import { Icon, navigateTo } from '../../DesignSystem';
 import { useDispatch } from '../../Uberedux';
 
+function normalizeRoutePath(input: string): string {
+  const trimmed = input.trim();
+  if (!trimmed) return '';
+  const withoutOrigin = trimmed.replace(/^https?:\/\/[^/]+/i, '');
+  const [pathOnly] = withoutOrigin.split(/[?#]/);
+  const normalized = pathOnly || '/';
+  if (normalized === '/') return '/';
+  return normalized.replace(/\/+$/, '');
+}
+
 export default function PageLink({
   url = null,
-  icon = 'link',
+  icon = null,
   title = null,
   description = null
 }: {
@@ -24,10 +33,18 @@ export default function PageLink({
 
   const dispatch = useDispatch();
   const router = useRouter();
+  const pathname = usePathname();
+
+  const normalizedCurrentPath = normalizeRoutePath(pathname || '/');
+  const normalizedTargetPath = typeof url === 'string' ? normalizeRoutePath(url) : '';
+  const isExternal = typeof url === 'string' && /^https?:\/\//i.test(url);
+
+  if (!url || (!isExternal && normalizedTargetPath === normalizedCurrentPath)) {
+    return null;
+  }
 
   const handleClick = () => {
     if (url) {
-      const isExternal = url.startsWith('http');
       dispatch(navigateTo(router, url, isExternal ? '_blank' : '_self'));
     }
   };
@@ -52,7 +69,7 @@ export default function PageLink({
           }}
           title={title}
           subheader={description}
-          avatar={<Icon icon={icon as any} color="primary" />}
+          avatar={icon ? <Icon icon={icon as any} color="primary" /> : undefined}
         />
       </Paper>
     </ButtonBase>

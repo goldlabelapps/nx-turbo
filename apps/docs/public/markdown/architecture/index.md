@@ -42,7 +42,7 @@ Client state is managed through a single Redux slice using dot-notation keys suc
 Markdown content can render React components through shortcode syntax:
 
 ```md
-[PageLink icon="rocket" title="Get started" url="/help"]
+[PageLink title="Get started" url="/help"]
 [CleverText text="Ready to create an NX app?"]
 ```
 

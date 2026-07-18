@@ -1,6 +1,17 @@
 'use client';
 import React from 'react';
+import { usePathname } from 'next/navigation';
 import { Button } from '@nx/design-system';
+
+function normalizeRoutePath(input: string): string {
+  const trimmed = input.trim();
+  if (!trimmed) return '';
+  const withoutOrigin = trimmed.replace(/^https?:\/\/[^/]+/i, '');
+  const [pathOnly] = withoutOrigin.split(/[?#]/);
+  const normalized = pathOnly || '/';
+  if (normalized === '/') return '/';
+  return normalized.replace(/\/+$/, '');
+}
 
 export default function PageLink({
   url = null,
@@ -11,9 +22,16 @@ export default function PageLink({
   title?: string | null;
   description?: string | null;
 }) {
+  const pathname = usePathname();
   if (!url) return null;
 
-  const isExternal = url.startsWith('http');
+  const isExternal = /^https?:\/\//i.test(url);
+  const normalizedCurrentPath = normalizeRoutePath(pathname || '/');
+  const normalizedTargetPath = normalizeRoutePath(url);
+  if (!isExternal && normalizedTargetPath === normalizedCurrentPath) {
+    return null;
+  }
+
   const label = title || description || url;
 
   return (

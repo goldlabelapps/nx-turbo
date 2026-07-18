@@ -21,6 +21,7 @@
             "enabled": false
         },
         "designSystem": {
+            "system": "aurora",
             "themeSwitching": true,
             "defaultTheme": "light",
             "themes": {

@@ -1,4 +1,5 @@
 import "./globals.css";
+import "@nx/design-system/styles";
 import type { Metadata } from "next";
 import fs from 'fs';
 import path from 'path';
@@ -11,6 +12,10 @@ const configPath = path.join(process.cwd(), 'public', tenant, 'config.json');
 const configRaw = fs.readFileSync(configPath, 'utf-8');
 const config = JSON.parse(configRaw);
 const { title, description, favicon } = config;
+const configuredDesignSystem = config?.cartridges?.designSystem?.system;
+const designSystemId = typeof configuredDesignSystem === 'string' && configuredDesignSystem.trim()
+  ? configuredDesignSystem.trim()
+  : 'nx';
 
 export const metadata: Metadata = {
   title: `${title}, ${description}`,
@@ -31,7 +36,7 @@ export default async function RootLayout({
   const paywall = config.cartridges?.paywall?.enabled === true;
 
   return (
-    <html lang="en">
+    <html lang="en" data-design-system={designSystemId}>
       <head>
         <link rel="icon" href={favicon} />
         <link rel="manifest" href={`/${tenant}/manifest.json`} />

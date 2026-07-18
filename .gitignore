@@ -155,3 +155,5 @@ packages/nx-agent/next-env.d.ts
 packages/nx-agent/next-env.d.ts
 packages/nx-agent/next-env.d.ts
 apps/agent/next-env.d.ts
+apps/agent/next-env.d.ts
+apps/agent/public/sw.js

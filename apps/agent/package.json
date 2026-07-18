@@ -12,6 +12,8 @@
   "dependencies": {
     "@nx/unix": "workspace:*",
     "@nx/nx-firebase": "workspace:*",
+    "eve": "^0.24.6",
+    "nx-agent": "workspace:*",
     "next": "16.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3"

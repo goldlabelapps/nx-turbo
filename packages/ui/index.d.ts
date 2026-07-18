@@ -4,6 +4,9 @@ export type { LogoProps } from "./components/brand/Logo";
 export { Favicon } from "./components/brand/Favicon";
 export type { StarMarkProps } from "./components/brand/Favicon";
 
+export { Icon } from "./components/brand/Icon";
+export type { IconName, IconProps } from "./components/brand/Icon";
+
 export { Button } from "./components/forms/Button";
 export type { ButtonProps } from "./components/forms/Button";
 

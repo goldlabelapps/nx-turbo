@@ -4,6 +4,10 @@
   "private": true,
   "type": "module",
   "description": "nx-agent example project using Vercel Eve",
+  "exports": {
+    ".": "./agent/server/index.ts",
+    "./server": "./agent/server/index.ts"
+  },
   "imports": {
     "#*": "./agent/*",
     "#evals/*": "./evals/*"

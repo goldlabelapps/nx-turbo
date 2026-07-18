@@ -2,11 +2,13 @@ import "server-only";
 
 import { promises as fs } from "fs";
 import path from "path";
+import { Client } from "eve/client";
 import {
   addHistoryEntry as addFirebaseHistoryEntry,
   isFirebaseHistoryEnabled,
   readHistoryEntries,
 } from "@nx/nx-firebase";
+import { runNxAgentChat } from "nx-agent/server";
 
 export type SessionKind = "chat" | "workbench";
 export type SessionStatus = "Draft" | "Published" | "Validated";
@@ -23,6 +25,10 @@ export type HistoryEntry = {
 
 type ChatInput = {
   message: string;
+};
+
+type ChatOptions = {
+  origin?: string;
 };
 
 type WorkbenchInput = {
@@ -95,13 +101,30 @@ export async function addHistoryEntry(entry: Omit<HistoryEntry, "id" | "createdA
   return next;
 }
 
-export async function runChat(input: ChatInput) {
+export async function runChat(input: ChatInput, options?: ChatOptions) {
   const cleanMessage = input.message.trim();
-  const reply = [
-    `Objective: ${shorten(cleanMessage, 88)}`,
-    "Constraints: Keep it implementation-ready, concise, and tied to route outcomes.",
-    "Output: Provide a short execution plan, then an actionable first draft.",
-  ].join("\n");
+  const agentResult = runNxAgentChat({ message: cleanMessage });
+  let reply = agentResult.reply;
+
+  try {
+    const host = `${options?.origin ?? ""}/eve`;
+    if (!host.startsWith("/eve")) {
+      const client = new Client({ host });
+      const session = client.session();
+      const response = await session.send(cleanMessage);
+      const result = await response.result();
+
+      if (result.status === "failed") {
+        throw new Error("Eve run failed.");
+      }
+
+      if (typeof result.message === "string" && result.message.trim().length > 0) {
+        reply = result.message;
+      }
+    }
+  } catch {
+    // Fall back to deterministic package response when Eve is unavailable.
+  }
 
   const entry = await addHistoryEntry({
     kind: "chat",
@@ -111,7 +134,13 @@ export async function runChat(input: ChatInput) {
     link: "/chat",
   });
 
-  return { reply, entry };
+  return {
+    reply,
+    entry,
+    confidence: agentResult.confidence,
+    intents: agentResult.intents,
+    nextActions: agentResult.nextActions,
+  };
 }
 
 export async function runWorkbench(input: WorkbenchInput) {

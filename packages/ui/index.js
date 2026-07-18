@@ -1,5 +1,6 @@
 export { Logo } from "./components/brand/Logo.jsx";
 export { Favicon } from "./components/brand/Favicon.jsx";
+export { Icon } from "./components/brand/Icon.jsx";
 
 export { Button } from "./components/forms/Button.jsx";
 export { Input } from "./components/forms/Input.jsx";

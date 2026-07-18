@@ -1,3 +1,12 @@
+---
+order: 292
+slug: /packages/nx-agent-project-charter
+title: nx-agent Project Charter
+description: Purpose, goals, success criteria, and milestones for nx-agent
+tags: docs, packages, nx-agent
+icon: smart_toy
+---
+
 # nx-agent Project Charter
 
 ## Purpose

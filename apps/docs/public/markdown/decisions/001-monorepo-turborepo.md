@@ -1,3 +1,12 @@
+---
+order: 61
+slug: /decisions/001-monorepo-turborepo
+title: ADR-001: Monorepo with Turborepo
+description: Decision to use a monorepo managed with pnpm workspaces and Turborepo
+tags: docs, decisions, adr, monorepo, turborepo
+icon: gavel
+---
+
 # ADR-001: Monorepo with Turborepo and pnpm workspaces
 
 **Status:** Accepted  

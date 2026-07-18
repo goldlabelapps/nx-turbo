@@ -1,3 +1,12 @@
+---
+order: 24
+slug: /features/paywall
+title: Paywall
+description: Firebase-backed authentication, account surfaces, and subscription hooks
+tags: docs, features, nx, paywall, auth
+icon: lock
+---
+
 # Paywall
 
 The paywall cartridge adds Firebase-backed account and authentication behavior to the framework.

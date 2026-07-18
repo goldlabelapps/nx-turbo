@@ -1,17 +1,13 @@
-<div>
-    <h1 style="display: flex; align-items: center; gap: 8px;">
-        <a href="../../README.md" target="_blank" rel="noreferrer" style="display: inline-flex; align-items: center;">
-        <img
-            src="../media/nx-icon.png"
-            width="24"
-            height="24"
-        />
-        </a>
-        <span>NX° Turbo</span>
-    </h1>
-</div>
+---
+order: 88
+slug: /packages/design-system-ui-kit-aftercare-app
+title: UI Kit — Aftercare App
+description: Client-facing living aftercare page UI kit for therapist-delivered content
+tags: docs, packages, design-system, ui-kit
+icon: brush
+---
 
-### Design System UI Kit: Aftercare App
+# Design System UI Kit: Aftercare App
 
 ## Purpose
 

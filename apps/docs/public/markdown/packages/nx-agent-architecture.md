@@ -1,3 +1,12 @@
+---
+order: 293
+slug: /packages/nx-agent-architecture
+title: nx-agent Architecture
+description: System overview, component map, request flow, and reliability principles
+tags: docs, packages, nx-agent, architecture
+icon: smart_toy
+---
+
 # nx-agent Architecture
 
 ## System Overview

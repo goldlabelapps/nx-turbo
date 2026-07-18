@@ -1,3 +1,12 @@
+---
+order: 25
+slug: /features/uberedux
+title: Uberedux
+description: Single Redux slice with dot-notation keys for shared framework state
+tags: docs, features, nx, redux, state
+icon: storage
+---
+
 # Uberedux
 
 Uberedux is the framework state layer.

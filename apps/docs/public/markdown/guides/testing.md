@@ -1,17 +1,13 @@
-<div>
-	<h1 style="display: flex; align-items: center; gap: 8px;">
-				<a href="./index.md" target="_blank" rel="noreferrer" style="display: inline-flex; align-items: center;">
-		<img
-			src="../media/nx-icon.png"
-			width="24"
-			height="24"
-		/>
-		</a>
-		<span>NX° Turbo</span>
-	</h1>
-</div>
+---
+order: 47
+slug: /guides/testing
+title: Testing Guide
+description: Test stack, commands, layout, and covered areas for the NX framework
+tags: docs, nx, guides, testing
+icon: science
+---
 
-### Testing Guide
+# Testing Guide
 
 ## Stack
 

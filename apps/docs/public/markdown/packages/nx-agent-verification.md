@@ -1,3 +1,12 @@
+---
+order: 298
+slug: /packages/nx-agent-verification
+title: nx-agent Verification
+description: Verification log for Node runtime, Eve CLI, evals, and smoke tests
+tags: docs, packages, nx-agent
+icon: smart_toy
+---
+
 # nx-agent Verification
 
 Date: 2026-07-17

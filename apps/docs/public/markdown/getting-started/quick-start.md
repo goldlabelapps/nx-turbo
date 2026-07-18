@@ -1,3 +1,12 @@
+---
+order: 12
+slug: /getting-started/quick-start
+title: Quick Start
+description: Clone the repo, configure your environment, and run the development server
+tags: docs, nx, getting-started
+icon: rocket_launch
+---
+
 # Quick start
 
 ## Clone the repository

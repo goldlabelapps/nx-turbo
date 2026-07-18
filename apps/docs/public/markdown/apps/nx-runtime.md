@@ -1,25 +1,19 @@
-<div>
-    <h1 style="display: flex; align-items: center; gap: 8px;">
-        <a href="../../README.md" target="_blank" rel="noreferrer" style="display: inline-flex; align-items: center;">
-        <img
-            src="../media/nx-icon.png"
-            width="24"
-            height="24"
-        />
-        </a>
-        <span>NX° Turbo</span>
-    </h1>
-</div>
+---
+order: 37
+slug: /apps/nx-runtime
+title: NX Runtime
+description: Shared runtime and platform layer for navigation, markdown rendering, and design-system bridging
+tags: docs, apps, nx, runtime
+icon: layers
+---
 
-### apps/v3 NX Runtime Notes
-
-## Purpose
+# NX Runtime
 
 `apps/v3/app/NX` is the shared runtime/platform layer for navigation, markdown rendering, and design-system bridging.
 
 ## Related Guide
 
-- [NX Guide](../nx.md)
+- [NX Guide](/guides/nx)
 
 ## Scope
 

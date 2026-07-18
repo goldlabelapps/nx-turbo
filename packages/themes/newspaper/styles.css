@@ -1,12 +1,12 @@
 :root {
   --np-color-paper: #fff;
-  --np-color-paper-strong: #F8F8F8;
-  --np-color-ink: #222;
-  --np-color-ink-muted: #02493C;
-  --np-color-line: #d7d0c4;
-  --np-color-accent: #085A4B;
-  --np-color-accent-soft: #e7f2ef;
-  --np-color-success: #085A4B;
+  --np-color-paper-strong: #f5f5f0;
+  --np-color-ink: #1a1a1a;
+  --np-color-ink-muted: #6b6b6b;
+  --np-color-line: #ccc8c0;
+  --np-color-accent: #b22222;
+  --np-color-accent-soft: #fdf0f0;
+  --np-color-success: #2e7d32;
   --np-max-width: 1240px;
   --np-gutter: clamp(0.75rem, 1vw + 0.5rem, 1.5rem);
   --np-font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", serif;
@@ -464,4 +464,33 @@
   .np-breaking-bar {
     grid-template-columns: 1fr;
   }
+}
+
+.np-footer {
+  border-top: 1px solid var(--np-color-line);
+  margin-top: 3rem;
+  padding-block: 1.5rem;
+  font-family: var(--np-font-sans);
+  font-size: 0.85rem;
+  color: var(--np-color-ink-muted);
+}
+
+.np-footer-inner {
+  max-width: var(--np-max-width);
+  margin: 0 auto;
+  padding-inline: var(--np-gutter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.np-footer-github-link {
+  color: var(--np-color-accent);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.np-footer-github-link:hover {
+  text-decoration: underline;
 }

@@ -21,7 +21,6 @@
     ],
     "paths": {
       "@/*": ["apps/agent/*"],
-      "@nx/design-system": ["packages/design-system"],
       "@nx/unix": ["packages/themes/unix"],
       "@nx/unix/*": ["packages/themes/unix/*"]
     }

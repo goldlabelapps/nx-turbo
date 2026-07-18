@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "NX Agent Frontend",
+    name: "NX Agent",
     short_name: "NX Agent",
     description: "Agent frontend with workbench, chat, history, and runtime settings.",
     start_url: "/",
@@ -19,7 +19,7 @@ export default function manifest(): MetadataRoute.Manifest {
         type: "image/png",
       },
       {
-        src: "/icon-512x512.png",
+        src: "/favicon.png",
         sizes: "512x512",
         type: "image/png",
       },

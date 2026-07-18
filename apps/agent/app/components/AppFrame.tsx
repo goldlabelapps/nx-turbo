@@ -1,72 +1,40 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Logo } from "@nx/unix";
 
 type AppFrameProps = {
   children: React.ReactNode;
 };
 
-const links = [
-  { href: "/", label: "Home" },
-];
-
 export function AppFrame({ children }: AppFrameProps) {
-  const pathname = usePathname();
-
   return (
-    <div className="site-shell" id="top">
+    <div className="site-shell">
       <header className="site-header">
         <div className="site-header__content">
-          <div className="terminal-chrome" aria-hidden>
+          <div className="terminal-chrome" aria-hidden="true">
             <span className="terminal-dot terminal-dot--close" />
             <span className="terminal-dot terminal-dot--warn" />
             <span className="terminal-dot terminal-dot--ok" />
-            <span className="terminal-path">/usr/local/agent-console</span>
+            <span className="terminal-path">/srv/nx/agent</span>
           </div>
 
           <div className="terminal-brand-row">
-            <Link href="/" className="brand" aria-label="Go to home">
-              <Logo height={30} />
-              <span className="brand-copy" aria-hidden>
-                <span className="brand-kicker">Agentic Terminal</span>
-                <span className="brand-title">nx-agent.runtime</span>
+            <Link className="brand" href="/" aria-label="NX Agent home">
+              <span className="brand-copy">
+                <span className="brand-kicker">NX Runtime</span>
               </span>
             </Link>
-
-            <nav className="site-nav" aria-label="Primary">
-              {links.map((item) => {
-                const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={`site-nav__link${isActive ? " is-active" : ""}`}
-                    aria-current={isActive ? "page" : undefined}
-                  >
-                    {item.label}
-                  </Link>
-                );
-              })}
-            </nav>
-          </div>
-
-          <div className="site-header__actions">
-            <p className="terminal-status">
-              <span className="mono-label">status</span> online
-            </p>
           </div>
         </div>
       </header>
 
-      <main className="site-main">
-        {children}
-        <span className="neon-cursor" aria-hidden />
-      </main>
+      <main>{children}</main>
 
       <footer className="site-footer">
-        <p>ready. enter a prompt.</p>
+        <div className="site-footer__content">
+          <span>NX Agent</span>
+          <span>Unix Theme Surface</span>
+        </div>
       </footer>
     </div>
   );

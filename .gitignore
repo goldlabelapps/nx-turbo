@@ -149,3 +149,6 @@ vite.config.ts.timestamp-*
 packages/design-system/storybook-static/
 apps/agent/next-env.d.ts
 packages/nx-agent/next-env.d.ts
+apps/agent/next-env.d.ts
+packages/nx-agent/next-env.d.ts
+packages/nx-agent/next-env.d.ts

@@ -148,3 +148,4 @@ vite.config.ts.timestamp-*
 .turbo/
 packages/design-system/storybook-static/
 apps/agent/next-env.d.ts
+packages/nx-agent/next-env.d.ts

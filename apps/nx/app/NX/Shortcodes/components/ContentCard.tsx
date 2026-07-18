@@ -35,13 +35,8 @@ export default function ContentCard({
     return (<>
                 <ButtonBase
                     onClick={handleClick}
-                    sx={{
-                        textAlign: 'left',
-                        width: '100%',
-                    }}
                 >
                     <CardHeader 
-                        sx={{ width: '100%' }}
                         title={title}
                         subheader={description}
                         avatar={<Icon icon={icon} color="primary" />}

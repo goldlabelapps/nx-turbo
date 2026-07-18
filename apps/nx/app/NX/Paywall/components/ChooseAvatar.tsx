@@ -1,7 +1,6 @@
 'use client';
 import * as React from 'react';
 import {
-    useTheme,
     useMediaQuery,
     Box,
     IconButton,
@@ -31,8 +30,7 @@ export default function ChooseAvatar({
     const account = useAccount();
     const paywall = usePaywall();
     const avatarsByUID = paywall?.avatarsByUID || {};
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    const isMobile = useMediaQuery('(max-width:600px)');
     const [open, setOpen] = React.useState(false);
     const [uploading, setUploading] = React.useState(false);
     const [selected, setSelected] = React.useState<string | null>(null);
@@ -113,24 +111,11 @@ export default function ChooseAvatar({
 
     return (
         <>
-            <Box sx={{ position: 'relative', display: 'inline-block' }}>
+            <Box>
                 <IconButton onClick={handleAvatarClick} disabled={uploading}>
-                    <Avatar sx={{ 
-                        width: 50, height: 50 }} 
-                        src={account?.avatar} 
-                    />
+                    <Avatar src={account?.avatar} />
                 </IconButton>
-                <Box
-                    sx={{
-                        position: 'absolute',
-                        bottom: 0,
-                        transform: 'translateX(-15px)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        pointerEvents: 'none',
-                    }}
-                >
+                <Box>
                     <Icon icon="photo" color="primary" />
                 </Box>
             </Box>
@@ -144,62 +129,43 @@ export default function ChooseAvatar({
                 fullWidth
                 fullScreen={isMobile}
             >
-                <DialogTitle sx={{  }}>
-                    <IconButton onClick={handleClose} sx={{ position: 'absolute', top: 8, right: 8 }}>
+                <DialogTitle>
+                    <IconButton onClick={handleClose}>
                         <Icon icon="close" />
                     </IconButton>
                 </DialogTitle>
 
                 <DialogContent>
-                    <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', mb: 2 }}>
+                    <Box>
                         
                         {Object.entries(avatarsByUID).map(([id, avatarObj]) => {
                             const avatar = avatarObj as { src: string; uid: string };
                             return (
                                 <IconButton key={id} onClick={() => handleChoice(avatar.src)}>
-                                    <Avatar
-                                        src={avatar.src}
-                                        sx={{
-                                            width: 85,
-                                            height: 85,
-                                            border: selected === avatar.src ? `2px solid ${theme.palette.primary.main}` : undefined
-                                        }}
-                                    />
+                                    <Avatar src={avatar.src} />
                                 </IconButton>
                             );
                         })}
                         
-                        <Box sx={{ display: 'flex', width: '100%', m: 2 }}>
-                            <Box sx={{ flexGrow: 1 }} />
-                            <label style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: 8,
-                                cursor: 'pointer',
-                            }}>
+                        <Box>
+                            <Box />
+                            <label>
                                 <input
                                     type="file"
                                     accept="image/*"
-                                    style={{ display: 'none' }}
                                     onChange={handleUpload} />
 
                                 Upload
                                 <Icon icon="upload" color="primary" />
                             </label>
-                            <Box sx={{ flexGrow: 1 }} />
+                            <Box />
                         </Box>
 
 
 
                         {presetAvatars.map((url) => (
                             <IconButton key={url} onClick={() => handleChoice(url)}>
-                                <Avatar 
-                                src={url} 
-                                sx={{ 
-                                    width: 85, 
-                                    height: 85,
-                                    border: selected === url ? `2px solid ${theme.palette.primary.main}` 
-                                : undefined }} />
+                                <Avatar src={url} />
                             </IconButton>
                         ))}
 

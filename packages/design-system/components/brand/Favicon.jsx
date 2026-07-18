@@ -7,19 +7,19 @@ const SMILE_PATH =
   "M8,12 C12.6203742,21.9973959 20,13.9133228 20,13.9133228 C14.7209979,15.4126605 8,12 8,12 Z";
 
 const TONES = {
-  ink: "#0b1020",
-  dusty: "#1a2340",
-  clay: "#ff4d00",
-  offwhite: "#f4f7ff",
+  ink: "#072734",
+  dusty: "#0f3d4d",
+  clay: "#3be8b8",
+  offwhite: "#eef8fa",
   current: "currentColor",
 };
 
 /**
  * Ping-pong ball icon used as the NX brand mark variant.
  */
-export function Favicon({ size = 24, tone = "ink", title, style, ...rest }) {
+export function Favicon({ size = 24, tone = "current", title, style, ...rest }) {
   const mainColor = TONES[tone] || tone;
-  const smileColor = tone === "offwhite" ? "#0b1020" : "#fff";
+  const smileColor = tone === "offwhite" ? "#072734" : "#fff";
   return (
     <svg
       viewBox="0 0 24 24"

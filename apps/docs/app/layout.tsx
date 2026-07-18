@@ -6,8 +6,8 @@ import path from 'path';
 import { UbereduxProvider } from './NX/Uberedux';
 import RequireAuthWrapper from './NX/Paywall/components/RequireAuthWrapper';
 
-const requestedTenant = process.env.NEXT_PUBLIC_TENANT || "edtech";
-const tenant = requestedTenant === 'free' ? 'edtech' : requestedTenant;
+const requestedTenant = process.env.NEXT_PUBLIC_TENANT || "docs";
+const tenant = requestedTenant === 'free' || requestedTenant === 'edtech' ? 'docs' : requestedTenant;
 // console.log(`Loading config for tenant: ${tenant}`);
 const configPath = path.join(process.cwd(), 'public', tenant, 'config.json');
 const configRaw = fs.readFileSync(configPath, 'utf-8');

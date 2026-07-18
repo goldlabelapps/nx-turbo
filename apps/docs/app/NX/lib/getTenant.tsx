@@ -1,21 +1,21 @@
 import type { T_Tenant } from '../types';
-import edtechConfig from '../../../public/edtech/config.json';
+import docsConfig from '../../../public/docs/config.json';
 
 export const getTenant = (tenant?: T_Tenant) => {
 
     const requestedTenant = tenant || process.env.NEXT_PUBLIC_TENANT;
-    const t = requestedTenant === 'free' ? 'edtech' : requestedTenant;
+    const t = requestedTenant === 'free' || requestedTenant === 'edtech' ? 'docs' : requestedTenant;
     let config;
     let markdownDir;
 
     switch (t) {
-        case 'edtech':
-            config = edtechConfig;
-            markdownDir = process.cwd() + '/public/edtech/markdown';
+        case 'docs':
+            config = docsConfig;
+            markdownDir = process.cwd() + '/public/docs/markdown';
             break;
         default:
-            config = edtechConfig;
-            markdownDir = process.cwd() + '/public/edtech/markdown';
+            config = docsConfig;
+            markdownDir = process.cwd() + '/public/docs/markdown';
             break;
     }
     return {

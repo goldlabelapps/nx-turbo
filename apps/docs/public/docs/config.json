@@ -1,5 +1,5 @@
 {
-    "tenant": "edtech",
+    "tenant": "docs",
     "siteName": "EdTech°",
     "description": "Educational Technology",
     "url": "https://docs.goldlabel.pro",
@@ -7,14 +7,14 @@
         "name": "Ed",
         "email": "ed@goldlabel.pro"
     },
-    "favicon": "/edtech/png/favicon.png",
+    "favicon": "/docs/png/favicon.png",
     "avatars": {
-        "light": "/edtech/svg/avatarLight.svg",
-        "dark": "/edtech/svg/avatarDark.svg"
+        "light": "/docs/svg/avatarLight.svg",
+        "dark": "/docs/svg/avatarDark.svg"
     },
     "images": {
-        "light": "/edtech/png/python.png",
-        "dark": "/edtech/png/python.png"
+        "light": "/docs/png/python.png",
+        "dark": "/docs/png/python.png"
     },
     "cartridges": {
         "paywall": {

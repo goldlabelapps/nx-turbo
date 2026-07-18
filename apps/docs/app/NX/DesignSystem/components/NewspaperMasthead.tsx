@@ -15,6 +15,7 @@ export interface NewspaperMastheadProps {
   sections?: Array<string | LinkItem>;
   menuItems?: NewspaperMastheadMenuItem[];
   utilityLinks?: LinkItem[];
+  utilityStart?: React.ReactNode;
 }
 
 function renderSection(item: string | LinkItem, index: number) {
@@ -89,10 +90,12 @@ export function NewspaperMasthead({
   sections = [],
   menuItems = [],
   utilityLinks = [],
+  utilityStart,
 }: NewspaperMastheadProps) {
   return (
     <header className="np-masthead" role="banner">
-      <div className="np-masthead-top-row">
+      <div className="np-masthead-top-row" style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', gap: '12px' }}>
+        {utilityStart ? <div className="np-masthead-utility-start" style={{ display: 'flex', alignItems: 'center' }}>{utilityStart}</div> : null}
         {utilityLinks.length > 0 ? (
           <nav aria-label="Utility" className="np-masthead-utility-nav">
             {utilityLinks.map((link) => (

@@ -14,7 +14,7 @@ This folder is the canonical location for repository documentation.
 ## Core Guides
 
 - [NX Guide](./nx.md)
-- [API + TypeScript Guide](../techstack/api-typescript.md)
+- [API + TypeScript Guide](../architecture/tech-stack/api-typescript.md)
 - [Testing Guide](./testing.md)
 - [Theme Guide](./theme.md)
 

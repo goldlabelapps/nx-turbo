@@ -1,9 +1,9 @@
 ---
 order: 41
-slug: /techstack/api-typescript
+slug: /architecture/tech-stack/api-typescript
 title: API + TypeScript
 description: Guide to NX API routes, shared utilities, contracts, and tests
-tags: docs, nx, api, typescript
+tags: docs, nx, api, typescript, architecture, techstack
 icon: api
 ---
 # API + TypeScript Guide

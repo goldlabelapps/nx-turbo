@@ -2,6 +2,7 @@ import "server-only";
 
 import { promises as fs } from "fs";
 import path from "path";
+import { Client } from "eve/client";
 import {
   addHistoryEntry as addFirebaseHistoryEntry,
   isFirebaseHistoryEnabled,
@@ -24,6 +25,10 @@ export type HistoryEntry = {
 
 type ChatInput = {
   message: string;
+};
+
+type ChatOptions = {
+  origin?: string;
 };
 
 type WorkbenchInput = {
@@ -96,10 +101,30 @@ export async function addHistoryEntry(entry: Omit<HistoryEntry, "id" | "createdA
   return next;
 }
 
-export async function runChat(input: ChatInput) {
+export async function runChat(input: ChatInput, options?: ChatOptions) {
   const cleanMessage = input.message.trim();
   const agentResult = runNxAgentChat({ message: cleanMessage });
-  const reply = agentResult.reply;
+  let reply = agentResult.reply;
+
+  try {
+    const host = `${options?.origin ?? ""}/eve`;
+    if (!host.startsWith("/eve")) {
+      const client = new Client({ host });
+      const session = client.session();
+      const response = await session.send(cleanMessage);
+      const result = await response.result();
+
+      if (result.status === "failed") {
+        throw new Error("Eve run failed.");
+      }
+
+      if (typeof result.message === "string" && result.message.trim().length > 0) {
+        reply = result.message;
+      }
+    }
+  } catch {
+    // Fall back to deterministic package response when Eve is unavailable.
+  }
 
   const entry = await addHistoryEntry({
     kind: "chat",

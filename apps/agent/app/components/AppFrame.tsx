@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 type AppFrameProps = {
   children: React.ReactNode;
 };
@@ -16,14 +14,6 @@ export function AppFrame({ children }: AppFrameProps) {
             <span className="terminal-dot terminal-dot--warn" />
             <span className="terminal-dot terminal-dot--ok" />
             <span className="terminal-path">/srv/nx/agent</span>
-          </div>
-
-          <div className="terminal-brand-row">
-            <Link className="brand" href="/" aria-label="NX Agent home">
-              <span className="brand-copy">
-                <span className="brand-kicker">NX Runtime</span>
-              </span>
-            </Link>
           </div>
         </div>
       </header>

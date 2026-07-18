@@ -3,8 +3,6 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { Card } from "@nx/unix";
 
-const promptText = "You are NX Agent. Execute clearly, stay concise, and always return actionable next steps.";
-
 type TerminalEntry = {
   id: number;
   command: string;
@@ -154,10 +152,6 @@ export default function Home() {
 
         <div style={{ width: "min(760px, 100%)" }}>
           <Card padding="lg" variant="glass">
-            <p className="lede" style={{ marginBottom: "10px" }}>
-              system: {promptText}
-            </p>
-
             <div className="terminal-log" role="log" aria-live="polite">
               {entries.map((entry) => (
                 <div key={entry.id}>

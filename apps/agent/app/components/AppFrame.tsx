@@ -29,13 +29,6 @@ export function AppFrame({ children }: AppFrameProps) {
       </header>
 
       <main>{children}</main>
-
-      <footer className="site-footer">
-        <div className="site-footer__content">
-          <span>NX Agent</span>
-          <span>Unix Theme Surface</span>
-        </div>
-      </footer>
     </div>
   );
 }

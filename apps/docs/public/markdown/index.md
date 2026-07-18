@@ -16,7 +16,7 @@ NX° Turbo is a modular application framework built on Next.js and React. Clone 
 
 [PageLink title="Features" description="Design system, Flash animation, Shortcodes, Paywall, and more" url="/features"]
 
-[PageLink title="Tech Stack" description="Next.js, React, TypeScript, MUI, Redux, Firebase, and more" url="/techstack"]
+[PageLink title="Tech Stack" description="Next.js, React, TypeScript, MUI, Redux, Firebase, and more" url="/architecture/tech-stack"]
 
 [PageLink title="Packages" description="Design system, UI kits, and nx-agent" url="/packages"]
 

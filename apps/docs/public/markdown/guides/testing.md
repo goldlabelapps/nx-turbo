@@ -18,9 +18,9 @@ icon: science
 
 ## Commands
 
-- `npm test`
-- `npm run test:watch`
-- `npm test -- <path-to-test-file>`
+- `pnpm --filter ./apps/nx test`
+- `pnpm --filter ./apps/nx test:watch`
+- `pnpm --filter ./apps/nx test -- <path-to-test-file>`
 
 ## Test Layout
 

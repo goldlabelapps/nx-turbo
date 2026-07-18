@@ -47,3 +47,20 @@ Direct use of `@nx/ui` remains deferred until its MUI version is aligned with `a
 ## Usage rule
 
 If a NX component needs a shared design-system primitive, import it from `app/NX/Theme/designSystem.ts` rather than reaching into `@nx/design-system` directly.
+
+## Multi design-system switching
+
+The shared CSS package now supports named design-system presets without changing component imports.
+
+- keep importing `@nx/design-system/styles`
+- choose a preset with `data-design-system` on `<html>`
+- in tenant-driven apps (`apps/nx`, `apps/docs`), set `cartridges.designSystem.system` in `public/<tenant>/config.json`
+- in env-driven apps (`apps/agent`), set `NEXT_PUBLIC_DESIGN_SYSTEM`
+
+Built-in presets:
+
+- `nx` (default)
+- `neo-brutal`
+- `aurora`
+
+If a preset value is missing or unknown, the system safely falls back to `nx` because base `:root` tokens remain loaded.

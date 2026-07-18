@@ -58,6 +58,7 @@ export type T_Config = {
         designSystem?: {
             themeSwitching: boolean;
             defaultTheme: string;
+            system?: string;
             themes: {
                 [key: string]: {
                     mode: string;
@@ -79,6 +80,7 @@ export type T_Config = {
         designSystem?: {
             themeSwitching: boolean;
             defaultTheme: string;
+            system?: string;
             themes: {
                 [key: string]: {
                     mode: string;

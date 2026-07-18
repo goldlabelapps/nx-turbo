@@ -5,6 +5,8 @@ import { AppFrame } from "./components/AppFrame";
 import { RouteAnalytics } from "./components/RouteAnalytics";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://agent.local";
+const configuredDesignSystem = process.env.NEXT_PUBLIC_DESIGN_SYSTEM;
+const designSystemId = configuredDesignSystem?.trim() || "nx";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -53,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-design-system={designSystemId}>
       <body className="app-root">
         <RouteAnalytics />
         <AppFrame>{children}</AppFrame>

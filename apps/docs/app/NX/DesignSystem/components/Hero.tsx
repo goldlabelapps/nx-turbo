@@ -27,7 +27,8 @@ export default function Hero({
 	if (!src) return null;
 	return (
 		<Box sx={{
-			my: 2,
+			mt: 2,
+			mb: 0,
 		}}>
 			<Box
 				sx={{

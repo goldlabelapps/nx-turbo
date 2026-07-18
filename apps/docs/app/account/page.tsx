@@ -1,13 +1,10 @@
-import type { I_NestedNav, T_Frontmatter } from '../NX/types';
+import type { T_Frontmatter } from '../NX/types';
 import fs from "fs";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import { Box } from '@mui/material';
+import { Box, Link as MuiLink, Paper, Typography } from '@mui/material';
 import {
-    BreakingBar,
-    SectionBlock,
-    StoryCard,
     StoryGrid,
     TopicChip,
 } from '@nx/newspaper';
@@ -20,7 +17,7 @@ import {
     getMeta 
 } from '../NX/lib/index.server';
 import {
-    Footer,
+    Breadcrumb,
     TreeNav,
 } from '../NX/DesignSystem';
 import {
@@ -92,83 +89,129 @@ export default async function Page(props: any) {
     const { content, data } = matter(md);
     if (data.title) title = data.title;
     if (data.description) description = data.description;
-    const icon = (typeof data.icon === 'string' && data.icon.trim()) ? data.icon : null;
     const navItems = await serverUseNav();
-    const themeMode: 'light' | 'dark' = (config?.cartridges?.designSystem?.defaultTheme 
-            === 'dark') ? 'dark' : 'light';
-    const themedImage = config?.images?.[themeMode] || config?.images?.light || null;
-
-    // Use data.image if it's a non-empty string, otherwise fallback to themedImage
-    const meta = getMeta({
-        siteName: config.siteName,
-        title,
-        description,
-        url: config.url || "",
-        image: (typeof data.image === 'string' && data.image.trim()) ? data.image : themedImage,
-    });
 
     const sectionLinks = (navItems || [])
         .filter((item: any) => item?.path && item?.title)
         .slice(0, 10)
         .map((item: any) => ({ label: item.title, href: item.path }));
+    const topCategories = sectionLinks.slice(0, 6);
 
     const primaryDescription = description || config.description || 'Account overview';
 
     return (
             <NX config={config} frontmatter={data}>
-                <Box sx={{ display: 'block' }}>
-                    <BreakingBar
-                        label="Account"
-                        items={[
-                            { label: 'Manage your profile and access', href: '#main' },
-                            { label: primaryDescription, href: '#main' },
-                        ]}
-                    />
-                </Box>
+                <Breadcrumb
+                    navItems={navItems as any[]}
+                    pathname="/account"
+                    currentLabel="Account"
+                    label="Now Reading"
+                />
 
                 <section id="main" style={{ paddingBottom: '90px' }}>
                     <StoryGrid
                         lead={
-                            <StoryCard
-                                eyebrow="Membership"
-                                title={title}
-                                dek={primaryDescription}
-                                tone="default"
-                            />
+                            <Paper
+                                sx={{
+                                    p: { xs: 2, sm: 3 },
+                                    borderRadius: 3,
+                                    background: 'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(248,249,252,1) 100%)',
+                                    border: 'none',
+                                    boxShadow: 'none',
+                                }}
+                            >
+                                <Typography
+                                    component="p"
+                                    sx={{
+                                        textTransform: 'uppercase',
+                                        letterSpacing: '0.08em',
+                                        fontSize: '0.75rem',
+                                        fontWeight: 700,
+                                        color: 'text.secondary',
+                                        mb: 1,
+                                    }}
+                                >
+                                    Membership
+                                </Typography>
+                                <Typography
+                                    component="h1"
+                                    sx={{
+                                        fontSize: { xs: '2rem', md: '2.4rem' },
+                                        lineHeight: 1.05,
+                                        fontWeight: 800,
+                                        color: 'text.primary',
+                                        mb: 1.25,
+                                    }}
+                                >
+                                    {title}
+                                </Typography>
+                                <Typography
+                                    component="p"
+                                    sx={{
+                                        fontSize: { xs: '1rem', md: '1.1rem' },
+                                        lineHeight: 1.6,
+                                        color: 'text.secondary',
+                                        maxWidth: '62ch',
+                                    }}
+                                >
+                                    {primaryDescription}
+                                </Typography>
+                            </Paper>
                         }
-                        stories={sectionLinks.slice(0, 3).map((item) => (
-                            <StoryCard
+                        stories={topCategories.map((item, index) => (
+                            <Paper
                                 key={item.href}
-                                compact
-                                title={item.label}
+                                component="a"
                                 href={item.href}
-                                tone="muted"
-                            />
+                                variant="outlined"
+                                sx={{
+                                    display: 'block',
+                                    p: 1.5,
+                                    borderRadius: 2,
+                                    textDecoration: 'none',
+                                    color: 'inherit',
+                                    transition: 'all 0.2s ease',
+                                    '&:hover': {
+                                        transform: 'translateY(-2px)',
+                                        boxShadow: 2,
+                                        borderColor: 'text.primary',
+                                    },
+                                }}
+                            >
+                                <Typography sx={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'text.secondary' }}>
+                                    Top Category {index + 1}
+                                </Typography>
+                                <Typography sx={{ fontSize: '1.05rem', fontWeight: 700, lineHeight: 1.2, mt: 0.4 }}>
+                                    {item.label}
+                                </Typography>
+                            </Paper>
                         ))}
-                        sideRail={
-                            <SectionBlock title="Browse" actions={[{ label: 'All Sections', href: '/' }]}>
-                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '0.8rem' }}>
-                                    {sectionLinks.slice(0, 12).map((item) => (
-                                        <TopicChip key={item.href} label={item.label} href={item.href} tone="muted" />
-                                    ))}
-                                </div>
-                                <TreeNav navItems={navItems}/>
-                            </SectionBlock>
-                        }
                     />
 
-                    <SectionBlock title="Your Account" tone="default">
+                    <Box sx={{ mt: 3 }}>
+                        <Typography component="h2" sx={{ fontSize: { xs: '1.35rem', md: '1.6rem' }, fontWeight: 800, mb: 1.25 }}>
+                            Your Account
+                        </Typography>
                         <Account />
-                    </SectionBlock>
+                    </Box>
+
+                    <Box sx={{ mt: 5 }}>
+                        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 2, mb: 1.5 }}>
+                            <Typography component="h2" sx={{ fontSize: { xs: '1.25rem', md: '1.4rem' }, fontWeight: 800 }}>
+                                Read Next
+                            </Typography>
+                            <MuiLink href="/" underline="hover" sx={{ fontWeight: 600 }}>
+                                All Sections
+                            </MuiLink>
+                        </Box>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '0.8rem' }}>
+                            {sectionLinks.slice(0, 12).map((item) => (
+                                <TopicChip key={item.href} label={item.label} href={item.href} tone="muted" />
+                            ))}
+                        </div>
+                        <TreeNav navItems={navItems}/>
+                    </Box>
                 </section>
-                <footer>
-                    <Footer
-                        meta={meta as any}
-                        frontmatter={data}
-                        navItems={navItems as I_NestedNav["navItems"]}
-                    >
-                    </Footer>
-                </footer>
             </NX>
     );
 }

@@ -1,12 +1,12 @@
 :root {
-  --np-color-paper: #f8f6f0;
-  --np-color-paper-strong: #f2efe6;
-  --np-color-ink: #151515;
-  --np-color-ink-muted: #5a5a5a;
+  --np-color-paper: #fff;
+  --np-color-paper-strong: #F8F8F8;
+  --np-color-ink: #222;
+  --np-color-ink-muted: #02493C;
   --np-color-line: #d7d0c4;
-  --np-color-accent: #9b1d20;
-  --np-color-accent-soft: #efe1df;
-  --np-color-success: #1f5b3d;
+  --np-color-accent: #085A4B;
+  --np-color-accent-soft: #e7f2ef;
+  --np-color-success: #085A4B;
   --np-max-width: 1240px;
   --np-gutter: clamp(0.75rem, 1vw + 0.5rem, 1.5rem);
   --np-font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", serif;

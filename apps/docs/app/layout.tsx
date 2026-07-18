@@ -2,12 +2,13 @@ import "./globals.css";
 import "@nx/design-system/styles";
 import "@nx/newspaper/styles";
 import type { Metadata } from "next";
-import { Masthead, NewspaperShell } from "@nx/newspaper";
+import { NewspaperShell } from "@nx/newspaper";
 import type { MastheadMenuItem } from "@nx/newspaper";
 import config from '../public/config.json';
 import { getDocsContext, serverUseNav } from './NX/lib/index.server';
 import { UbereduxProvider } from './NX/Uberedux';
 import RequireAuthWrapper from './NX/Paywall/components/RequireAuthWrapper';
+import { NewspaperMasthead } from './NX/DesignSystem/components/NewspaperMasthead';
 
 const { manifestPath } = getDocsContext();
 const { siteName, description, favicon } = config;
@@ -86,11 +87,11 @@ export default async function RootLayout({
       </head>
       <body>
         <NewspaperShell>
-          <Masthead
+          <NewspaperMasthead
             title={siteName}
             strapline={description}
             menuItems={mastheadMenu}
-            utilityLinks={[{ label: "Docs Home", href: "/" }]}
+            utilityLinks={[{ label: "Home", href: "/" }]}
           />
           <div className="wrapper">
             <UbereduxProvider config={config}>

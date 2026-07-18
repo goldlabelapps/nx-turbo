@@ -1,13 +1,13 @@
 export const newspaperTokens = {
   color: {
-    paper: "#f8f6f0",
-    paperStrong: "#f2efe6",
-    ink: "#151515",
-    inkMuted: "#5a5a5a",
+    paper: "#ffffff",
+    paperStrong: "#F8F8F8",
+    ink: "#222222",
+    inkMuted: "#02493C",
     line: "#d7d0c4",
-    accent: "#9b1d20",
-    accentSoft: "#efe1df",
-    success: "#1f5b3d",
+    accent: "#085A4B",
+    accentSoft: "#e7f2ef",
+    success: "#085A4B",
     warning: "#8a5b00"
   },
   font: {

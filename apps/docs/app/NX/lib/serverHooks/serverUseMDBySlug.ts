@@ -5,13 +5,9 @@ import matter from "gray-matter";
 /**
  * Recursively finds a markdown file by its slug array.
  * @param slugArr Array of slug segments
- * @param project Project name (default: "nx")
  * @returns The file path if found, otherwise null
  */
-export function serverUseMDBySlug(slugArr: string[] = [], project: string = "nx"): string | null {
-    if (!project) {
-        project = process.env.NEXT_PUBLIC_TENANT || "nx";
-    }
+export function serverUseMDBySlug(slugArr: string[] = []): string | null {
     // Remove trailing empty strings from slugArr
     let normalizedSlugArr = Array.isArray(slugArr) ? [...slugArr] : [];
     while (normalizedSlugArr.length > 1 && normalizedSlugArr[normalizedSlugArr.length - 1] === "") {
@@ -37,7 +33,7 @@ export function serverUseMDBySlug(slugArr: string[] = [], project: string = "nx"
             }
         }
     };
-    const markdownDir = `public/${project}/markdown`;
+    const markdownDir = `public/markdown`;
     walk(markdownDir);
     return foundPath;
 }

@@ -40,7 +40,6 @@ export const onFingerprint = (): any =>
 				<strong>URL:</strong> ${landingPage?.url || 'n/a'}<br />
 				<strong>Description:</strong> ${landingPage?.description || 'n/a'}<br />
 				<strong>Site:</strong> ${landingPage?.siteName || 'n/a'}<br />
-				<strong>Tenant:</strong> ${landingPage?.tenant || 'n/a'}
 				<strong>Favicon:</strong> ${landingPage?.favicon || 'n/a'}
 			`;
 

@@ -1,4 +1,4 @@
-import { Badge, Button, Card } from "@nx/design-system";
+import { Badge, Card } from "@nx/design-system";
 
 export default function Home() {
   return (
@@ -12,17 +12,7 @@ export default function Home() {
 
         <div style={{ width: "min(760px, 100%)" }}>
           <Card padding="lg" variant="glass">
-            <div className="actions" style={{ marginTop: 0 }}>
-              <Button as="a" href="/chat">
-                Open chat
-              </Button>
-              <Button as="a" href="/history" variant="ghost">
-                History
-              </Button>
-              <Button as="a" href="/settings" variant="ghost">
-                Settings
-              </Button>
-            </div>
+            <p className="lede">System online. This build currently runs in focused single-page mode.</p>
           </Card>
         </div>
       </section>

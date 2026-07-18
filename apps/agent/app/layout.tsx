@@ -5,6 +5,8 @@ import { AppFrame } from "./components/AppFrame";
 import { RouteAnalytics } from "./components/RouteAnalytics";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://agent.local";
+const configuredDesignSystem = process.env.NEXT_PUBLIC_DESIGN_SYSTEM;
+const designSystemId = configuredDesignSystem?.trim() || "agentic";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -43,8 +45,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f4f7ff",
-  colorScheme: "light",
+  themeColor: "#090f18",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
@@ -53,10 +55,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="app-root">
-        <RouteAnalytics />
-        <AppFrame>{children}</AppFrame>
+    <html lang="en" data-design-system={designSystemId}>
+      <body>
+        <div className="wrapper">
+          <RouteAnalytics />
+          <AppFrame>{children}</AppFrame>
+        </div>
       </body>
     </html>
   );

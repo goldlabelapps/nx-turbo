@@ -45,7 +45,7 @@ The following shortcodes are available out of the box:
 | `GithubLink`      | Button linking to a GitHub repo or file          | `[GithubLink url="https://github.com/" label="View Repo"]` |
 | `FeedbackBtn`     | Button to trigger feedback UI                    | `[FeedbackBtn url="/feedback" label="Send Feedback"]` |
 | `CleverText`      | Renders clever/animated text                     | `[CleverText text="Hello, world!"]`                |
-| `ContentCard`     | Embeds a card with markdown content by slug      | `[ContentCard slug="/docs/intro"]`                  |
+| `ContentCard`     | Embeds a card with markdown content by slug      | `[ContentCard slug="/intro"]`                       |
 | `PageLink`        | Renders a styled link to a page or URL           | `[PageLink url="/about" title="About Us"]`         |
 
 ---

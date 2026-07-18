@@ -5,6 +5,7 @@ import { serverUseAllMd } from './serverHooks/serverUseAllMd';
 import { serverUseSlugs } from './serverHooks/serverUseSlugs';
 import { serverUseRelated } from './serverHooks/serverUseRelated';
 import { serverUseRightRailCards } from './serverHooks/serverUseRightRailCards';
+import { serverUseSearchIndex } from './serverHooks/serverUseSearchIndex';
 import { getDocsContext } from './getDocsContext';
 import { getMeta } from './getMeta';
 
@@ -16,6 +17,7 @@ export {
     serverUseSlugs,
     serverUseRelated,
     serverUseRightRailCards,
+    serverUseSearchIndex,
     getDocsContext,
     getMeta,
 };

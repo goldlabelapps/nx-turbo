@@ -5,10 +5,11 @@ import type { Metadata } from "next";
 import { NewspaperShell } from "@nx/newspaper";
 import type { MastheadMenuItem } from "@nx/newspaper";
 import config from '../public/config.json';
-import { getDocsContext, serverUseNav } from './NX/lib/index.server';
+import { getDocsContext, serverUseNav, serverUseSearchIndex } from './NX/lib/index.server';
 import { UbereduxProvider } from './NX/Uberedux';
 import RequireAuthWrapper from './NX/Paywall/components/RequireAuthWrapper';
 import { NewspaperMasthead } from './NX/DesignSystem/components/NewspaperMasthead';
+import SearchBar from './NX/Search/SearchBar';
 
 const { manifestPath } = getDocsContext();
 const { siteName, description, favicon } = config;
@@ -72,7 +73,16 @@ export default async function RootLayout({
 
   const paywall = config.cartridges?.paywall?.enabled === true;
   const navItems = await serverUseNav();
+  const searchEntries = await serverUseSearchIndex();
   const mastheadMenu = toMastheadMenu(navItems as RawNavItem[]);
+  const content = (
+    <>
+      <div className="wrapper-inner" style={{ paddingTop: 16 }}>
+        <SearchBar entries={searchEntries} />
+      </div>
+      {children}
+    </>
+  );
 
   return (
     <html lang="en" data-design-system={designSystemId}>
@@ -96,9 +106,9 @@ export default async function RootLayout({
           <div className="wrapper">
             <UbereduxProvider config={config}>
               {paywall ? (
-                <RequireAuthWrapper config={config}>{children}</RequireAuthWrapper>
+                <RequireAuthWrapper config={config}>{content}</RequireAuthWrapper>
               ) : (
-                children
+                content
               )}
             </UbereduxProvider>
           </div>

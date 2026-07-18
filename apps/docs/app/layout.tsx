@@ -1,4 +1,5 @@
 import "./globals.css";
+import "@nx/design-system/styles";
 import type { Metadata } from "next";
 import fs from 'fs';
 import path from 'path';

@@ -109,7 +109,13 @@ export async function runChat(input: ChatInput) {
     link: "/chat",
   });
 
-  return { reply, entry };
+  return {
+    reply,
+    entry,
+    confidence: agentResult.confidence,
+    intents: agentResult.intents,
+    nextActions: agentResult.nextActions,
+  };
 }
 
 export async function runWorkbench(input: WorkbenchInput) {

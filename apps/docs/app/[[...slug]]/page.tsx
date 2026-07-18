@@ -3,11 +3,14 @@ import fs from "fs";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
+import { Box } from '@mui/material';
 import {
-    Box,
-    Container,
-    Typography,
-} from '@mui/material';
+    BreakingBar,
+    SectionBlock,
+    StoryCard,
+    StoryGrid,
+    TopicChip,
+} from '@nx/newspaper';
 import { NX } from '../NX';
 import {
     serverUseMDBySlug,
@@ -18,7 +21,6 @@ import {
 } from '../NX/lib/index.server';
 import {
     Icon,
-    Header,
     Hero,
     Footer,
     TreeNav,
@@ -108,71 +110,110 @@ export default async function Page(props: any) {
         image: (typeof data.image === 'string' && data.image.trim()) ? data.image : themedImage,
     });
 
+    const sectionLinks = (navItems || [])
+        .filter((item: any) => item?.path && item?.title)
+        .slice(0, 8)
+        .map((item: any) => ({ label: item.title, href: item.path }));
+
+    const primaryDescription = description || config.description || "Documentation";
+
+    const topStories = [
+        {
+            label: `${title} published`,
+            href: '#main',
+        },
+        {
+            label: `${primaryDescription}`,
+            href: '#main',
+        },
+    ];
+
     return (
             <NX config={config} frontmatter={data}>
-                <Header config={config} frontmatter={data} />
+                <Box sx={{ display: 'block' }}>
+                    <BreakingBar label="Now Reading" items={topStories} />
+                </Box>
                 {data.cartridge ? (
                     data.cartridge === 'virus' ? (
-                        <Container id="main" maxWidth="lg" sx={{ mt: '100px', pb: '90px' }}>
-                            <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 2 }}>
+                        <section id="main" style={{ paddingBottom: '90px' }}>
+                            <SectionBlock title={data.title || title} tone="accent">
                                 <Virus />
-                            </Box>
-                        </Container>
+                            </SectionBlock>
+                        </section>
                     ) : data.cartridge === 'orders' ? (
-                        <Container id="main" maxWidth="lg" sx={{ mt: '100px', pb: '90px' }}>
-                            <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 2 }}>
+                        <section id="main" style={{ paddingBottom: '90px' }}>
+                            <SectionBlock title={data.title || title} tone="accent">
                                 <Orders />
-                            </Box>
-                        </Container>
+                            </SectionBlock>
+                        </section>
                     ) : data.cartridge === 'prospects' ? (
-                        <Container id="main" maxWidth="lg" sx={{ mt: '100px', pb: '90px' }}>
-                            <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 2 }}>
+                        <section id="main" style={{ paddingBottom: '90px' }}>
+                            <SectionBlock title={data.title || title} tone="accent">
                                 <Prospects />
-                            </Box>
-                        </Container>
+                            </SectionBlock>
+                        </section>
                     ) : (
-                        <Container id="main" maxWidth="lg" sx={{ mt: '100px', pb: '90px' }}>
-                            <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 2 }}>
-                                <Typography variant="h4" color="primary" sx={{ mb: 2 }}>
-                                    {data.title || title} (CARTRIDGE)
-                                </Typography>
-                                <Box>
-                                    <RenderMarkdown config={config}>
-                                        {content}
-                                    </RenderMarkdown>
-                                </Box>
-                            </Box>
-                        </Container>
-                    )
-                ) : (
-                    <Container id="main" maxWidth="lg" 
-                        sx={{ mt: '100px', pb: '90px' }}>
-                        <Box sx={{ width: '100%', display: 'flex', gap: 1 }}>
-                            <Box sx={{ display: { xs: 'none', sm: 'flex' }, flexDirection: 'column' }}>
-                                <Box sx={{ flexGrow: 1, minHeight: 0, minWidth: 200 }}>
-                                    <TreeNav navItems={navItems}/>
-                                </Box>
-                            </Box>
-                            <Box component="main" sx={{ gridColumn: { lg: '1' }, width: '100%', minWidth: 0, pr: { xs: 2, lg: 3 }, pl: { xs: 2, lg: 0 }, flexGrow: 1 }}>
-                                <Typography sx={{ display: 'flex', mt: 1 }} color='secondary' variant="h6" component="h2">
-                                    <Box sx={{ display: 'flex', width: '100%' }}>
-                                        {data.icon && <Box sx={{ mx: 2 }}><Icon icon={data.icon} color="primary" /></Box>}
-                                        <Box sx={{ flexGrow: 1 }}>
-                                            {description}
-                                        </Box>
-                                    </Box>
-                                </Typography>
-                                <Hero
-                                    config={config}
-                                    frontmatter={data}
-                                    navItems={navItems as I_NestedNav["navItems"]}
-                                />
+                        <section id="main" style={{ paddingBottom: '90px' }}>
+                            <SectionBlock title={`${data.title || title} (CARTRIDGE)`} tone="accent">
                                 <RenderMarkdown config={config}>
                                     {content}
                                 </RenderMarkdown>
-                            </Box>
-                        </Box>
-                    </Container>
+                            </SectionBlock>
+                        </section>
+                    )
+                ) : (
+                    <section id="main" style={{ paddingBottom: '90px' }}>
+                        <StoryGrid
+                            lead={
+                                <StoryCard
+                                    eyebrow="Documentation"
+                                    title={title}
+                                    dek={primaryDescription}
+                                    tone="default"
+                                    media={
+                                        <Hero
+                                            config={config}
+                                            frontmatter={data}
+                                            navItems={navItems as I_NestedNav["navItems"]}
+                                        />
+                                    }
+                                />
+                            }
+                            stories={sectionLinks.slice(0, 3).map((item) => (
+                                <StoryCard
+                                    key={item.href}
+                                    compact
+                                    title={item.label}
+                                    href={item.href}
+                                    tone="muted"
+                                />
+                            ))}
+                            sideRail={
+                                <SectionBlock title="Browse" actions={[{ label: 'All Sections', href: '/' }]}>
+                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '0.8rem' }}>
+                                        {sectionLinks.slice(0, 12).map((item) => (
+                                            <TopicChip key={item.href} label={item.label} href={item.href} tone="muted" />
+                                        ))}
+                                    </div>
+                                    <TreeNav navItems={navItems}/>
+                                </SectionBlock>
+                            }
+                        />
+
+                        <SectionBlock title={data.title || title} tone="default">
+                            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '0.75rem', color: '#5a5a5a' }}>
+                                {data.icon ? (
+                                    <span style={{ display: 'inline-flex', marginRight: '0.75rem' }}>
+                                        <Icon icon={data.icon} color="primary" />
+                                    </span>
+                                ) : null}
+                                <span>{description}</span>
+                            </div>
+                            <RenderMarkdown config={config}>
+                                {content}
+                            </RenderMarkdown>
+                        </SectionBlock>
+                    </section>
                 )}
                 <footer>
                     <Footer

@@ -14,8 +14,8 @@ export function BreakingBar({ label = "Breaking", items }: BreakingBarProps) {
     <aside aria-label="Breaking stories" className="np-breaking-bar">
       <span className="np-breaking-label">{label}</span>
       <ul className="np-breaking-list">
-        {items.map((item) => (
-          <li key={item.href}>
+        {items.map((item, index) => (
+          <li key={`${item.href}-${item.label}-${index}`}>
             <a href={item.href}>{item.label}</a>
           </li>
         ))}

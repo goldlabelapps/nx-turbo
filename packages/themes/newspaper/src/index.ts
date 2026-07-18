@@ -4,8 +4,9 @@ export type { NewspaperTokens } from "./theme/tokens";
 export type {
   BaseCardProps,
   LinkItem,
+  MastheadMenuItem,
   SectionTone,
-  StoryMeta
+  StoryMeta as StoryMetaData
 } from "./theme/types";
 
 export { NewspaperShell } from "./components/NewspaperShell";

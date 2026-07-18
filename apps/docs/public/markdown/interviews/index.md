@@ -5,6 +5,7 @@ title: Interview Skills
 description: Preparation
 tags: docs, interviews, career, communication
 icon: user
+image: https://live.staticflickr.com/65535/55053909886_fa79b33160_b.jpg
 ---
 > [CleverText text="Ace software developer interviews."]
 

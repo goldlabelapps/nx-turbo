@@ -5,6 +5,7 @@ title: Docs°
 description: Educational Technology 
 tags: nx, goldlabel, coding
 icon: ai
+image: https://live.staticflickr.com/65535/55200629763_b061c12b9d_c.jpg
 ---
 > [CleverText text="Where will AI take education?"]
 

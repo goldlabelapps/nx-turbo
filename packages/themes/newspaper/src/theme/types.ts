@@ -13,6 +13,12 @@ export interface LinkItem {
   href: string;
 }
 
+export interface MastheadMenuItem {
+  label: string;
+  href: string;
+  children?: MastheadMenuItem[];
+}
+
 export interface BaseCardProps {
   eyebrow?: string;
   title: string;

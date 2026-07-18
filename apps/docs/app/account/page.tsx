@@ -3,7 +3,14 @@ import fs from "fs";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import { Box, Container } from '@mui/material';
+import { Box } from '@mui/material';
+import {
+    BreakingBar,
+    SectionBlock,
+    StoryCard,
+    StoryGrid,
+    TopicChip,
+} from '@nx/newspaper';
 import { NX } from '../NX';
 import { 
     serverUseMDBySlug, 
@@ -13,7 +20,6 @@ import {
     getMeta 
 } from '../NX/lib/index.server';
 import {
-    Header,
     Footer,
     TreeNav,
 } from '../NX/DesignSystem';
@@ -101,38 +107,60 @@ export default async function Page(props: any) {
         image: (typeof data.image === 'string' && data.image.trim()) ? data.image : themedImage,
     });
 
+    const sectionLinks = (navItems || [])
+        .filter((item: any) => item?.path && item?.title)
+        .slice(0, 10)
+        .map((item: any) => ({ label: item.title, href: item.path }));
+
+    const primaryDescription = description || config.description || 'Account overview';
+
     return (
             <NX config={config} frontmatter={data}>
-                <Header config={config} frontmatter={data} />
-                
-                <Container id="main" maxWidth="lg" 
-                    sx={{ mt: '100px', pb: '90px' }}>
-                    <Box sx={{ width: '100%', display: 'flex', gap: 1 }}>
-                        <Box sx={{ 
-                            display: { xs: 'none', sm: 'flex' }, 
-                            flexDirection: 'column' 
-                        }}>
-                            <Box sx={{ 
-                                flexGrow: 1, 
-                                minHeight: 0, 
-                                minWidth: 200 
-                            }}>
+                <Box sx={{ display: 'block' }}>
+                    <BreakingBar
+                        label="Account"
+                        items={[
+                            { label: 'Manage your profile and access', href: '#main' },
+                            { label: primaryDescription, href: '#main' },
+                        ]}
+                    />
+                </Box>
+
+                <section id="main" style={{ paddingBottom: '90px' }}>
+                    <StoryGrid
+                        lead={
+                            <StoryCard
+                                eyebrow="Membership"
+                                title={title}
+                                dek={primaryDescription}
+                                tone="default"
+                            />
+                        }
+                        stories={sectionLinks.slice(0, 3).map((item) => (
+                            <StoryCard
+                                key={item.href}
+                                compact
+                                title={item.label}
+                                href={item.href}
+                                tone="muted"
+                            />
+                        ))}
+                        sideRail={
+                            <SectionBlock title="Browse" actions={[{ label: 'All Sections', href: '/' }]}>
+                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '0.8rem' }}>
+                                    {sectionLinks.slice(0, 12).map((item) => (
+                                        <TopicChip key={item.href} label={item.label} href={item.href} tone="muted" />
+                                    ))}
+                                </div>
                                 <TreeNav navItems={navItems}/>
-                            </Box>
-                        </Box>
-                        <Box component="main" 
-                            sx={{ 
-                                gridColumn: { lg: '1' }, 
-                                width: '100%', 
-                                minWidth: 0, 
-                                pr: { xs: 2, lg: 3 }, 
-                                pl: { xs: 2, lg: 0 }, 
-                                flexGrow: 1,
-                            }}>
-                            <Account />
-                        </Box>
-                    </Box>
-                </Container>
+                            </SectionBlock>
+                        }
+                    />
+
+                    <SectionBlock title="Your Account" tone="default">
+                        <Account />
+                    </SectionBlock>
+                </section>
                 <footer>
                     <Footer
                         meta={meta as any}

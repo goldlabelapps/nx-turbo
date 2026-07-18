@@ -1,8 +1,11 @@
 import "./globals.css";
 import "@nx/design-system/styles";
+import "@nx/newspaper/styles";
 import type { Metadata } from "next";
+import { Masthead, NewspaperShell } from "@nx/newspaper";
+import type { MastheadMenuItem } from "@nx/newspaper";
 import config from '../public/config.json';
-import { getDocsContext } from './NX/lib/index.server';
+import { getDocsContext, serverUseNav } from './NX/lib/index.server';
 import { UbereduxProvider } from './NX/Uberedux';
 import RequireAuthWrapper from './NX/Paywall/components/RequireAuthWrapper';
 
@@ -19,6 +22,35 @@ const configuredDesignSystem = config?.cartridges?.designSystem?.system;
 const designSystemId = typeof configuredDesignSystem === 'string' && configuredDesignSystem.trim()
   ? configuredDesignSystem.trim()
   : 'nx';
+
+type RawNavItem = {
+  title?: string;
+  path?: string;
+  hideInNav?: boolean | string;
+  children?: RawNavItem[];
+};
+
+function isVisibleNavItem(item: RawNavItem) {
+  return !(item.hideInNav === true || item.hideInNav === "true");
+}
+
+function toMastheadMenu(items: RawNavItem[]): MastheadMenuItem[] {
+  return items
+    .filter(isVisibleNavItem)
+    .map((item) => {
+      const href = typeof item.path === "string" && item.path.trim() ? item.path : "/";
+      const label = href === "/" ? "Home" : item.title || "Untitled";
+      const childItems = Array.isArray(item.children)
+        ? toMastheadMenu(item.children).filter((child) => child.href !== href)
+        : [];
+
+      return {
+        label,
+        href,
+        children: childItems.length > 0 ? childItems : undefined,
+      };
+    });
+}
 
 export const metadata: Metadata = {
   metadataBase,
@@ -38,6 +70,8 @@ export default async function RootLayout({
 }>) {
 
   const paywall = config.cartridges?.paywall?.enabled === true;
+  const navItems = await serverUseNav();
+  const mastheadMenu = toMastheadMenu(navItems as RawNavItem[]);
 
   return (
     <html lang="en" data-design-system={designSystemId}>
@@ -51,15 +85,23 @@ export default async function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
       </head>
       <body>
-        <div className="wrapper">
-          <UbereduxProvider config={config}>
-            {paywall ? (
-              <RequireAuthWrapper config={config}>{children}</RequireAuthWrapper>
-            ) : (
-              children
-            )}
-          </UbereduxProvider>
-        </div>
+        <NewspaperShell>
+          <Masthead
+            title={siteName}
+            strapline={description}
+            menuItems={mastheadMenu}
+            utilityLinks={[{ label: "Docs Home", href: "/" }]}
+          />
+          <div className="wrapper">
+            <UbereduxProvider config={config}>
+              {paywall ? (
+                <RequireAuthWrapper config={config}>{children}</RequireAuthWrapper>
+              ) : (
+                children
+              )}
+            </UbereduxProvider>
+          </div>
+        </NewspaperShell>
       </body>
     </html>
   );

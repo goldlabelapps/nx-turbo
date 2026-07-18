@@ -8,12 +8,20 @@ import RequireAuthWrapper from './NX/Paywall/components/RequireAuthWrapper';
 
 const { manifestPath } = getDocsContext();
 const { siteName, description, favicon } = config;
+const metadataBase = (() => {
+  try {
+    return new URL(config.url);
+  } catch {
+    return new URL('http://localhost:3000');
+  }
+})();
 const configuredDesignSystem = config?.cartridges?.designSystem?.system;
 const designSystemId = typeof configuredDesignSystem === 'string' && configuredDesignSystem.trim()
   ? configuredDesignSystem.trim()
   : 'nx';
 
 export const metadata: Metadata = {
+  metadataBase,
   title: `${siteName}, ${description}`,
   description,
   icons: {

@@ -40,6 +40,10 @@ export default function Mapbox({ map }: T_MapboxProps) {
     return <Box>No location available</Box>;
   }
 
+  if (!MAPBOX_TOKEN) {
+    return <Box>Map unavailable</Box>;
+  }
+
   return (
     <Box
       sx={{ 

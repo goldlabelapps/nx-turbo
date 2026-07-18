@@ -33,5 +33,8 @@ export type { StoryGridProps } from "./components/StoryGrid";
 export { SectionBlock } from "./components/SectionBlock";
 export type { SectionBlockProps } from "./components/SectionBlock";
 
+export { Footer } from "./components/Footer";
+export type { FooterProps } from "./components/Footer";
+
 export { TopicChip } from "./components/TopicChip";
 export type { TopicChipProps } from "./components/TopicChip";

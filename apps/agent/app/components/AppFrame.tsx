@@ -20,7 +20,7 @@ export function AppFrame({ children }: AppFrameProps) {
   const pathname = usePathname();
 
   return (
-    <div className="app-shell" id="top">
+    <div className="site-shell" id="top">
       <header className="site-header">
         <div className="site-header__content">
           <Link href="/" className="brand" aria-label="Go to home">

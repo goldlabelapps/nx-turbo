@@ -1,7 +1,7 @@
 {
     "tenant": "docs",
-    "siteName": "EdTech°",
-    "description": "Educational Technology",
+    "siteName": "Docs°",
+    "description": "NX° Turbo",
     "url": "https://docs.goldlabel.pro",
     "owner": {
         "name": "Ed",
@@ -23,7 +23,7 @@
         "designSystem": {
             "system": "aurora",
             "themeSwitching": true,
-            "defaultTheme": "dark",
+            "defaultTheme": "light",
             "themes": {
                 "light": {
                     "mode": "light",

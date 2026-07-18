@@ -1,7 +1,7 @@
 ---
 order: 1 
 slug: /
-title: EdTech°
+title: Docs°
 description: Educational Technology 
 tags: nx, goldlabel, coding
 icon: ai

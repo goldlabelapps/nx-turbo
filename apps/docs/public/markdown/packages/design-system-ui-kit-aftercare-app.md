@@ -1,5 +1,5 @@
 ---
-order: 28
+order: 88
 slug: /packages/design-system-ui-kit-aftercare-app
 title: UI Kit — Aftercare App
 description: Client-facing living aftercare page UI kit for therapist-delivered content

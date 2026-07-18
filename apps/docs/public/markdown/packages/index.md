@@ -1,5 +1,5 @@
 ---
-order: 25
+order: 85
 slug: /packages
 title: Packages
 description: Design system, UI kits, and nx-agent package documentation

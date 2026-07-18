@@ -1,5 +1,5 @@
 ---
-order: 29
+order: 89
 slug: /packages/nx-agent
 title: nx-agent
 description: Eve-based production AI agent starter for the monorepo packages folder

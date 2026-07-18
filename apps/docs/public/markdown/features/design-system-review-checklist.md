@@ -1,5 +1,5 @@
 ---
-order: 30
+order: 130
 slug: /features/design-system-review-checklist
 title: Design System Review Checklist
 description: Pre-promotion checklist for design concepts entering the shared system

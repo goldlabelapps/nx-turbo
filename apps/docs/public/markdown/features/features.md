@@ -1,5 +1,5 @@
 ---
-order: 20
+order: 120
 slug: /features/features
 title: Features Overview
 description: Full list of NX framework capabilities

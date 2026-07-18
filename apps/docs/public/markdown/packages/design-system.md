@@ -1,5 +1,5 @@
 ---
-order: 26
+order: 86
 slug: /packages/design-system
 title: Design System
 description: Tokens, brand assets, reusable components, and UI kits

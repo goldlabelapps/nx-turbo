@@ -1,5 +1,5 @@
 ---
-order: 40
+order: 140
 slug: /apps/nx-chatbot
 title: NX Chatbot
 description: Chatbot flash module and movieclip-style interaction flow

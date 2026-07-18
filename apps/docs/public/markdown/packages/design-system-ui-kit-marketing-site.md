@@ -1,5 +1,5 @@
 ---
-order: 27
+order: 87
 slug: /packages/design-system-ui-kit-marketing-site
 title: UI Kit — Marketing Site
 description: Public landing page UI kit for the nx.app solo skin therapist marketing site

@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { usePathname } from 'next/navigation';
-import { Button } from '@nx/nx-core';
+import { Button } from '@nx/oldfashioned';
 
 function normalizeRoutePath(input: string): string {
   const trimmed = input.trim();

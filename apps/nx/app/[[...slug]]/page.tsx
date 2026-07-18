@@ -15,7 +15,7 @@ import {
 import { normalizeTenant } from '../NX/lib/normalizeTenant';
 import { RenderMarkdown } from '../NX/Shortcodes';
 import { ShareVirus } from '../../public/shared/flash';
-import { Favicon } from '@nx/nx-core';
+import { Favicon } from '@nx/oldfashioned';
 
 type T_NavNode = {
     title?: string;

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import {
   Box,
   Chip,
@@ -45,7 +44,7 @@ export async function generateMetadata({ searchParams }: SearchPageProps): Promi
 function SearchResultCard({ result, query }: { result: SearchResult; query: string }) {
   return (
     <Paper
-      component={Link}
+      component="a"
       href={result.href}
       variant="outlined"
       sx={{

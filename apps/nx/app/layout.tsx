@@ -1,5 +1,5 @@
 import "./globals.css";
-import "@nx/nx-core/styles";
+import "@nx/oldfashioned/styles";
 import type { Metadata } from "next";
 import fs from 'fs';
 import path from 'path';
@@ -14,7 +14,7 @@ const { title, description, favicon } = config;
 const configuredDesignSystem = config?.cartridges?.designSystem?.system;
 const designSystemId = typeof configuredDesignSystem === 'string' && configuredDesignSystem.trim()
   ? configuredDesignSystem.trim()
-  : 'nx-core';
+  : 'oldfashioned';
 
 function resolveMetadataBase(input: unknown): URL {
   if (typeof input === 'string') {

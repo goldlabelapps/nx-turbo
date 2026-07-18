@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import "@nx/design-system/styles";
+import "@nx/unix/styles";
 import "./globals.css";
 import { AppFrame } from "./components/AppFrame";
 import { RouteAnalytics } from "./components/RouteAnalytics";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://agent.local";
 const configuredDesignSystem = process.env.NEXT_PUBLIC_DESIGN_SYSTEM;
-const designSystemId = configuredDesignSystem?.trim() || "agentic";
+const designSystemId = configuredDesignSystem?.trim() || "unix";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

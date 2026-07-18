@@ -1,7 +1,7 @@
 ---
 order: 64
 slug: /decisions/004-cva-component-variants
-title: ADR-004: CVA for Component Variants
+title: "ADR-004: CVA for Component Variants"
 description: Decision to use CVA for type-safe, co-located component variant definitions
 tags: docs, decisions, adr, cva, components
 icon: gavel

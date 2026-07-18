@@ -27,7 +27,7 @@ The parser lives in `app/NX/Shortcodes/components/RenderMarkdown.tsx` and resolv
 ## Example
 
 ```md
-[PageLink icon="rocket" title="Get started" url="/help"]
+[PageLink title="Get started" url="/help"]
 [CleverText text="Ready to create an NX app?"]
 ```
 

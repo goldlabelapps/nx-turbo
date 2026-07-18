@@ -29,6 +29,7 @@ export default function Hero({
 		<Box sx={{
 			mt: 2,
 			mb: 0,
+			width: '100%',
 		}}>
 			<Box
 				sx={{

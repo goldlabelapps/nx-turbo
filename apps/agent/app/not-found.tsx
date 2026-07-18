@@ -1,4 +1,4 @@
-import { Button, Card } from "@nx/design-system";
+import { Button, Card } from "@nx/unix";
 
 export default function NotFound() {
   return (

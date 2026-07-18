@@ -1,7 +1,7 @@
 ---
 order: 62
 slug: /decisions/002-design-tokens
-title: ADR-002: Design Tokens
+title: "ADR-002: Design Tokens"
 description: Decision to use a dedicated design tokens package as single source of truth
 tags: docs, decisions, adr, design-tokens
 icon: gavel

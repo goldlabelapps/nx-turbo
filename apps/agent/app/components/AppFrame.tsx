@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Logo } from "@nx/design-system";
+import { Logo } from "@nx/unix";
 
 type AppFrameProps = {
   children: React.ReactNode;

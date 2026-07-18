@@ -170,7 +170,9 @@
   text-decoration: none;
   font-family: var(--np-font-serif);
   font-size: 1rem;
+  line-height: 1.25;
   font-weight: 400;
+  letter-spacing: -0.005em;
   margin-bottom: 0.35rem;
 }
 
@@ -184,14 +186,20 @@
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 0.2rem;
+  gap: 0.28rem;
+}
+
+.np-dropdown-list li {
+  margin: 0;
 }
 
 .np-dropdown-list li > a {
+  display: inline-block;
   color: var(--np-color-ink-muted);
   text-decoration: none;
+  font-family: var(--np-font-sans);
   font-size: 0.88rem;
-  line-height: 1.35;
+  line-height: 1.45;
 }
 
 .np-dropdown-list li > a:hover,
@@ -212,8 +220,18 @@
 .np-masthead-section-link {
   text-decoration: none;
   color: var(--np-color-ink);
+  font-family: var(--np-font-sans);
   font-weight: 400;
   font-size: 0.92rem;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
+
+.np-masthead-section-link:focus-visible,
+.np-dropdown-column-title:focus-visible,
+.np-dropdown-list li > a:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--np-color-accent) 45%, transparent);
+  outline-offset: 2px;
 }
 
 .np-breaking-bar {

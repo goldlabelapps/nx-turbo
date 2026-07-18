@@ -1,6 +1,6 @@
 {
   "name": "nx-turbo",
-  "version": "1.0.4",
+  "version": "1.5.0",
   "packageManager": "pnpm@11.13.0",
   "engines": {
     "node": ">=20 <25"
@@ -12,8 +12,8 @@
     "build": "turbo run build",
     "lint": "turbo run lint",
     "type-check": "turbo run type-check",
-    "storybook": "turbo run storybook --filter=@nx/design-system",
-    "build-storybook": "turbo run build-storybook --filter=@nx/design-system",
+    "storybook": "turbo run storybook --filter=@nx/themes-storybook",
+    "build-storybook": "turbo run build-storybook --filter=@nx/themes-storybook",
     "preview:concept-lab": "open 'packages/design-system/templates/concept-lab/ConceptLab.dc.html'"
   },
   "devDependencies": {

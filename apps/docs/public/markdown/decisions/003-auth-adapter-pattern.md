@@ -1,7 +1,7 @@
 ---
 order: 63
 slug: /decisions/003-auth-adapter-pattern
-title: ADR-003: Auth Adapter Pattern
+title: "ADR-003: Auth Adapter Pattern"
 description: Decision to implement an adapter pattern for authentication providers
 tags: docs, decisions, adr, auth
 icon: gavel

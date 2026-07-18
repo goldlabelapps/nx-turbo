@@ -1,6 +1,6 @@
 "use client";
 
-import { Badge, Button, Card } from "@nx/design-system";
+import { Badge, Button, Card } from "@nx/unix";
 
 type ErrorProps = {
   error: Error & { digest?: string };

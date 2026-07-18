@@ -19,11 +19,11 @@ type SearchParams = {
 };
 
 type SearchPageProps = {
-  searchParams?: SearchParams | Promise<SearchParams>;
+  searchParams?: Promise<SearchParams>;
 };
 
-function resolveSearchParams(searchParams?: SearchParams | Promise<SearchParams>) {
-  return Promise.resolve(searchParams ?? {});
+async function resolveSearchParams(searchParams?: Promise<SearchParams>) {
+  return (await searchParams) ?? {};
 }
 
 export async function generateMetadata({ searchParams }: SearchPageProps): Promise<Metadata> {

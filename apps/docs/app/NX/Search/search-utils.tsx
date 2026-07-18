@@ -50,7 +50,7 @@ export function stripMarkdown(value: string) {
     .trim();
 }
 
-export function parseTags(value: unknown) {
+export function parseTags(value: unknown): string[] {
   if (Array.isArray(value)) {
     return value.flatMap((item) => parseTags(item));
   }
@@ -62,7 +62,7 @@ export function parseTags(value: unknown) {
       .filter(Boolean);
   }
 
-  return [] as string[];
+  return [];
 }
 
 export function highlightText(text: string, query: string) {

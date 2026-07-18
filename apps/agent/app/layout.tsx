@@ -1,18 +1,18 @@
 import type { Metadata, Viewport } from "next";
-import "@nx/newspaper/styles";
+import "@nx/unix/styles";
 import "./globals.css";
 import { AppFrame } from "./components/AppFrame";
 import { RouteAnalytics } from "./components/RouteAnalytics";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://agent.local";
 const configuredDesignSystem = process.env.NEXT_PUBLIC_DESIGN_SYSTEM;
-const designSystemId = configuredDesignSystem?.trim() || "newspaper";
+const designSystemId = configuredDesignSystem?.trim() || "unix";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   manifest: "/manifest.webmanifest",
   title: {
-    default: "NX Agent Frontend",
+    default: "NX Agent",
     template: "%s | NX Agent",
   },
   description: "Agent frontend with workbench, chat, history, and runtime settings in a resilient Next.js shell.",
@@ -22,20 +22,22 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "NX Agent Frontend",
+    title: "NX Agent",
     description: "Production-minded frontend shell with agent workbench and operational routes.",
     url: "/",
   },
   twitter: {
     card: "summary_large_image",
-    title: "NX Agent Frontend",
+    title: "NX Agent",
     description: "A polished and resilient frontend for Agent workflows.",
   },
   icons: {
     icon: [
-      { url: "/icon-192x192.png", sizes: "192x192", type: "image/png" },
-      { url: "/icon-512x512.png", sizes: "512x512", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.png", sizes: "512x512", type: "image/png" },
     ],
+    shortcut: "/favicon.png",
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   robots: {
@@ -45,8 +47,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#090f18",
-  colorScheme: "dark",
+  themeColor: "#edf8f0",
+  colorScheme: "light",
 };
 
 export default function RootLayout({

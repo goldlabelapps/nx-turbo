@@ -5,7 +5,7 @@ export default function Home() {
     <main className="page">
       <section className="shell">
         <div className="section-head">
-          <Badge tone="clay">Agent Frontend</Badge>
+          <Badge tone="clay">NX Agent</Badge>
           <h1>Type request. Get response.</h1>
           <p className="lede">Start with one prompt.</p>
         </div>

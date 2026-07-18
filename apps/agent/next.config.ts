@@ -4,7 +4,7 @@ import withPWA from "next-pwa";
 const isDevelopment = process.env.NODE_ENV === "development";
 
 const nextConfig: NextConfig = {
-  transpilePackages: ["@nx/newspaper", "@nx/firebase-adapter"],
+  transpilePackages: ["@nx/unix", "@nx/firebase-adapter"],
 };
 
 export default withPWA({

@@ -21,8 +21,8 @@
     ],
     "paths": {
       "@/*": ["apps/agent/*"],
-      "@nx/newspaper": ["packages/themes/newspaper"],
-      "@nx/newspaper/*": ["packages/themes/newspaper/*"]
+      "@nx/unix": ["packages/themes/unix"],
+      "@nx/unix/*": ["packages/themes/unix/*"]
     }
   },
   "include": [

@@ -1,51 +1,38 @@
 'use client';
 import React from 'react';
-import { useRouter } from 'next/navigation';
-import {
-  Paper,
-  ButtonBase,
-  CardHeader,
-} from '@mui/material';
-import { Icon, navigateTo } from '../../DesignSystem';
-import { useDispatch } from '../../Uberedux';
+import { Button } from '@nx/design-system';
 
 export default function PageLink({
   url = null,
-  icon = 'link',
-  iconAlign = 'left',
   title = null,
   description = null
 }: {
   url?: string | null;
-  icon?: string | null;
-  iconAlign?: 'left' | 'right' | null;
   title?: string | null;
   description?: string | null;
 }) {
+  if (!url) return null;
 
-  const dispatch = useDispatch();
-  const router = useRouter();
-
-  const handleClick = () => {
-    if (url) {
-      const isExternal = url.startsWith('http');
-      dispatch(navigateTo(router, url, isExternal ? '_blank' : '_self'));
-    }
-  };
-
-  const isRightAligned = iconAlign === 'right';
-  const iconNode = <Icon icon={icon as any} color="primary" />;
+  const isExternal = url.startsWith('http');
+  const label = title || description || url;
 
   return (
-    <ButtonBase onClick={handleClick}>
-      <Paper variant="outlined">
-        <CardHeader
-          title={title}
-          subheader={description}
-          avatar={!isRightAligned ? iconNode : undefined}
-          action={isRightAligned ? iconNode : undefined}
-        />
-      </Paper>
-    </ButtonBase>
+    <Button
+      as="a"
+      variant="quiet"
+      block={true}
+      href={url}
+      target={isExternal ? '_blank' : '_self'}
+      rel={isExternal ? 'noopener noreferrer' : undefined}
+      style={{
+        justifyContent: 'flex-start',
+        padding: '12px 14px',
+        borderColor: 'transparent',
+        background: 'rgba(255,255,255,0.46)',
+        boxShadow: 'none',
+      }}
+    >
+      {label}
+    </Button>
   );
 }

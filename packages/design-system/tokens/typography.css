@@ -1,17 +1,18 @@
 /* ============================================================
-   NX, Type tokens
-   Three voices: an editorial ITALIC SERIF for display (set in
-   Times, a deliberate, ubiquitous-but-elegant choice), DM Sans
-   for body, and DM Mono for eyebrows / labels / buttons (all-caps,
-   wide-tracked). Display is almost always italic, weight 400.
-   ============================================================ */
+  NX, Type tokens
+  Three voices: Cormorant Garamond for display, Instrument Sans for
+  body, and IBM Plex Mono for labels / buttons. Display remains the
+  expressive editorial voice, while the rest of the system keeps a
+  cleaner and more contemporary baseline.
+  ============================================================ */
 :root {
   /* --- Families --- */
-  --font-serif: "Times New Roman", Times, "Tinos", serif;      /* display, italic 400 */
-  --font-sans:  "DM Sans", system-ui, -apple-system, sans-serif;/* body */
-  --font-mono:  "DM Mono", ui-monospace, "SF Mono", monospace;  /* labels / buttons */
+  --font-serif: "Cormorant Garamond", "Iowan Old Style", Georgia, serif; /* display */
+  --font-sans:  "Instrument Sans", "Avenir Next", system-ui, sans-serif;/* body */
+  --font-mono:  "IBM Plex Mono", "SF Mono", ui-monospace, monospace;   /* labels / buttons */
+  --font-heading: "Sora", "Instrument Sans", "Avenir Next", system-ui, sans-serif; /* headings */
 
-  /* --- Display scale (serif italic) - fluid clamps from source --- */
+  /* --- Display scale (serif display) - fluid clamps from source --- */
   --type-display: clamp(3.2rem, 16vw, 6.8rem);  /* hero splash word */
   --type-h1:      clamp(2.5rem, 5.6vw, 4rem);
   --type-h2:      clamp(2.2rem, 4.9vw, 3.6rem);

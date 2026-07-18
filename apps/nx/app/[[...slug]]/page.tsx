@@ -1,9 +1,9 @@
 import type { T_Tenant } from '../NX/types';
 import type { ReactNode } from 'react';
+import type { Metadata } from "next";
 import fs from "fs";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
-import { Metadata } from "next";
 import { NX } from '../NX';
 import {
     serverUseMDBySlug,
@@ -22,6 +22,14 @@ type T_NavNode = {
     slug?: string;
     path?: string;
     children?: T_NavNode[];
+};
+
+type T_PageParams = {
+    slug?: string[];
+};
+
+type T_PageProps = {
+    params: Promise<T_PageParams>;
 };
 
 function getNavHref(item: T_NavNode): string {
@@ -44,10 +52,20 @@ function renderNavItems(items: T_NavNode[], keyPrefix = 'nav'): ReactNode {
             {items.map((item, index) => {
                 const key = `${keyPrefix}-${index}-${item.title || item.slug || item.path || 'node'}`;
                 const hasChildren = Array.isArray(item.children) && item.children.length > 0;
+                const label = item.title || 'Untitled';
                 return (
-                    <li key={key}>
-                        <a href={getNavHref(item)}>{item.title || 'Untitled'}</a>
-                        {hasChildren ? renderNavItems(item.children as T_NavNode[], key) : null}
+                    <li key={key} className={hasChildren ? 'site-nav-item site-nav-item-branch' : 'site-nav-item'}>
+                        {hasChildren ? (
+                            <details className="site-nav-branch">
+                                <summary className="site-nav-branch-summary">
+                                    <a href={getNavHref(item)}>{label}</a>
+                                    <span className="site-nav-branch-toggle" aria-hidden="true">+</span>
+                                </summary>
+                                {renderNavItems(item.children as T_NavNode[], key)}
+                            </details>
+                        ) : (
+                            <a href={getNavHref(item)}>{label}</a>
+                        )}
                     </li>
                 );
             })}
@@ -55,9 +73,9 @@ function renderNavItems(items: T_NavNode[], keyPrefix = 'nav'): ReactNode {
     );
 }
 
-export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
-    const resolvedParams = typeof params.then === 'function' ? await params : params;
-    const slugArr = resolvedParams?.slug || [];
+export async function generateMetadata({ params }: T_PageProps): Promise<Metadata> {
+    const resolvedParams = await params;
+    const slugArr = Array.isArray(resolvedParams?.slug) ? resolvedParams.slug : [];
     const tenant = normalizeTenant();
     const { config } = getTenant(tenant as T_Tenant);
     const filePath = serverUseMDBySlug(slugArr, tenant);
@@ -91,17 +109,16 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
 export async function generateStaticParams() {
     const tenant = normalizeTenant();
     const { markdownDir } = getTenant(tenant as T_Tenant);
-    let allSlugs = serverUseAllMd(markdownDir, tenant);
+    const allSlugs = serverUseAllMd(markdownDir, tenant);
     return allSlugs.map((slugArr) => {
         const normalized = slugArr.filter(Boolean);
         return { slug: normalized.length ? normalized : undefined };
     });
 }
 
-export default async function Page(props: any) {
-    const { params } = props;
-    const resolvedParams = typeof params?.then === 'function' ? await params : params;
-    let slugArr = resolvedParams?.slug || [];
+export default async function Page({ params }: T_PageProps) {
+    const resolvedParams = await params;
+    const slugArr = Array.isArray(resolvedParams?.slug) ? [...resolvedParams.slug] : [];
     while (slugArr.length > 1 && slugArr[slugArr.length - 1] === "") slugArr.pop();
     const tenant = normalizeTenant();
     const { config: rawConfig } = getTenant(tenant as T_Tenant);
@@ -114,6 +131,7 @@ export default async function Page(props: any) {
     const { content, data } = matter(md);
     if (data.title) title = data.title;
     if (data.description) description = data.description;
+    const featuredImage = typeof data.image === 'string' && data.image.trim() ? data.image : null;
     const navItems = (await serverUseNav()) as T_NavNode[];
     const siteName = config?.siteName || tenant.toUpperCase();
     const pageDescription = description || config?.description || '';
@@ -125,20 +143,8 @@ export default async function Page(props: any) {
                     <div className="site-header-top" aria-label="Main header bar">
                         <div className="site-brand">
                             <a className="site-home-reset" href="/" aria-label="Home and reset to root">
-                                <Favicon size={35} tone="ink" aria-hidden={true} />
+                                <Favicon size={30} tone="current" aria-hidden={true} />
                             </a>
-                            <a className="site-brand-name" href="/" aria-label={`${siteName} home`}>
-                                {siteName}
-                            </a>
-                        </div>
-
-                        <div className="site-header-actions" aria-label="Header actions">
-                            <details className="site-mobile-nav" aria-label="Mobile navigation">
-                                <summary className="site-mobile-nav-trigger">Menu</summary>
-                                <nav className="site-mobile-nav-panel" aria-label="Primary navigation">
-                                    {renderNavItems(navItems)}
-                                </nav>
-                            </details>
                         </div>
                     </div>
 
@@ -150,36 +156,48 @@ export default async function Page(props: any) {
                     </div>
                 </header>
 
+                <details className="site-floating-nav" aria-label="Mobile navigation">
+                    <summary className="site-mobile-nav-trigger">Menu</summary>
+                    <nav className="site-mobile-nav-panel" aria-label="Primary navigation">
+                        {renderNavItems(navItems)}
+                    </nav>
+                </details>
+
                 <main className="site-main" id="main">
                     <aside className="site-col site-col-left" aria-label="Primary navigation">
-                        {renderNavItems(navItems)}
+                        <div className="site-panel site-panel-nav">
+                            {renderNavItems(navItems)}
+                        </div>
                     </aside>
 
                     <section className="site-col site-col-center" aria-label="Page content">
-                        <div className="site-featured-image" aria-label="Featured image" aria-hidden="true">
-                            <img className="site-featured-image-bg" src="/nx/jpg/target.jpg" alt="" />
-                            <img className="site-featured-image-avatar" src="/nx/svg/avatarLight.svg" alt="" />
-                        </div>
-                        {data.cartridge ? (
-                            data.cartridge === 'virus' ? (
-                                <ShareVirus config={config} />
+                        <div className="site-panel site-panel-main">
+                            {featuredImage ? (
+                                <div className="site-featured-image" aria-label="Featured image" aria-hidden="true">
+                                    <img className="site-featured-image-bg" src={featuredImage} alt="" />
+                                </div>
+                            ) : null}
+                            {data.cartridge ? (
+                                data.cartridge === 'virus' ? (
+                                    <ShareVirus config={config} />
+                                ) : (
+                                    <>
+                                        <h2>{data.title || title} (CARTRIDGE)</h2>
+                                        <RenderMarkdown config={config}>
+                                            {content}
+                                        </RenderMarkdown>
+                                    </>
+                                )
                             ) : (
-                                <>
-                                    <h2>{data.title || title} (CARTRIDGE)</h2>
-                                    <RenderMarkdown config={config}>
-                                        {content}
-                                    </RenderMarkdown>
-                                </>
-                            )
-                        ) : (
-                            <RenderMarkdown config={config}>
-                                {content}
-                            </RenderMarkdown>
-                        )}
+                                <RenderMarkdown config={config}>
+                                    {content}
+                                </RenderMarkdown>
+                            )}
+                        </div>
                     </section>
 
                     <aside className="site-col site-col-right" aria-label="Sidebar placeholder">
-                        <section className="site-sidebar-placeholder">
+                        <section className="site-panel site-panel-sidebar site-sidebar-placeholder">
                             <p className="site-sidebar-placeholder-label">Placeholder</p>
                             <p className="site-sidebar-placeholder-text">
                                 Sidebar module intentionally muted for now.
@@ -239,12 +257,16 @@ export default async function Page(props: any) {
                     </div>
 
                     <div className="site-footer-bottom">
-                        <p>© {new Date().getFullYear()} {siteName}. All rights reserved.</p>
                         <ul className="site-footer-social" aria-label="Social links">
-                            <li><a href={config?.url || '/'}>Website</a></li>
-                            <li><a href="https://github.com">GitHub</a></li>
-                            <li><a href="https://x.com">X</a></li>
-                            <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+                            <li>
+                                <a
+                                    href="https://github.com/goldlabelapps/nx-turbo"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Open source on GitHub
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </footer>

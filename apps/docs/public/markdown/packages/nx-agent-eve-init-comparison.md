@@ -1,3 +1,12 @@
+---
+order: 297
+slug: /packages/nx-agent-eve-init-comparison
+title: Eve Init Comparison
+description: Comparison of this repo against the official Eve CLI initializer output
+tags: docs, packages, nx-agent, eve
+icon: smart_toy
+---
+
 # Eve Init Comparison
 
 Date: 2026-07-17

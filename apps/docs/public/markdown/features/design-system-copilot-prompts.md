@@ -1,3 +1,12 @@
+---
+order: 29
+slug: /features/design-system-copilot-prompts
+title: Design System Copilot Prompts
+description: Prompt pack for generating and reviewing design ideas within the shared design system
+tags: docs, features, nx, design-system, copilot
+icon: auto_awesome
+---
+
 # Design System Copilot Prompt Pack
 
 Use these prompts to generate and review design ideas without drifting away from the shared design system.

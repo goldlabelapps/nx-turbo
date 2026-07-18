@@ -1,3 +1,12 @@
+---
+order: 31
+slug: /devops/api
+title: API
+description: Framework API layer, response envelope, and endpoint registry
+tags: docs, devops, nx, api
+icon: api
+---
+
 # API
 
 NX ships with a small framework API layer under `app/api/`.

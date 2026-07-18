@@ -1,17 +1,13 @@
-<div>
-	<h1 style="display: flex; align-items: center; gap: 8px;">
-				<a href="./index.md" target="_blank" rel="noreferrer" style="display: inline-flex; align-items: center;">
-		<img
-			src="../media/nx-icon.png"
-			width="24"
-			height="24"
-		/>
-		</a>
-		<span>NX° Turbo</span>
-	</h1>
-</div>
+---
+order: 46
+slug: /guides/nx
+title: NX Guide
+description: Core platform and runtime layer for pages and app modules
+tags: docs, nx, guides, runtime
+icon: settings
+---
 
-### NX Guide
+# NX Guide
 
 ## Purpose
 

@@ -1,3 +1,12 @@
+---
+order: 22
+slug: /features/flash
+title: Flash
+description: GSAP animation stage, movie clip primitives, and ActionScript-style interaction controllers
+tags: docs, features, nx, flash, animation
+icon: animation
+---
+
 # Flash
 
 Flash is NX's animation cartridge.

@@ -1,3 +1,12 @@
+---
+order: 20
+slug: /features/features
+title: Features Overview
+description: Full list of NX framework capabilities
+tags: docs, features, nx
+icon: auto_awesome
+---
+
 # Features
 
 - **Next.js 16** for SSR, SSG, API routes, and the App Router

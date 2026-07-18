@@ -1,19 +1,13 @@
-<div>
-    <h1 style="display: flex; align-items: center; gap: 8px;">
-        <a href="../../README.md" target="_blank" rel="noreferrer" style="display: inline-flex; align-items: center;">
-        <img
-            src="../media/nx-icon.png"
-            width="24"
-            height="24"
-        />
-        </a>
-        <span>NX° Turbo</span>
-    </h1>
-</div>
+---
+order: 40
+slug: /apps/nx-chatbot
+title: NX Chatbot
+description: Chatbot flash module and movieclip-style interaction flow
+tags: docs, apps, nx, chatbot, flash
+icon: chat
+---
 
-### apps/v3 NX Chatbot Flash Notes
-
-## Purpose
+# NX Chatbot
 
 The Chatbot flash module supports the movieclip-style interaction flow used by the shared flash system.
 

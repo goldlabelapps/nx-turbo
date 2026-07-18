@@ -1,3 +1,12 @@
+---
+order: 295
+slug: /packages/nx-agent-deployment-plan
+title: nx-agent Deployment Plan
+description: Vercel deployment environments, release workflow, and rollback strategy
+tags: docs, packages, nx-agent, deployment
+icon: smart_toy
+---
+
 # nx-agent Deployment Plan (Vercel)
 
 ## Deployment Intent

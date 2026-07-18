@@ -1,3 +1,12 @@
+---
+order: 11
+slug: /getting-started/overview
+title: Overview
+description: What NX is, what it gives you, and how it is meant to be used
+tags: docs, nx, getting-started
+icon: info
+---
+
 # Overview
 
 NX is a modular application framework built on [Next.js](https://nextjs.org/) and [React](https://react.dev/).

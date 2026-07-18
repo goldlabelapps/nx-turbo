@@ -1,3 +1,12 @@
+---
+order: 30
+slug: /features/design-system-review-checklist
+title: Design System Review Checklist
+description: Pre-promotion checklist for design concepts entering the shared system
+tags: docs, features, nx, design-system, review
+icon: checklist
+---
+
 # Design System Review Checklist
 
 Use this checklist before a design concept becomes a shared component, variant, or token decision.

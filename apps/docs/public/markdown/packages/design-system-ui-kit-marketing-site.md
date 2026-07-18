@@ -1,17 +1,13 @@
-<div>
-    <h1 style="display: flex; align-items: center; gap: 8px;">
-        <a href="../../README.md" target="_blank" rel="noreferrer" style="display: inline-flex; align-items: center;">
-        <img
-            src="../media/nx-icon.png"
-            width="24"
-            height="24"
-        />
-        </a>
-        <span>NX° Turbo</span>
-    </h1>
-</div>
+---
+order: 27
+slug: /packages/design-system-ui-kit-marketing-site
+title: UI Kit — Marketing Site
+description: Public landing page UI kit for the nx.app solo skin therapist marketing site
+tags: docs, packages, design-system, ui-kit
+icon: brush
+---
 
-### Design System UI Kit: Marketing Site
+# Design System UI Kit: Marketing Site
 
 ## Purpose
 

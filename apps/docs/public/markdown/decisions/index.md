@@ -1,3 +1,12 @@
+---
+order: 60
+slug: /decisions
+title: Decisions
+description: Architecture Decision Records documenting significant technical choices
+tags: docs, decisions, architecture, adr
+icon: gavel
+---
+
 # Architecture Decision Records
 
 This directory contains Architecture Decision Records (ADRs) for the Platform project. ADRs document significant technical decisions — what was decided, why, and what alternatives were considered.

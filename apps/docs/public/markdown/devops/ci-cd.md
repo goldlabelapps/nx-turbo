@@ -1,3 +1,12 @@
+---
+order: 32
+slug: /devops/ci-cd
+title: CI/CD
+description: GitHub Actions workflow, quality gates, and pipeline stages
+tags: docs, devops, nx, ci-cd
+icon: sync
+---
+
 # CI/CD
 
 NX uses GitHub Actions for continuous integration.

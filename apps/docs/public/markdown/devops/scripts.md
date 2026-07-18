@@ -1,3 +1,12 @@
+---
+order: 33
+slug: /devops/scripts
+title: Scripts
+description: Monorepo and app-level commands for development, build, test, and lint
+tags: docs, devops, nx, scripts
+icon: terminal
+---
+
 # Scripts
 
 ## Monorepo root

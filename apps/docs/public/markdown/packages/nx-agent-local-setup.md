@@ -1,3 +1,12 @@
+---
+order: 296
+slug: /packages/nx-agent-local-setup
+title: nx-agent Local Setup
+description: Prerequisites, setup steps, and useful commands for local development
+tags: docs, packages, nx-agent
+icon: smart_toy
+---
+
 # nx-agent Local Setup
 
 ## Why This Exists

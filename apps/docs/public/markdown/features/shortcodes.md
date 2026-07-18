@@ -1,3 +1,12 @@
+---
+order: 23
+slug: /features/shortcodes
+title: Shortcodes
+description: Embed React components directly in Markdown without writing JSX
+tags: docs, features, nx, shortcodes
+icon: code
+---
+
 # Shortcodes
 
 Shortcodes let Markdown content render React components without exposing application code to content editors.

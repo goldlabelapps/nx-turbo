@@ -1,19 +1,13 @@
-<div>
-    <h1 style="display: flex; align-items: center; gap: 8px;">
-        <a href="../../README.md" target="_blank" rel="noreferrer" style="display: inline-flex; align-items: center;">
-        <img
-            src="../media/nx-icon.png"
-            width="24"
-            height="24"
-        />
-        </a>
-        <span>NX° Turbo</span>
-    </h1>
-</div>
+---
+order: 39
+slug: /apps/nx-clevertext
+title: NX CleverText
+description: Enhanced text presentation component for markdown-driven pages
+tags: docs, apps, nx, clevertext
+icon: text_fields
+---
 
-### apps/v3 NX CleverText
-
-## Purpose
+# NX CleverText
 
 CleverText is a NX DesignSystem component used for enhanced text presentation in markdown-driven pages.
 

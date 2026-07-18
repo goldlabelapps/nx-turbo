@@ -1,3 +1,12 @@
+---
+order: 45
+slug: /guides
+title: Guides
+description: Developer guides, architecture references, and how-to documentation
+tags: docs, nx, guides
+icon: menu_book
+---
+
 # Documentation
 
 This folder is the canonical location for repository documentation.

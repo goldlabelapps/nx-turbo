@@ -1,3 +1,12 @@
+---
+order: 294
+slug: /packages/nx-agent-mvp-backlog
+title: nx-agent MVP Backlog
+description: Prioritised backlog and definition of done for the initial release
+tags: docs, packages, nx-agent
+icon: smart_toy
+---
+
 # nx-agent MVP Backlog
 
 ## P0: Must Have

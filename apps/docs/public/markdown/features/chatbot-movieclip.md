@@ -1,3 +1,12 @@
+---
+order: 28
+slug: /features/chatbot-movieclip
+title: Chatbot MovieClip
+description: Full-screen conversational shell combining Flash, Uberedux, and MUI
+tags: docs, features, nx, chatbot, flash
+icon: chat
+---
+
 # Chatbot movie clip
 
 The chatbot movie clip is the conversational shell exported from `app/NX/Flash/MovieClips/Chatbot/`.

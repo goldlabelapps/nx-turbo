@@ -1,3 +1,12 @@
+---
+order: 26
+slug: /features/share-virus
+title: ShareVirus
+description: Flash-style branded full-screen scene for the virus cartridge
+tags: docs, features, nx, flash, share-virus
+icon: share
+---
+
 # ShareVirus
 
 `ShareVirus` is a Flash-style branded scene used by the `virus` cartridge and related full-screen flows.

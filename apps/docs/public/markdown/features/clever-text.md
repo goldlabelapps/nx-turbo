@@ -1,3 +1,12 @@
+---
+order: 27
+slug: /features/clever-text
+title: CleverText
+description: Typewriter-effect animated text component for markdown-driven pages
+tags: docs, features, nx, clever-text, animation
+icon: text_fields
+---
+
 # CleverText
 
 `CleverText` is a small animated text component used directly in the design system and indirectly through the `CleverText` shortcode.

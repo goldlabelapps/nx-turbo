@@ -1,3 +1,12 @@
+---
+order: 29
+slug: /packages/nx-agent
+title: nx-agent
+description: Eve-based production AI agent starter for the monorepo packages folder
+tags: docs, packages, nx-agent, eve
+icon: smart_toy
+---
+
 # nx-agent
 
 nx-agent is the Eve-based agent starter that now lives in the monorepo packages folder and is documented from the main docs site.

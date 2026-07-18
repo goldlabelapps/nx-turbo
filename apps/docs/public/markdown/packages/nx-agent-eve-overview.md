@@ -1,3 +1,12 @@
+---
+order: 291
+slug: /packages/nx-agent-eve-overview
+title: Eve Overview
+description: What Eve is, what it does, and how it fits the Vercel stack
+tags: docs, packages, nx-agent, eve
+icon: smart_toy
+---
+
 # Eve Overview
 
 ## What Eve Is

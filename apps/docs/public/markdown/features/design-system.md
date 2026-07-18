@@ -1,3 +1,12 @@
+---
+order: 21
+slug: /features/design-system
+title: Design System
+description: MUI-based application shell with theming, layout, navigation, and reusable components
+tags: docs, features, nx, design-system
+icon: brush
+---
+
 # Design system
 
 The design system is the UI cartridge that gives NX a ready-made application shell.

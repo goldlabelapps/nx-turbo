@@ -1,17 +1,13 @@
-<div>
-    <h1 style="display: flex; align-items: center; gap: 8px;">
-        <a href="../../README.md" target="_blank" rel="noreferrer" style="display: inline-flex; align-items: center;">
-        <img
-            src="../media/nx-icon.png"
-            width="24"
-            height="24"
-        />
-        </a>
-        <span>NX° Turbo</span>
-    </h1>
-</div>
+---
+order: 26
+slug: /packages/design-system
+title: Design System
+description: Tokens, brand assets, reusable components, and UI kits
+tags: docs, packages, design-system, nx
+icon: brush
+---
 
-### Design System Overview
+# Design System Overview
 
 ## Purpose
 

@@ -10,6 +10,11 @@ type TerminalEntry = {
   command: string;
   output?: string;
   error?: string;
+  meta?: {
+    confidence: "low" | "medium" | "high";
+    intents: string[];
+    nextActions: string[];
+  };
 };
 
 export default function Home() {
@@ -98,7 +103,13 @@ export default function Home() {
         body: JSON.stringify({ message: cleanCommand }),
       });
 
-      const payload = (await response.json()) as { reply?: string; error?: string };
+      const payload = (await response.json()) as {
+        confidence?: "low" | "medium" | "high";
+        error?: string;
+        intents?: string[];
+        nextActions?: string[];
+        reply?: string;
+      };
 
       if (!response.ok) {
         throw new Error(payload.error || "Command failed.");
@@ -106,7 +117,20 @@ export default function Home() {
 
       setEntries((current) =>
         current.map((entry) =>
-          entry.id === entryId ? { ...entry, output: payload.reply || "No output returned." } : entry,
+          entry.id === entryId
+            ? {
+                ...entry,
+                meta:
+                  payload.confidence && payload.intents && payload.nextActions
+                    ? {
+                        confidence: payload.confidence,
+                        intents: payload.intents,
+                        nextActions: payload.nextActions,
+                      }
+                    : undefined,
+                output: payload.reply || "No output returned.",
+              }
+            : entry,
         ),
       );
     } catch (error) {
@@ -142,6 +166,11 @@ export default function Home() {
                     <span>{entry.command}</span>
                   </p>
                   {entry.output ? <pre className="prompt-output">{entry.output}</pre> : null}
+                  {entry.meta ? (
+                    <p className="lede" style={{ marginTop: "8px" }}>
+                      confidence: {entry.meta.confidence} | intents: {entry.meta.intents.join(", ")}
+                    </p>
+                  ) : null}
                   {entry.error ? <p className="prompt-error">error: {entry.error}</p> : null}
                 </div>
               ))}
